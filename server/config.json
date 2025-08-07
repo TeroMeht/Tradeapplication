@@ -1,0 +1,18 @@
+{
+    "Trading_Tiers": {
+        "tier_1": 400,
+        "tier_2": 300,
+        "tier_3": 200,
+        "tier_4": 100
+    },
+    "API_Config": {
+        "API_KEY": "PK5FAP22RYUFJZSMWTT6",
+        "API_SECRET": "xRJzCaAXUfZib26nYHfCoo4UEssfRt2GHpipKKS0",
+        "BASE_URL": "https://paper-api.alpaca.markets/v2"
+    },  
+    "ib_connection": {
+        "host": "127.0.0.1",
+        "port": 7497,
+        "clientId": 2
+      }
+}
