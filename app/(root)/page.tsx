@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import HeaderBox from '@/components/HeaderBox';
-import Calendar from '@/components/home/CalendarComponent';
+import Calendar from '@/components/home/ExecutionsCalendar';
 import TradesCalendar from '@/components/home/TradesCalendar';
 import TradeKPI from '@/components/home/TradeKPIcomponent';
 import SetupBarChart from '@/components/home/SetupCharting';

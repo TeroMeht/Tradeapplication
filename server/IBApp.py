@@ -60,51 +60,44 @@ class IbapiApp(EWrapper, EClient):
         
         
         order = Order()
-        order.action = action
+        order.orderId = self.nextOrderId
+        print(order.orderId)
         order.orderType = ordertype
+        print(order.orderType)
+        order.lmtPrice = price
+        order.action = action
+        print(order.action)      
         order.totalQuantity = quantity
+        print(order.totalQuantity)
         order.transmit = False
         order.eTradeOnly = ''
         order.firmQuoteOnly = ''
-        order.lmtPrice = price
+
         
 
-        if order.action =='BUY':
-            # Create stop loss order object for BUY
-            stop_order = Order()
-            stop_order.action = 'SELL'
-            stop_order.totalQuantity = quantity
-            stop_order.orderType = 'STP'
-            stop_order.auxPrice = stop_price
-            stop_order.parentId = order.orderId
-            order.auxPrice = price + 0.04
-            stop_order.transmit = False
+        stop_order = Order()
+        stop_order.orderId = order.orderId + 1
+        print(stop_order.orderId)
+        stop_order.parentId = order.orderId
+        print(stop_order.parentId)  # Ensure stop order has a unique ID
+        stop_order.orderType = 'STP'
+        stop_order.auxPrice = stop_price
+        stop_order.action = 'SELL'
+        stop_order.totalQuantity = quantity
+        stop_order.transmit = True
 
-        elif order.action =='SELL':
-            # Create stop loss order object for SELL
-            stop_order = Order()
-            stop_order.action = 'BUY'
-            stop_order.totalQuantity =quantity
-            stop_order.orderType = 'STP'
-            stop_order.auxPrice = stop_price
-            stop_order.parentId = order.orderId
-            order.auxPrice = price - 0.04
-            stop_order.transmit = False
+
 
         stop_order.eTradeOnly = ''
         stop_order.firmQuoteOnly = ''
-        try:
-            # Place the order
-            self.placeOrder(self.nextOrderId, contract, order)
-            self.nextOrderId += 1
-            self.placeOrder(self.nextOrderId, contract, stop_order)
-            # Print order summary in one line
-            print(f"Order placed: Symbol={contract.symbol}, Price={price}, Quantity={quantity}")
-            # Increment the next order ID
-            self.nextOrderId += 1
 
-        except Exception as e:
-            print(f"Failed to place order. Error: {str(e)}")
+        # Place the order
+        self.placeOrder(order.orderId, contract, order)
+        self.placeOrder(stop_order.orderId, contract, stop_order)
+        # Print order summary in one line
+        print(f"Order placed: Symbol={contract.symbol}, Price={price}, Quantity={quantity}")
+        # Increment the next order ID
+
 
     # def orderStatus(self, orderId: OrderId, status: str, filled: Decimal, remaining: Decimal, avgFillPrice: float, permId: int, parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
     #     print(f"orderId: {orderId}, status: {status}, filled: {filled}, remaining: {remaining}, avgFillPrice: {avgFillPrice}, permId: {permId}, parentId: {parentId}, lastFillPrice: {lastFillPrice}, clientId: {clientId}, whyHeld: {whyHeld}, mktCapPrice: {mktCapPrice}")

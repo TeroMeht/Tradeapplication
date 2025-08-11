@@ -30,19 +30,23 @@ const TradeKPI: React.FC = () => {
   const [categoryCountsByMonth, setCategoryCountsByMonth] = useState<CategoryCountsByMonth>({});
   const [allSetups, setAllSetups] = useState<string[]>([]);
 
-  useEffect(() => {
-    const fetchTrades = async () => {
-      try {
-        const res = await fetch("http://localhost:8080/api/trades");
-        const data: Trade[] = await res.json();
-        setTrades(data);
-      } catch (err) {
-        console.error("Failed to fetch trades", err);
-      }
-    };
+    useEffect(() => {
+      const fetchTrades = async () => {
+        try {
+          const res = await fetch("http://localhost:8080/api/trades");
+          const data: Trade[] = await res.json();
+          // Filter out 'VWAP continuation' and 'Swing trade' setups
+          const filtered = data.filter(
+            trade => !['Swing trade exit','Swing trade'].includes(trade.Setup)
+          );
+          setTrades(filtered);
+        } catch (err) {
+          console.error("Failed to fetch trades", err);
+        }
+      };
 
-    fetchTrades();
-  }, []);
+      fetchTrades();
+    }, []);
 
   useEffect(() => {
     const counts: SetupCountsByMonth = {};

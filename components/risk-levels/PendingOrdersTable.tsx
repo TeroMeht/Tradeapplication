@@ -116,10 +116,10 @@ const PendingOrdersTable: React.FC<PendingOrdersTableProps> = ({
             <TableHead>Symbol</TableHead>
             <TableHead>Entry Price</TableHead>
             {selectedOrder.limit_price !== 0 && selectedOrder.limit_price !== null && (
-              <TableHead>Stop area</TableHead>
+              <TableHead>Stop price</TableHead>
             )}
             {selectedOrder.stop_price !== 0 && selectedOrder.stop_price !== null && (
-              <TableHead>Stop area</TableHead>
+              <TableHead>Stop price</TableHead>
             )}
             {selectedTierValue !== 0 && selectedTierValue !== null && (
               <TableHead>Position Size</TableHead>

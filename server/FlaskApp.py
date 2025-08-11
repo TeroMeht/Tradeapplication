@@ -195,7 +195,7 @@ def place_order():
 
             mycontract = IB_app.get_contract(symbol) # tämä käy kysymässä contractin IB_appilta
             # Request PnL data for reqId=17005
-            IB_app.place_order(mycontract, action,position_size, entry_price, stop_price,ordertype = 'STP LMT')
+            IB_app.place_order(mycontract, action,position_size, entry_price, stop_price,ordertype = 'LMT')
 
             print("Order going live, with price:",entry_price) # tää tarvii kysyä just ennen ku tilaus lähtee ja mennä sillä arvolla
         else:

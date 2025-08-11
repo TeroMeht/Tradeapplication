@@ -102,6 +102,8 @@ def get_latest_price(symbol, config):
         # Fetch historical price data
         last_price = IB_app.get_lastPrice(99, mycontract)
         print("Last Price from IB:", last_price)  # Print last price from IB
+        if last_price is None:
+            last_price = 50  # Default to 0 if None or invalid
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
         last_price = None

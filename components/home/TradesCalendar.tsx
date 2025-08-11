@@ -92,11 +92,18 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
 
     while (day <= endDate) {
       const weekCells = [];
+      let weeklyTotal = 0; // running total for the week (excluding Swing trade exit)
 
       for (let i = 0; i < 7; i++) {
         const cloneDay = new Date(day);
         const dateKey = format(cloneDay, "yyyy-MM-dd");
         const trades = tradesByDay[dateKey];
+
+        if (trades) {
+          // Count only trades that are NOT "Swing trade exit"
+          const validTrades = trades.filter(t => t.Setup !== "Swing trade exit");
+          weeklyTotal += validTrades.length;
+        }
 
         weekCells.push(
           <div
@@ -121,8 +128,18 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
         day = addDays(day, 1);
       }
 
+      // Weekly total column
+      weekCells.push(
+        <div
+          key={`summary-${day.toString()}`}
+          className="p-1 h-20 flex items-center justify-center text-[10px] font-semibold bg-purple-50 border border-purple-200 rounded-lg text-purple-700"
+        >
+          {weeklyTotal} total
+        </div>
+      );
+
       rows.push(
-        <div key={`row-${day.toString()}`} className="grid grid-cols-7 gap-1 mb-1">
+        <div key={`row-${day.toString()}`} className="grid grid-cols-8 gap-1 mb-1">
           {weekCells}
         </div>
       );
@@ -130,6 +147,7 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
 
     return <>{rows}</>;
   };
+
 
   return (
     <div className="max-w-3xl mx-auto p-2 bg-white rounded-xl shadow">

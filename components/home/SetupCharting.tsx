@@ -28,9 +28,9 @@ const ALL_SETUPS = [
   "No setup",
   "Parabolic short",
   "ORB",
-  "Episodic Pivot",
   "Extreme Reversal",
   "Reversal",
+  "VWAP continuation"
   // add more setups if needed
 ];
 
