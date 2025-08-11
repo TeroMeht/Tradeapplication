@@ -1,9 +1,6 @@
 {
     "Trading_Tiers": {
-        "tier_1": 400,
-        "tier_2": 300,
-        "tier_3": 200,
-        "tier_4": 100
+        "tier_1": 300
     },
     "API_Config": {
         "API_KEY": "PK5FAP22RYUFJZSMWTT6",

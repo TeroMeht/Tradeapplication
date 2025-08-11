@@ -56,47 +56,38 @@ class IbapiApp(EWrapper, EClient):
         contract.primaryExchange = "ARCA"
         return contract
     
-    def place_order(self, contract: Contract, action: str, quantity: int, price: float, stop_price: float, ordertype) -> None:
-        
-        
-        order = Order()
-        order.orderId = self.nextOrderId
-        print(order.orderId)
-        order.orderType = ordertype
-        print(order.orderType)
-        order.lmtPrice = price
-        order.action = action
-        print(order.action)      
-        order.totalQuantity = quantity
-        print(order.totalQuantity)
-        order.transmit = False
-        order.eTradeOnly = ''
-        order.firmQuoteOnly = ''
 
-        
+    def place_order(self, contract, action, quantity, price, stop_price, ordertype):
+        # Parent
+        parent = Order()
+        parent.orderId = self.nextOrderId
+        parent.action = action
+        parent.orderType = ordertype
+        parent.lmtPrice = price
+        parent.totalQuantity = quantity
+        parent.transmit = False
+        parent.eTradeOnly = ''
+        parent.firmQuoteOnly = ''
 
+        # Stop-loss
         stop_order = Order()
-        stop_order.orderId = order.orderId + 1
-        print(stop_order.orderId)
-        stop_order.parentId = order.orderId
-        print(stop_order.parentId)  # Ensure stop order has a unique ID
+        stop_order.orderId = parent.orderId + 1
+        stop_order.parentId = parent.orderId
         stop_order.orderType = 'STP'
         stop_order.auxPrice = stop_price
-        stop_order.action = 'SELL'
+        stop_order.action = 'SELL' if action == 'BUY' else 'BUY'
         stop_order.totalQuantity = quantity
-        stop_order.transmit = True
-
-
-
+        stop_order.transmit = False  # last in chain
         stop_order.eTradeOnly = ''
         stop_order.firmQuoteOnly = ''
 
-        # Place the order
-        self.placeOrder(order.orderId, contract, order)
+
+        # Place together
+        self.placeOrder(parent.orderId, contract, parent)
+        time.sleep(0.5)  # Ensure parent order is processed before placing stop order
         self.placeOrder(stop_order.orderId, contract, stop_order)
-        # Print order summary in one line
-        print(f"Order placed: Symbol={contract.symbol}, Price={price}, Quantity={quantity}")
-        # Increment the next order ID
+
+        self.nextOrderId += 2
 
 
     # def orderStatus(self, orderId: OrderId, status: str, filled: Decimal, remaining: Decimal, avgFillPrice: float, permId: int, parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
