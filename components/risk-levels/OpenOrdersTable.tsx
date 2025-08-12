@@ -107,8 +107,18 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
 
   return (
     <div>
-      <div className="text-center text-xl font-bold my-4">Open Alpaca Orders</div>
+      <div className="relative flex items-center justify-center my-4">
+        {/* Update Table button on the left */}
+        <button
+          onClick={updateTable}
+          className="absolute left-0 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          Update Table
+        </button>
 
+        {/* Centered header */}
+        <div className="text-xl font-bold">Pending Orders</div>
+      </div>
       <Table>
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
@@ -118,13 +128,14 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
             <TableHead>Stop price</TableHead>
             <TableHead>Risk</TableHead>
             <TableHead>Position size</TableHead>
+            <TableHead>Size</TableHead>
             <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {positions.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={7} className="text-center text-lg text-gray-500">
+              <TableCell colSpan={8} className="text-center text-lg text-gray-500">
                 {message || "No orders to display."}
               </TableCell>
             </TableRow>
@@ -145,8 +156,11 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
                   <TableCell>{position.symbol}</TableCell>
                   <TableCell>{position.latest_price}</TableCell>
                   <TableCell>{stopValue}</TableCell>
-                  <TableCell>{position.risk}</TableCell>
+                  <TableCell>{(position.risk*position.tier_1).toFixed(2)}</TableCell>
                   <TableCell>{position.tier_1}</TableCell>
+                  <TableCell>
+                    {(position.latest_price * position.tier_1).toFixed(2)}
+                  </TableCell>
                   <TableCell>
                     <Button
                       variant="secondary"
@@ -155,7 +169,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
                       disabled={isSent}
                       onClick={() => handleSendOrder(position, index)}
                     >
-                      {isSent ? "Sent" : "Send"}
+                      {isSent ? "Sent" : "Send Order"}
                     </Button>
                   </TableCell>
                 </TableRow>
@@ -164,15 +178,6 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
           )}
         </TableBody>
       </Table>
-
-      <div className="flex justify-center my-4">
-        <button
-          onClick={updateTable}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Update Table
-        </button>
-      </div>
     </div>
   );
 };

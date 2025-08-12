@@ -22,11 +22,7 @@ class IbapiApp(EWrapper, EClient):
         ])
         self.realtimebars = pd.DataFrame()
         self.connected_flag = threading.Event()
-        self.executions = pd.DataFrame(columns=[
-                            "Symbol", "ExecId", "Time", "Price", "PermId", "AvgPrice", "Shares", "Side"
-                        ])
-
-        self.commissions = pd.DataFrame()
+        self.accountdata = pd.DataFrame()
 
 
     def error(self, reqId, errorCode, errorString, advancedOrderReject=""):
@@ -38,7 +34,6 @@ class IbapiApp(EWrapper, EClient):
     def nextValidId(self, orderId: int) -> None:
 
         super().nextValidId(orderId)
-        print(f"Connected: Next Valid Order ID is {orderId}")
         self.connected_flag.set()
         self.nextOrderId = orderId
 
@@ -77,7 +72,7 @@ class IbapiApp(EWrapper, EClient):
         stop_order.auxPrice = stop_price
         stop_order.action = 'SELL' if action == 'BUY' else 'BUY'
         stop_order.totalQuantity = quantity
-        stop_order.transmit = False  # last in chain
+        stop_order.transmit = True  # last in chain
         stop_order.eTradeOnly = ''
         stop_order.firmQuoteOnly = ''
 
@@ -90,8 +85,8 @@ class IbapiApp(EWrapper, EClient):
         self.nextOrderId += 2
 
 
-    # def orderStatus(self, orderId: OrderId, status: str, filled: Decimal, remaining: Decimal, avgFillPrice: float, permId: int, parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
-    #     print(f"orderId: {orderId}, status: {status}, filled: {filled}, remaining: {remaining}, avgFillPrice: {avgFillPrice}, permId: {permId}, parentId: {parentId}, lastFillPrice: {lastFillPrice}, clientId: {clientId}, whyHeld: {whyHeld}, mktCapPrice: {mktCapPrice}")
+    def orderStatus(self, orderId: OrderId, status: str, filled: Decimal, remaining: Decimal, avgFillPrice: float, permId: int, parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
+        print(f"orderId: {orderId}, status: {status}, filled: {filled}, remaining: {remaining}, avgFillPrice: {avgFillPrice}, permId: {permId}, parentId: {parentId}, lastFillPrice: {lastFillPrice}, clientId: {clientId}, whyHeld: {whyHeld}, mktCapPrice: {mktCapPrice}")
     
     # Force liquidate positions that you are not supposed to be involved
     def place_market_order(self, contract: Contract, action: str, quantity: int) -> None:
@@ -132,11 +127,11 @@ class IbapiApp(EWrapper, EClient):
             contract=contract,
             endDateTime="",
             durationStr="1 D",
-            barSizeSetting="1 min",
+            barSizeSetting="5 mins",
             whatToShow="TRADES",
             useRTH=0,
             formatDate=1,
-            keepUpToDate=False,
+            keepUpToDate=True,
             chartOptions=[],
         )
         time.sleep(1)
@@ -157,6 +152,12 @@ class IbapiApp(EWrapper, EClient):
         time.sleep(1) # tässä pitäis oikeesti odottaa vastausta että kaikki positiot on haettu
         return self.positions
 
+    def get_accountdata(self) -> pd.DataFrame:
+        self.reqAccountUpdates(True, 'DU7263343')
+        time.sleep(1)
+        return self.accountdata
+
+
     def get_lastPrice(self, reqId: int, contract: Contract):
         # Initialize the DataFrame for real-time bars
         self.realtimebars = pd.DataFrame(columns=[
@@ -164,25 +165,30 @@ class IbapiApp(EWrapper, EClient):
         ])
         
         # Request real-time bars from the IB API
+        print("Requesting real-time bars from IB API...")
         self.reqRealTimeBars(reqId, contract, 5, "MIDPOINT", False, [])
         time.sleep(1)  # Give some time to collect data
 
-        # Check if the DataFrame is empty
+        # If no real-time bar data, fall back to historical data
         if self.realtimebars.empty:
-            return None  # Handle the case where no data is received
+            print("No real-time data received. Fetching historical data instead...")
+            historical_df = self.get_historical_data(reqId, contract)
+            time.sleep(1)  # Ensure historical data is ready
 
-        # Get the last row of the DataFrame
+            if not historical_df.empty:
+                last_close = historical_df.iloc[-1]["close"]
+                print(f"Price fetched from historical data: {last_close}")
+                return round(last_close, 2)
+            print("No historical data received either.")
+            return None
+
+        # If we have real-time bar data
         last_row = self.realtimebars.iloc[-1]
-
-        # Calculate the average price
         average_price = (last_row["Open"] + last_row["High"] + last_row["Low"] + last_row["Close"]) / 4
-        average_price = round(average_price,2)
-        return average_price
+        print(f"Price fetched from real-time bars (average OHLC): {average_price}")
+        return round(average_price, 2)
 
-    def get_executions(self) -> pd.DataFrame:
-        self.reqExecutions(10001, ExecutionFilter())  # Triggers execDetails for each execution
-        time.sleep(1)  # Optional: allow some time for execDetails to populate
-        return self.executions, self.commissions
+
 
     def openOrder(self, orderId: int, contract: Contract, order: Order, orderState: OrderState): 
  
@@ -281,20 +287,21 @@ class IbapiApp(EWrapper, EClient):
 
         self.executions.loc[len(self.executions)] = new_row
 
+    def updateAccountValue(self, key: str, val: str, currency: str, accountName: str) -> pd.DataFrame:
+        super().updateAccountValue(key, val, currency, accountName)
 
-    def commissionReport(self, commissionReport: CommissionReport):
-        super().commissionReport(commissionReport)
-        
-        # Convert commission report to a dictionary
-        report_dict = {
-            "ExecId": commissionReport.execId,
-            "Commission": commissionReport.commission,
-            "Currency": commissionReport.currency,
-            "RealizedPNL": commissionReport.realizedPNL,
-            "Yield": commissionReport.yield_,
-            "YieldRedemptionDate": commissionReport.yieldRedemptionDate,
-        }
 
-        # Append to the commissions DataFrame
-        self.commissions = pd.concat([self.commissions, pd.DataFrame([report_dict])], ignore_index=True)
+        # Initialize as empty DataFrame if not exists
+        if not hasattr(self, "accountdata") or self.accountdata is None:
+            self.accountdata = pd.DataFrame(columns=["Key", "Value", "Currency", "AccountName"])
 
+        new_row = pd.DataFrame([{
+            "Key": key,
+            "Value": val,
+            "Currency": currency,
+            "AccountName": accountName
+        }])
+
+        self.accountdata = pd.concat([self.accountdata, new_row], ignore_index=True)
+
+        return self.accountdata

@@ -26,7 +26,6 @@ config = read_project_config('config.json')
 app = Flask(__name__)
 CORS(app)
 
-DAILY_LOSS_LIMIT = -1000.0  # Example: stop trading if loss exceeds -1000
 
 host = config["ib_connection"]["host"]
 port = config["ib_connection"]["port"]
@@ -446,133 +445,38 @@ def pcs_logic():
         cursor.close()
         release_db_connection(conn)
 
-    # # Hakee portfolion ja avoimet orderit
-    # portfolio = get_ib_positions_from_api()
-    # #executions = get_ib_executions_from_api()
-
-    # if portfolio is not None:
-    #     positions = portfolio.get("openRiskLevels", [])
-        
-    #     if positions:
-    #         # Create DataFrame with the columns: Symbol, Position, AvgCost, OpenRisk
-    #         df = pd.DataFrame(positions)
-    #         print("\nCurrent IB Positions (Portfolio):")
-    #         print(df.to_string(index=False))  # Print the DataFrame without index
-
-    #     # Detect positions with infinite risk (i.e., no stop-loss)
-    #     risky_positions = detect_inf_risk_positions(portfolio)
-
-    #     if risky_positions:
-    #         print("Risky positions detected:", risky_positions)
-            
-    #         for position in risky_positions:
-    #             symbol = position.get("symbol")
-    #             qty = position.get("qty")
-    #             avg_price = position.get("avg_price")
-                
-    #             print(f"⚠️ Closing risky position: {symbol} (Qty: {qty}, Avg Price: {avg_price})")
-
-    #             try:
-    #                 # Initialize the IB API connection
-    #                 IB_app = IbapiApp()
-    #                 IB_app.connect(host, port, clientId)
-    #                 threading.Thread(target=IB_app.run, daemon=True).start()
-
-    #                 # Wait for connection confirmation via nextValidId()
-    #                 if IB_app.connected_flag.wait(timeout=2):
-    #                     print("Connection confirmed.")
-                        
-    #                     # Use the force_exit_position method to close the risky position
-    #                     action = "SELL" if qty > 0 else "BUY"  # If position is long, sell; if short, buy
-    #                     position_size = abs(qty)  # Use absolute value to close position
-                        
-    #                     # Get the contract information for the symbol
-    #                     mycontract = IB_app.get_contract(symbol)
-
-    #                     # Force exit the position with a market order
-    #                     IB_app.place_market_order(mycontract, action, position_size)
-    #                     print(f"Market order placed to force exit position {symbol}.")
-
-    #                 else:
-    #                     print("Failed to confirm connection (timeout). Disconnecting...")
-    #                     IB_app.disconnect()
-    #                     raise ConnectionError("IB connection timeout — exiting process.")
-
-    #             except Exception as e:
-    #                 print(f"An error occurred while placing market order for {symbol}: {str(e)}")
-    #                 return jsonify({"error": f"An error occurred: {str(e)}"}), 500
-    #             finally:
-    #                 if IB_app.isConnected():
-    #                     IB_app.disconnect()
-    #                     print("Force exit disconnect from IB Gateway/TWS.")
-            
-    #         return jsonify({
-    #             "status": "success",
-    #             "message": f"{len(risky_positions)} force market orders sent"
-    #         }), 200
-
-    #     else:
-    #         return jsonify({"status": "success", "message": "No risky positions detected"}), 200
-
-    # else:
-    #     return jsonify({"status": "error", "message": "Failed to fetch positions"}), 500
-    
-
 # Täällä kysytään kerralla kaikki oleellinen IB:ltä jotta sitä ei tarvitse erikseen kysellä joka välissä
-# Executionit viedään kantaan tästä samasta viestistä
-# Positions näytetään
-# Orders näytetään
-# pnl sama homma?    
-@app.route("/api/ib_portfoliodata", methods=['GET'])
+    
+@app.route("/api/ib_accountdata", methods=['GET'])
 def get_ib_portfolio():
     try:
-        # Create and connect the IB API instance
         IB_app = IbapiApp()
         IB_app.connect(host, port, clientId)
-
-        # Start the IB API thread
         threading.Thread(target=IB_app.run, daemon=True).start()
 
-        # Wait for connection confirmation
         if IB_app.connected_flag.wait(timeout=2):
             print("Connection confirmed.")
 
-            # Fetch the data
-            executions_df, commissions_df = IB_app.get_executions()
             positions_df = IB_app.get_positions()
             orders_df = IB_app.get_stopOrders()
+            accountdata_df = IB_app.get_accountdata()
 
-            # Ensure numeric types
-            # Ensure numeric types
-            executions_df["AvgPrice"] = executions_df["AvgPrice"].astype(float)
-            executions_df["Shares"] = executions_df["Shares"].astype(float)
-            commissions_df["Commission"] = commissions_df["Commission"].astype(float)
+            # Filter accountdata_df for only USD StockMarketValue and TotalCashBalance
+            filtered_accountdata_df = accountdata_df[
+                ((accountdata_df['Key'] == 'StockMarketValue') & (accountdata_df['Currency'] == 'USD')) |
+                ((accountdata_df['Key'] == 'TotalCashBalance') & (accountdata_df['Currency'] == 'USD'))
+            ]
 
-            # Merge executions and commissions by ExecId
-            merged_df = executions_df.merge(
-                commissions_df,
-                how="left",
-                left_on="ExecId",
-                right_on="ExecId"
-            )
-
-            # Calculate adjusted average price
-            merged_df["AdjustedAvgPrice"] = merged_df["AvgPrice"] + (merged_df["Commission"] / merged_df["Shares"])
-
-            # Drop unwanted columns (handle missing ones safely)
-            merged_df.drop(columns=["RealizedPNL", "Yield", "YieldRedemptionDate", "Currency", "ExecId"], inplace=True, errors="ignore")
-
-            # Prepare clean outputs
-            executions_data = merged_df.to_dict(orient="records")
+            # Convert to dict for JSON serialization
             positions_data = positions_df.to_dict(orient="records")
             orders_data = orders_df.to_dict(orient="records")
+            accountdata = filtered_accountdata_df.to_dict(orient="records")
 
             return jsonify({
-                "executions": executions_data,
                 "positions": positions_data,
-                "orders": orders_data
+                "orders": orders_data,
+                "accountdata": accountdata
             }), 200
-
 
         else:
             print("Failed to confirm connection (timeout). Disconnecting...")
@@ -585,84 +489,7 @@ def get_ib_portfolio():
     finally:
         if IB_app.isConnected():
             IB_app.disconnect()
-            print("Executions disconnect from IB Gateway/TWS.")
-
-
-# Palauttaa PCS hälytykset omasta kannasta
-@app.route("/api/pcs_alarms", methods=['GET'])
-def get_pcs_alarms():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Use exact case-sensitive column names in quotes
-        cursor.execute('SELECT id, "Message", "Status", "Date" FROM pcs_alarms ORDER BY id;')
-        rows = cursor.fetchall()
-
-        alarms = [
-            {
-                "id": row[0],
-                "Message": row[1],
-                "Status": row[2],
-                "Date": row[3].isoformat() if row[3] else None
-            }
-            for row in rows
-        ]
-
-        return jsonify(alarms)
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-
-
-
-
-
-# Daily pnl
-@app.route('/api/dailypnl', methods=['GET'])
-def last_pnl_endpoint():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-
-    try:
-        # Fetch all PnL data
-        all_pnls = get_all_pnls(cursor)
-
-        if all_pnls:
-            last_pnl = all_pnls[0]  # Most recent entry
-
-            # Extract DailyPnL and Time
-            daily_pnl = last_pnl.get("DailyPnL")
-            timestamp = last_pnl.get("Time")  # Already formatted in get_all_pnls()
-
-            # Check against limit
-            if daily_pnl is not None:
-                limit_exceeded = daily_pnl < DAILY_LOSS_LIMIT
-            else:
-                limit_exceeded = None
-
-            # Include the limit status and timestamp in the response
-            response = {
-                "pnl": daily_pnl,
-                "limitExceeded": limit_exceeded,
-                "limitThreshold": DAILY_LOSS_LIMIT,
-                "timestamp": timestamp
-            }
-
-            return jsonify(response), 200
-
-        else:
-            return jsonify({"error": "No PnL data found"}), 404
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-    finally:
-        cursor.close()
-        release_db_connection(conn)
+            print("Disconnected from IB Gateway/TWS.")
 
 
 

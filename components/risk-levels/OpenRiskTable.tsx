@@ -35,49 +35,67 @@ const fetchOpenRiskLevels = async (): Promise<OpenRiskLevel[]> => {
   }
 };
 
-const OpenRiskTable = () => {
-  const [openRiskLevels, setOpenRiskLevels] = useState<OpenRiskLevel[]>([]);
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);  // Track loading state
-  const hasFetched = useRef(false);
+  type OpenRiskTableProps = {
+    onLoaded: () => void;
+  };
 
-  const updateTable = useCallback(async () => {
-    if (isLoading) return; 
-    setIsLoading(true);
-  
-    try {
-      const data = await fetchOpenRiskLevels();
-      if (data.length === 0) {
-        setMessage("");
-      } else {
-        setMessage("");
-      }
-      setOpenRiskLevels(data);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setMessage(error.message);
-      } else {
-        setMessage("Error loading data");
-      }
-      setOpenRiskLevels([]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [isLoading]);
+  const OpenRiskTable: React.FC<OpenRiskTableProps> = ({ onLoaded }) => {
+    const [openRiskLevels, setOpenRiskLevels] = useState<OpenRiskLevel[]>([]);
+    const [message, setMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const hasFetched = useRef(false);
 
-  // ✅ Fetch once on mount
-  useEffect(() => {
-    if (!hasFetched.current) {
-      hasFetched.current = true;
-      updateTable();
-    }
-  }, [updateTable]);
+    const fetchOpenRiskLevels = useCallback(async (): Promise<OpenRiskLevel[]> => {
+      const response = await fetch("http://localhost:8080/api/ib-positions");
+      if (!response.ok) {
+        throw new Error("Failed to fetch open risk levels");
+      }
+      const data = await response.json();
+      return data.openRiskLevels as OpenRiskLevel[];
+    }, []);
+
+    const updateTable = useCallback(async () => {
+      if (isLoading) return;
+      setIsLoading(true);
+
+      try {
+        const data = await fetchOpenRiskLevels();
+        setMessage(data.length === 0 ? "No data available." : "");
+        setOpenRiskLevels(data);
+
+        // Signal parent that loading finished successfully
+        onLoaded();
+      } catch (error) {
+        setMessage(error instanceof Error ? error.message : "Error loading data");
+        setOpenRiskLevels([]);
+      } finally {
+        setIsLoading(false);
+      }
+    }, [fetchOpenRiskLevels, isLoading, onLoaded]);
+
+    useEffect(() => {
+      if (!hasFetched.current) {
+        hasFetched.current = true;
+        updateTable();
+      }
+    }, [updateTable]);
 
 
   return (
     <div>
-      <div className="text-center text-xl font-bold my-4">Position management</div>
+      <div className="relative flex items-center justify-center my-4">
+        {/* Left-aligned update button */}
+        <button
+          onClick={updateTable}
+          disabled={isLoading}
+          className="absolute left-0 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          {isLoading ? "Loading..." : "Update Table"}
+        </button>
 
+        {/* Centered header */}
+        <div className="text-xl font-bold">Position management</div>
+      </div>
       <Table>
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
@@ -144,16 +162,7 @@ const OpenRiskTable = () => {
           )}
         </TableBody>
       </Table>
-      {/* Update Button */}
-      <div className="text-center mb-4">
-        <button
-          onClick={updateTable}
-          disabled={isLoading}  // Disable button if data is loading
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          {isLoading ? "Loading..." : "Update Data"}
-        </button>
-      </div>
+
     </div>
   );
 };

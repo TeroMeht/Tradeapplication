@@ -40,17 +40,21 @@ const Calendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }) => {
     const fetchExecutions = async () => {
       try {
         const response = await fetch("http://localhost:8080/api/executions");
-        const data: Execution[] = await response.json();
+        const data: Execution[] | null = await response.json();
 
         const grouped: DailyExecutions = {};
 
-        data.forEach((exec) => {
-          const dateTimeStr = `${exec.Date}T${exec.Time}`;
-          const dateStr = format(new Date(dateTimeStr), "yyyy-MM-dd");
-          if (!grouped[dateStr]) grouped[dateStr] = {};
-          if (!grouped[dateStr][exec.Symbol]) grouped[dateStr][exec.Symbol] = 0;
-          grouped[dateStr][exec.Symbol] += 1;
-        });
+        if (Array.isArray(data)) {
+          data.forEach((exec) => {
+            const dateTimeStr = `${exec.Date}T${exec.Time}`;
+            const dateStr = format(new Date(dateTimeStr), "yyyy-MM-dd");
+            if (!grouped[dateStr]) grouped[dateStr] = {};
+            if (!grouped[dateStr][exec.Symbol]) grouped[dateStr][exec.Symbol] = 0;
+            grouped[dateStr][exec.Symbol] += 1;
+          });
+        } else {
+          console.warn("Executions data is not an array:", data);
+        }
 
         setExecutionsByDay(grouped);
       } catch (err) {
