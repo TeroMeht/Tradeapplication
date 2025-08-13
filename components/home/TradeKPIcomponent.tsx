@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { format, parseISO } from "date-fns";
-import { parse } from "date-fns"; // Add at the top
+import { format, parseISO, parse } from "date-fns";
 
 interface Trade {
-  Date: string;
-  Setup: string;
   Symbol: string;
-  TradeId: number;
+  Date: string;   // e.g., "2025-08-13"
+  Setup: string;
+  Rating: string; // not used here, but kept for type completeness
 }
 
 type SetupCountsByMonth = {
@@ -19,34 +18,20 @@ type CategoryCountsByMonth = {
 
 // Define setup categories
 const setupCategories: { [category: string]: string[] } = {
-  Continuation: [ 'ORB', 'Episodic Pivot'],
-  Reversal: ['Extreme Reversal', 'Reversal','Parabolic short'],
-  Uncategorized: ['No setup'],
+  Continuation: ["ORB", "Episodic Pivot"],
+  Reversal: ["Extreme Reversal", "Reversal", "Parabolic short"],
+  Uncategorized: ["No setup"],
 };
 
-const TradeKPI: React.FC = () => {
-  const [trades, setTrades] = useState<Trade[]>([]);
+interface TradeKPIProps {
+  trades: Trade[];
+}
+
+const TradeKPI: React.FC<TradeKPIProps> = ({ trades }) => {
   const [countsByMonth, setCountsByMonth] = useState<SetupCountsByMonth>({});
-  const [categoryCountsByMonth, setCategoryCountsByMonth] = useState<CategoryCountsByMonth>({});
+  const [categoryCountsByMonth, setCategoryCountsByMonth] =
+    useState<CategoryCountsByMonth>({});
   const [allSetups, setAllSetups] = useState<string[]>([]);
-
-    useEffect(() => {
-      const fetchTrades = async () => {
-        try {
-          const res = await fetch("http://localhost:8080/api/trades");
-          const data: Trade[] = await res.json();
-          // Filter out 'VWAP continuation' and 'Swing trade' setups
-          const filtered = data.filter(
-            trade => !['Swing trade exit','Swing trade'].includes(trade.Setup)
-          );
-          setTrades(filtered);
-        } catch (err) {
-          console.error("Failed to fetch trades", err);
-        }
-      };
-
-      fetchTrades();
-    }, []);
 
   useEffect(() => {
     const counts: SetupCountsByMonth = {};
@@ -55,7 +40,7 @@ const TradeKPI: React.FC = () => {
 
     trades.forEach(({ Date: dateStr, Setup }) => {
       const date = parseISO(dateStr);
-      const month = format(date, 'MMMM yyyy');
+      const month = format(date, "MMMM yyyy");
 
       setupsSet.add(Setup);
 
@@ -64,7 +49,7 @@ const TradeKPI: React.FC = () => {
       counts[month][Setup] = (counts[month][Setup] || 0) + 1;
 
       // Category counts
-      let matchedCategory = 'Other';
+      let matchedCategory = "Other";
       for (const [category, setupList] of Object.entries(setupCategories)) {
         if (setupList.includes(Setup)) {
           matchedCategory = category;
@@ -73,7 +58,8 @@ const TradeKPI: React.FC = () => {
       }
 
       if (!categoryCounts[month]) categoryCounts[month] = {};
-      categoryCounts[month][matchedCategory] = (categoryCounts[month][matchedCategory] || 0) + 1;
+      categoryCounts[month][matchedCategory] =
+        (categoryCounts[month][matchedCategory] || 0) + 1;
     });
 
     setCountsByMonth(counts);
@@ -81,14 +67,17 @@ const TradeKPI: React.FC = () => {
     setCategoryCountsByMonth(categoryCounts);
   }, [trades]);
 
-  
-    const sortedMonths = Object.keys(countsByMonth).sort((a, b) =>
-    parse(a, "MMMM yyyy", new Date()).getTime() - parse(b, "MMMM yyyy", new Date()).getTime()
-    );
+  const sortedMonths = Object.keys(countsByMonth).sort(
+    (a, b) =>
+      parse(a, "MMMM yyyy", new Date()).getTime() -
+      parse(b, "MMMM yyyy", new Date()).getTime()
+  );
 
   return (
     <div className="max-w-6xl mx-auto p-4 bg-white rounded shadow mt-10">
-      <h2 className="text-2xl font-semibold mb-6">Trade KPI: Setups by Month</h2>
+      <h2 className="text-2xl font-semibold mb-6">
+        Trade KPI: Setups by Month
+      </h2>
 
       {/* Setup Count Table */}
       <h3 className="text-lg font-semibold mb-2">Setups</h3>
@@ -97,7 +86,10 @@ const TradeKPI: React.FC = () => {
           <tr>
             <th className="border border-gray-300 p-2 text-left">Month</th>
             {allSetups.map((setup) => (
-              <th key={setup} className="border border-gray-300 p-2 text-left">
+              <th
+                key={setup}
+                className="border border-gray-300 p-2 text-left"
+              >
                 {setup}
               </th>
             ))}
@@ -106,9 +98,14 @@ const TradeKPI: React.FC = () => {
         <tbody>
           {sortedMonths.map((month) => (
             <tr key={month} className="even:bg-gray-50">
-              <td className="border border-gray-300 p-2 font-medium">{month}</td>
+              <td className="border border-gray-300 p-2 font-medium">
+                {month}
+              </td>
               {allSetups.map((setup) => (
-                <td key={setup} className="border border-gray-300 p-2 text-center">
+                <td
+                  key={setup}
+                  className="border border-gray-300 p-2 text-center"
+                >
                   {countsByMonth[month][setup] || 0}
                 </td>
               ))}
@@ -124,7 +121,10 @@ const TradeKPI: React.FC = () => {
           <tr>
             <th className="border border-gray-300 p-2 text-left">Month</th>
             {Object.keys(setupCategories).map((category) => (
-              <th key={category} className="border border-gray-300 p-2 text-left">
+              <th
+                key={category}
+                className="border border-gray-300 p-2 text-left"
+              >
                 {category}
               </th>
             ))}
@@ -134,14 +134,19 @@ const TradeKPI: React.FC = () => {
         <tbody>
           {sortedMonths.map((month) => (
             <tr key={month} className="even:bg-gray-50">
-              <td className="border border-gray-300 p-2 font-medium">{month}</td>
+              <td className="border border-gray-300 p-2 font-medium">
+                {month}
+              </td>
               {Object.keys(setupCategories).map((category) => (
-                <td key={category} className="border border-gray-300 p-2 text-center">
+                <td
+                  key={category}
+                  className="border border-gray-300 p-2 text-center"
+                >
                   {categoryCountsByMonth[month]?.[category] || 0}
                 </td>
               ))}
               <td className="border border-gray-300 p-2 text-center">
-                {categoryCountsByMonth[month]?.['Other'] || 0}
+                {categoryCountsByMonth[month]?.["Other"] || 0}
               </td>
             </tr>
           ))}

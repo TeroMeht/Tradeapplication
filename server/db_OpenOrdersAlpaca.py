@@ -114,14 +114,14 @@ def get_latest_price(symbol, config):
     return last_price
 
 
-
 # Main function
 def process_open_orders(config):
     
     """Main function to process open orders, fetch prices, calculate risk, and write to the database."""
 
     open_orders = get_open_orders(config)
-
     df = handle_orders_data(open_orders,config)
 
     return df
+
+

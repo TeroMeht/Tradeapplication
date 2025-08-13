@@ -1,5 +1,4 @@
-from db_connection import connect_db
-import pandas as pd
+
 
 
 def get_those_alarms(cursor):

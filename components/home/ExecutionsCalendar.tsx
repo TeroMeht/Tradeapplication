@@ -25,9 +25,10 @@ type DailyExecutions = {
 interface CalendarProps {
   currentMonth: Date;
   onMonthChange: (date: Date) => void;
+  executions: Execution[]; // NEW: accept executions as prop
 }
 
-const Calendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }) => {
+const Calendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange, executions }) => {
   const today = new Date();
   const [executionsByDay, setExecutionsByDay] = useState<DailyExecutions>({});
 
@@ -36,42 +37,25 @@ const Calendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }) => {
   const startDate = startOfWeek(monthStart, { weekStartsOn: 1 });
   const endDate = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
+  // Process executions whenever they change
   useEffect(() => {
-    const fetchExecutions = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/api/executions");
-        const data: Execution[] | null = await response.json();
+    const grouped: DailyExecutions = {};
 
-        const grouped: DailyExecutions = {};
+    if (Array.isArray(executions)) {
+      executions.forEach((exec) => {
+        const dateTimeStr = `${exec.Date}T${exec.Time}`;
+        const dateStr = format(new Date(dateTimeStr), "yyyy-MM-dd");
+        if (!grouped[dateStr]) grouped[dateStr] = {};
+        if (!grouped[dateStr][exec.Symbol]) grouped[dateStr][exec.Symbol] = 0;
+        grouped[dateStr][exec.Symbol] += 1;
+      });
+    }
 
-        if (Array.isArray(data)) {
-          data.forEach((exec) => {
-            const dateTimeStr = `${exec.Date}T${exec.Time}`;
-            const dateStr = format(new Date(dateTimeStr), "yyyy-MM-dd");
-            if (!grouped[dateStr]) grouped[dateStr] = {};
-            if (!grouped[dateStr][exec.Symbol]) grouped[dateStr][exec.Symbol] = 0;
-            grouped[dateStr][exec.Symbol] += 1;
-          });
-        } else {
-          console.warn("Executions data is not an array:", data);
-        }
+    setExecutionsByDay(grouped);
+  }, [executions]);
 
-        setExecutionsByDay(grouped);
-      } catch (err) {
-        console.error("Failed to fetch executions:", err);
-      }
-    };
-
-    fetchExecutions();
-  }, [currentMonth]);
-
-  const handlePrevMonth = () => {
-    onMonthChange(subMonths(currentMonth, 1));
-  };
-
-  const handleNextMonth = () => {
-    onMonthChange(addMonths(currentMonth, 1));
-  };
+  const handlePrevMonth = () => onMonthChange(subMonths(currentMonth, 1));
+  const handleNextMonth = () => onMonthChange(addMonths(currentMonth, 1));
 
   const renderHeader = () => (
     <div className="flex items-center justify-between mb-2">
@@ -108,10 +92,10 @@ const Calendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }) => {
       for (let i = 0; i < 7; i++) {
         const cloneDay = new Date(day);
         const dateKey = format(cloneDay, "yyyy-MM-dd");
-        const executions = executionsByDay[dateKey];
+        const dailyExecutions = executionsByDay[dateKey];
 
-        if (executions) {
-          const dayTotal = Object.values(executions).reduce((sum, count) => sum + count, 0);
+        if (dailyExecutions) {
+          const dayTotal = Object.values(dailyExecutions).reduce((sum, count) => sum + count, 0);
           weeklyTotal += dayTotal;
         }
 
@@ -126,8 +110,8 @@ const Calendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }) => {
             <div className={`font-semibold mb-0.5 ${isSameDay(cloneDay, today) ? "text-blue-600" : ""}`}>
               {format(cloneDay, "d")}
             </div>
-            {executions &&
-              Object.entries(executions).map(([symbol, count]) => (
+            {dailyExecutions &&
+              Object.entries(dailyExecutions).map(([symbol, count]) => (
                 <div key={symbol} className="text-[10px]">
                   {symbol}: {count}
                 </div>

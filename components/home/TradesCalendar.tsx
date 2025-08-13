@@ -16,6 +16,7 @@ interface Trade {
   Symbol: string;
   Date: string;
   Setup: string;
+  Rating: string;
 }
 
 type DailyTrades = {
@@ -25,9 +26,10 @@ type DailyTrades = {
 interface CalendarProps {
   currentMonth: Date;
   onMonthChange: (date: Date) => void;
+  trades: Trade[]; // now required
 }
 
-const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }) => {
+const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange, trades }) => {
   const today = new Date();
   const [tradesByDay, setTradesByDay] = useState<DailyTrades>({});
 
@@ -37,27 +39,14 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
   const endDate = endOfWeek(monthEnd, { weekStartsOn: 1 });
 
   useEffect(() => {
-    const fetchTrades = async () => {
-      try {
-        const response = await fetch("http://localhost:8080/api/trades");
-        const data: Trade[] = await response.json();
-
-        const grouped: DailyTrades = {};
-
-        data.forEach((trade) => {
-          const dateStr = format(new Date(trade.Date), "yyyy-MM-dd");
-          if (!grouped[dateStr]) grouped[dateStr] = [];
-          grouped[dateStr].push({ Symbol: trade.Symbol, Setup: trade.Setup });
-        });
-
-        setTradesByDay(grouped);
-      } catch (err) {
-        console.error("Failed to fetch trades:", err);
-      }
-    };
-
-    fetchTrades();
-  }, [currentMonth]);
+    const grouped: DailyTrades = {};
+    trades.forEach((trade) => {
+      const dateStr = format(new Date(trade.Date), "yyyy-MM-dd");
+      if (!grouped[dateStr]) grouped[dateStr] = [];
+      grouped[dateStr].push({ Symbol: trade.Symbol, Setup: trade.Setup });
+    });
+    setTradesByDay(grouped);
+  }, [trades, currentMonth]);
 
   const handlePrevMonth = () => {
     onMonthChange(subMonths(currentMonth, 1));
@@ -69,9 +58,19 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
 
   const renderHeader = () => (
     <div className="flex items-center justify-between mb-2">
-      <button onClick={handlePrevMonth} className="px-2 py-0.5 text-sm bg-gray-200 rounded hover:bg-gray-300">←</button>
+      <button
+        onClick={handlePrevMonth}
+        className="px-2 py-0.5 text-sm bg-gray-200 rounded hover:bg-gray-300"
+      >
+        ←
+      </button>
       <h2 className="text-base font-medium">{format(currentMonth, "MMMM yyyy")}</h2>
-      <button onClick={handleNextMonth} className="px-2 py-0.5 text-sm bg-gray-200 rounded hover:bg-gray-300">→</button>
+      <button
+        onClick={handleNextMonth}
+        className="px-2 py-0.5 text-sm bg-gray-200 rounded hover:bg-gray-300"
+      >
+        →
+      </button>
     </div>
   );
 
@@ -92,16 +91,15 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
 
     while (day <= endDate) {
       const weekCells = [];
-      let weeklyTotal = 0; // running total for the week (excluding Swing trade exit)
+      let weeklyTotal = 0;
 
       for (let i = 0; i < 7; i++) {
         const cloneDay = new Date(day);
         const dateKey = format(cloneDay, "yyyy-MM-dd");
-        const trades = tradesByDay[dateKey];
+        const dayTrades = tradesByDay[dateKey];
 
-        if (trades) {
-          // Count only trades that are NOT "Swing trade exit"
-          const validTrades = trades.filter(t => t.Setup !== "Swing trade exit");
+        if (dayTrades) {
+          const validTrades = dayTrades.filter((t) => t.Setup !== "Swing trade exit");
           weeklyTotal += validTrades.length;
         }
 
@@ -116,8 +114,8 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
             <div className={`font-semibold mb-0.5 ${isSameDay(cloneDay, today) ? "text-purple-600" : ""}`}>
               {format(cloneDay, "d")}
             </div>
-            {trades &&
-              trades.map((trade, index) => (
+            {dayTrades &&
+              dayTrades.map((trade, index) => (
                 <div key={index} className="text-[10px] whitespace-nowrap">
                   {trade.Symbol}: {trade.Setup}
                 </div>
@@ -128,7 +126,6 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
         day = addDays(day, 1);
       }
 
-      // Weekly total column
       weekCells.push(
         <div
           key={`summary-${day.toString()}`}
@@ -147,7 +144,6 @@ const TradesCalendar: React.FC<CalendarProps> = ({ currentMonth, onMonthChange }
 
     return <>{rows}</>;
   };
-
 
   return (
     <div className="max-w-3xl mx-auto p-2 bg-white rounded-xl shadow">

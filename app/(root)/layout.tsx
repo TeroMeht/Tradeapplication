@@ -2,7 +2,6 @@
 
 import Sidebar from "@/components/Sidebar";
 import RightSidebar from "@/components/RightSideBar";
-// import DailyPnl from "@/components/DailyPnL";
 import { useState, useEffect } from "react";
 
 type AlarmData = {
@@ -81,11 +80,7 @@ export default function RootLayout({
       {/* Right Sidebar, passing alarms data */}
       <RightSidebar alarms={alarms} pageSpecific={true} streamerRunning={streamerRunning} />
       
-      {/* Daily PnL Section
-      <section className="absolute bottom-4 right-4 bg-white shadow-lg p-4 rounded-lg border z-50">
-        <h2 className="text-xl font-semibold mb-2">Daily PnL</h2>
-        <DailyPnl />
-      </section> */}
+
     </main>
   );
 }

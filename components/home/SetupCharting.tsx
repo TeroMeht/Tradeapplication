@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+"use client";
+
+import React from "react";
 import { Bar } from "react-chartjs-2";
-import { format, startOfMonth, endOfMonth, parseISO } from "date-fns";
+import { format } from "date-fns";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -13,15 +15,16 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-interface Execution {
+interface Trade {
   Symbol: string;
-  Time: string;
-  Date: string;
-  Setup: string;  // Make sure your API returns this field
+  Date: string;   // e.g., "2025-08-13"
+  Setup: string;
+  Rating: string; // not used here, but kept for type completeness
 }
 
 interface SetupBarChartProps {
   currentMonth: Date;
+  trades: Trade[]; // Passed in from parent
 }
 
 const ALL_SETUPS = [
@@ -30,61 +33,38 @@ const ALL_SETUPS = [
   "ORB",
   "Extreme Reversal",
   "Reversal",
-  "VWAP continuation"
-  // add more setups if needed
+  "VWAP continuation",
 ];
 
-const SetupBarChart: React.FC<SetupBarChartProps> = ({ currentMonth }) => {
-  const [data, setData] = useState<Record<string, number>>({});
-  const [loading, setLoading] = useState(false);
+const SetupBarChart: React.FC<SetupBarChartProps> = ({ currentMonth, trades }) => {
+  const monthStart = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), 1);
+  const monthEnd = new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1, 0);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("http://localhost:8080/api/trades");
-        const executions: Execution[] = await response.json();
+  // Count setups for this month
+  const counts: Record<string, number> = {};
+  trades.forEach((trade) => {
+    const tradeDate = new Date(trade.Date);
+    if (tradeDate >= monthStart && tradeDate <= monthEnd) {
+      counts[trade.Setup] = (counts[trade.Setup] || 0) + 1;
+    }
+  });
 
-        const monthStart = startOfMonth(currentMonth);
-        const monthEnd = endOfMonth(currentMonth);
-
-        const counts: Record<string, number> = {};
-
-        executions.forEach((exec) => {
-          const execDate = parseISO(exec.Date);
-          if (execDate >= monthStart && execDate <= monthEnd) {
-            counts[exec.Setup] = (counts[exec.Setup] || 0) + 1;
-          }
-        });
-
-        const fullCounts: Record<string, number> = {};
-        ALL_SETUPS.forEach((setup) => {
-          fullCounts[setup] = counts[setup] || 0;
-        });
-
-        setData(fullCounts);
-      } catch (error) {
-        console.error("Failed to fetch setup data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [currentMonth]);
+  // Fill in missing setups with 0
+  const fullCounts: Record<string, number> = {};
+  ALL_SETUPS.forEach((setup) => {
+    fullCounts[setup] = counts[setup] || 0;
+  });
 
   const labels = ALL_SETUPS;
-  const counts = labels.map((setup) => data[setup] || 0);
-
-  // Calculate total count
-  const totalCount = counts.reduce((sum, val) => sum + val, 0);
+  const dataValues = labels.map((setup) => fullCounts[setup]);
+  const totalCount = dataValues.reduce((sum, val) => sum + val, 0);
 
   const chartData = {
     labels,
     datasets: [
       {
         label: "Setups Count",
-        data: counts,
+        data: dataValues,
         backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
@@ -95,9 +75,7 @@ const SetupBarChart: React.FC<SetupBarChartProps> = ({ currentMonth }) => {
       <h3 className="text-lg font-semibold mb-4">
         Setups for {format(currentMonth, "MMMM yyyy")}
       </h3>
-      {loading ? (
-        <p>Loading...</p>
-      ) : labels.length === 0 ? (
+      {totalCount === 0 ? (
         <p>No setups found for this month.</p>
       ) : (
         <>

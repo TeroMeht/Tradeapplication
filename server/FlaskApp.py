@@ -2,38 +2,38 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
 from db_OpenOrdersAlpaca import process_open_orders
-from db_Strategydev import get_setup_data, get_price_data
 from db_LiveDataStream import get_livestream_data
 from db_LiveDataStream import get_those_alarms
-from db_Executions import get_execution_data, get_trade_data
-from db_DailypnlLimit import get_all_pnls
-from db_PortfolioControlSystem import pcs_handler
+from db_ExecutionsAndTrades import get_execution_data, get_trade_data
 import threading
 from ibapi.client import *
 from ibapi.wrapper import *
 from IBApp import IbapiApp
 import pandas as pd
-from config import read_project_config, read_db_config
+from db_connection import read_project_config, db_config
 from psycopg2.pool import SimpleConnectionPool
 import subprocess
 import psutil
-import os
 
 
-config = read_project_config('config.json')
+
+# Load configs
+project_config = read_project_config(filename='config.json')
+database_config = db_config(filename="database.ini", section="postgresql")
 # app instance
 
 app = Flask(__name__)
 CORS(app)
 
 
-host = config["ib_connection"]["host"]
-port = config["ib_connection"]["port"]
-clientId = config["ib_connection"]["clientId"]
+host = project_config["ib_connection"]["host"]
+port = project_config["ib_connection"]["port"]
+clientId = project_config["ib_connection"]["clientId"]
 
 # Initialize the connection pool
-db_config = read_db_config()
-db_pool = SimpleConnectionPool(1, 10, **db_config)  # Min 1, Max 10 connections
+
+
+db_pool = SimpleConnectionPool(1, 10, **database_config)  # Min 1, Max 10 connections
 
 def get_db_connection():
     """Get a database connection from the pool."""
@@ -42,6 +42,151 @@ def get_db_connection():
 def release_db_connection(conn):
     """Return the connection to the pool."""
     db_pool.putconn(conn)
+
+
+
+
+# Home page codes---------------------------------------------------------------------
+
+@app.route("/api/executions", methods=['GET'])
+def get_executions():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        # Fetch all data from the livestreamdata table
+        df = get_execution_data(cursor)
+
+        # Convert DataFrame to a dictionary and return it as a JSON response
+        return jsonify(df)
+
+    except Exception as e:
+        # Handle unexpected errors
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        release_db_connection(conn)
+
+@app.route("/api/trades", methods=['GET'])
+def get_trades():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        trades = get_trade_data(cursor)
+        return jsonify(trades)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        release_db_connection(conn)
+
+#-------------------------------------------------------------------------------------
+
+# Live-trading-assistance-------------------------------------------------------------
+
+TARGET_SCRIPT = "LiveDataStreamer.py"
+SCRIPT_DIR = r"C:/Projects/05_TradingAssistance"
+
+@app.route("/api/livestream", methods=['GET'])
+def get_livestreamdata():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        # Fetch all data from the livestreamdata table
+        df = get_livestream_data(cursor)
+
+        # Convert DataFrame to a dictionary and return it as a JSON response
+        return jsonify(df)
+
+    except Exception as e:
+        # Handle unexpected errors
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        release_db_connection(conn)
+    
+# Live assistance alarms
+@app.route("/api/alarms", methods=['GET'])
+def get_alarms():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    try:
+        # Fetch all alarms from the alarms table
+        alarms = get_those_alarms(cursor)
+        
+        # Return alarms as JSON response
+        return jsonify(alarms)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    finally:
+        cursor.close()
+        release_db_connection(conn)
+
+@app.route('/run-script', methods=['POST'])
+def run_script():
+    data = request.json
+    param = data.get('param')
+
+    try:
+        if is_process_running():
+            print(f"{TARGET_SCRIPT} is already running. Terminating it...")
+            terminate_exact_process()
+            time.sleep(2)
+
+        subprocess.Popen(
+            [
+                'cmd.exe', '/c',
+                f'start cmd.exe /k python {TARGET_SCRIPT} {param}'
+            ],
+            cwd=SCRIPT_DIR,
+            shell=True
+        )
+
+        time.sleep(5)
+
+        if is_process_running():
+            response = {'output': f"LiveStream ticker: {param.upper()} started"}
+            print(f"Response: {response}")
+            return jsonify(response), 200
+        else:
+            response = {'error': f"The {TARGET_SCRIPT} process is not running."}
+            print(f"Response: {response}")
+            return jsonify(response), 500
+
+    except subprocess.CalledProcessError as e:
+        return jsonify({'error': str(e)}), 500
+
+def is_process_running():
+    """Check if LiveDataStreamer.py is running."""
+    for proc in psutil.process_iter(['name', 'cmdline']):
+        try:
+            if proc.info['name'] == 'python.exe' and TARGET_SCRIPT in ' '.join(proc.info['cmdline']):
+                return True
+        except (psutil.NoSuchProcess, psutil.AccessDenied):
+            continue
+    return False
+
+def terminate_exact_process():
+    """Terminate all python processes running LiveDataStreamer.py."""
+    for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
+        try:
+            if proc.info['name'] == 'python.exe' and TARGET_SCRIPT in ' '.join(proc.info['cmdline']):
+                psutil.Process(proc.info['pid']).terminate()
+                print(f"Terminated {TARGET_SCRIPT} (PID: {proc.info['pid']})")
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess) as e:
+            print(f"Error terminating process: {e}")
+
+@app.route('/check-streamer', methods=['GET'])
+def check_streamer_status():
+    return jsonify({'running': is_process_running()})
+
+#--------------------------------------------------------------------------------------
+
+
+
+
+
+
+# Risk-levels--------------------------------------------------------------------------
 
 # Apufunktiot place orderille
 def handle_order_request():
@@ -124,47 +269,10 @@ def handle_open_risk(positions_df: pd.DataFrame, orders_df: pd.DataFrame) -> pd.
     return risk_df
 
 
-# Home page codes
-@app.route("/api/executions", methods=['GET'])
-def get_executions():
-    conn = get_db_connection()
-    cursor = conn.cursor()
+@app.route("/api/openorders", methods=['GET']) # IB connection  
+def get_alpacaorders_data(): 
     try:
-        # Fetch all data from the livestreamdata table
-        df = get_execution_data(cursor)
-
-        # Convert DataFrame to a dictionary and return it as a JSON response
-        return jsonify(df)
-
-    except Exception as e:
-        # Handle unexpected errors
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-@app.route("/api/trades", methods=['GET'])
-def get_trades():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        trades = get_trade_data(cursor)
-        return jsonify(trades)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-
-
-
-# Risk-levels
-@app.route("/api/openorders", methods=['GET'])
-def get_alpacaorders_data(): # IB connection
-     
-    try:
-        df = process_open_orders(config)
+        df = process_open_orders(project_config)
 
         # Check if DataFrame is empty
         if df.empty:
@@ -178,7 +286,6 @@ def get_alpacaorders_data(): # IB connection
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
-# Risk-levels
 @app.route("/api/place-order", methods=['POST']) # IB connection
 def place_order():
     try:
@@ -213,7 +320,6 @@ def place_order():
             IB_app.disconnect()
             print("Place order disconnect from IB Gateway/TWS.")
             
-# Risk-levels
 @app.route("/api/ib-positions", methods=['GET']) # IB connection
 def get_ibpositions_data():
 
@@ -254,200 +360,7 @@ def get_ibpositions_data():
             IB_app.disconnect()
             print("Positions and orders disconnect from IB Gateway/TWS.")
 
-
-
-
-
-# Strategy-development
-@app.route("/api/query", methods=['GET'])
-def get_query_setupdata():
-    try:
-        # Extract 'userId' from the query parameters
-        user_id = request.args.get('userId')
-        # Check if 'userId' is provided
-        if not user_id:
-            return jsonify({'status': 'error', 'message': 'userId is required'}), 400
-        
-        # Call a function to fetch data using the user_id
-        df = get_setup_data(user_id)
- 
-        # Check if the DataFrame is empty (no data found for the user_id)
-        if df.empty:
-            return jsonify({'status': 'success', 'message': 'No data available for the provided userId'}), 200
-        
-        # Convert the DataFrame to a dictionary (for the response)
-        data = df.to_dict(orient='records')
-        return jsonify({'status': 'success', 'data': data})
-
-    except Exception as e:
-        # Catch any exceptions and return an error message
-        return jsonify({'status': 'error', 'message': str(e)}), 500
-# Strategy-development
-@app.route("/api/chart-data", methods=['GET'])
-def get_chart_data_endpoint():
-    try:
-        # Retrieve query parameters
-        ticker = request.args.get('ticker')
-        date_str = request.args.get('date')  
-        marketdata = request.args.get('timeframe')
-        print(ticker, date_str,marketdata)
-
-
-        # Fetch the chart data based on the parameters (replace this with your actual data source)
-        data = get_price_data(ticker, date_str, marketdata)
-
-        # Prepare the data for JSON response
-        chart_data = []
-        for item in data:
-            chart_data.append({
-                'Time': item['Time'].strftime("%H:%M:%S"),  # Ensure 'time' is in the correct string format (YYYY-MM-DD)
-                'Open': item['Open'],
-                'High': item['High'],
-                'Low': item['Low'],
-                'Close': item['Close'],
-                'Volume': item['Volume'],
-                'VWAP': item['VWAP'],
-                'EMA9': item['EMA9']
-            })
-        print(chart_data)
-        # Return the chart data as JSON
-        return jsonify({
-            'status': 'success',
-            'ohlcData': chart_data  # Respond with the OHLC data
-        })
-    except Exception as e:
-        # Handle unexpected errors
-        return jsonify({'status': 'error', 'message': str(e)}), 500
-
-
-
-
-# Live-trading-assistance
-@app.route("/api/livestream", methods=['GET'])
-def get_livestreamdata():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Fetch all data from the livestreamdata table
-        df = get_livestream_data(cursor)
-
-        # Convert DataFrame to a dictionary and return it as a JSON response
-        return jsonify(df)
-
-    except Exception as e:
-        # Handle unexpected errors
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-    
-# Live assistance alarms
-@app.route("/api/alarms", methods=['GET'])
-def get_alarms():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Fetch all alarms from the alarms table
-        alarms = get_those_alarms(cursor)
-        
-        # Return alarms as JSON response
-        return jsonify(alarms)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-TARGET_SCRIPT = "LiveDataStreamer.py"
-SCRIPT_DIR = r"C:/Projects/05_TradingAssistance"
-
-@app.route('/run-script', methods=['POST'])
-def run_script():
-    data = request.json
-    param = data.get('param')
-
-    try:
-        if is_process_running():
-            print(f"{TARGET_SCRIPT} is already running. Terminating it...")
-            terminate_exact_process()
-            time.sleep(2)
-
-        subprocess.Popen(
-            [
-                'cmd.exe', '/c',
-                f'start cmd.exe /k python {TARGET_SCRIPT} {param}'
-            ],
-            cwd=SCRIPT_DIR,
-            shell=True
-        )
-
-        time.sleep(5)
-
-        if is_process_running():
-            response = {'output': f"LiveStream ticker: {param.upper()} started"}
-            print(f"Response: {response}")
-            return jsonify(response), 200
-        else:
-            response = {'error': f"The {TARGET_SCRIPT} process is not running."}
-            print(f"Response: {response}")
-            return jsonify(response), 500
-
-    except subprocess.CalledProcessError as e:
-        return jsonify({'error': str(e)}), 500
-
-
-def is_process_running():
-    """Check if LiveDataStreamer.py is running."""
-    for proc in psutil.process_iter(['name', 'cmdline']):
-        try:
-            if proc.info['name'] == 'python.exe' and TARGET_SCRIPT in ' '.join(proc.info['cmdline']):
-                return True
-        except (psutil.NoSuchProcess, psutil.AccessDenied):
-            continue
-    return False
-
-
-def terminate_exact_process():
-    """Terminate all python processes running LiveDataStreamer.py."""
-    for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
-        try:
-            if proc.info['name'] == 'python.exe' and TARGET_SCRIPT in ' '.join(proc.info['cmdline']):
-                psutil.Process(proc.info['pid']).terminate()
-                print(f"Terminated {TARGET_SCRIPT} (PID: {proc.info['pid']})")
-        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess) as e:
-            print(f"Error terminating process: {e}")
-
-
-@app.route('/check-streamer', methods=['GET'])
-def check_streamer_status():
-    return jsonify({'running': is_process_running()})
-
-
-
-
-# Portfolio control system
-# Valvoo ettei portfoliossa ole positioita ilman stoppia, sulkee ne väkisin jos on
-@app.route('/api/run_pcs_logic', methods= ['GET']) # IB connection
-def pcs_logic():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-
-    try:
-        pcs_handler(cursor)  # Just call your handler
-        conn.commit()
-        return jsonify({"status": "PCS handler executed successfully"}), 200
-
-    except Exception as e:
-        conn.rollback()
-        return jsonify({"error": str(e)}), 500
-
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-# Täällä kysytään kerralla kaikki oleellinen IB:ltä jotta sitä ei tarvitse erikseen kysellä joka välissä
-    
-@app.route("/api/ib_accountdata", methods=['GET'])
+@app.route("/api/ib_accountdata", methods=['GET'])# IB connection
 def get_ib_portfolio():
     try:
         IB_app = IbapiApp()
@@ -491,7 +404,20 @@ def get_ib_portfolio():
             IB_app.disconnect()
             print("Disconnected from IB Gateway/TWS.")
 
+#--------------------------------------------------------------------------------------
 
+
+
+# Trade data analysis------------------------------------------------------------------
+
+
+
+
+
+
+
+
+    
 
 
 # Run Flask and IB API simultaneously

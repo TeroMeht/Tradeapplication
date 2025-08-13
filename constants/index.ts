@@ -9,26 +9,13 @@ export const sidebarLinks = [
     route: "/live-strategy-assistance",
     label: "Live Strategy Assistance",
   },
-  // {
-  //   imgURL: "/icons/transaction.svg",
-  //   route: "/strategy-development",
-  //   label: "Strategy Development",
-  // },
-  // {
-  //   imgURL: "/icons/money-send.svg",
-  //   route: "/trade-execution-review",
-  //   label: "Trade Execution Review",
-  // },
+
   {
     imgURL: "/icons/money-send.svg",
     route: "/risk-levels",
     label: "Risk Levels",
   },
-  {
-    imgURL: "/icons/money-send.svg",
-    route: "/portfolio-control-system",
-    label: "Portfolio Control System",
-  },
+
 ];
 
 // good_user / good_password - Bank of America
