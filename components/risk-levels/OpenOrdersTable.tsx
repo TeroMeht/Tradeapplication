@@ -26,7 +26,7 @@ type ApiResponse = {
 };
 
 const fetchPositions = async (): Promise<ApiResponse> => {
-  const res = await fetch("http://localhost:8080/api/openorders");
+  const res = await fetch("http://localhost:8080/api/open-alpaca-orders");
   const json = await res.json();
   return json as ApiResponse;
 };
@@ -109,12 +109,12 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
     <div>
       <div className="relative flex items-center justify-center my-4">
         {/* Update Table button on the left */}
-        <button
+        <Button
           onClick={updateTable}
-          className="absolute left-0 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="absolute left-0 bg-blue-500 text-white hover:bg-blue-600 px-4 py-2 rounded"
         >
           Update Table
-        </button>
+        </Button>
 
         {/* Centered header */}
         <div className="text-xl font-bold">Pending Orders</div>

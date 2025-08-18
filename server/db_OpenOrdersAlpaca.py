@@ -88,7 +88,7 @@ def handle_orders_data(open_orders,config):
 def get_latest_price(symbol, config):
     host = config["ib_connection"]["host"]
     port = config["ib_connection"]["port"]
-    clientId = config["ib_connection"]["clientId"]
+    clientId = "1"
 
     try:
         # Initialize and connect the IB API application
@@ -99,7 +99,6 @@ def get_latest_price(symbol, config):
 
         # Fetch contract details for the given symbol
         mycontract = IB_app.get_contract(symbol)
-        print("IB Contract:", mycontract)  # Print IB contract details
         # Fetch historical price data
         last_price = IB_app.get_lastPrice(99, mycontract)
         print("Last Price from IB:", last_price)  # Print last price from IB

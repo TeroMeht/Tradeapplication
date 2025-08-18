@@ -34,6 +34,9 @@ const ALL_SETUPS = [
   "Extreme Reversal",
   "Reversal",
   "VWAP continuation",
+  "Reversal short",
+  "Swing trade",
+  "Other"
 ];
 
 const SetupBarChart: React.FC<SetupBarChartProps> = ({ currentMonth, trades }) => {

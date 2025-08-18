@@ -18,9 +18,9 @@ type CategoryCountsByMonth = {
 
 // Define setup categories
 const setupCategories: { [category: string]: string[] } = {
-  Continuation: ["ORB", "Episodic Pivot"],
-  Reversal: ["Extreme Reversal", "Reversal", "Parabolic short"],
-  Uncategorized: ["No setup"],
+  Continuation: ["ORB", "Episodic Pivot","VWAP continuation"],
+  Reversal: ["Extreme Reversal", "Reversal", "Parabolic short", "Reversal short"],
+  Uncategorized: ["No setup", "Other"],
 };
 
 interface TradeKPIProps {

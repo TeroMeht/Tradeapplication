@@ -269,7 +269,7 @@ def handle_open_risk(positions_df: pd.DataFrame, orders_df: pd.DataFrame) -> pd.
     return risk_df
 
 
-@app.route("/api/openorders", methods=['GET']) # IB connection  
+@app.route("/api/open-alpaca-orders", methods=['GET']) # IB connection  
 def get_alpacaorders_data(): 
     try:
         df = process_open_orders(project_config)
@@ -320,47 +320,8 @@ def place_order():
             IB_app.disconnect()
             print("Place order disconnect from IB Gateway/TWS.")
             
-@app.route("/api/ib-positions", methods=['GET']) # IB connection
-def get_ibpositions_data():
 
-    try:
-        IB_app = IbapiApp()
-        IB_app.connect(host, port, clientId)
-        threading.Thread(target=IB_app.run, daemon=True).start()
-
-        # Wait for connection confirmation via nextValidId()
-        if IB_app.connected_flag.wait(timeout=2):
-            print("Connection confirmed.")
-            # Fetch portfolio positions
-            positions= IB_app.get_positions()
-
-            orders= IB_app.get_stopOrders()
-
-            risk_levels = handle_open_risk(positions,orders)
-            print(risk_levels)
-            risk_data = risk_levels.to_dict(orient='records')  # Convert risk DataFrame to list of dicts
-
-
-        else:
-            print("Failed to confirm connection (timeout). Disconnecting...")
-            IB_app.disconnect()
-            raise ConnectionError("IB connection timeout — exiting process.")
-        
-        # Return all data in JSON format
-        return jsonify({
-            "openRiskLevels": risk_data
-        }), 200
-
-    except Exception as e:
-        # Handle errors if any occurred during order placement
-        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
-    
-    finally:
-        if IB_app.isConnected():
-            IB_app.disconnect()
-            print("Positions and orders disconnect from IB Gateway/TWS.")
-
-@app.route("/api/ib_accountdata", methods=['GET'])# IB connection
+@app.route("/api/ib_accountdata", methods=['GET'])
 def get_ib_portfolio():
     try:
         IB_app = IbapiApp()
@@ -380,15 +341,21 @@ def get_ib_portfolio():
                 ((accountdata_df['Key'] == 'TotalCashBalance') & (accountdata_df['Currency'] == 'USD'))
             ]
 
-            # Convert to dict for JSON serialization
+            # ✅ Call handle_open_risk with DataFrames, not lists
+            risk_levels = handle_open_risk(positions_df, orders_df)
+
+
+            # Convert DataFrames to dicts for JSON serialization
             positions_data = positions_df.to_dict(orient="records")
             orders_data = orders_df.to_dict(orient="records")
             accountdata = filtered_accountdata_df.to_dict(orient="records")
+            risk_data = risk_levels.to_dict(orient="records")
 
             return jsonify({
                 "positions": positions_data,
                 "orders": orders_data,
-                "accountdata": accountdata
+                "accountdata": accountdata,
+                "risk_levels": risk_data
             }), 200
 
         else:
@@ -404,12 +371,9 @@ def get_ib_portfolio():
             IB_app.disconnect()
             print("Disconnected from IB Gateway/TWS.")
 
+
+
 #--------------------------------------------------------------------------------------
-
-
-
-# Trade data analysis------------------------------------------------------------------
-
 
 
 
