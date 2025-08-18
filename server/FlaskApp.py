@@ -10,16 +10,18 @@ from ibapi.client import *
 from ibapi.wrapper import *
 from IBApp import IbapiApp
 import pandas as pd
-from db_connection import read_project_config, db_config
 from psycopg2.pool import SimpleConnectionPool
 import subprocess
 import psutil
+
+from ConfigFiles import read_project_config
+from ConfigFiles import read_database_config
 
 
 
 # Load configs
 project_config = read_project_config(filename='config.json')
-database_config = db_config(filename="database.ini", section="postgresql")
+database_config = read_database_config(filename="database.ini", section="postgresql")
 # app instance
 
 app = Flask(__name__)
@@ -269,6 +271,9 @@ def handle_open_risk(positions_df: pd.DataFrame, orders_df: pd.DataFrame) -> pd.
     return risk_df
 
 
+
+
+
 @app.route("/api/open-alpaca-orders", methods=['GET']) # IB connection  
 def get_alpacaorders_data(): 
     try:
@@ -295,7 +300,7 @@ def place_order():
         threading.Thread(target=IB_app.run, daemon=True).start()
 
         # Wait for connection confirmation via nextValidId()
-        if IB_app.connected_flag.wait(timeout=2):
+        if IB_app.connected_flag.wait(timeout=1):
             print("Connection confirmed.")
             symbol, action, position_size, entry_price, stop_price = handle_order_request()
 
@@ -320,15 +325,14 @@ def place_order():
             IB_app.disconnect()
             print("Place order disconnect from IB Gateway/TWS.")
             
-
-@app.route("/api/ib_accountdata", methods=['GET'])
+@app.route("/api/ib_accountdata", methods=['GET']) # IB connection
 def get_ib_portfolio():
     try:
         IB_app = IbapiApp()
         IB_app.connect(host, port, clientId)
         threading.Thread(target=IB_app.run, daemon=True).start()
 
-        if IB_app.connected_flag.wait(timeout=2):
+        if IB_app.connected_flag.wait(timeout=1):
             print("Connection confirmed.")
 
             positions_df = IB_app.get_positions()
