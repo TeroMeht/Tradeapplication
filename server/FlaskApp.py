@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
-from db_OpenOrdersAlpaca import process_open_orders
 from db_LiveDataStream import get_livestream_data
 from db_LiveDataStream import get_those_alarms
 from db_ExecutionsAndTrades import get_execution_data, get_trade_data
@@ -17,7 +16,9 @@ import psutil
 from ConfigFiles import read_project_config
 from ConfigFiles import read_database_config
 
+from Scanner import request_market_scan
 
+from OpenOrdersAlpaca import process_open_orders
 
 # Load configs
 project_config = read_project_config(filename='config.json')
@@ -377,12 +378,19 @@ def get_ib_portfolio():
 
 
 
-#--------------------------------------------------------------------------------------
+#--------------Scanner ---------------------------------------------------------
 
+# Flask endpoint
+@app.route("/api/ib_scanner", methods=['GET'])
+def get_scanner():
 
-
-
-
+    try:
+        df_result = request_market_scan(project_config)
+        # Convert DataFrame to JSON
+        result_json = df_result.to_dict(orient='records')
+        return jsonify(result_json)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
     
