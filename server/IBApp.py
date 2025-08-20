@@ -164,16 +164,14 @@ class IbapiApp(EWrapper, EClient):
             "TickerId", "Time", "Open", "High", "Low", "Close", "Volume", "WAP", "Count"
         ])
         
-        # Request real-time bars from the IB API
-        print("Requesting real-time bars from IB API...")
-        self.reqRealTimeBars(reqId, contract, 5, "MIDPOINT", False, [])
-        time.sleep(1)  # Give some time to collect data
+
+        self.reqRealTimeBars(reqId, contract, 5, "ASK", False, [])
+
 
         # If no real-time bar data, fall back to historical data
         if self.realtimebars.empty:
             print("No real-time data received. Fetching historical data instead...")
             historical_df = self.get_historical_data(reqId, contract)
-            time.sleep(1)  # Ensure historical data is ready
 
             if not historical_df.empty:
                 last_close = historical_df.iloc[-1]["close"]
@@ -185,9 +183,9 @@ class IbapiApp(EWrapper, EClient):
         # If we have real-time bar data
         last_row = self.realtimebars.iloc[-1]
         average_price = (last_row["Open"] + last_row["High"] + last_row["Low"] + last_row["Close"]) / 4
-        print(f"Price fetched from real-time bars (average OHLC): {average_price}")
-        return round(average_price, 2)
-
+        price = round(average_price, 2)
+        price = price + 0.02
+        return price
 
 
     def openOrder(self, orderId: int, contract: Contract, order: Order, orderState: OrderState): 
