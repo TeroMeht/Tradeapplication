@@ -1,7 +1,7 @@
 from ib_insync import *
 import pandas as pd
 from AdjustTimezone import adjust_timezone_IB_data
-import os
+import numpy as np
 from datetime import datetime
 util.startLoop()
 
@@ -221,10 +221,9 @@ def compare_to_avg_volume(df_new, df_avg_model):
     return Rvol_data
 
 
-def compare_and_save_rvolumes(df_today_volumes, avg_volumes, output_folder="rvol"):
+def compare_and_save_rvolumes(df_today_volumes, avg_volumes):
 
-    # Ensure output folder exists
-    os.makedirs(output_folder, exist_ok=True)
+
 
     all_Rvol_data = []
 
@@ -248,19 +247,9 @@ def compare_and_save_rvolumes(df_today_volumes, avg_volumes, output_folder="rvol
 
         all_Rvol_data.append(df_result)
 
-        # Save per symbol
-        filename = os.path.join(output_folder, f"{symbol}_Rvol.csv")
-        df_result.to_csv(filename, index=False)
-
-
     # Combine all symbols
     if all_Rvol_data:
         Rvol_data_all = pd.concat(all_Rvol_data, ignore_index=True)
-
-        filename_all = os.path.join(output_folder, "All_symbols_Rvol.csv")
-        Rvol_data_all.to_csv(filename_all, index=False)
-        print(f"Saved {filename_all}")
-
         return Rvol_data_all
     else:
         print("No Rvol data generated.")
@@ -327,28 +316,19 @@ def request_market_scan(project_config):
     port = project_config["ib_connection"]["port"]
     clientId = project_config["ib_connection"]["clientId"]
 
-
+    print("Fetching scan data")
     ib = IB()
     ib.connect(host, port, clientId=4)
     ticker_dict, df_scan = get_hot_by_volume_data(ib)
 
     df_stocks = display_stock_with_marketdata(df_scan, ticker_dict)
-    print(df_stocks)
+
 
     # 1️⃣ Fetch raw 5-day history
     day5_history_datas = fetch_history_data(df_stocks, ib, days=5)
 
     # 2️⃣ Calculate average volumes
     avg_volumes = calculate_avg_volume(day5_history_datas)
-
-
-    # Create folder if not exists
-    os.makedirs("avg_volume_csvs", exist_ok=True)
-
-    for df_avg in avg_volumes:
-        symbol = df_avg["Symbol"].iloc[0]
-        filename = f"avg_volume_csvs/{symbol}_avg_volume.csv"
-        df_avg.to_csv(filename, index=False)
 
 
 
@@ -385,11 +365,19 @@ def request_market_scan(project_config):
     # Sort by Mean_Rvol descending
     df_sorted = df_merged.sort_values(by="Mean_Rvol", ascending=False).reset_index(drop=True)
 
-    #print(df_sorted)
 
 
     # # # # # 3️⃣ Merge total volumes into df_stocks
     df_frame = df_sorted.merge(cum_vol_df, on='Symbol', how='left')
+
+    # Replace infinite values with NaN first
+    df_frame.replace([np.inf, -np.inf], np.nan, inplace=True)
+
+    # Option 1: Fill NaN values with 0 (or another default value)
+    df_frame.fillna(0, inplace=True)
+
+
+
     print(df_frame)
     ib.disconnect()
 

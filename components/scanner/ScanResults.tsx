@@ -10,13 +10,15 @@ import {
   TableCell,
   TableCaption,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button"; // shadcn/ui button
+import { Button } from "@/components/ui/button";
 
 const ScannerTable = () => {
   const [data, setData] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
   const [endTime, setEndTime] = React.useState<string | null>(null);
+
+  const fetchedRef = React.useRef(false); // track if fetch already happened
 
   const columns = [
     "Symbol",
@@ -28,7 +30,10 @@ const ScannerTable = () => {
     "Cumulative_Volume",
   ];
 
-  const fetchData = async () => {
+  const fetchData = React.useCallback(async () => {
+    if (fetchedRef.current) return; // prevent double fetch
+    fetchedRef.current = true;
+
     setLoading(true);
     setError(null);
     try {
@@ -36,7 +41,6 @@ const ScannerTable = () => {
       if (!res.ok) throw new Error("Failed to fetch scanner data");
       const json = await res.json();
 
-      // Reorder object keys according to columns + keep End_Time separately
       const orderedData = json.map((row: any) => {
         const newRow: Record<string, any> = {};
         columns.forEach((col) => {
@@ -47,7 +51,6 @@ const ScannerTable = () => {
 
       setData(orderedData);
 
-      // Take End_Time (from first row for now)
       if (json.length > 0) {
         setEndTime(json[0].End_Time ?? null);
       }
@@ -57,11 +60,11 @@ const ScannerTable = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [columns]);
 
   React.useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   if (loading) return <p>Loading scanner data...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -70,14 +73,17 @@ const ScannerTable = () => {
   return (
     <section className="home">
       <div className="home-content">
-
-        {/* Refresh button */}
         <div className="flex justify-end mb-4">
-          <Button onClick={fetchData} variant="outline">
+          <Button
+            onClick={() => {
+              fetchedRef.current = false; // allow manual refresh
+              fetchData();
+            }}
+            variant="outline"
+          >
             Refresh Data
           </Button>
         </div>
-
         <div className="mt-6">
           <Table>
             <TableCaption>
@@ -98,11 +104,12 @@ const ScannerTable = () => {
                     const isPercentChange = col === "% Change";
                     const isMeanRvol = col === "Mean_Rvol";
                     const isNumeric =
-                      ["Close", "Last", "% Change", "Mean_Rvol", "Cumulative_Volume"].includes(col);
+                      ["Close", "Last", "% Change", "Mean_Rvol", "Cumulative_Volume"].includes(
+                        col
+                      );
 
                     let cellClass = "";
 
-                    // Conditional styling for % Change
                     if (isPercentChange && typeof value === "number") {
                       cellClass =
                         value > 0
@@ -112,12 +119,10 @@ const ScannerTable = () => {
                           : "";
                     }
 
-                    // Right-align numeric values
                     if (isNumeric) {
                       cellClass += " text-right";
                     }
 
-                    // Conditional styling for Mean_Rvol
                     const style: React.CSSProperties = {};
                     if (isMeanRvol && typeof value === "number") {
                       const darkness = Math.min(1, (value - 1.5) / 5);
