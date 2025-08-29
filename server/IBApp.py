@@ -83,7 +83,23 @@ class IbapiApp(EWrapper, EClient):
         self.placeOrder(stop_order.orderId, contract, stop_order)
 
         self.nextOrderId += 2
+        # Print order details
+        print("Parent Order:")
+        print(f"  ID: {parent.orderId}")
+        print(f"  Action: {parent.action}")
+        print(f"  Type: {parent.orderType}")
+        print(f"  Limit Price: {parent.lmtPrice}")
+        print(f"  Quantity: {parent.totalQuantity}")
+        print(f"  Transmit: {parent.transmit}")
 
+        print("\nStop-Loss Order:")
+        print(f"  ID: {stop_order.orderId}")
+        print(f"  Parent ID: {stop_order.parentId}")
+        print(f"  Action: {stop_order.action}")
+        print(f"  Type: {stop_order.orderType}")
+        print(f"  Stop Price: {stop_order.auxPrice}")
+        print(f"  Quantity: {stop_order.totalQuantity}")
+        print(f"  Transmit: {stop_order.transmit}")
 
     # def orderStatus(self, orderId: OrderId, status: str, filled: Decimal, remaining: Decimal, avgFillPrice: float, permId: int, parentId: int, lastFillPrice: float, clientId: int, whyHeld: str, mktCapPrice: float):
     #     print(f"orderId: {orderId}, status: {status}, filled: {filled}, remaining: {remaining}, avgFillPrice: {avgFillPrice}, permId: {permId}, parentId: {parentId}, lastFillPrice: {lastFillPrice}, clientId: {clientId}, whyHeld: {whyHeld}, mktCapPrice: {mktCapPrice}")

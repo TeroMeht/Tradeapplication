@@ -29,13 +29,8 @@ const RiskTable: React.FC<RiskTableProps> = ({ riskLevels, onUpdate }) => {
   return (
     <div>
       <div className="relative flex items-center justify-center my-4">
-        {/* Update Table button on the left */}
-        <Button
-          onClick={onUpdate}
-          className="absolute left-0 bg-blue-500 text-white hover:bg-blue-600 px-4 py-2 rounded"
-        >
-          Update Table
-        </Button>
+
+
 
         {/* Centered header */}
         <div className="text-xl font-bold">Position management</div>

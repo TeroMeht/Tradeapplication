@@ -8,10 +8,15 @@ import threading
 from ibapi.client import *
 from ibapi.wrapper import *
 from IBApp import IbapiApp
+from IBasync import *
+
 import pandas as pd
 from psycopg2.pool import SimpleConnectionPool
 import subprocess
 import psutil
+
+from Calculate import calculate_position_size
+
 
 from ConfigFiles import read_project_config
 from ConfigFiles import read_database_config
@@ -25,8 +30,12 @@ project_config = read_project_config(filename='config.json')
 database_config = read_database_config(filename="database.ini", section="postgresql")
 # app instance
 
+RISK = project_config["Trading_Tiers"]["tier_1"]
+
+
 app = Flask(__name__)
 CORS(app)
+
 
 
 host = project_config["ib_connection"]["host"]
@@ -277,8 +286,11 @@ def handle_open_risk(positions_df: pd.DataFrame, orders_df: pd.DataFrame) -> pd.
 
 @app.route("/api/open-alpaca-orders", methods=['GET']) # IB connection  
 def get_alpacaorders_data(): 
+    ib = IB()
     try:
-        df = process_open_orders(project_config)
+        ib.connect(host, port, clientId)
+
+        df = process_open_orders(ib, project_config)
 
         # Check if DataFrame is empty
         if df.empty:
@@ -288,43 +300,60 @@ def get_alpacaorders_data():
         # Convert DataFrame to dictionary format
         data = df.to_dict(orient='records')
         return jsonify({'status': 'success', 'data': data})
-        
+
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
-@app.route("/api/place-order", methods=['POST']) # IB connection
+    finally:
+        ib.disconnect()
+
+@app.route("/api/place-order", methods=['POST'])
 def place_order():
+    ib = IB()
     try:
 
-        IB_app = IbapiApp()
-        IB_app.connect(host, port, clientId)
-        threading.Thread(target=IB_app.run, daemon=True).start()
+        ib.connect(host, port, clientId)
 
-        # Wait for connection confirmation via nextValidId()
-        if IB_app.connected_flag.wait(timeout=1):
-            print("Connection confirmed.")
-            symbol, action, position_size, entry_price, stop_price = handle_order_request()
 
-            mycontract = IB_app.get_contract(symbol) # tämä käy kysymässä contractin IB_appilta
-            # Request PnL data for reqId=17005
-            IB_app.place_order(mycontract, action,position_size, entry_price, stop_price,ordertype = 'LMT')
+        # Extract order data from request
+        symbol, action, position_size, entry_price, stop_price = handle_order_request()
 
-            print("Order going live, with price:",entry_price) # tää tarvii kysyä just ennen ku tilaus lähtee ja mennä sillä arvolla
-        else:
-            print("Failed to confirm connection (timeout). Disconnecting...")
-            IB_app.disconnect()
-            raise ConnectionError("IB connection timeout — exiting process.")
+        # Get live ask as entry price
+        entry_price = get_last_ask_price(ib, symbol) or entry_price
 
-        # Assuming the order is successfully placed:
-        return jsonify({"message": "Order placed successfully!", "symbol": symbol, "action": action}), 200
+        # Calculate position size safely
+        position_size = calculate_position_size(entry_price, stop_price, RISK)
+
+        if position_size <= 0:
+            return jsonify({"error": "Calculated position size <= 0"}), 400
+
+        # Place bracket order
+        parent, stoploss = place_bracket_order(
+            ib=ib,
+            symbol=symbol,
+            action=action,
+            quantity=position_size,
+            limit_price=entry_price,
+            stop_price=stop_price
+        )
+
+        return jsonify({
+            "message": "Order placed successfully!",
+            "symbol": symbol,
+            "action": action,
+            "entry_price": entry_price,
+            "stop_price": stop_price,
+            "parent_orderId": getattr(parent, 'orderId', None),
+            "stop_orderId": getattr(stoploss, 'orderId', None)
+        }), 200
 
     except Exception as e:
-        # Handle errors if any occurred during order placement
-        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+        print("Error placing order:", str(e))
+        return jsonify({"error": str(e)}), 500
+
     finally:
-        if IB_app.isConnected():
-            IB_app.disconnect()
-            print("Place order disconnect from IB Gateway/TWS.")
+        ib.disconnect()
+
             
 @app.route("/api/ib_accountdata", methods=['GET']) # IB connection
 def get_ib_portfolio():

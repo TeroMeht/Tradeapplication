@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import AccountSummary from "./AccountSummary";
 import RiskTable from "./RiskTable";
 
@@ -50,21 +50,23 @@ function PortfolioDashboard() {
     }
   }, []);
 
-  useEffect(() => {
-    fetchPortfolioData();
-  }, [fetchPortfolioData]);
-
-  if (loading) return <div>Loading portfolio data...</div>;
-  if (error) return <div>Error: {error}</div>;
-
   return (
-    <div >
-            {/* Open Risk Table with Update button */}
+    <div>
+      <button
+        onClick={fetchPortfolioData}
+        className="bg-blue-500 text-white px-4 py-2 rounded mb-4"
+        disabled={loading}
+      >
+        {loading ? "Loading..." : "Fetch Portfolio Data"}
+      </button>
+
+      {error && <div className="text-red-500 mb-2">Error: {error}</div>}
+
+      {/* Open Risk Table */}
       <RiskTable riskLevels={riskLevels} onUpdate={fetchPortfolioData} />
+
       {/* Account Summary */}
       <AccountSummary accountdata={accountdata} />
-
-
     </div>
   );
 }
