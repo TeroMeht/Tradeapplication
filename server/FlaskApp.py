@@ -28,6 +28,10 @@ from OpenOrdersAlpaca import process_open_orders
 # Load configs
 project_config = read_project_config(filename='config.json')
 database_config = read_database_config(filename="database.ini", section="postgresql")
+
+# Nää ei saa mennä sekaisin, koska delete ominaisuus
+database_livestream_config = read_database_config(filename="database.ini", section="livestream")
+
 # app instance
 
 RISK = project_config["Trading_Tiers"]["tier_1"]
@@ -43,8 +47,6 @@ port = project_config["ib_connection"]["port"]
 clientId = project_config["ib_connection"]["clientId"]
 
 # Initialize the connection pool
-
-
 db_pool = SimpleConnectionPool(1, 10, **database_config)  # Min 1, Max 10 connections
 
 def get_db_connection():
@@ -55,6 +57,17 @@ def release_db_connection(conn):
     """Return the connection to the pool."""
     db_pool.putconn(conn)
 
+
+# Initialize the connection pool for livestream database
+livestream_db_pool = SimpleConnectionPool(1, 10, **database_livestream_config)
+
+def get_livestream_db_connection():
+    """Get a database connection from the livestream pool."""
+    return livestream_db_pool.getconn()
+
+def release_livestream_db_connection(conn):
+    """Return the connection to the livestream pool."""
+    livestream_db_pool.putconn(conn)
 
 
 
@@ -95,27 +108,39 @@ def get_trades():
 
 # Live-trading-assistance-------------------------------------------------------------
 
-TARGET_SCRIPT = "LiveDataStreamer.py"
-SCRIPT_DIR = r"C:/Projects/05_TradingAssistance"
+TARGET_SCRIPT = "Main.py"
+SCRIPT_DIR = r"C:\Projects\15_MultipleTickerLiveData\src"
 
 @app.route("/api/livestream", methods=['GET'])
 def get_livestreamdata():
-    conn = get_db_connection()
+    conn = get_livestream_db_connection()
     cursor = conn.cursor()
     try:
-        # Fetch all data from the livestreamdata table
-        df = get_livestream_data(cursor)
+        # Get "symbol" query param
+        symbol_param = request.args.get("symbol")
+        if not symbol_param:
+            return jsonify({"error": "Missing required parameter: symbol"}), 400
 
-        # Convert DataFrame to a dictionary and return it as a JSON response
-        return jsonify(df)
+        # Split by comma, remove whitespace, convert to uppercase
+        symbols = [s.strip().upper() for s in symbol_param.split(",") if s.strip()]
+        if not symbols:
+            return jsonify({"error": "No valid symbols provided"}), 400
+
+        # Return error if more than one symbol
+        if len(symbols) > 1:
+            return jsonify({"error": "Only one symbol is allowed per request"}), 400
+
+        # Fetch data for the single symbol
+        sym = symbols[0]
+        data = get_livestream_data(cursor, sym)
+        return jsonify(data or [])
 
     except Exception as e:
-        # Handle unexpected errors
         return jsonify({"error": str(e)}), 500
     finally:
         cursor.close()
-        release_db_connection(conn)
-    
+        release_livestream_db_connection(conn)
+
 # Live assistance alarms
 @app.route("/api/alarms", methods=['GET'])
 def get_alarms():
@@ -323,10 +348,10 @@ def place_order():
 
         # Calculate position size safely
         position_size = calculate_position_size(entry_price, stop_price, RISK)
-
+        print(position_size)
         if position_size <= 0:
             return jsonify({"error": "Calculated position size <= 0"}), 400
-
+        print(action, position_size, entry_price, stop_price)
         # Place bracket order
         parent, stoploss = place_bracket_order(
             ib=ib,

@@ -6,7 +6,7 @@ from datetime import datetime
 util.startLoop()
 
 
-def get_hot_by_volume_data(ib, numberOfRows=50, marketCapAbove=10000, abovePrice=10, aboveVolume=100000):
+def get_hot_by_volume_data(ib, numberOfRows=10, marketCapAbove=10000, abovePrice=10, aboveVolume=100000):
 
     # Define scanner subscription
     sub = ScannerSubscription(
@@ -318,7 +318,7 @@ def request_market_scan(project_config):
 
     print("Fetching scan data")
     ib = IB()
-    ib.connect(host, port, clientId=4)
+    ib.connect(host, port, clientId)
     ticker_dict, df_scan = get_hot_by_volume_data(ib)
 
     df_stocks = display_stock_with_marketdata(df_scan, ticker_dict)

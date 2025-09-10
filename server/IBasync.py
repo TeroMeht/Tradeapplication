@@ -77,7 +77,6 @@ def place_bracket_order(
             lmtPrice=limit_price,
             orderId=ib.client.getReqId(),
             transmit=False,
-            outsideRth=True,
         )
 
         # stop loss order

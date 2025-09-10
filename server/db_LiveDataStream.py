@@ -46,40 +46,39 @@ def get_those_alarms(cursor):
         return None
 
 
-def get_livestream_data(cursor):
+def get_livestream_data(cursor, symbol: str):
     """
-    Retrieve all data from the 'livestreamdata' table and return it as a Pandas DataFrame.
+    Retrieve all data from the table named after the symbol and return it as a list of dicts.
     
-    :return: DataFrame containing all rows from the 'livestreamdata' table
+    :param cursor: Database cursor
+    :param symbol: Table name (must be validated)
+    :return: List of dictionaries containing all rows
     """
     try:
+        # Validate symbol: allow only letters, numbers, underscores
+        if not symbol.isalnum() and "_" not in symbol:
+            raise ValueError("Invalid table name")
 
-        # Define the SQL query to retrieve all data from the 'livestreamdata' table
-        select_query = """
-                        SELECT * 
-                        FROM livestreamdata
-                        ORDER BY "Date" ASC, "Time" ASC;
-                    """
-        
-        # Execute the query
+        # Build query string safely after validation
+        select_query = f'''
+            SELECT *
+            FROM "{symbol}"
+            ORDER BY "Date" ASC, "Time" ASC;
+        '''
+
         cursor.execute(select_query)
-        
-        # Fetch all rows from the table
         rows = cursor.fetchall()
-
-        # Get column names from the cursor description
         columns = [desc[0] for desc in cursor.description]
 
-        # Convert data to list of dictionaries
         df = [
             {
-                "Ticker": str(row[columns.index("Ticker")]),  # Assuming 'Ticker' exists in the table
-                "Date": str(row[columns.index("Date")]),      # Assuming 'Date' exists in the table
-                "Time": str(row[columns.index("Time")]),  # Convert 'Time' to string to make it JSON serializable
-                "Open": float(row[columns.index("Open")]),  # Convert to float
+                "Symbol": str(row[columns.index("Symbol")]),
+                "Date": str(row[columns.index("Date")]),
+                "Time": str(row[columns.index("Time")]),
+                "Open": float(row[columns.index("Open")]),
                 "High": float(row[columns.index("High")]),
                 "Low": float(row[columns.index("Low")]),
-                "Close": float(row[columns.index("Close")]), 
+                "Close": float(row[columns.index("Close")]),
                 "Volume": float(row[columns.index("Volume")]),
                 "VWAP": float(row[columns.index("VWAP")]),
                 "EMA9": float(row[columns.index("EMA9")]),
@@ -88,9 +87,9 @@ def get_livestream_data(cursor):
             for row in rows
         ]
 
-        # Return the DataFrame
         return df
 
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error fetching data from table {symbol}: {e}")
         return None
+
