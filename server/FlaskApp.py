@@ -1,15 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
-from db_LiveDataStream import get_livestream_data
 from db_LiveDataStream import get_those_alarms
-from db_ExecutionsAndTrades import get_execution_data, get_trade_data
-import threading
+import requests
 from ibapi.client import *
 from ibapi.wrapper import *
-from IBApp import IbapiApp
+from IBApp import IBClient
 from IBasync import *
-
+from ParseIBdata import parse_ib_data
 import pandas as pd
 from psycopg2.pool import SimpleConnectionPool
 import subprocess
@@ -21,7 +19,6 @@ from Calculate import calculate_position_size
 from ConfigFiles import read_project_config
 from ConfigFiles import read_database_config
 
-from Scanner import request_market_scan
 
 from OpenOrdersAlpaca import process_open_orders
 
@@ -71,75 +68,14 @@ def release_livestream_db_connection(conn):
 
 
 
-# Home page codes---------------------------------------------------------------------
 
-@app.route("/api/executions", methods=['GET'])
-def get_executions():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Fetch all data from the livestreamdata table
-        df = get_execution_data(cursor)
-
-        # Convert DataFrame to a dictionary and return it as a JSON response
-        return jsonify(df)
-
-    except Exception as e:
-        # Handle unexpected errors
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-@app.route("/api/trades", methods=['GET'])
-def get_trades():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        trades = get_trade_data(cursor)
-        return jsonify(trades)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-#-------------------------------------------------------------------------------------
 
 # Live-trading-assistance-------------------------------------------------------------
 
 TARGET_SCRIPT = "Main.py"
 SCRIPT_DIR = r"C:\Projects\15_MultipleTickerLiveData\src"
 
-@app.route("/api/livestream", methods=['GET'])
-def get_livestreamdata():
-    conn = get_livestream_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Get "symbol" query param
-        symbol_param = request.args.get("symbol")
-        if not symbol_param:
-            return jsonify({"error": "Missing required parameter: symbol"}), 400
 
-        # Split by comma, remove whitespace, convert to uppercase
-        symbols = [s.strip().upper() for s in symbol_param.split(",") if s.strip()]
-        if not symbols:
-            return jsonify({"error": "No valid symbols provided"}), 400
-
-        # Return error if more than one symbol
-        if len(symbols) > 1:
-            return jsonify({"error": "Only one symbol is allowed per request"}), 400
-
-        # Fetch data for the single symbol
-        sym = symbols[0]
-        data = get_livestream_data(cursor, sym)
-        return jsonify(data or [])
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_livestream_db_connection(conn)
 
 # Live assistance alarms
 @app.route("/api/alarms", methods=['GET'])
@@ -380,72 +316,28 @@ def place_order():
         ib.disconnect()
 
             
-@app.route("/api/ib_accountdata", methods=['GET']) # IB connection
-def get_ib_portfolio():
+# --- Flask endpoint ---
+@app.route("/api/ibdata", methods=["GET"])
+def get_ib_data():
+    """Connect to IB, fetch data, parse it, then disconnect."""
+    client = IBClient()
     try:
-        IB_app = IbapiApp()
-        IB_app.connect(host, port, clientId)
-        threading.Thread(target=IB_app.run, daemon=True).start()
-
-        if IB_app.connected_flag.wait(timeout=1):
-            print("Connection confirmed.")
-
-            positions_df = IB_app.get_positions()
-            orders_df = IB_app.get_stopOrders()
-            accountdata_df = IB_app.get_accountdata()
-
-            # Filter accountdata_df for only USD StockMarketValue and TotalCashBalance
-            filtered_accountdata_df = accountdata_df[
-                ((accountdata_df['Key'] == 'StockMarketValue') & (accountdata_df['Currency'] == 'USD')) |
-                ((accountdata_df['Key'] == 'TotalCashBalance') & (accountdata_df['Currency'] == 'USD'))
-            ]
-
-            # ✅ Call handle_open_risk with DataFrames, not lists
-            risk_levels = handle_open_risk(positions_df, orders_df)
-
-
-            # Convert DataFrames to dicts for JSON serialization
-            positions_data = positions_df.to_dict(orient="records")
-            orders_data = orders_df.to_dict(orient="records")
-            accountdata = filtered_accountdata_df.to_dict(orient="records")
-            risk_data = risk_levels.to_dict(orient="records")
-
-            return jsonify({
-                "positions": positions_data,
-                "orders": orders_data,
-                "accountdata": accountdata,
-                "risk_levels": risk_data
-            }), 200
-
-        else:
-            print("Failed to confirm connection (timeout). Disconnecting...")
-            IB_app.disconnect()
-            raise ConnectionError("IB connection timeout — exiting process.")
-
-    except Exception as e:
-        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
-
+        client.connect(
+            host=project_config["ib_connection"]["host"],
+            port=project_config["ib_connection"]["port"],
+            clientId=project_config["ib_connection"]["clientId"]
+        )
+        raw_data = client.fetch_all()
     finally:
-        if IB_app.isConnected():
-            IB_app.disconnect()
-            print("Disconnected from IB Gateway/TWS.")
+        client.close()
 
+    # --- Parse data ---
+    parsed_data = parse_ib_data(raw_data)  # <--- COMMENT THIS LINE if you want raw data
 
-
-#--------------Scanner ---------------------------------------------------------
-
-# Flask endpoint
-@app.route("/api/ib_scanner", methods=['GET'])
-def get_scanner():
-
-    try:
-        df_result = request_market_scan(project_config)
-        # Convert DataFrame to JSON
-        result_json = df_result.to_dict(orient='records')
-        return jsonify(result_json)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
+    # --- Return JSON ---
+    return jsonify(parsed_data)  # Use this when parsing is ON
+    #return jsonify({k: v.to_dict(orient="records") if isinstance(v, pd.DataFrame) else v
+     #               for k, v in raw_data.items()})  # Use this when parsing is OFF
 
     
 
