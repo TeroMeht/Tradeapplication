@@ -10,6 +10,6 @@
     "ib_connection": {
         "host": "127.0.0.1",
         "port": 7497,
-        "clientId": 2
+        "clientId": 3
       }
 }
