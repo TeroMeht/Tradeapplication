@@ -5,7 +5,7 @@ import HeaderBox from "@/components/HeaderBox";
 import RunScript from '@/components/live-strategy-assistance/RunScript';
 
 const Page = () => {
-  const [symbols, setSymbols] = useState<string[]>([]);
+  const [, setSymbols] = useState<string[]>([]);
 
   // Handle symbols coming from RunScript
   const handleSymbolsChange = (newSymbols: string[]) => {

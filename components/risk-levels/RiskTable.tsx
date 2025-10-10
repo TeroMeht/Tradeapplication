@@ -25,7 +25,7 @@ interface RiskTableProps {
   onUpdate: () => void; // callback to refresh data
 }
 
-const RiskTable: React.FC<RiskTableProps> = ({ riskLevels, onUpdate }) => {
+const RiskTable: React.FC<RiskTableProps> = ({ riskLevels }) => {
   return (
     <div>
       <div className="relative flex items-center justify-center my-4">

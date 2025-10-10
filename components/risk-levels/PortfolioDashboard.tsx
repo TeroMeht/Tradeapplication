@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import AccountSummary from "./AccountSummary";
 import RiskTable from "./RiskTable";
 
+// Strongly typed account data
 interface AccountDataItem {
   AccountName: string;
   Currency: string;
@@ -11,6 +11,7 @@ interface AccountDataItem {
   Value: string;
 }
 
+// Strongly typed open risk levels
 interface OpenRiskLevel {
   OrderId: number;
   Symbol: string;
@@ -20,16 +21,36 @@ interface OpenRiskLevel {
   Position: number;
 }
 
+// Define position type
+interface Position {
+  symbol: string;
+  position: number;
+  avgCost: number;
+  currency: string;
+}
+
+// Define order type
+interface Order {
+  orderId: number;
+  symbol: string;
+  action: string;
+  totalQuantity: number;
+  auxPrice: number;
+  status: string;
+}
+
 interface ApiResponse {
   accountdata: AccountDataItem[];
   risk_levels: OpenRiskLevel[];
-  positions: any[];
-  orders: any[];
+  positions: Position[];
+  orders: Order[];
 }
 
 function PortfolioDashboard() {
-  const [accountdata, setAccountdata] = useState<AccountDataItem[]>([]);
+  const [, setAccountdata] = useState<AccountDataItem[]>([]);
   const [riskLevels, setRiskLevels] = useState<OpenRiskLevel[]>([]);
+  const [, setPositions] = useState<Position[]>([]);
+  const [, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -41,15 +62,21 @@ function PortfolioDashboard() {
       const res = await fetch("http://localhost:8080/api/ib_accountdata");
       if (!res.ok) throw new Error("Failed to fetch portfolio data");
       const json: ApiResponse = await res.json();
+
       setAccountdata(json.accountdata || []);
       setRiskLevels(json.risk_levels || []);
-    } catch (err: any) {
-      setError(err.message || "Unknown error fetching portfolio data");
-    } finally {
-      setLoading(false);
-    }
+      setPositions(json.positions || []);
+      setOrders(json.orders || []);
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("Unknown error fetching portfolio data");
+        }
+      } finally {
+        setLoading(false);
+      }
   }, []);
-
   return (
     <div>
       <button
@@ -65,8 +92,6 @@ function PortfolioDashboard() {
       {/* Open Risk Table */}
       <RiskTable riskLevels={riskLevels} onUpdate={fetchPortfolioData} />
 
-      {/* Account Summary */}
-      <AccountSummary accountdata={accountdata} />
     </div>
   );
 }

@@ -6,6 +6,9 @@
 .pnp.js
 .yarn/install-state.gz
 
+# Database ini
+database.ini
+
 # testing
 /coverage
 
@@ -34,3 +37,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class

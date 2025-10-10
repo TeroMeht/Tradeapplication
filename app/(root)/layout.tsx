@@ -11,9 +11,7 @@ type AlarmData = {
   Date: string;
 };
 
-type PortfolioControlData = {
-  // Define the structure of portfolio control data here if necessary
-};
+
 
 export default function RootLayout({
   children,

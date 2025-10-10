@@ -15,8 +15,9 @@ type Order_Alpaca = {
   latest_price: number;
   limit_price: number | null;
   stop_price: number | null;
-  risk: number;
-  tier_1: number;
+  position_size: number;
+  position_value: number;
+
 };
 
 type ApiResponse = {
@@ -81,7 +82,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
       entry_price: order.latest_price,
       lmt_price: order.limit_price,
       stp_price: order.stop_price,
-      position_size: order.tier_1,
+      position_size: order.position_size,
     };
 
     try {
@@ -126,7 +127,6 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
             <TableHead>Symbol</TableHead>
             <TableHead>Latest Price</TableHead>
             <TableHead>Stop price</TableHead>
-            <TableHead>Risk</TableHead>
             <TableHead>Position size</TableHead>
             <TableHead>Size</TableHead>
             <TableHead>Action</TableHead>
@@ -156,10 +156,9 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
                   <TableCell>{position.symbol}</TableCell>
                   <TableCell>{position.latest_price}</TableCell>
                   <TableCell>{stopValue}</TableCell>
-                  <TableCell>{(position.risk*position.tier_1).toFixed(2)}</TableCell>
-                  <TableCell>{position.tier_1}</TableCell>
+                  <TableCell>{position.position_size}</TableCell>
                   <TableCell>
-                    {(position.latest_price * position.tier_1).toFixed(2)}
+                    {(position.latest_price * position.position_size).toFixed(2)}
                   </TableCell>
                   <TableCell>
                     <Button

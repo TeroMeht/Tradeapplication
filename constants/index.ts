@@ -15,11 +15,6 @@ export const sidebarLinks = [
     route: "/risk-levels",
     label: "Risk Levels",
   },
-    {
-    imgURL: "/icons/money-send.svg",
-    route: "/scanner",
-    label: "Scanner",
-  },
 
 ];
 
