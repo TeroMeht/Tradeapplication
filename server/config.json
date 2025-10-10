@@ -1,7 +1,8 @@
 {
-    "Trading_Tiers": {
-        "tier_1": 100
-    },
+    "TARGET_SCRIPT": "Main.py",
+    "SCRIPT_DIR": "C:\\Projects\\15_MultipleTickerLiveData\\src",
+    "Risk": 100
+    ,
     "API_Config": {
         "API_KEY": "PK5FAP22RYUFJZSMWTT6",
         "API_SECRET": "xRJzCaAXUfZib26nYHfCoo4UEssfRt2GHpipKKS0",

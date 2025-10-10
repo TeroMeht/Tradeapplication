@@ -1,15 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import time
-from db_LiveDataStream import get_livestream_data
 from db_LiveDataStream import get_those_alarms
-from db_ExecutionsAndTrades import get_execution_data, get_trade_data
 import threading
 from ibapi.client import *
 from ibapi.wrapper import *
 from IBApp import IbapiApp
 from IBasync import *
-
+import asyncio
 import pandas as pd
 from psycopg2.pool import SimpleConnectionPool
 import subprocess
@@ -21,10 +19,8 @@ from Calculate import calculate_position_size
 from ConfigFiles import read_project_config
 from ConfigFiles import read_database_config
 
-from Scanner import request_market_scan
-
 from OpenOrdersAlpaca import process_open_orders
-
+from waitress import serve
 # Load configs
 project_config = read_project_config(filename='config.json')
 database_config = read_database_config(filename="database.ini", section="postgresql")
@@ -34,7 +30,7 @@ database_livestream_config = read_database_config(filename="database.ini", secti
 
 # app instance
 
-RISK = project_config["Trading_Tiers"]["tier_1"]
+RISK = project_config["Risk"]
 
 
 app = Flask(__name__)
@@ -58,88 +54,8 @@ def release_db_connection(conn):
     db_pool.putconn(conn)
 
 
-# Initialize the connection pool for livestream database
-livestream_db_pool = SimpleConnectionPool(1, 10, **database_livestream_config)
-
-def get_livestream_db_connection():
-    """Get a database connection from the livestream pool."""
-    return livestream_db_pool.getconn()
-
-def release_livestream_db_connection(conn):
-    """Return the connection to the livestream pool."""
-    livestream_db_pool.putconn(conn)
-
-
-
-# Home page codes---------------------------------------------------------------------
-
-@app.route("/api/executions", methods=['GET'])
-def get_executions():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Fetch all data from the livestreamdata table
-        df = get_execution_data(cursor)
-
-        # Convert DataFrame to a dictionary and return it as a JSON response
-        return jsonify(df)
-
-    except Exception as e:
-        # Handle unexpected errors
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-@app.route("/api/trades", methods=['GET'])
-def get_trades():
-    conn = get_db_connection()
-    cursor = conn.cursor()
-    try:
-        trades = get_trade_data(cursor)
-        return jsonify(trades)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_db_connection(conn)
-
-#-------------------------------------------------------------------------------------
-
 # Live-trading-assistance-------------------------------------------------------------
 
-TARGET_SCRIPT = "Main.py"
-SCRIPT_DIR = r"C:\Projects\15_MultipleTickerLiveData\src"
-
-@app.route("/api/livestream", methods=['GET'])
-def get_livestreamdata():
-    conn = get_livestream_db_connection()
-    cursor = conn.cursor()
-    try:
-        # Get "symbol" query param
-        symbol_param = request.args.get("symbol")
-        if not symbol_param:
-            return jsonify({"error": "Missing required parameter: symbol"}), 400
-
-        # Split by comma, remove whitespace, convert to uppercase
-        symbols = [s.strip().upper() for s in symbol_param.split(",") if s.strip()]
-        if not symbols:
-            return jsonify({"error": "No valid symbols provided"}), 400
-
-        # Return error if more than one symbol
-        if len(symbols) > 1:
-            return jsonify({"error": "Only one symbol is allowed per request"}), 400
-
-        # Fetch data for the single symbol
-        sym = symbols[0]
-        data = get_livestream_data(cursor, sym)
-        return jsonify(data or [])
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-    finally:
-        cursor.close()
-        release_livestream_db_connection(conn)
 
 # Live assistance alarms
 @app.route("/api/alarms", methods=['GET'])
@@ -162,19 +78,20 @@ def get_alarms():
 def run_script():
     data = request.json
     param = data.get('param')
-
+    print(project_config["TARGET_SCRIPT"])
+    print(project_config["SCRIPT_DIR"])
     try:
         if is_process_running():
-            print(f"{TARGET_SCRIPT} is already running. Terminating it...")
+            print(f"{project_config["TARGET_SCRIPT"]} is already running. Terminating it...")
             terminate_exact_process()
             time.sleep(2)
 
         subprocess.Popen(
             [
                 'cmd.exe', '/c',
-                f'start cmd.exe /k python {TARGET_SCRIPT} {param}'
+                f'start cmd.exe /k python {project_config["TARGET_SCRIPT"]} {param}'
             ],
-            cwd=SCRIPT_DIR,
+            cwd=project_config["SCRIPT_DIR"],
             shell=True
         )
 
@@ -185,7 +102,7 @@ def run_script():
             print(f"Response: {response}")
             return jsonify(response), 200
         else:
-            response = {'error': f"The {TARGET_SCRIPT} process is not running."}
+            response = {'error': f"The {project_config["TARGET_SCRIPT"]} process is not running."}
             print(f"Response: {response}")
             return jsonify(response), 500
 
@@ -196,7 +113,7 @@ def is_process_running():
     """Check if LiveDataStreamer.py is running."""
     for proc in psutil.process_iter(['name', 'cmdline']):
         try:
-            if proc.info['name'] == 'python.exe' and TARGET_SCRIPT in ' '.join(proc.info['cmdline']):
+            if proc.info['name'] == 'python.exe' and project_config["TARGET_SCRIPT"] in ' '.join(proc.info['cmdline']):
                 return True
         except (psutil.NoSuchProcess, psutil.AccessDenied):
             continue
@@ -206,9 +123,9 @@ def terminate_exact_process():
     """Terminate all python processes running LiveDataStreamer.py."""
     for proc in psutil.process_iter(['pid', 'name', 'cmdline']):
         try:
-            if proc.info['name'] == 'python.exe' and TARGET_SCRIPT in ' '.join(proc.info['cmdline']):
+            if proc.info['name'] == 'python.exe' and project_config["TARGET_SCRIPT"] in ' '.join(proc.info['cmdline']):
                 psutil.Process(proc.info['pid']).terminate()
-                print(f"Terminated {TARGET_SCRIPT} (PID: {proc.info['pid']})")
+                print(f"Terminated {project_config["TARGET_SCRIPT"]} (PID: {proc.info['pid']})")
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess) as e:
             print(f"Error terminating process: {e}")
 
@@ -309,50 +226,47 @@ def handle_open_risk(positions_df: pd.DataFrame, orders_df: pd.DataFrame) -> pd.
 
 
 
-@app.route("/api/open-alpaca-orders", methods=['GET']) # IB connection  
-def get_alpacaorders_data(): 
+@app.route("/api/open-alpaca-orders", methods=['GET'])
+def get_alpacaorders_data():
     ib = IB()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
     try:
-        ib.connect(host, port, clientId)
-
-        df = process_open_orders(ib, project_config)
-
-        # Check if DataFrame is empty
-        if df.empty:
-            print("No open Alpaca orders")
-            return jsonify({'status': 'success', 'message': 'No open orders'}), 200
+        loop.run_until_complete(ib.connectAsync(host, port, clientId))
         
-        # Convert DataFrame to dictionary format
-        data = df.to_dict(orient='records')
-        return jsonify({'status': 'success', 'data': data})
+        df1= process_open_orders(ib, project_config)
+        print(df1)
+
+        if df1.empty:
+            return jsonify({'status': 'success', 'message': 'No open orders'}), 200
+        return jsonify({'status': 'success', 'data': df1.to_dict(orient='records')})
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
     finally:
         ib.disconnect()
+        loop.close()
 
 @app.route("/api/place-order", methods=['POST'])
 def place_order():
     ib = IB()
-    try:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
 
+    try:
+        # Connect synchronously using the new loop
         ib.connect(host, port, clientId)
 
-
-        # Extract order data from request
+        # --- Your business logic ---
         symbol, action, position_size, entry_price, stop_price = handle_order_request()
 
-        # Get live ask as entry price
         entry_price = get_last_ask_price(ib, symbol) or entry_price
-
-        # Calculate position size safely
         position_size = calculate_position_size(entry_price, stop_price, RISK)
-        print(position_size)
+
         if position_size <= 0:
             return jsonify({"error": "Calculated position size <= 0"}), 400
-        print(action, position_size, entry_price, stop_price)
-        # Place bracket order
+
         parent, stoploss = place_bracket_order(
             ib=ib,
             symbol=symbol,
@@ -378,6 +292,7 @@ def place_order():
 
     finally:
         ib.disconnect()
+        loop.close()
 
             
 @app.route("/api/ib_accountdata", methods=['GET']) # IB connection
@@ -432,19 +347,6 @@ def get_ib_portfolio():
 
 
 
-#--------------Scanner ---------------------------------------------------------
-
-# Flask endpoint
-@app.route("/api/ib_scanner", methods=['GET'])
-def get_scanner():
-
-    try:
-        df_result = request_market_scan(project_config)
-        # Convert DataFrame to JSON
-        result_json = df_result.to_dict(orient='records')
-        return jsonify(result_json)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
 
 
     
@@ -452,4 +354,7 @@ def get_scanner():
 
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
-    app.run(debug=False, port=8080)
+    # Serve the app with Waitress on all interfaces
+    serve(app, host="0.0.0.0", port=8080)
+    # Run Flask app (use built-in dev server for development)
+   # app.run(host="0.0.0.0", port=8080, debug=True)

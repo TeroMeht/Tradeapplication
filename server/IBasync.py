@@ -9,7 +9,7 @@ def get_last_ask_price(
     symbol: str,
     exchange: str = "SMART",
     currency: str = "USD",
-    wait_time: int = 0.5
+    wait_time: int = 1
 ) -> float:
     """
     Fetches the last ask price for a given symbol from IB.
