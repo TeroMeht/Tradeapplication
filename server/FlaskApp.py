@@ -3,18 +3,20 @@ from flask_cors import CORS
 import asyncio
 import subprocess
 from dataclasses import asdict
+from waitress import serve
 
-from common.calculate import calculate_position_size
-from common.read_configs_in import *
 
 
 from common.logger import setup_logging
 import logging
 setup_logging()
 logger = logging.getLogger(__name__)
-logger.info("Application starting")
+logger.info("Application backend starting")
 
 
+
+from common.calculate import calculate_position_size
+from common.read_configs_in import *
 from database.db_functions import fetch_alarms
 from alpacaAPI import process_open_orders
 from ibclient import *
@@ -25,7 +27,7 @@ from helpers.handle_open_risks import handle_open_risk
 
 # Load configs
 project_config = read_project_config(filename='config.json')
-database_config = read_database_config(filename="database.ini", section="postgresql")
+database_config = read_database_config(filename="database.ini", section="livestream")
 
 app = Flask(__name__)
 CORS(app)
@@ -194,7 +196,7 @@ def get_ib_data():
         # Fetch positions and open orders
         positions_df = get_positions(ib)
         orders_df = get_stop_orders(ib)
-        # ✅ Call handle_open_risk with DataFrames, not lists
+        #  Call handle_open_risk with DataFrames, not lists
         risk_levels = handle_open_risk(positions_df, orders_df)
 
         # Convert DataFrames to dicts for JSON response
@@ -219,6 +221,6 @@ def get_ib_data():
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
     # Serve the app with Waitress on all interfaces
-   # serve(app, host="0.0.0.0", port=8080)
+    serve(app, host="0.0.0.0", port=8080)
     # Run Flask app (use built-in dev server for development)
-    app.run(host="0.0.0.0", port=8080, debug=True)
+   # app.run(host="0.0.0.0", port=8080, debug=True)
