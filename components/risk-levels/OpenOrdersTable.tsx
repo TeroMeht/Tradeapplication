@@ -13,8 +13,7 @@ import { Button } from "@/components/ui/button";
 type Order_Alpaca = {
   symbol: string;
   latest_price: number;
-  limit_price: number | null;
-  stop_price: number | null;
+  stop_price: number;
   position_size: number;
   position_value: number;
 
@@ -80,8 +79,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
     const requestBody = {
       symbol: order.symbol,
       entry_price: order.latest_price,
-      lmt_price: order.limit_price,
-      stp_price: order.stop_price,
+      stop_price: order.stop_price,
       position_size: order.position_size,
     };
 
@@ -141,13 +139,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
             </TableRow>
           ) : (
             positions.map((position, index) => {
-              const stopValue =
-                (position.limit_price ?? 0) > 0
-                  ? position.limit_price
-                  : (position.stop_price ?? 0) > 0
-                  ? position.stop_price
-                  : 0;
-
+              const stopValue = position.stop_price;
               const isSent = sentOrders.has(index);
 
               return (

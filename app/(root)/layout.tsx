@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Sidebar from "@/components/Sidebar";
 import RightSidebar from "@/components/RightSideBar";
@@ -11,28 +11,14 @@ type AlarmData = {
   Date: string;
 };
 
-
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const [alarms, setAlarms] = useState<AlarmData[]>([]);
-  const [streamerRunning, setStreamerRunning] = useState<boolean>(true); // Track streamer status
 
-  // Check if the streamer is running
-  const checkStreamer = async (): Promise<boolean> => {
-    try {
-      const statusRes = await fetch("http://localhost:8080/check-streamer");
-      const statusData = await statusRes.json();
-      return statusRes.ok && statusData.running;
-    } catch (error) {
-      console.error("Error checking streamer status:", error);
-      return false;
-    }
-  };
-
+  // ✅ Fetch alarms only
   const fetchAlarms = async (): Promise<AlarmData[]> => {
     try {
       const response = await fetch("http://localhost:8080/api/alarms");
@@ -44,41 +30,29 @@ export default function RootLayout({
     }
   };
 
-
-
+  // ✅ Fetch periodically (every minute)
   useEffect(() => {
-    const updateAlarmsAndPortfolio = async () => {
-      const isRunning = await checkStreamer();
-      setStreamerRunning(isRunning);
-
-      if (isRunning) {
-        const fetchedAlarms = await fetchAlarms();
-        setAlarms(fetchedAlarms);
-
-      } else {
-        console.warn("Streamer not running. Skipping alarm fetch.");
-        setAlarms([]); // Optional: clear alarms if streamer stops
-      }
+    const updateAlarms = async () => {
+      const fetchedAlarms = await fetchAlarms();
+      setAlarms(fetchedAlarms);
     };
 
-    updateAlarmsAndPortfolio(); // Initial check
-    const intervalId = setInterval(updateAlarmsAndPortfolio, 60 * 1000); // Every minute
+    updateAlarms(); // Initial fetch
+    const intervalId = setInterval(updateAlarms, 10 * 1000);
 
-    return () => clearInterval(intervalId); // Clean up interval on unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
     <main className="flex h-screen w-full font-inter">
-      {/* Sidebar with portfolio control system data */}
+      {/* Sidebar with portfolio/control system data */}
       <Sidebar />
-      
+
       {/* Main content area */}
       <div className="flex-grow p-1">{children}</div>
 
-      {/* Right Sidebar, passing alarms data */}
-      <RightSidebar alarms={alarms} pageSpecific={true} streamerRunning={streamerRunning} />
-      
-
+      {/* Right Sidebar with alarms */}
+      <RightSidebar alarms={alarms} pageSpecific={true} />
     </main>
   );
 }

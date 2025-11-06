@@ -1,16 +1,13 @@
 {
-    "TARGET_SCRIPT": "Main.py",
-    "SCRIPT_DIR": "C:\\Projects\\15_MultipleTickerLiveData\\src",
-    "Risk": 100
-    ,
-    "API_Config": {
-        "API_KEY": "PK5FAP22RYUFJZSMWTT6",
-        "API_SECRET": "xRJzCaAXUfZib26nYHfCoo4UEssfRt2GHpipKKS0",
-        "BASE_URL": "https://paper-api.alpaca.markets/v2"
-    },  
-    "ib_connection": {
-        "host": "127.0.0.1",
-        "port": 7497,
-        "clientId": 3
-      }
+    "TARGET_SCRIPT": "main.py",
+    "SCRIPT_DIR": "C:\\Projects\\22_WatchlistStreamer",
+    "Risk": 110,
+    "host": "127.0.0.1",
+    "port": 7497,
+    "clientId": 3,
+    "API_KEY": "PK5FAP22RYUFJZSMWTT6",
+    "API_SECRET": "xRJzCaAXUfZib26nYHfCoo4UEssfRt2GHpipKKS0",
+    "BASE_URL": "https://paper-api.alpaca.markets/v2"
+    
+
 }

@@ -1,0 +1,137 @@
+from ib_insync import *
+import pandas as pd
+import time
+import logging
+
+logger = logging.getLogger(__name__)
+
+def get_last_ask_price(ib: IB, symbol: str) -> float:
+
+    try:
+        # Define and qualify contract
+        contract = Stock(symbol=symbol, exchange="SMART", currency="USD")
+        ib.qualifyContracts(contract)
+
+        # Request market data
+        ticker = ib.reqMktData(contract, "", False, False)
+
+        # Wait for IB to respond
+        ib.sleep(1)
+
+        ask_price = ticker.ask
+        if ask_price is None:
+            logging.warning(f"Warning: No ask price available for {symbol}")
+        else:
+            logging.info(f"{symbol} last ask price: {ask_price}")
+
+        return ask_price
+
+    except Exception as e:
+        logging.error(f"Error fetching last ask price for {symbol}: {e}")
+        return None
+
+
+def place_bracket_order(ib: IB, order:Order)-> None:
+    """
+    Places a bracket order with a parent limit order and a stop loss.
+    Returns the parent and stoploss orders, or (None, None) if failed.
+    """
+    try:
+        # qualify contract
+        contract = Stock(symbol=order.symbol, exchange='SMART', currency='USD')
+        ib.qualifyContracts(contract)
+
+        # determine reverse action
+        reverse_action = 'SELL' if order.action.upper() == 'BUY' else 'BUY'
+
+        # parent limit order
+        parent = LimitOrder(
+            action=order.action,
+            totalQuantity=order.position_size,
+            lmtPrice=order.entry_price,
+            orderId=ib.client.getReqId(),
+            transmit=False,
+        )
+
+        # stop loss order
+        stoploss = StopOrder(
+            action=reverse_action,
+            totalQuantity=order.position_size,
+            stopPrice=order.stop_price,
+            orderId=ib.client.getReqId(),
+            parentId=parent.orderId,
+            transmit=True,  # last order in chain transmits
+            outsideRth=True,
+        )
+
+        # place orders
+        for order in [parent, stoploss]:
+            try:
+                logging.info(f"Going live with: {order}")
+                ib.placeOrder(contract, order)
+                ib.sleep(0.1)  # small delay helps IB handle sequencing
+            except Exception as e:
+                logging.error(f"Error placing order {order}: {e}")
+                return None, None
+
+        return parent, stoploss
+
+    except Exception as e:
+        print(f"Error in place_bracket_order for {order.symbol}: {e}")
+        return None, None
+
+
+def get_stop_orders(ib: IB) -> pd.DataFrame:
+    """
+    Fetch all open orders and return as a DataFrame.
+    """
+    try:
+        # Request all open orders (returns list of Trade objects)
+        trades = ib.reqAllOpenOrders()
+        ib.sleep(1)  # small delay to ensure IB has processed the orders
+
+        # Convert to DataFrame
+        orders_df = pd.DataFrame([{
+            "OrderId": t.order.permId if t.order else None,
+            "Symbol": t.contract.symbol if t.contract else None,
+            "Action": t.order.action if t.order else None,
+            "OrderType": t.order.orderType if t.order else None,
+            "TotalQty": t.order.totalQuantity if t.order else None,
+            "LmtPrice": getattr(t.order, "lmtPrice", None) if t.order else None,
+            "AuxPrice": getattr(t.order, "auxPrice", None) if t.order else None,
+            "Status": t.orderStatus.status if t.orderStatus else None,
+            "Filled": t.orderStatus.filled if t.orderStatus else None,
+            "Remaining": t.orderStatus.remaining if t.orderStatus else None
+        } for t in trades])
+
+        logging.info(f"Fetched {orders_df}")
+        return orders_df
+
+    except Exception as e:
+        logging.error(f"Error fetching open orders: {e}")
+        return pd.DataFrame()
+
+
+def get_positions(ib: IB) -> pd.DataFrame:
+    """
+    Fetch all positions and return as a DataFrame.
+    """
+    try:
+        positions = ib.reqPositions()  # returns list of ib_insync Position objects
+        time.sleep(1)  # wait to ensure all data is fetched
+        # Convert to DataFrame
+        positions_df = pd.DataFrame([{
+            "Account": p.account,
+            "Symbol": p.contract.symbol if p.contract else None,
+            "SecType": p.contract.secType if p.contract else None,
+            "Currency": p.contract.currency if p.contract else None,
+            "Position": p.position,
+            "AvgCost": p.avgCost
+        } for p in positions if p.position != 0])  # only non-zero positions
+
+        logging.info(f"Fetched {positions_df}")
+        return positions_df
+
+    except Exception as e:
+        logging.error(f"Error fetching positions: {e}")
+        return pd.DataFrame()
