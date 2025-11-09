@@ -17,7 +17,7 @@ logger.info("Application backend starting")
 
 from common.calculate import calculate_position_size
 from common.read_configs_in import *
-from database.db_functions import fetch_alarms
+from database.db_functions import *
 from alpacaAPI import process_open_orders
 from ibclient import *
 from helpers.handle_place_order import *
@@ -57,6 +57,49 @@ def get_alarms():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/tables", methods=['GET'])
+def get_table_names():
+    """
+    Fetch all table names from the database (excluding 'livedata' and 'alarms')
+    and return them as JSON.
+    """
+    try:
+        tables = fetch_all_table_names(database_config)
+
+        if not tables:
+            logger.warning("No tables found or failed to fetch.")
+            return jsonify({"error": "No tables found."}), 404
+
+        return jsonify({"tables": tables}), 200
+
+    except Exception as e:
+        logger.error(f"Error fetching table names: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/tables/last_rows", methods=['GET'])
+def get_last_rows():
+    """
+    Fetch the last row from each table (excluding 'livedata' and 'alarms')
+    and return them as JSON.
+    """
+    try:
+        last_rows = fetch_last_row_from_each_table(database_config)
+
+        if not last_rows:
+            logger.warning("No data found or failed to fetch last rows.")
+            return jsonify({"error": "No data found."}), 404
+
+        return jsonify({"last_rows": last_rows}), 200
+
+    except Exception as e:
+        logger.error(f"Error fetching last rows: {e}")
+        return jsonify({"error": str(e)}), 500
+
+
+
 
 @app.route('/run-script', methods=['POST'])
 def run_script():

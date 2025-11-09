@@ -1,8 +1,9 @@
 'use client';
-
 import { useState } from 'react';
 import HeaderBox from "@/components/HeaderBox";
 import RunScript from '@/components/live-strategy-assistance/RunScript';
+import TablesList from "@/components/live-strategy-assistance/LiveMonitor"; // import your tables component
+import LastRowsTable from '@/components/live-strategy-assistance/RelatrTable';
 
 const Page = () => {
   const [, setSymbols] = useState<string[]>([]);
@@ -21,7 +22,7 @@ const Page = () => {
   return (
     <section className="home">
       <div className="home-content">
-        <header className="home-header">
+        <header className="home-header mb-6">
           <HeaderBox
             type="greeting"
             title="Live Strategy Assistance"
@@ -29,8 +30,22 @@ const Page = () => {
           />
         </header>
 
-        <div className="flex flex-col items-start mb-6">
-          <RunScript onSymbolsChange={handleSymbolsChange} />
+        {/* Flex row for RunScript and TablesList */}
+        <div className="flex flex-col md:flex-row gap-6">
+          {/* Left side: RunScript */}
+          <div className="flex-1">
+            <RunScript onSymbolsChange={handleSymbolsChange} />
+          </div>
+
+          {/* Right side: TablesList */}
+          <div className="flex-1 max-w-sm">
+            <TablesList />
+          </div>
+        </div>
+
+        {/* LastRowsTable below the flex row */}
+        <div className="mt-6">
+          <LastRowsTable />
         </div>
       </div>
     </section>

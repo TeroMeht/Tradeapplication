@@ -1,7 +1,7 @@
 {
     "TARGET_SCRIPT": "main.py",
-    "SCRIPT_DIR": "C:\\Projects\\22_WatchlistStreamer",
-    "Risk": 110,
+    "SCRIPT_DIR": "C:\\productioncodes\\22_WatchlistStreamer",
+    "Risk": 121,
     "host": "127.0.0.1",
     "port": 7497,
     "clientId": 3,

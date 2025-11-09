@@ -1,5 +1,6 @@
 import psycopg2
 import logging
+from decimal import Decimal
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +51,102 @@ def fetch_alarms(database_config):
 
     finally:
         # Always close database resources safely
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+
+
+# skip livedata and alarms table
+def fetch_all_table_names(database_config):
+    """
+    Retrieve all table names from the public schema of the PostgreSQL database.
+    """
+    conn = None
+    cur = None
+    try:
+        conn, cur = get_connection_and_cursor(database_config)
+
+        # SQL command to list all table names in the public schema
+        select_query = """
+                SELECT table_name
+                FROM information_schema.tables
+                WHERE table_schema = 'public'
+                AND table_name NOT IN ('livedata', 'alarms')
+                ORDER BY table_name;
+        """
+
+        cur.execute(select_query)
+        rows = cur.fetchall()
+
+        # Convert to simple list of table names
+        table_names = [row[0] for row in rows]
+
+        logger.info(f"Fetched {len(table_names)} tables.")
+        return table_names
+
+    except Exception as e:
+        logger.error(f"Error fetching table names: {e}")
+        return None
+
+    finally:
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+
+
+def fetch_last_row_from_each_table(database_config):
+    """
+    Fetch the last row from each table in the public schema
+    (excluding 'livedata' and 'alarms').
+    Returns a dictionary with table names as keys and last row as values.
+    """
+    last_rows = {}
+    try:
+        table_names = fetch_all_table_names(database_config)
+        if not table_names:
+            logger.warning("No tables found to fetch data from.")
+            return last_rows
+
+        conn, cur = get_connection_and_cursor(database_config)
+
+        for table in table_names:
+            try:
+                # Query to get the last row based on primary key or insertion order
+                query = f"""
+                    SELECT *
+                    FROM {table}
+                    ORDER BY "Time" DESC
+                    LIMIT 1;
+                """
+                cur.execute(query)
+                row = cur.fetchone()
+                if row:
+                    col_names = [desc[0] for desc in cur.description]
+                    row_dict = dict(zip(col_names, row))
+
+                    # Convert values to JSON-serializable
+                    for k, v in row_dict.items():
+                        if hasattr(v, "isoformat"):  # datetime.date or datetime.time
+                            row_dict[k] = v.isoformat()
+                        elif isinstance(v, Decimal):
+                            row_dict[k] = float(v)
+
+                    last_rows[table] = row_dict
+                else:
+                    last_rows[table] = None
+
+            except Exception as e:
+                last_rows[table] = None
+
+        return last_rows
+
+    except Exception as e:
+        logger.error(f"Error in fetching last rows from tables: {e}")
+        return None
+
+    finally:
         if cur:
             cur.close()
         if conn:
