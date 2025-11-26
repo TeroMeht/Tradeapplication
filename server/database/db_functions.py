@@ -14,6 +14,48 @@ def get_connection_and_cursor(database_config):
     cur = conn.cursor()
     return conn, cur
 
+def fetch_last_n_rows(database_config, table_name, n):
+    """
+    Retrieve the last 'n' rows from the specified table and return it as a list of dictionaries.
+    
+    :param database_config: Database connection config.
+    :param table_name: The name of the table to query.
+    :param n: The number of rows to fetch (default is 10).
+    :return: List of dictionaries with table rows or None in case of error.
+    """
+    conn = None
+    cur = None
+    try:
+        # Use the helper function to get a connection and cursor
+        conn, cur = get_connection_and_cursor(database_config)
+
+        # SQL query to fetch the last n rows from the specified table
+        select_query = f"""
+            SELECT * FROM {table_name}
+            ORDER BY "Time" DESC
+            LIMIT {n};
+        """
+        cur.execute(select_query)
+        rows = cur.fetchall()
+
+        # Get column names dynamically
+        columns = [desc[0] for desc in cur.description]
+
+        # Convert rows to a list of dictionaries
+        rows_list = [dict(zip(columns, row)) for row in rows]
+
+        return rows_list
+
+    except Exception as e:
+        logger.error(f"Error fetching data from table {table_name}: {e}")
+        return None
+
+    finally:
+        # Always close database resources safely
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
 
 
 

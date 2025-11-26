@@ -3,6 +3,7 @@
 import HeaderBox from "@/components/HeaderBox";
 import PortfolioDashboard from "@/components/risk-levels/PortfolioDashboard";
 import PositionTable from "@/components/risk-levels/OpenOrdersTable";
+import TablesList from "@/components/risk-levels/LiveMonitor"; // import your tables component
 
 const Risklevels = () => {
   return (
@@ -16,7 +17,10 @@ const Risklevels = () => {
             subtext="Create transparency to the risk you are taking"
           />
         </header>
-
+          {/* Right side: TablesList */}
+          <div className="flex-1 w-full">
+            <TablesList />
+          </div>
         {/* ✅ Show Alpaca pending orders table first */}
         <div className="mt-6">
           <PositionTable onComplete={() => console.log("Alpaca table loaded")} />
@@ -27,6 +31,7 @@ const Risklevels = () => {
           <PortfolioDashboard />
         </div>
       </div>
+      
     </section>
   );
 };

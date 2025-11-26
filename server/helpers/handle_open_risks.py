@@ -1,43 +1,68 @@
 import pandas as pd
 
 
-# Tää on alempaan tableen ja laskee riskitasoja positioille
-def handle_open_risk(positions_df: pd.DataFrame, orders_df: pd.DataFrame) -> pd.DataFrame:
-    # Initialize an empty DataFrame for the results
-    risk_df = pd.DataFrame(columns=["OrderId", "Symbol", "AvgCost", "AuxPrice", "Position", "OpenRisk"])
+def handle_open_risk(positions_df: pd.DataFrame, 
+                     orders_df: pd.DataFrame,
+                     account_data: dict) -> pd.DataFrame:
+    """
+    Build risk table for each position:
+      - OpenRisk (based on stop)
+      - NetLiquidity% exposure
+      - Size (absolute position value)
+    """
 
-    # Iterate over positions
-    row_index = 0  # Track the index for appending rows
-    for _, position_row in positions_df.iterrows():
-        
-        symbol = position_row["Symbol"]
-        position = position_row["Position"]
-        avgcost = position_row["AvgCost"]
+    # Extract net liquidation from account summary
+    netliq = float(account_data.get("NetLiquidation", 0))
 
-        # Find the matching order for this symbol with OrderType 'STP'
-        matching_orders = orders_df[(orders_df["Symbol"] == symbol) & (orders_df["OrderType"] == "STP")].head(1)
+    risk_df = pd.DataFrame(columns=[
+        "Symbol",
+        "Allocation",
+        "Size",
+        "AvgCost",
+        "AuxPrice",
+        "Position",
+        "OpenRisk"
+    ])
 
-        if not matching_orders.empty:
-            for _, order_row in matching_orders.iterrows():
-                orderId = order_row["OrderId"]
-                aux_price = order_row["AuxPrice"]
-                open_risk = abs(position * (aux_price - avgcost))
-                open_risk = round(open_risk, 2)
+    row_index = 0
+
+    for _, pos in positions_df.iterrows():
+        symbol = pos["Symbol"]
+        position = float(pos["Position"])
+        avgcost = float(pos["AvgCost"])
+
+        # Size = abs(position * avgcost)
+        size = round(abs(position * avgcost), 2)
+
+        # Calculate NetLiquidity% using Size
+        if netliq > 0:
+            netliq_pct = round((size / netliq) * 100, 2)
         else:
-            # No STP order found, set OpenRisk to infinity
-            orderId = 0
-            aux_price = 0
-            open_risk = str('inf')
+            netliq_pct = None
 
-        # Add the result to the risk DataFrame using loc
+        # Find stop for this symbol
+        stop_order = orders_df[
+            (orders_df["Symbol"] == symbol) &
+            (orders_df["OrderType"] == "STP")
+        ].head(1)
+
+        if not stop_order.empty:
+            aux_price = float(stop_order.iloc[0]["AuxPrice"])
+            open_risk = round(abs(position * (aux_price - avgcost)), 2)
+        else:
+            aux_price = None
+            open_risk = None
+
         risk_df.loc[row_index] = {
-            "OrderId": orderId,
             "Symbol": symbol,
-            "AuxPrice": aux_price,
+            "Allocation": netliq_pct,
+            "Size": size,
             "AvgCost": avgcost,
+            "AuxPrice": aux_price,
             "Position": position,
             "OpenRisk": open_risk
         }
+
         row_index += 1
 
     return risk_df

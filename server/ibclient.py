@@ -5,6 +5,15 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+ESSENTIAL_ACCOUNT_FIELDS = {
+    "NetLiquidation",
+    "GrossPositionValue",
+    "InitMarginReq",
+    "MaintMarginReq",
+    "AvailableFunds",
+    "ExcessLiquidity",
+}
+
 def get_last_ask_price(ib: IB, symbol: str) -> float:
 
     try:
@@ -135,3 +144,29 @@ def get_positions(ib: IB) -> pd.DataFrame:
     except Exception as e:
         logging.error(f"Error fetching positions: {e}")
         return pd.DataFrame()
+    
+
+
+
+
+def get_account_summary(ib: IB) -> dict:
+    """
+    Return only the essential IB account fields needed for calculations.
+    """
+    try:
+        summary = ib.accountSummary()
+        filtered = {}
+
+        for item in summary:
+            if item.tag in ESSENTIAL_ACCOUNT_FIELDS:
+                # Convert numeric fields to float safely
+                try:
+                    filtered[item.tag] = float(item.value)
+                except:
+                    filtered[item.tag] = item.value
+
+        return filtered
+
+    except Exception as e:
+        logging.error(f"Error fetching essential account summary: {e}")
+        return {}

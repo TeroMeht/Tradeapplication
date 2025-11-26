@@ -3,7 +3,7 @@ from flask_cors import CORS
 import asyncio
 import subprocess
 from dataclasses import asdict
-from waitress import serve
+#from waitress import serve
 
 
 
@@ -22,6 +22,8 @@ from alpacaAPI import process_open_orders
 from ibclient import *
 from helpers.handle_place_order import *
 from helpers.handle_open_risks import handle_open_risk
+from helpers.detect_stoplevel import detect_stoplevel
+
 
 
 
@@ -230,23 +232,27 @@ def get_ib_data():
     ib = IB()
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    try:
-        # Connect to IB Gateway/TWS
-        ib.connect(host = project_config["host"],
-                    port = project_config["port"], 
-                    clientId = project_config["clientId"])
 
-        # Fetch positions and open orders
+    try:
+        ib.connect(
+            host=project_config["host"],
+            port=project_config["port"],
+            clientId=project_config["clientId"]
+        )
+
+        # Pull data
         positions_df = get_positions(ib)
         orders_df = get_stop_orders(ib)
-        #  Call handle_open_risk with DataFrames, not lists
-        risk_levels = handle_open_risk(positions_df, orders_df)
+        account_summary = get_account_summary(ib)
+        risk_levels = handle_open_risk(positions_df, orders_df,account_summary)
+        #  NEW: All account summary values
+        
 
-        # Convert DataFrames to dicts for JSON response
         response = {
             "positions": positions_df.to_dict(orient="records"),
             "orders": orders_df.to_dict(orient="records"),
-            "risk_levels": risk_levels.to_dict(orient="records")
+            "risk_levels": risk_levels.to_dict(orient="records"),
+            "account_summary": account_summary
         }
 
         return jsonify(response), 200
@@ -254,16 +260,42 @@ def get_ib_data():
     except Exception as e:
         logger.error(f"Error fetching IB account data: {e}")
         return jsonify({"error": str(e)}), 500
-        
+
     finally:
         ib.disconnect()
         loop.close()
     
 
+@app.route("/api/stoplevel", methods=['GET'])
+def get_stop_level():
+    """
+    Fetches the stop level based on the last 10 rows from the specified table (ticker).
+    :param ticker: The ticker (table name) to query.
+    :return: JSON response with the stop level or an error message.
+    """
+    ticker = request.args.get('ticker')  # e.g., 'AAPL'
+    if not ticker:
+        return jsonify({"error": "Ticker is required"}), 400
+
+    stop_level = detect_stoplevel(database_config, ticker, n=10)
+
+    if stop_level is None:
+        return jsonify({"error": "Failed to calculate the stop level"}), 500
+
+    # Convert stop level to float
+    try:
+        stop_level_float = float(stop_level)
+    except ValueError:
+        return jsonify({"error": "Invalid stop level value"}), 500
+
+    # Return stop level as a float (calculable number)
+    return jsonify({"stop_level": stop_level_float}), 200
+
+
 
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
     # Serve the app with Waitress on all interfaces
-    serve(app, host="0.0.0.0", port=8080)
+   # serve(app, host="0.0.0.0", port=8080)
     # Run Flask app (use built-in dev server for development)
-   # app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)

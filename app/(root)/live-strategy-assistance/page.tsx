@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import HeaderBox from "@/components/HeaderBox";
 import RunScript from '@/components/live-strategy-assistance/RunScript';
-import TablesList from "@/components/live-strategy-assistance/LiveMonitor"; // import your tables component
 import LastRowsTable from '@/components/live-strategy-assistance/RelatrTable';
 
 const Page = () => {
@@ -37,10 +36,7 @@ const Page = () => {
             <RunScript onSymbolsChange={handleSymbolsChange} />
           </div>
 
-          {/* Right side: TablesList */}
-          <div className="flex-1 max-w-sm">
-            <TablesList />
-          </div>
+
         </div>
 
         {/* LastRowsTable below the flex row */}

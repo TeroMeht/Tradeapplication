@@ -13,7 +13,8 @@ interface AccountDataItem {
 
 // Strongly typed open risk levels
 interface OpenRiskLevel {
-  OrderId: number;
+  Allocation: number;
+  Size: number;
   Symbol: string;
   AuxPrice: number;
   AvgCost: number;
