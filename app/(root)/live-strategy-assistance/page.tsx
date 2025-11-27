@@ -3,6 +3,8 @@ import { useState } from 'react';
 import HeaderBox from "@/components/HeaderBox";
 import RunScript from '@/components/live-strategy-assistance/RunScript';
 import LastRowsTable from '@/components/live-strategy-assistance/RelatrTable';
+import TickBoxAll from '@/components/live-strategy-assistance/TickBoxAll';
+
 
 const Page = () => {
   const [, setSymbols] = useState<string[]>([]);
@@ -36,7 +38,10 @@ const Page = () => {
             <RunScript onSymbolsChange={handleSymbolsChange} />
           </div>
 
-
+          {/* Right side: TickBoxAll */}
+          <div className="w-full md:w-80">
+            <TickBoxAll />
+          </div>
         </div>
 
         {/* LastRowsTable below the flex row */}

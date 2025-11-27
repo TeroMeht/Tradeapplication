@@ -124,7 +124,7 @@ def fetch_all_table_names(database_config):
         # Convert to simple list of table names
         table_names = [row[0] for row in rows]
 
-        logger.info(f"Fetched {len(table_names)} tables.")
+        logger.debug(f"Fetched {len(table_names)} tables.")
         return table_names
 
     except Exception as e:
@@ -145,6 +145,8 @@ def fetch_last_row_from_each_table(database_config):
     Returns a dictionary with table names as keys and last row as values.
     """
     last_rows = {}
+    conn = None
+    cur = None
     try:
         table_names = fetch_all_table_names(database_config)
         if not table_names:

@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 logger.info("Application backend starting")
 
 
-
+from pathlib import Path
 from common.calculate import calculate_position_size
 from common.read_configs_in import *
 from database.db_functions import *
@@ -36,7 +36,63 @@ app = Flask(__name__)
 CORS(app)
 
 
-# Live-trading-assistance-------------------------------------------------------------
+@app.route("/api/input_tickers", methods=["GET"])
+def get_input_tickers():
+    try:
+        # Get base path from project_config
+        base_path = Path(project_config["input_tickers"])
+        if not base_path.exists() or not base_path.is_dir():
+            return jsonify({"error": f"Base path not found or is not a directory: {base_path}"}), 500
+
+        # If a specific file is requested, read only that file
+        filename = request.args.get("file")
+        if filename:
+            file_path = base_path / filename
+            if not file_path.exists() or not file_path.is_file():
+                return jsonify({"error": f"File not found: {file_path}"}), 404
+
+            with open(file_path, "r", encoding="utf-8") as f:
+                content = f.read()
+
+            return jsonify({"filename": filename, "content": content})
+
+        # Otherwise, read all .txt files in the directory
+        files = list(base_path.glob("*.txt"))
+        result = {}
+        for file in files:
+            with open(file, "r", encoding="utf-8") as f:
+                result[file.name] = f.read()
+
+        return jsonify({"files": result})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/input_tickers", methods=["POST"])
+def save_input_tickers():
+    try:
+        data = request.get_json()
+        if not data or "file" not in request.args or "content" not in data:
+            return jsonify({"error": "Missing 'file' query param or content in body"}), 400
+
+        filename = request.args["file"]
+        content = data["content"]
+
+        base_path = Path(project_config["input_tickers"])
+        if not base_path.exists() or not base_path.is_dir():
+            return jsonify({"error": f"Base path not found: {base_path}"}), 500
+
+        file_path = base_path / filename
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        return jsonify({"success": True, "filename": filename})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+
 
 
 
@@ -100,8 +156,6 @@ def get_last_rows():
     except Exception as e:
         logger.error(f"Error fetching last rows: {e}")
         return jsonify({"error": str(e)}), 500
-
-
 
 
 @app.route('/run-script', methods=['POST'])
@@ -325,6 +379,8 @@ def get_ibscanner_data():
     finally:
         ib.disconnect()
         loop.close()
+
+
 
 
 
