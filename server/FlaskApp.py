@@ -24,7 +24,8 @@ from helpers.handle_place_order import *
 from helpers.handle_open_risks import handle_open_risk
 from helpers.detect_stoplevel import detect_stoplevel
 
-
+from scanner.scan import run_scanner
+from helpers.handle_market_scan import handle_scandata_from_ib
 
 
 # Load configs
@@ -290,6 +291,41 @@ def get_stop_level():
 
     # Return stop level as a float (calculable number)
     return jsonify({"stop_level": stop_level_float}), 200
+
+
+
+@app.route("/api/ib_scanner", methods=['GET'])
+def get_ibscanner_data():
+    preset_name = request.args.get("preset")
+
+    ib = IB()
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
+    try:
+        ib.connect(
+            host=project_config["host"],
+            port=project_config["port"],
+            clientId=project_config["clientId"]
+        )
+
+        # Run IB scanner
+        sub, df_scan = run_scanner(ib, preset_name)
+
+        # Extract only rank + symbol
+        clean_data = handle_scandata_from_ib(df_scan)
+        logger.info(f"Scanner returned {clean_data} results for preset '{preset_name}'")
+        return jsonify({
+            "results": clean_data
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        ib.disconnect()
+        loop.close()
+
 
 
 
