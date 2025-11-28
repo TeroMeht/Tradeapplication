@@ -5,6 +5,7 @@ const Home = () => {
   const loggedIn = { firstName: 'Tero' };
 
   const scannerTables = [
+
     { title: "High Activity", endpoint: "/api/ib_scanner?preset=high_activity_scan" },
     { title: "Gap Up", endpoint: "/api/ib_scanner?preset=gap_up_scan" },
     { title: "Gap Down", endpoint: "/api/ib_scanner?preset=gap_down_scan" },

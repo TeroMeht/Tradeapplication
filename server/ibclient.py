@@ -146,9 +146,6 @@ def get_positions(ib: IB) -> pd.DataFrame:
         return pd.DataFrame()
     
 
-
-
-
 def get_account_summary(ib: IB) -> dict:
     """
     Return only the essential IB account fields needed for calculations.
@@ -170,3 +167,7 @@ def get_account_summary(ib: IB) -> dict:
     except Exception as e:
         logging.error(f"Error fetching essential account summary: {e}")
         return {}
+    
+
+
+

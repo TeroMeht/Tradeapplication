@@ -13,12 +13,20 @@ import {
 type ScannerRow = {
   symbol: string;
   rank: number | null;
+  change_pct: number | null;
+};
+
+// Raw API row (more fields exist, but we only pick 3)
+type ApiScannerRow = {
+  rank: number | null;
+  symbol: string | null;
+  change_pct: number | null;
 };
 
 type ScannerTableProps = {
   title?: string;
   endpoint: string;
-  fetchTrigger?: boolean;      // triggers fetch when true
+  fetchTrigger?: boolean;
   onFetched?: () => void;
 };
 
@@ -32,46 +40,73 @@ const ScannerTable: React.FC<ScannerTableProps> = ({
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
 
-const fetchData = React.useCallback(async () => {
-  setLoading(true);
-  setError(null);
-  try {
-    const url = endpoint.startsWith("http")
-      ? endpoint
-      : `http://127.0.0.1:8080${endpoint}`;
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("Failed to fetch scanner data");
-    const json = await res.json();
-    const rows: ScannerRow[] = (json.results as ScannerRow[] || []).filter(
-      (row) => row.symbol
-    );
-    setData(rows);
-    onFetched?.();
-  } catch (err: unknown) {
-    if (err instanceof Error) setError(err.message);
-    else setError(String(err));
-  } finally {
-    setLoading(false);
+  const fetchData = React.useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const url = endpoint.startsWith("http")
+        ? endpoint
+        : `http://127.0.0.1:8080${endpoint}`;
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Failed to fetch scanner data");
+
+      const json = await res.json();
+
+      const results = (json.results as ApiScannerRow[] | undefined) ?? [];
+
+      const rows: ScannerRow[] = results.map((row) => ({
+        rank: row.rank ?? null,
+        symbol: row.symbol ?? "-",
+        change_pct: row.change_pct ?? null,
+      }));
+
+      setData(rows);
+      onFetched?.();
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : String(err));
+    } finally {
+      setLoading(false);
+    }
+  }, [endpoint, onFetched]);
+
+  React.useEffect(() => {
+    if (fetchTrigger) fetchData();
+  }, [fetchTrigger, fetchData]);
+
+  const displayedColumns = ["rank", "symbol", "change_pct"];
+
+// --- gradient scaling for positive & negative values ---
+const maxAbsChange = Math.max(
+  ...data.map((d) => Math.abs(d.change_pct ?? 0)),
+  0.001
+);
+
+const getRowColor = (value: number | null) => {
+  if (value === null || value === 0) return "transparent";
+
+  const intensity = Math.min(Math.abs(value) / maxAbsChange, 1); // 0–1
+  const colorValue = Math.floor(100 + intensity * 155); // 100 → 255
+
+  if (value > 0) {
+    // green gradient
+    return `rgb(0, ${colorValue}, 0)`;
+  } else {
+    // red gradient
+    return `rgb(${colorValue}, 0, 0)`;
   }
-}, [endpoint, onFetched]); // include dependencies used inside fetchData
-
-React.useEffect(() => {
-  if (fetchTrigger) fetchData();
-}, [fetchTrigger, fetchData]);
-
-  const displayedColumns = ["rank", "symbol"];
+};
 
   return (
     <div
       className={`border rounded-md p-2 bg-white shadow-sm w-full max-w-xs transition-colors duration-300 ${
         loading ? "bg-blue-50 animate-pulse" : ""
-      }`} // flash while loading
+      }`}
     >
       <h3 className="text-sm font-semibold mb-1">{title}</h3>
-
       {error && <p className="text-red-500 text-xs mb-1">{error}</p>}
 
-      <div className="overflow-y-auto max-h-80">
+      <div className="overflow-y-auto max-h-96">
         <Table className="table-auto text-xs">
           <TableHeader>
             <TableRow>
@@ -80,19 +115,27 @@ React.useEffect(() => {
               ))}
             </TableRow>
           </TableHeader>
+
           <TableBody>
             {data.length === 0 && !loading && (
               <TableRow>
-                <TableCell colSpan={displayedColumns.length} className="text-center text-xs">
+                <TableCell
+                  colSpan={displayedColumns.length}
+                  className="text-center text-xs"
+                >
                   No data
                 </TableCell>
               </TableRow>
             )}
+
             {data.map((row, idx) => (
-              <TableRow key={idx}>
+              <TableRow
+                key={idx}
+                style={{ backgroundColor: getRowColor(row.change_pct) }}
+              >
                 {displayedColumns.map((col) => (
                   <TableCell key={col} className="text-xs">
-                    {String(row[col as keyof ScannerRow] ?? "-")}
+                    {row[col as keyof ScannerRow] ?? "-"}
                   </TableCell>
                 ))}
               </TableRow>

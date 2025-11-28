@@ -3,7 +3,7 @@ from flask_cors import CORS
 import asyncio
 import subprocess
 from dataclasses import asdict
-#from waitress import serve
+from waitress import serve
 
 
 
@@ -25,7 +25,8 @@ from helpers.handle_open_risks import handle_open_risk
 from helpers.detect_stoplevel import detect_stoplevel
 
 from scanner.scan import run_scanner
-from helpers.handle_market_scan import handle_scandata_from_ib
+from helpers.handle_market_scan import *
+
 
 
 # Load configs
@@ -365,13 +366,46 @@ def get_ibscanner_data():
 
         # Run IB scanner
         sub, df_scan = run_scanner(ib, preset_name)
-
-        # Extract only rank + symbol
+        if df_scan is None or df_scan.empty:
+            logger.warning(f"Scanner returned NO RESULTS for preset '{preset_name}'")
+            return jsonify({"results": []})
+        # Extract clean data (rank + symbol + contract dict)
         clean_data = handle_scandata_from_ib(df_scan)
-        logger.info(f"Scanner returned {clean_data} results for preset '{preset_name}'")
-        return jsonify({
-            "results": clean_data
-        })
+
+        logger.info(f"Scanner returned {len(clean_data)} results for preset '{preset_name}'")
+
+        # Fetch snapshot last prices and yesterday close
+        snapshot = fetch_snapshot_prices(ib, clean_data)
+        yclose   = fetch_yesterday_close(ib, clean_data)
+
+        # Merge into results in desired order
+        flat_results = []
+        for item in clean_data:
+            symbol = item.get("symbol")
+            rank = item.get("rank")
+            contract = item.get("contract")  # keep untouched
+
+            last_price = snapshot["Symbol"].get(symbol, {}).get("last_price")
+            yesterday_close = yclose["Symbol"].get(symbol, {}).get("yesterday_close")
+
+            if last_price is not None and yesterday_close:
+                change_pct = round((last_price - yesterday_close) / yesterday_close * 100, 2)
+            else:
+                change_pct = None
+
+            # Build dictionary in the order you want:
+            flat_item = {
+                "contract": contract,
+                "last_price": last_price,
+                "rank": rank,
+                "symbol": symbol,
+                "yesterday_close": yesterday_close,
+                "change_pct": change_pct
+            }
+
+            flat_results.append(flat_item)
+
+        return jsonify({"results": flat_results})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -385,9 +419,10 @@ def get_ibscanner_data():
 
 
 
+
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
     # Serve the app with Waitress on all interfaces
-   # serve(app, host="0.0.0.0", port=8080)
+     serve(app, host="0.0.0.0", port=8080)
     # Run Flask app (use built-in dev server for development)
-    app.run(host="0.0.0.0", port=8080, debug=True)
+   # app.run(host="0.0.0.0", port=8080, debug=True)
