@@ -35,7 +35,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
   const [positions, setPositions] = useState<Order_Alpaca[]>([]);
   const [message, setMessage] = useState("");
   const [sentOrders, setSentOrders] = useState<Set<number>>(new Set());
-  const [orderMessages, setOrderMessages] = useState<Record<number, string>>({});
+  const [, setOrderMessages] = useState<Record<number, string>>({});
   const [popupMessage, setPopupMessage] = useState<{
   text: string;
   colorClass: string;
