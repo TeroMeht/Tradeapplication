@@ -23,6 +23,7 @@ from ibclient import *
 from helpers.handle_place_order import *
 from helpers.handle_open_risks import handle_open_risk
 from helpers.detect_stoplevel import detect_stoplevel
+from helpers.handle_executions import is_entry_allowed
 
 from scanner.scan import run_scanner
 from helpers.handle_market_scan import *
@@ -244,13 +245,31 @@ def place_order():
 
     try:
         # Connect synchronously using the new loop
-        ib.connect(host = project_config["host"],
-                    port = project_config["port"], 
-                    clientId = project_config["clientId"])
+        ib.connect(
+            host=project_config["host"],
+            port=project_config["port"], 
+            clientId=project_config["clientId"]
+        )
 
         # --- Parse order request ---
         order = handle_place_order_request(data)  # Returns Order dataclass
 
+        # --- Fetch executed trades ---
+        executions_df = get_executed_trades(ib)
+        
+        # --- Determine if entry allowed ---
+        entry_allowed, message = is_entry_allowed(executions_df, order.symbol, project_config)
+
+        if not entry_allowed:
+            # Entry not allowed → return JSON with message, skip order placement
+            return jsonify({
+                "order_placed": False,
+                "entry_allowed": False,
+                "message": message,
+                "symbol": order.symbol
+            }), 200
+
+        # --- Proceed with order placement ---
         # Fetch latest ask price if available
         order.entry_price = get_last_ask_price(ib, order.symbol)
 
@@ -267,16 +286,18 @@ def place_order():
             order=order
         )
 
-        # Return response
+        # Return success response
         return jsonify({
-            "message": "Order placed successfully!",
+            "order_placed": True,
+            "entry_allowed": True,
+            "message": message,
             "order": order.__dict__,  # Convert dataclass to dict
             "parent_orderId": getattr(parent, 'orderId', None),
             "stop_orderId": getattr(stoploss, 'orderId', None)
         }), 200
 
     except Exception as e:
-        logger.error("Error placing order:", str(e))
+        logger.error("Error placing order: %s", str(e))
         return jsonify({"error": str(e)}), 500
 
     finally:
@@ -414,8 +435,48 @@ def get_ibscanner_data():
         ib.disconnect()
         loop.close()
 
+# @app.route("/api/get_executions", methods=['GET'])
+# def executions():
 
+#     ib = IB()
+#     loop = asyncio.new_event_loop()
+#     asyncio.set_event_loop(loop)
 
+#     try:
+#         # Connect
+#         ib.connect(
+#             host=project_config["host"],
+#             port=project_config["port"],
+#             clientId=project_config["clientId"]
+#         )
+
+#         # --- Get symbol from query params or use default ---
+#         symbol =  "NVDA"
+
+#         # Fetch executed trades
+#         executions_df = get_executed_trades(ib)
+        
+#         # --- Determine if entry allowed ---
+#         entry_allowed, message = is_entry_allowed(executions_df, symbol, project_config)
+
+#         # Convert DataFrame → list of dicts for JSON
+#         executions_json = executions_df.to_dict(orient="records")
+
+#         # --- Return full executions + entry info ---
+#         return jsonify({
+#             "executions": executions_json,
+#             "symbol": symbol,
+#             "entry_allowed": entry_allowed,
+#             "message": message
+#         }), 200
+
+#     except Exception as e:
+#         logger.error("Error fetching executions: %s", str(e))
+#         return jsonify({"error": str(e)}), 500
+
+#     finally:
+#         ib.disconnect()
+#         loop.close()
 
 
 
@@ -423,6 +484,6 @@ def get_ibscanner_data():
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
     # Serve the app with Waitress on all interfaces
-     serve(app, host="0.0.0.0", port=8080)
+    serve(app, host="0.0.0.0", port=8080)
     # Run Flask app (use built-in dev server for development)
-   # app.run(host="0.0.0.0", port=8080, debug=True)
+    #app.run(host="0.0.0.0", port=8080, debug=True)

@@ -2,6 +2,8 @@ from ib_insync import *
 import pandas as pd
 import time
 import logging
+import pytz
+from datetime import datetime
 
 logger = logging.getLogger(__name__)
 
@@ -169,5 +171,50 @@ def get_account_summary(ib: IB) -> dict:
         return {}
     
 
+def get_executed_trades(ib: IB) -> pd.DataFrame:
+    """
+    Fetch all executed trades (completed fills) from IB and return as a DataFrame.
+    Converts execution time to Helsinki timezone.
+    """
+    try:
+        helsinki_tz = pytz.timezone("Europe/Helsinki")
+        trades = ib.trades()
+        ib.sleep(1)
 
+        executed = []
 
+        for t in trades:
+            if not t.fills:
+                continue
+
+            for fill in t.fills:
+
+                # Convert IB timestamp (UTC) → Helsinki
+                time_utc = fill.execution.time  # datetime in UTC
+
+                # Convert
+                time_helsinki = time_utc.astimezone(helsinki_tz)
+
+                executed.append({
+                    "TradeId": t.order.permId if t.order else None,
+                    "Symbol": t.contract.symbol if t.contract else None,
+                    "SecType": t.contract.secType if t.contract else None,
+                    "Action": fill.execution.side if fill.execution else None,
+                    "Quantity": fill.execution.shares if fill.execution else None,
+                    "Price": fill.execution.price if fill.execution else None,    # keep original
+                    "Time": time_helsinki.isoformat(),  # converted
+                    "Exchange": fill.execution.exchange if fill.execution else None,
+                    "Commission": (
+                        fill.commissionReport.commission
+                        if fill.commissionReport else None
+                    ),
+                })
+
+        trades_df = pd.DataFrame(executed)
+        logging.info(f"Fetched executed trades: {len(trades_df)}")
+
+        return trades_df
+
+    except Exception as e:
+        logging.error(f"Error fetching executed trades: {e}")
+        return pd.DataFrame()
