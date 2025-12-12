@@ -13,15 +13,30 @@ def is_entry_allowed(executions_df: pd.DataFrame, symbol: str, project_config: d
       - No previous executions for this symbol, OR
       - The latest execution is older than max_entry_freq_minutes.
     """
-
     try:
         threshold_minutes = project_config["max_entry_freq_minutes"]
+
+        # ---- FIX: Handle missing or empty DataFrame columns safely ----
+        if executions_df is None or executions_df.empty:
+            message = f"No executions found. Entry allowed for {symbol}."
+            logging.info(message)
+            return True, message
+
+        # Make sure required columns exist
+        if "Symbol" not in executions_df.columns or "Time" not in executions_df.columns:
+            message = (
+                f"Executions DataFrame missing required columns. "
+                f"Entry allowed for {symbol}. (Columns present: {list(executions_df.columns)})"
+            )
+            logging.info(message)
+            return True, message
+        # -----------------------------------------------------------------
 
         # Filter by symbol
         symbol_execs = executions_df[executions_df["Symbol"] == symbol]
 
         if symbol_execs.empty:
-            message = f"Order going market {symbol}."
+            message = f"No previous executions for {symbol}. Entry allowed."
             logging.info(message)
             return True, message
 

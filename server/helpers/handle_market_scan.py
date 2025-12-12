@@ -1,5 +1,6 @@
 # scanner_utils.py
-
+from typing import Dict
+from ib_insync import IB, Contract
 import pandas as pd
 
 def handle_scandata_from_ib(df_scan: pd.DataFrame) -> list:
@@ -48,8 +49,7 @@ def handle_scandata_from_ib(df_scan: pd.DataFrame) -> list:
     return results
 
 
-from typing import Dict
-from ib_insync import IB, Contract
+
 
 def contract_from_dict(d: dict) -> Contract:
     """Convert a raw contract dict back into an ib_insync Contract object."""

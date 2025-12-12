@@ -24,7 +24,7 @@ from helpers.handle_place_order import *
 from helpers.handle_open_risks import handle_open_risk
 from helpers.detect_stoplevel import detect_stoplevel
 from helpers.handle_executions import is_entry_allowed
-
+from helpers.utils import log_scan_results, sanitize_for_json
 from scanner.scan import run_scanner
 from helpers.handle_market_scan import *
 
@@ -425,10 +425,15 @@ def get_ibscanner_data():
             }
 
             flat_results.append(flat_item)
-
-        return jsonify({"results": flat_results})
+        # Sanitize results before returning to UI
+        clean_output = sanitize_for_json(flat_results)
+        # Dump readable results into ib_scanner.log
+        log_scan_results(preset_name, clean_output)
+        logger.info(f"Final scanner results prepared with {len(clean_output)} entries.")
+        return jsonify({"results": clean_output})
 
     except Exception as e:
+        logger.exception("Error in IB scanner endpoint")
         return jsonify({"error": str(e)}), 500
 
     finally:

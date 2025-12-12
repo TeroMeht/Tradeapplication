@@ -1,0 +1,53 @@
+2025-12-12 11:29:13,553 | INFO | === Scan results for preset='high_activity_scan' (1 items) ===
+2025-12-12 11:29:13,553 | INFO | NVDA | rank=0 | last=179.43 | yclose=180.93 | change=-0.83%
+2025-12-12 11:29:13,553 | INFO | === End of scan ===
+
+2025-12-12 11:29:18,212 | INFO | === Scan results for preset='gap_down_scan' (1 items) ===
+2025-12-12 11:29:18,212 | INFO | NVDA | rank=0 | last=179.45 | yclose=180.93 | change=-0.82%
+2025-12-12 11:29:18,213 | INFO | === End of scan ===
+
+2025-12-12 11:44:08,832 | INFO | === Scan results for preset='high_activity_scan' (2 items) ===
+2025-12-12 11:44:08,835 | INFO | AVGO | rank=0 | last=385.9 | yclose=406.37 | change=-5.04%
+2025-12-12 11:44:08,836 | INFO | NVDA | rank=1 | last=179.2 | yclose=180.93 | change=-0.96%
+2025-12-12 11:44:08,836 | INFO | === End of scan ===
+
+2025-12-12 11:44:13,464 | INFO | === Scan results for preset='gap_down_scan' (2 items) ===
+2025-12-12 11:44:13,464 | INFO | AVGO | rank=0 | last=385.9 | yclose=406.37 | change=-5.04%
+2025-12-12 11:44:13,465 | INFO | NVDA | rank=1 | last=179.2 | yclose=180.93 | change=-0.96%
+2025-12-12 11:44:13,465 | INFO | === End of scan ===
+
+2025-12-12 12:00:51,910 | INFO | === Scan results for preset='high_activity_scan' (2 items) ===
+2025-12-12 12:00:51,913 | INFO | AVGO | rank=0 | last=386.87 | yclose=406.37 | change=-4.8%
+2025-12-12 12:00:51,913 | INFO | NVDA | rank=1 | last=179.42 | yclose=180.93 | change=-0.83%
+2025-12-12 12:00:51,913 | INFO | === End of scan ===
+
+2025-12-12 12:00:56,027 | INFO | === Scan results for preset='gap_down_scan' (2 items) ===
+2025-12-12 12:00:56,028 | INFO | AVGO | rank=0 | last=386.87 | yclose=406.37 | change=-4.8%
+2025-12-12 12:00:56,028 | INFO | NVDA | rank=1 | last=179.42 | yclose=180.93 | change=-0.83%
+2025-12-12 12:00:56,028 | INFO | === End of scan ===
+
+2025-12-12 13:07:25,359 | INFO | === Scan results for preset='high_activity_scan' (8 items) ===
+2025-12-12 13:07:25,360 | INFO | AVGO | rank=0 | last=381.9 | yclose=406.37 | change=-6.02%
+2025-12-12 13:07:25,360 | INFO | NFLX | rank=1 | last=95.16 | yclose=94.09 | change=1.14%
+2025-12-12 13:07:25,360 | INFO | RKLB | rank=2 | last=62.87 | yclose=63.53 | change=-1.04%
+2025-12-12 13:07:25,360 | INFO | NVDA | rank=3 | last=179.82 | yclose=180.93 | change=-0.61%
+2025-12-12 13:07:25,360 | INFO | BMNR | rank=4 | last=39.0 | yclose=38.38 | change=1.62%
+2025-12-12 13:07:25,360 | INFO | SOFI | rank=5 | last=27.06 | yclose=27.07 | change=-0.04%
+2025-12-12 13:07:25,360 | INFO | INTC | rank=6 | last=39.29 | yclose=39.51 | change=-0.56%
+2025-12-12 13:07:25,360 | INFO | TSLA | rank=7 | last=446.05 | yclose=446.89 | change=-0.19%
+2025-12-12 13:07:25,360 | INFO | === End of scan ===
+
+2025-12-12 13:07:28,692 | INFO | === Scan results for preset='gap_up_scan' (2 items) ===
+2025-12-12 13:07:28,693 | INFO | BMNR | rank=0 | last=39.0 | yclose=38.38 | change=1.62%
+2025-12-12 13:07:28,693 | INFO | NFLX | rank=1 | last=95.16 | yclose=94.09 | change=1.14%
+2025-12-12 13:07:28,693 | INFO | === End of scan ===
+
+2025-12-12 13:07:33,025 | INFO | === Scan results for preset='gap_down_scan' (6 items) ===
+2025-12-12 13:07:33,025 | INFO | AVGO | rank=0 | last=381.98 | yclose=406.37 | change=-6.0%
+2025-12-12 13:07:33,025 | INFO | RKLB | rank=1 | last=62.87 | yclose=63.53 | change=-1.04%
+2025-12-12 13:07:33,025 | INFO | NVDA | rank=2 | last=179.83 | yclose=180.93 | change=-0.61%
+2025-12-12 13:07:33,025 | INFO | INTC | rank=3 | last=39.25 | yclose=39.51 | change=-0.66%
+2025-12-12 13:07:33,025 | INFO | TSLA | rank=4 | last=446.05 | yclose=446.89 | change=-0.19%
+2025-12-12 13:07:33,025 | INFO | SOFI | rank=5 | last=27.04 | yclose=27.07 | change=-0.11%
+2025-12-12 13:07:33,026 | INFO | === End of scan ===
+
