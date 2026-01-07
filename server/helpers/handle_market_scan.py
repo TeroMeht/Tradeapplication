@@ -1,7 +1,9 @@
-# scanner_utils.py
-from typing import Dict
-from ib_insync import IB, Contract
+from helpers.handle_dataframes import *
+import logging
+from ib_insync import *
 import pandas as pd
+
+logger = logging.getLogger(__name__)
 
 def handle_scandata_from_ib(df_scan: pd.DataFrame) -> list:
     """
@@ -98,8 +100,6 @@ def fetch_snapshot_prices(ib: IB, results: list) -> dict:
 
     return output
 
-
-
 def fetch_yesterday_close(ib: IB, results: list) -> dict:
     """
     Returns:
@@ -137,4 +137,55 @@ def fetch_yesterday_close(ib: IB, results: list) -> dict:
         output["Symbol"][symbol] = {"yesterday_close": yclose}
 
     return output
+
+
+# --- Historical fetch intraday until this moment---
+def fetch_intraday_history(ib: IB, symbol: str, time_zone: str):
+    logging.info(f"Requesting intraday data for {symbol}")
+
+    contract = Stock(symbol, "SMART", "USD")
+    ib.qualifyContracts(contract)
+
+    bars = ib.reqHistoricalData(
+        contract,
+        endDateTime="",
+        durationStr="1 D",
+        barSizeSetting="2 mins",
+        whatToShow="TRADES",
+        useRTH=False
+    )
+
+    if not bars:
+        logging.warning(f"No historical data returned for {symbol}")
+        return None
+    
+    # Process bars directly using the intraday handler
+    processed_df = handle_incoming_dataframe_intraday(bars, symbol,time_zone)
+
+    return processed_df
+        
+# --- Historical fetch for Rvol calculation ---
+def fetch_intraday_volume_history(ib: IB, symbol: str, time_zone: str):
+    logging.info(f"Requesting Rvol data for {symbol}")
+
+    contract = Stock(symbol, "SMART", "USD")
+    ib.qualifyContracts(contract)
+
+    bars = ib.reqHistoricalData(
+        contract,
+        endDateTime="",
+        durationStr="5 D",
+        barSizeSetting="2 mins",
+        whatToShow="TRADES",
+        useRTH=False
+    )
+
+    if not bars:
+        logging.warning(f"No 5-day historical data returned for {symbol}")
+        return None
+    
+    # Process bars directly using the intraday handler
+    processed_df = handle_incoming_dataframe_intradays_volume(bars, symbol,time_zone)
+
+    return processed_df
 

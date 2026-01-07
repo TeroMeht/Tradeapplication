@@ -13,14 +13,16 @@ import {
 type ScannerRow = {
   symbol: string;
   rank: number | null;
-  change_pct: number | null;
+  change: number | null;
+  rvol?: number | null;
 };
 
 // Raw API row (more fields exist, but we only pick 3)
 type ApiScannerRow = {
   rank: number | null;
   symbol: string | null;
-  change_pct: number | null;
+  change: number | null;
+  rvol?: number | null;
 };
 
 type ScannerTableProps = {
@@ -58,8 +60,10 @@ const ScannerTable: React.FC<ScannerTableProps> = ({
       const rows: ScannerRow[] = results.map((row) => ({
         rank: row.rank ?? null,
         symbol: row.symbol ?? "-",
-        change_pct: row.change_pct ?? null,
-      }));
+        change: row.change ?? null,
+        rvol: row.rvol ?? null,
+      }))
+      .filter((row) => row.rvol === null || row.rvol >= 2); // keep null or >=1
 
       setData(rows);
       onFetched?.();
@@ -74,11 +78,11 @@ const ScannerTable: React.FC<ScannerTableProps> = ({
     if (fetchTrigger) fetchData();
   }, [fetchTrigger, fetchData]);
 
-  const displayedColumns = ["rank", "symbol", "change_pct"];
+  const displayedColumns = ["rank", "symbol", "change", "rvol"];
 
 // --- gradient scaling for positive & negative values ---
 const maxAbsChange = Math.max(
-  ...data.map((d) => Math.abs(d.change_pct ?? 0)),
+  ...data.map((d) => Math.abs(d.change ?? 0)),
   0.001
 );
 
@@ -131,7 +135,7 @@ const getRowColor = (value: number | null) => {
             {data.map((row, idx) => (
               <TableRow
                 key={idx}
-                style={{ backgroundColor: getRowColor(row.change_pct) }}
+                style={{ backgroundColor: getRowColor(row.change) }}
               >
                 {displayedColumns.map((col) => (
                   <TableCell key={col} className="text-xs">

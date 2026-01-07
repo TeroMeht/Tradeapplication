@@ -10,7 +10,7 @@ SCANNER_PRESETS = {
         "instrument": "STK",
         "locationCode": "STK.US.MAJOR",
         "scanCode": "HOT_BY_VOLUME",
-        "marketCapAbove": 10000,
+        "marketCapAbove": 1000,
         "abovePrice": 5,
         "aboveVolume": 100000,
         "stockTypeFilter": "CORP"
@@ -33,7 +33,7 @@ SCANNER_PRESETS = {
         "scanCode": "TOP_PERC_GAIN",  # top % gainers
         "abovePrice": 5,              # avoid tiny stocks
         "aboveVolume": 100000,        # minimum liquidity
-        "marketCapAbove": 10000,        # minimum market cap in millions
+        "marketCapAbove": 1000,        # minimum market cap in millions
         "stockTypeFilter": "CORP"
     },
     "gap_down_scan": {
@@ -43,7 +43,7 @@ SCANNER_PRESETS = {
         "scanCode": "TOP_PERC_LOSE",  # top % losers
         "abovePrice": 5,              # avoid tiny stocks
         "aboveVolume": 100000,        # minimum liquidity
-        "marketCapAbove": 10000,        # minimum market cap in millions
+        "marketCapAbove": 1000,        # minimum market cap in millions
         "stockTypeFilter": "CORP"
     }
 }

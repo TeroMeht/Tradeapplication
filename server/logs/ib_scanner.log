@@ -51,3 +51,2343 @@
 2025-12-12 13:07:33,025 | INFO | SOFI | rank=5 | last=27.04 | yclose=27.07 | change=-0.11%
 2025-12-12 13:07:33,026 | INFO | === End of scan ===
 
+2025-12-12 13:20:40,117 | INFO | === Scan results for preset='high_activity_scan' (8 items) ===
+2025-12-12 13:20:40,118 | INFO | AVGO | rank=0 | last=381.7 | yclose=406.37 | change=-6.07%
+2025-12-12 13:20:40,118 | INFO | NFLX | rank=1 | last=95.19 | yclose=94.09 | change=1.17%
+2025-12-12 13:20:40,118 | INFO | RKLB | rank=2 | last=62.84 | yclose=63.53 | change=-1.09%
+2025-12-12 13:20:40,119 | INFO | NVDA | rank=3 | last=180.21 | yclose=180.93 | change=-0.4%
+2025-12-12 13:20:40,119 | INFO | BMNR | rank=4 | last=38.88 | yclose=38.38 | change=1.3%
+2025-12-12 13:20:40,119 | INFO | SOFI | rank=5 | last=27.06 | yclose=27.07 | change=-0.04%
+2025-12-12 13:20:40,119 | INFO | INTC | rank=6 | last=39.24 | yclose=39.51 | change=-0.68%
+2025-12-12 13:20:40,120 | INFO | TSLA | rank=7 | last=446.05 | yclose=446.89 | change=-0.19%
+2025-12-12 13:20:40,120 | INFO | === End of scan ===
+
+2025-12-12 13:20:43,850 | INFO | === Scan results for preset='gap_up_scan' (2 items) ===
+2025-12-12 13:20:43,850 | INFO | BMNR | rank=0 | last=38.92 | yclose=38.38 | change=1.41%
+2025-12-12 13:20:43,850 | INFO | NFLX | rank=1 | last=95.19 | yclose=94.09 | change=1.17%
+2025-12-12 13:20:43,850 | INFO | === End of scan ===
+
+2025-12-12 13:20:48,511 | INFO | === Scan results for preset='gap_down_scan' (6 items) ===
+2025-12-12 13:20:48,511 | INFO | AVGO | rank=0 | last=381.75 | yclose=406.37 | change=-6.06%
+2025-12-12 13:20:48,511 | INFO | RKLB | rank=1 | last=62.84 | yclose=63.53 | change=-1.09%
+2025-12-12 13:20:48,511 | INFO | INTC | rank=2 | last=39.24 | yclose=39.51 | change=-0.68%
+2025-12-12 13:20:48,511 | INFO | NVDA | rank=3 | last=180.23 | yclose=180.93 | change=-0.39%
+2025-12-12 13:20:48,512 | INFO | TSLA | rank=4 | last=446.05 | yclose=446.89 | change=-0.19%
+2025-12-12 13:20:48,512 | INFO | SOFI | rank=5 | last=27.06 | yclose=27.07 | change=-0.04%
+2025-12-12 13:20:48,512 | INFO | === End of scan ===
+
+2025-12-12 13:48:44,528 | INFO | === Scan results for preset='high_activity_scan' (10 items) ===
+2025-12-12 13:48:44,528 | INFO | AVGO | rank=0 | last=380.53 | yclose=406.37 | change=-6.36%
+2025-12-12 13:48:44,529 | INFO | NFLX | rank=1 | last=95.09 | yclose=94.09 | change=1.06%
+2025-12-12 13:48:44,529 | INFO | CDE | rank=2 | last=18.26 | yclose=17.48 | change=4.46%
+2025-12-12 13:48:44,529 | INFO | RKLB | rank=3 | last=62.3 | yclose=63.53 | change=-1.94%
+2025-12-12 13:48:44,529 | INFO | NVDA | rank=4 | last=180.23 | yclose=180.93 | change=-0.39%
+2025-12-12 13:48:44,529 | INFO | GOOGL | rank=5 | last=313.55 | yclose=312.43 | change=0.36%
+2025-12-12 13:48:44,529 | INFO | BMNR | rank=6 | last=38.87 | yclose=38.38 | change=1.28%
+2025-12-12 13:48:44,529 | INFO | SOFI | rank=7 | last=26.99 | yclose=27.07 | change=-0.3%
+2025-12-12 13:48:44,529 | INFO | TSLA | rank=8 | last=446.0 | yclose=446.89 | change=-0.2%
+2025-12-12 13:48:44,530 | INFO | INTC | rank=9 | last=39.19 | yclose=39.51 | change=-0.81%
+2025-12-12 13:48:44,530 | INFO | === End of scan ===
+
+2025-12-12 13:48:48,664 | INFO | === Scan results for preset='gap_up_scan' (4 items) ===
+2025-12-12 13:48:48,664 | INFO | CDE | rank=0 | last=18.26 | yclose=17.48 | change=4.46%
+2025-12-12 13:48:48,664 | INFO | BMNR | rank=1 | last=38.87 | yclose=38.38 | change=1.28%
+2025-12-12 13:48:48,664 | INFO | NFLX | rank=2 | last=95.06 | yclose=94.09 | change=1.03%
+2025-12-12 13:48:48,664 | INFO | GOOGL | rank=3 | last=313.41 | yclose=312.43 | change=0.31%
+2025-12-12 13:48:48,665 | INFO | === End of scan ===
+
+2025-12-12 13:49:32,544 | INFO | === Scan results for preset='high_activity_scan' (10 items) ===
+2025-12-12 13:49:32,544 | INFO | AVGO | rank=0 | last=380.42 | yclose=406.37 | change=-6.39%
+2025-12-12 13:49:32,545 | INFO | NFLX | rank=1 | last=95.05 | yclose=94.09 | change=1.02%
+2025-12-12 13:49:32,545 | INFO | CDE | rank=2 | last=18.26 | yclose=17.48 | change=4.46%
+2025-12-12 13:49:32,545 | INFO | RKLB | rank=3 | last=62.23 | yclose=63.53 | change=-2.05%
+2025-12-12 13:49:32,545 | INFO | NVDA | rank=4 | last=180.2 | yclose=180.93 | change=-0.4%
+2025-12-12 13:49:32,545 | INFO | GOOGL | rank=5 | last=313.41 | yclose=312.43 | change=0.31%
+2025-12-12 13:49:32,545 | INFO | BMNR | rank=6 | last=38.86 | yclose=38.38 | change=1.25%
+2025-12-12 13:49:32,545 | INFO | SOFI | rank=7 | last=26.99 | yclose=27.07 | change=-0.3%
+2025-12-12 13:49:32,546 | INFO | TSLA | rank=8 | last=446.0 | yclose=446.89 | change=-0.2%
+2025-12-12 13:49:32,546 | INFO | INTC | rank=9 | last=39.18 | yclose=39.51 | change=-0.84%
+2025-12-12 13:49:32,546 | INFO | === End of scan ===
+
+2025-12-12 13:49:44,456 | INFO | === Scan results for preset='gap_up_scan' (4 items) ===
+2025-12-12 13:49:44,456 | INFO | CDE | rank=0 | last=18.26 | yclose=17.48 | change=4.46%
+2025-12-12 13:49:44,456 | INFO | BMNR | rank=1 | last=38.86 | yclose=38.38 | change=1.25%
+2025-12-12 13:49:44,456 | INFO | NFLX | rank=2 | last=95.04 | yclose=94.09 | change=1.01%
+2025-12-12 13:49:44,456 | INFO | GOOGL | rank=3 | last=313.41 | yclose=312.43 | change=0.31%
+2025-12-12 13:49:44,456 | INFO | === End of scan ===
+
+2025-12-12 13:49:58,793 | INFO | === Scan results for preset='gap_down_scan' (6 items) ===
+2025-12-12 13:49:58,793 | INFO | AVGO | rank=0 | last=380.55 | yclose=406.37 | change=-6.35%
+2025-12-12 13:49:58,794 | INFO | RKLB | rank=1 | last=62.15 | yclose=63.53 | change=-2.17%
+2025-12-12 13:49:58,794 | INFO | INTC | rank=2 | last=39.16 | yclose=39.51 | change=-0.89%
+2025-12-12 13:49:58,794 | INFO | NVDA | rank=3 | last=180.21 | yclose=180.93 | change=-0.4%
+2025-12-12 13:49:58,794 | INFO | SOFI | rank=4 | last=26.99 | yclose=27.07 | change=-0.3%
+2025-12-12 13:49:58,794 | INFO | TSLA | rank=5 | last=446.03 | yclose=446.89 | change=-0.19%
+2025-12-12 13:49:58,794 | INFO | === End of scan ===
+
+2025-12-12 13:55:40,759 | INFO | === Scan results for preset='high_activity_scan' (10 items) ===
+2025-12-12 13:55:40,760 | INFO | AVGO | rank=0 | last=381.38 | yclose=406.37 | change=-6.15%
+2025-12-12 13:55:40,760 | INFO | NFLX | rank=1 | last=94.84 | yclose=94.09 | change=0.8%
+2025-12-12 13:55:40,760 | INFO | CDE | rank=2 | last=18.28 | yclose=17.48 | change=4.58%
+2025-12-12 13:55:40,760 | INFO | RKLB | rank=3 | last=62.1 | yclose=63.53 | change=-2.25%
+2025-12-12 13:55:40,760 | INFO | NVDA | rank=4 | last=180.35 | yclose=180.93 | change=-0.32%
+2025-12-12 13:55:40,760 | INFO | GOOGL | rank=5 | last=313.2 | yclose=312.43 | change=0.25%
+2025-12-12 13:55:40,760 | INFO | BMNR | rank=6 | last=38.88 | yclose=38.38 | change=1.3%
+2025-12-12 13:55:40,760 | INFO | SOFI | rank=7 | last=27.03 | yclose=27.07 | change=-0.15%
+2025-12-12 13:55:40,760 | INFO | TSLA | rank=8 | last=445.69 | yclose=446.89 | change=-0.27%
+2025-12-12 13:55:40,761 | INFO | INTC | rank=9 | last=39.21 | yclose=39.51 | change=-0.76%
+2025-12-12 13:55:40,761 | INFO | === End of scan ===
+
+2025-12-12 13:55:52,263 | INFO | === Scan results for preset='gap_up_scan' (4 items) ===
+2025-12-12 13:55:52,263 | INFO | CDE | rank=0 | last=18.28 | yclose=17.48 | change=4.58%
+2025-12-12 13:55:52,263 | INFO | BMNR | rank=1 | last=38.88 | yclose=38.38 | change=1.3%
+2025-12-12 13:55:52,263 | INFO | NFLX | rank=2 | last=94.84 | yclose=94.09 | change=0.8%
+2025-12-12 13:55:52,263 | INFO | GOOGL | rank=3 | last=313.21 | yclose=312.43 | change=0.25%
+2025-12-12 13:55:52,264 | INFO | === End of scan ===
+
+2025-12-12 13:56:09,731 | INFO | === Scan results for preset='gap_down_scan' (7 items) ===
+2025-12-12 13:56:09,731 | INFO | AVGO | rank=0 | last=382.9 | yclose=406.37 | change=-5.78%
+2025-12-12 13:56:09,731 | INFO | RKLB | rank=1 | last=62.28 | yclose=63.53 | change=-1.97%
+2025-12-12 13:56:09,731 | INFO | PLTR | rank=2 | last=185.5 | yclose=187.54 | change=-1.09%
+2025-12-12 13:56:09,731 | INFO | INTC | rank=3 | last=39.21 | yclose=39.51 | change=-0.76%
+2025-12-12 13:56:09,731 | INFO | NVDA | rank=4 | last=180.35 | yclose=180.93 | change=-0.32%
+2025-12-12 13:56:09,731 | INFO | TSLA | rank=5 | last=445.69 | yclose=446.89 | change=-0.27%
+2025-12-12 13:56:09,731 | INFO | SOFI | rank=6 | last=27.05 | yclose=27.07 | change=-0.07%
+2025-12-12 13:56:09,732 | INFO | === End of scan ===
+
+2025-12-12 13:58:08,040 | INFO | === Scan results for preset='high_activity_scan' (11 items) ===
+2025-12-12 13:58:08,040 | INFO | AVGO | rank=0 | last=382.05 | yclose=406.37 | change=-5.98%
+2025-12-12 13:58:08,040 | INFO | NFLX | rank=1 | last=94.92 | yclose=94.09 | change=0.88%
+2025-12-12 13:58:08,040 | INFO | CDE | rank=2 | last=18.28 | yclose=17.48 | change=4.58%
+2025-12-12 13:58:08,040 | INFO | RKLB | rank=3 | last=62.49 | yclose=63.53 | change=-1.64%
+2025-12-12 13:58:08,040 | INFO | NVDA | rank=4 | last=180.47 | yclose=180.93 | change=-0.25%
+2025-12-12 13:58:08,040 | INFO | GOOGL | rank=5 | last=313.21 | yclose=312.43 | change=0.25%
+2025-12-12 13:58:08,040 | INFO | BMNR | rank=6 | last=38.88 | yclose=38.38 | change=1.3%
+2025-12-12 13:58:08,040 | INFO | PLTR | rank=7 | last=185.54 | yclose=187.54 | change=-1.07%
+2025-12-12 13:58:08,040 | INFO | SOFI | rank=8 | last=27.05 | yclose=27.07 | change=-0.07%
+2025-12-12 13:58:08,040 | INFO | TSLA | rank=9 | last=445.89 | yclose=446.89 | change=-0.22%
+2025-12-12 13:58:08,040 | INFO | INTC | rank=10 | last=39.25 | yclose=39.51 | change=-0.66%
+2025-12-12 13:58:08,040 | INFO | === End of scan ===
+
+2025-12-12 13:58:18,269 | INFO | === Scan results for preset='gap_up_scan' (4 items) ===
+2025-12-12 13:58:18,269 | INFO | CDE | rank=0 | last=18.28 | yclose=17.48 | change=4.58%
+2025-12-12 13:58:18,269 | INFO | BMNR | rank=1 | last=38.88 | yclose=38.38 | change=1.3%
+2025-12-12 13:58:18,269 | INFO | NFLX | rank=2 | last=94.87 | yclose=94.09 | change=0.83%
+2025-12-12 13:58:18,270 | INFO | GOOGL | rank=3 | last=313.21 | yclose=312.43 | change=0.25%
+2025-12-12 13:58:18,270 | INFO | === End of scan ===
+
+2025-12-12 13:58:35,863 | INFO | === Scan results for preset='gap_down_scan' (7 items) ===
+2025-12-12 13:58:35,863 | INFO | AVGO | rank=0 | last=382.0 | yclose=406.37 | change=-6.0%
+2025-12-12 13:58:35,864 | INFO | RKLB | rank=1 | last=62.43 | yclose=63.53 | change=-1.73%
+2025-12-12 13:58:35,864 | INFO | PLTR | rank=2 | last=185.54 | yclose=187.54 | change=-1.07%
+2025-12-12 13:58:35,864 | INFO | INTC | rank=3 | last=39.25 | yclose=39.51 | change=-0.66%
+2025-12-12 13:58:35,864 | INFO | NVDA | rank=4 | last=180.49 | yclose=180.93 | change=-0.24%
+2025-12-12 13:58:35,864 | INFO | TSLA | rank=5 | last=445.89 | yclose=446.89 | change=-0.22%
+2025-12-12 13:58:35,864 | INFO | SOFI | rank=6 | last=27.05 | yclose=27.07 | change=-0.07%
+2025-12-12 13:58:35,864 | INFO | === End of scan ===
+
+2025-12-12 13:59:53,474 | INFO | === Scan results for preset='high_activity_scan' (12 items) ===
+2025-12-12 13:59:53,475 | INFO | AVGO | rank=0 | last=381.61 | yclose=406.37 | change=-6.09%
+2025-12-12 13:59:53,475 | INFO | NFLX | rank=1 | last=94.73 | yclose=94.09 | change=0.68%
+2025-12-12 13:59:53,475 | INFO | CDE | rank=2 | last=18.26 | yclose=17.48 | change=4.46%
+2025-12-12 13:59:53,475 | INFO | RKLB | rank=3 | last=62.35 | yclose=63.53 | change=-1.86%
+2025-12-12 13:59:53,475 | INFO | NVDA | rank=4 | last=180.56 | yclose=180.93 | change=-0.2%
+2025-12-12 13:59:53,475 | INFO | GOOGL | rank=5 | last=313.21 | yclose=312.43 | change=0.25%
+2025-12-12 13:59:53,475 | INFO | BMNR | rank=6 | last=38.94 | yclose=38.38 | change=1.46%
+2025-12-12 13:59:53,475 | INFO | IREN | rank=7 | last=43.56 | yclose=43.94 | change=-0.86%
+2025-12-12 13:59:53,475 | INFO | PLTR | rank=8 | last=185.49 | yclose=187.54 | change=-1.09%
+2025-12-12 13:59:53,475 | INFO | SOFI | rank=9 | last=27.03 | yclose=27.07 | change=-0.15%
+2025-12-12 13:59:53,475 | INFO | INTC | rank=10 | last=39.26 | yclose=39.51 | change=-0.63%
+2025-12-12 13:59:53,475 | INFO | TSLA | rank=11 | last=445.78 | yclose=446.89 | change=-0.25%
+2025-12-12 13:59:53,475 | INFO | === End of scan ===
+
+2025-12-12 14:00:03,965 | INFO | === Scan results for preset='gap_up_scan' (4 items) ===
+2025-12-12 14:00:03,965 | INFO | CDE | rank=0 | last=18.25 | yclose=17.48 | change=4.41%
+2025-12-12 14:00:03,965 | INFO | BMNR | rank=1 | last=38.94 | yclose=38.38 | change=1.46%
+2025-12-12 14:00:03,965 | INFO | NFLX | rank=2 | last=94.73 | yclose=94.09 | change=0.68%
+2025-12-12 14:00:03,965 | INFO | GOOGL | rank=3 | last=313.21 | yclose=312.43 | change=0.25%
+2025-12-12 14:00:03,966 | INFO | === End of scan ===
+
+2025-12-12 14:00:21,793 | INFO | === Scan results for preset='gap_down_scan' (8 items) ===
+2025-12-12 14:00:21,793 | INFO | AVGO | rank=0 | last=382.28 | yclose=406.37 | change=-5.93%
+2025-12-12 14:00:21,793 | INFO | RKLB | rank=1 | last=62.64 | yclose=63.53 | change=-1.4%
+2025-12-12 14:00:21,794 | INFO | PLTR | rank=2 | last=185.5 | yclose=187.54 | change=-1.09%
+2025-12-12 14:00:21,794 | INFO | IREN | rank=3 | last=43.62 | yclose=43.94 | change=-0.73%
+2025-12-12 14:00:21,794 | INFO | INTC | rank=4 | last=39.25 | yclose=39.51 | change=-0.66%
+2025-12-12 14:00:21,794 | INFO | TSLA | rank=5 | last=445.79 | yclose=446.89 | change=-0.25%
+2025-12-12 14:00:21,794 | INFO | NVDA | rank=6 | last=180.44 | yclose=180.93 | change=-0.27%
+2025-12-12 14:00:21,794 | INFO | SOFI | rank=7 | last=27.05 | yclose=27.07 | change=-0.07%
+2025-12-12 14:00:21,794 | INFO | === End of scan ===
+
+2025-12-12 14:01:04,487 | INFO | === Scan results for preset='high_activity_scan' (15 items) ===
+2025-12-12 14:01:04,487 | INFO | AVGO | rank=0 | last=382.01 | yclose=406.37 | change=-5.99%
+2025-12-12 14:01:04,487 | INFO | NFLX | rank=1 | last=94.7 | yclose=94.09 | change=0.65%
+2025-12-12 14:01:04,487 | INFO | CDE | rank=2 | last=18.23 | yclose=17.48 | change=4.29%
+2025-12-12 14:01:04,487 | INFO | RKLB | rank=3 | last=62.6 | yclose=63.53 | change=-1.46%
+2025-12-12 14:01:04,487 | INFO | HL | rank=4 | last=19.92 | yclose=19.35 | change=2.95%
+2025-12-12 14:01:04,487 | INFO | NVDA | rank=5 | last=180.44 | yclose=180.93 | change=-0.27%
+2025-12-12 14:01:04,487 | INFO | IONQ | rank=6 | last=52.04 | yclose=52.55 | change=-0.97%
+2025-12-12 14:01:04,487 | INFO | GOOGL | rank=7 | last=313.45 | yclose=312.43 | change=0.33%
+2025-12-12 14:01:04,487 | INFO | BMNR | rank=8 | last=38.93 | yclose=38.38 | change=1.43%
+2025-12-12 14:01:04,488 | INFO | GRAB | rank=9 | last=5.18 | yclose=5.18 | change=0.0%
+2025-12-12 14:01:04,488 | INFO | IREN | rank=10 | last=43.57 | yclose=43.94 | change=-0.84%
+2025-12-12 14:01:04,488 | INFO | PLTR | rank=11 | last=185.5 | yclose=187.54 | change=-1.09%
+2025-12-12 14:01:04,488 | INFO | SOFI | rank=12 | last=27.04 | yclose=27.07 | change=-0.11%
+2025-12-12 14:01:04,488 | INFO | TSLA | rank=13 | last=445.51 | yclose=446.89 | change=-0.31%
+2025-12-12 14:01:04,488 | INFO | INTC | rank=14 | last=39.27 | yclose=39.51 | change=-0.61%
+2025-12-12 14:01:04,488 | INFO | === End of scan ===
+
+2025-12-12 14:01:17,243 | INFO | === Scan results for preset='gap_up_scan' (5 items) ===
+2025-12-12 14:01:17,243 | INFO | CDE | rank=0 | last=18.25 | yclose=17.48 | change=4.41%
+2025-12-12 14:01:17,243 | INFO | HL | rank=1 | last=19.92 | yclose=19.35 | change=2.95%
+2025-12-12 14:01:17,243 | INFO | BMNR | rank=2 | last=38.88 | yclose=38.38 | change=1.3%
+2025-12-12 14:01:17,243 | INFO | NFLX | rank=3 | last=94.63 | yclose=94.09 | change=0.57%
+2025-12-12 14:01:17,243 | INFO | GOOGL | rank=4 | last=313.45 | yclose=312.43 | change=0.33%
+2025-12-12 14:01:17,243 | INFO | === End of scan ===
+
+2025-12-12 14:01:37,552 | INFO | === Scan results for preset='gap_down_scan' (9 items) ===
+2025-12-12 14:01:37,552 | INFO | AVGO | rank=0 | last=383.0 | yclose=406.37 | change=-5.75%
+2025-12-12 14:01:37,552 | INFO | RKLB | rank=1 | last=62.59 | yclose=63.53 | change=-1.48%
+2025-12-12 14:01:37,552 | INFO | PLTR | rank=2 | last=185.34 | yclose=187.54 | change=-1.17%
+2025-12-12 14:01:37,552 | INFO | IONQ | rank=3 | last=51.97 | yclose=52.55 | change=-1.1%
+2025-12-12 14:01:37,552 | INFO | IREN | rank=4 | last=43.57 | yclose=43.94 | change=-0.84%
+2025-12-12 14:01:37,552 | INFO | INTC | rank=5 | last=39.2 | yclose=39.51 | change=-0.78%
+2025-12-12 14:01:37,552 | INFO | TSLA | rank=6 | last=445.33 | yclose=446.89 | change=-0.35%
+2025-12-12 14:01:37,552 | INFO | NVDA | rank=7 | last=180.37 | yclose=180.93 | change=-0.31%
+2025-12-12 14:01:37,553 | INFO | SOFI | rank=8 | last=27.01 | yclose=27.07 | change=-0.22%
+2025-12-12 14:01:37,553 | INFO | === End of scan ===
+
+2025-12-12 14:02:59,785 | INFO | === Scan results for preset='high_activity_scan' (15 items) ===
+2025-12-12 14:02:59,785 | INFO | AVGO | rank=0 | last=382.0 | yclose=406.37 | change=-6.0%
+2025-12-12 14:02:59,785 | INFO | NFLX | rank=1 | last=94.67 | yclose=94.09 | change=0.62%
+2025-12-12 14:02:59,785 | INFO | CDE | rank=2 | last=18.24 | yclose=17.48 | change=4.35%
+2025-12-12 14:02:59,786 | INFO | RKLB | rank=3 | last=62.59 | yclose=63.53 | change=-1.48%
+2025-12-12 14:02:59,786 | INFO | HL | rank=4 | last=20.05 | yclose=19.35 | change=3.62%
+2025-12-12 14:02:59,786 | INFO | NVDA | rank=5 | last=180.4 | yclose=180.93 | change=-0.29%
+2025-12-12 14:02:59,786 | INFO | IONQ | rank=6 | last=52.0 | yclose=52.55 | change=-1.05%
+2025-12-12 14:02:59,786 | INFO | GOOGL | rank=7 | last=313.25 | yclose=312.43 | change=0.26%
+2025-12-12 14:02:59,786 | INFO | BMNR | rank=8 | last=38.84 | yclose=38.38 | change=1.2%
+2025-12-12 14:02:59,786 | INFO | IREN | rank=9 | last=43.41 | yclose=43.94 | change=-1.21%
+2025-12-12 14:02:59,786 | INFO | GRAB | rank=10 | last=5.18 | yclose=5.18 | change=0.0%
+2025-12-12 14:02:59,786 | INFO | PLTR | rank=11 | last=185.31 | yclose=187.54 | change=-1.19%
+2025-12-12 14:02:59,786 | INFO | SOFI | rank=12 | last=27.03 | yclose=27.07 | change=-0.15%
+2025-12-12 14:02:59,787 | INFO | INTC | rank=13 | last=39.2 | yclose=39.51 | change=-0.78%
+2025-12-12 14:02:59,787 | INFO | TSLA | rank=14 | last=445.44 | yclose=446.89 | change=-0.32%
+2025-12-12 14:02:59,787 | INFO | === End of scan ===
+
+2025-12-12 14:03:12,530 | INFO | === Scan results for preset='gap_up_scan' (5 items) ===
+2025-12-12 14:03:12,530 | INFO | CDE | rank=0 | last=18.24 | yclose=17.48 | change=4.35%
+2025-12-12 14:03:12,530 | INFO | HL | rank=1 | last=20.06 | yclose=19.35 | change=3.67%
+2025-12-12 14:03:12,530 | INFO | BMNR | rank=2 | last=38.8 | yclose=38.38 | change=1.09%
+2025-12-12 14:03:12,531 | INFO | NFLX | rank=3 | last=94.65 | yclose=94.09 | change=0.6%
+2025-12-12 14:03:12,531 | INFO | GOOGL | rank=4 | last=313.2 | yclose=312.43 | change=0.25%
+2025-12-12 14:03:12,531 | INFO | === End of scan ===
+
+2025-12-12 14:03:32,557 | INFO | === Scan results for preset='gap_down_scan' (9 items) ===
+2025-12-12 14:03:32,557 | INFO | AVGO | rank=0 | last=382.12 | yclose=406.37 | change=-5.97%
+2025-12-12 14:03:32,557 | INFO | RKLB | rank=1 | last=62.59 | yclose=63.53 | change=-1.48%
+2025-12-12 14:03:32,557 | INFO | PLTR | rank=2 | last=185.44 | yclose=187.54 | change=-1.12%
+2025-12-12 14:03:32,558 | INFO | IREN | rank=3 | last=43.45 | yclose=43.94 | change=-1.12%
+2025-12-12 14:03:32,558 | INFO | IONQ | rank=4 | last=51.9 | yclose=52.55 | change=-1.24%
+2025-12-12 14:03:32,558 | INFO | INTC | rank=5 | last=39.16 | yclose=39.51 | change=-0.89%
+2025-12-12 14:03:32,558 | INFO | NVDA | rank=6 | last=180.25 | yclose=180.93 | change=-0.38%
+2025-12-12 14:03:32,559 | INFO | TSLA | rank=7 | last=445.29 | yclose=446.89 | change=-0.36%
+2025-12-12 14:03:32,559 | INFO | SOFI | rank=8 | last=27.01 | yclose=27.07 | change=-0.22%
+2025-12-12 14:03:32,560 | INFO | === End of scan ===
+
+2025-12-12 14:03:51,560 | INFO | === Scan results for preset='gap_down_scan' (9 items) ===
+2025-12-12 14:03:51,560 | INFO | AVGO | rank=0 | last=382.32 | yclose=406.37 | change=-5.92%
+2025-12-12 14:03:51,560 | INFO | RKLB | rank=1 | last=62.5 | yclose=63.53 | change=-1.62%
+2025-12-12 14:03:51,560 | INFO | IONQ | rank=2 | last=51.9 | yclose=52.55 | change=-1.24%
+2025-12-12 14:03:51,560 | INFO | PLTR | rank=3 | last=185.46 | yclose=187.54 | change=-1.11%
+2025-12-12 14:03:51,560 | INFO | IREN | rank=4 | last=43.53 | yclose=43.94 | change=-0.93%
+2025-12-12 14:03:51,560 | INFO | INTC | rank=5 | last=39.17 | yclose=39.51 | change=-0.86%
+2025-12-12 14:03:51,561 | INFO | NVDA | rank=6 | last=180.3 | yclose=180.93 | change=-0.35%
+2025-12-12 14:03:51,561 | INFO | TSLA | rank=7 | last=445.29 | yclose=446.89 | change=-0.36%
+2025-12-12 14:03:51,561 | INFO | SOFI | rank=8 | last=27.01 | yclose=27.07 | change=-0.22%
+2025-12-12 14:03:51,561 | INFO | === End of scan ===
+
+2025-12-12 14:04:29,321 | INFO | === Scan results for preset='high_activity_scan' (15 items) ===
+2025-12-12 14:04:29,322 | INFO | AVGO | rank=0 | last=382.69 | yclose=406.37 | change=-5.83%
+2025-12-12 14:04:29,322 | INFO | NFLX | rank=1 | last=94.57 | yclose=94.09 | change=0.51%
+2025-12-12 14:04:29,322 | INFO | CDE | rank=2 | last=18.24 | yclose=17.48 | change=4.35%
+2025-12-12 14:04:29,322 | INFO | RKLB | rank=3 | last=62.5 | yclose=63.53 | change=-1.62%
+2025-12-12 14:04:29,322 | INFO | HL | rank=4 | last=20.07 | yclose=19.35 | change=3.72%
+2025-12-12 14:04:29,322 | INFO | NVDA | rank=5 | last=180.34 | yclose=180.93 | change=-0.33%
+2025-12-12 14:04:29,322 | INFO | IONQ | rank=6 | last=51.9 | yclose=52.55 | change=-1.24%
+2025-12-12 14:04:29,322 | INFO | GOOGL | rank=7 | last=313.4 | yclose=312.43 | change=0.31%
+2025-12-12 14:04:29,322 | INFO | BMNR | rank=8 | last=38.79 | yclose=38.38 | change=1.07%
+2025-12-12 14:04:29,322 | INFO | IREN | rank=9 | last=43.53 | yclose=43.94 | change=-0.93%
+2025-12-12 14:04:29,322 | INFO | GRAB | rank=10 | last=5.18 | yclose=5.18 | change=0.0%
+2025-12-12 14:04:29,322 | INFO | PLTR | rank=11 | last=185.46 | yclose=187.54 | change=-1.11%
+2025-12-12 14:04:29,322 | INFO | SOFI | rank=12 | last=27.08 | yclose=27.07 | change=0.04%
+2025-12-12 14:04:29,322 | INFO | INTC | rank=13 | last=39.17 | yclose=39.51 | change=-0.86%
+2025-12-12 14:04:29,323 | INFO | TSLA | rank=14 | last=445.44 | yclose=446.89 | change=-0.32%
+2025-12-12 14:04:29,323 | INFO | === End of scan ===
+
+2025-12-12 14:04:43,146 | INFO | === Scan results for preset='gap_up_scan' (6 items) ===
+2025-12-12 14:04:43,147 | INFO | CDE | rank=0 | last=18.255 | yclose=17.48 | change=4.43%
+2025-12-12 14:04:43,147 | INFO | HL | rank=1 | last=20.09 | yclose=19.35 | change=3.82%
+2025-12-12 14:04:43,147 | INFO | BMNR | rank=2 | last=38.82 | yclose=38.38 | change=1.15%
+2025-12-12 14:04:43,147 | INFO | NFLX | rank=3 | last=94.58 | yclose=94.09 | change=0.52%
+2025-12-12 14:04:43,147 | INFO | GOOGL | rank=4 | last=313.39 | yclose=312.43 | change=0.31%
+2025-12-12 14:04:43,147 | INFO | SOFI | rank=5 | last=27.07 | yclose=27.07 | change=0.0%
+2025-12-12 14:04:43,147 | INFO | === End of scan ===
+
+2025-12-12 14:05:00,897 | INFO | === Scan results for preset='gap_down_scan' (8 items) ===
+2025-12-12 14:05:00,897 | INFO | AVGO | rank=0 | last=382.79 | yclose=406.37 | change=-5.8%
+2025-12-12 14:05:00,897 | INFO | RKLB | rank=1 | last=62.53 | yclose=63.53 | change=-1.57%
+2025-12-12 14:05:00,897 | INFO | IONQ | rank=2 | last=51.92 | yclose=52.55 | change=-1.2%
+2025-12-12 14:05:00,897 | INFO | PLTR | rank=3 | last=185.46 | yclose=187.54 | change=-1.11%
+2025-12-12 14:05:00,897 | INFO | IREN | rank=4 | last=43.55 | yclose=43.94 | change=-0.89%
+2025-12-12 14:05:00,897 | INFO | INTC | rank=5 | last=39.17 | yclose=39.51 | change=-0.86%
+2025-12-12 14:05:00,897 | INFO | TSLA | rank=6 | last=445.44 | yclose=446.89 | change=-0.32%
+2025-12-12 14:05:00,897 | INFO | NVDA | rank=7 | last=180.38 | yclose=180.93 | change=-0.3%
+2025-12-12 14:05:00,897 | INFO | === End of scan ===
+
+2025-12-12 14:06:09,455 | INFO | === Scan results for preset='high_activity_scan' (15 items) ===
+2025-12-12 14:06:09,456 | INFO | AVGO | rank=0 | last=383.46 | yclose=406.37 | change=-5.64%
+2025-12-12 14:06:09,456 | INFO | NFLX | rank=1 | last=94.56 | yclose=94.09 | change=0.5%
+2025-12-12 14:06:09,456 | INFO | CDE | rank=2 | last=18.25 | yclose=17.48 | change=4.41%
+2025-12-12 14:06:09,456 | INFO | RKLB | rank=3 | last=62.5 | yclose=63.53 | change=-1.62%
+2025-12-12 14:06:09,456 | INFO | HL | rank=4 | last=20.07 | yclose=19.35 | change=3.72%
+2025-12-12 14:06:09,456 | INFO | NVDA | rank=5 | last=180.34 | yclose=180.93 | change=-0.33%
+2025-12-12 14:06:09,456 | INFO | IONQ | rank=6 | last=51.9 | yclose=52.55 | change=-1.24%
+2025-12-12 14:06:09,456 | INFO | GOOGL | rank=7 | last=313.39 | yclose=312.43 | change=0.31%
+2025-12-12 14:06:09,456 | INFO | BMNR | rank=8 | last=38.82 | yclose=38.38 | change=1.15%
+2025-12-12 14:06:09,456 | INFO | IREN | rank=9 | last=43.54 | yclose=43.94 | change=-0.91%
+2025-12-12 14:06:09,456 | INFO | GRAB | rank=10 | last=5.18 | yclose=5.18 | change=0.0%
+2025-12-12 14:06:09,456 | INFO | PLTR | rank=11 | last=185.46 | yclose=187.54 | change=-1.11%
+2025-12-12 14:06:09,456 | INFO | SOFI | rank=12 | last=27.04 | yclose=27.07 | change=-0.11%
+2025-12-12 14:06:09,456 | INFO | INTC | rank=13 | last=39.17 | yclose=39.51 | change=-0.86%
+2025-12-12 14:06:09,456 | INFO | TSLA | rank=14 | last=445.38 | yclose=446.89 | change=-0.34%
+2025-12-12 14:06:09,456 | INFO | === End of scan ===
+
+2025-12-12 14:06:21,846 | INFO | === Scan results for preset='gap_up_scan' (5 items) ===
+2025-12-12 14:06:21,846 | INFO | CDE | rank=0 | last=18.25 | yclose=17.48 | change=4.41%
+2025-12-12 14:06:21,846 | INFO | HL | rank=1 | last=20.1 | yclose=19.35 | change=3.88%
+2025-12-12 14:06:21,848 | INFO | BMNR | rank=2 | last=38.82 | yclose=38.38 | change=1.15%
+2025-12-12 14:06:21,848 | INFO | NFLX | rank=3 | last=94.57 | yclose=94.09 | change=0.51%
+2025-12-12 14:06:21,848 | INFO | GOOGL | rank=4 | last=313.39 | yclose=312.43 | change=0.31%
+2025-12-12 14:06:21,848 | INFO | === End of scan ===
+
+2025-12-12 14:06:41,904 | INFO | === Scan results for preset='gap_down_scan' (9 items) ===
+2025-12-12 14:06:41,904 | INFO | AVGO | rank=0 | last=383.27 | yclose=406.37 | change=-5.68%
+2025-12-12 14:06:41,904 | INFO | RKLB | rank=1 | last=62.5 | yclose=63.53 | change=-1.62%
+2025-12-12 14:06:41,904 | INFO | PLTR | rank=2 | last=185.55 | yclose=187.54 | change=-1.06%
+2025-12-12 14:06:41,904 | INFO | IONQ | rank=3 | last=52.0 | yclose=52.55 | change=-1.05%
+2025-12-12 14:06:41,904 | INFO | IREN | rank=4 | last=43.53 | yclose=43.94 | change=-0.93%
+2025-12-12 14:06:41,904 | INFO | INTC | rank=5 | last=39.18 | yclose=39.51 | change=-0.84%
+2025-12-12 14:06:41,905 | INFO | TSLA | rank=6 | last=445.38 | yclose=446.89 | change=-0.34%
+2025-12-12 14:06:41,905 | INFO | NVDA | rank=7 | last=180.34 | yclose=180.93 | change=-0.33%
+2025-12-12 14:06:41,905 | INFO | SOFI | rank=8 | last=27.0 | yclose=27.07 | change=-0.26%
+2025-12-12 14:06:41,905 | INFO | === End of scan ===
+
+2025-12-12 14:07:19,729 | INFO | === Scan results for preset='high_activity_scan' (16 items) ===
+2025-12-12 14:07:19,729 | INFO | AVGO | rank=0 | last=383.0 | yclose=406.37 | change=None%
+2025-12-12 14:07:19,730 | INFO | NFLX | rank=1 | last=94.57 | yclose=94.09 | change=None%
+2025-12-12 14:07:19,730 | INFO | CDE | rank=2 | last=18.25 | yclose=17.48 | change=None%
+2025-12-12 14:07:19,730 | INFO | RKLB | rank=3 | last=62.5 | yclose=63.53 | change=None%
+2025-12-12 14:07:19,730 | INFO | HL | rank=4 | last=20.1 | yclose=19.35 | change=None%
+2025-12-12 14:07:19,730 | INFO | NVDA | rank=5 | last=180.34 | yclose=180.93 | change=None%
+2025-12-12 14:07:19,730 | INFO | ORCL | rank=6 | last=196.31 | yclose=198.85 | change=None%
+2025-12-12 14:07:19,730 | INFO | IONQ | rank=7 | last=52.0 | yclose=52.55 | change=None%
+2025-12-12 14:07:19,730 | INFO | GOOGL | rank=8 | last=313.39 | yclose=312.43 | change=None%
+2025-12-12 14:07:19,730 | INFO | BMNR | rank=9 | last=38.74 | yclose=38.38 | change=None%
+2025-12-12 14:07:19,730 | INFO | IREN | rank=10 | last=43.53 | yclose=43.94 | change=None%
+2025-12-12 14:07:19,731 | INFO | GRAB | rank=11 | last=5.18 | yclose=5.18 | change=None%
+2025-12-12 14:07:19,731 | INFO | PLTR | rank=12 | last=185.55 | yclose=187.54 | change=None%
+2025-12-12 14:07:19,731 | INFO | SOFI | rank=13 | last=27.01 | yclose=27.07 | change=None%
+2025-12-12 14:07:19,731 | INFO | INTC | rank=14 | last=39.18 | yclose=39.51 | change=None%
+2025-12-12 14:07:19,731 | INFO | TSLA | rank=15 | last=445.38 | yclose=446.89 | change=None%
+2025-12-12 14:07:19,731 | INFO | === End of scan ===
+
+2025-12-12 14:07:31,625 | INFO | === Scan results for preset='gap_up_scan' (5 items) ===
+2025-12-12 14:07:31,625 | INFO | CDE | rank=0 | last=18.23 | yclose=17.48 | change=None%
+2025-12-12 14:07:31,625 | INFO | HL | rank=1 | last=20.11 | yclose=19.35 | change=None%
+2025-12-12 14:07:31,625 | INFO | BMNR | rank=2 | last=38.74 | yclose=38.38 | change=None%
+2025-12-12 14:07:31,625 | INFO | NFLX | rank=3 | last=94.63 | yclose=94.09 | change=None%
+2025-12-12 14:07:31,625 | INFO | GOOGL | rank=4 | last=313.39 | yclose=312.43 | change=None%
+2025-12-12 14:07:31,625 | INFO | === End of scan ===
+
+2025-12-12 14:07:54,547 | INFO | === Scan results for preset='gap_down_scan' (10 items) ===
+2025-12-12 14:07:54,548 | INFO | AVGO | rank=0 | last=382.87 | yclose=406.37 | change=None%
+2025-12-12 14:07:54,548 | INFO | RKLB | rank=1 | last=62.4 | yclose=63.53 | change=None%
+2025-12-12 14:07:54,548 | INFO | ORCL | rank=2 | last=196.38 | yclose=198.85 | change=None%
+2025-12-12 14:07:54,548 | INFO | PLTR | rank=3 | last=185.52 | yclose=187.54 | change=None%
+2025-12-12 14:07:54,548 | INFO | IONQ | rank=4 | last=52.0 | yclose=52.55 | change=None%
+2025-12-12 14:07:54,548 | INFO | IREN | rank=5 | last=43.56 | yclose=43.94 | change=None%
+2025-12-12 14:07:54,549 | INFO | INTC | rank=6 | last=39.18 | yclose=39.51 | change=None%
+2025-12-12 14:07:54,549 | INFO | NVDA | rank=7 | last=180.27 | yclose=180.93 | change=None%
+2025-12-12 14:07:54,549 | INFO | SOFI | rank=8 | last=26.97 | yclose=27.07 | change=None%
+2025-12-12 14:07:54,549 | INFO | TSLA | rank=9 | last=445.4 | yclose=446.89 | change=None%
+2025-12-12 14:07:54,549 | INFO | === End of scan ===
+
+2025-12-12 14:13:24,991 | INFO | === Scan results for preset='high_activity_scan' (17 items) ===
+2025-12-12 14:13:24,991 | INFO | AVGO | rank=0 | last=382.5 | yclose=406.37 | change=None%
+2025-12-12 14:13:24,991 | INFO | NFLX | rank=1 | last=94.61 | yclose=94.09 | change=None%
+2025-12-12 14:13:24,992 | INFO | CDE | rank=2 | last=18.19 | yclose=17.48 | change=None%
+2025-12-12 14:13:24,992 | INFO | RKLB | rank=3 | last=62.4 | yclose=63.53 | change=None%
+2025-12-12 14:13:24,992 | INFO | HL | rank=4 | last=20.12 | yclose=19.35 | change=None%
+2025-12-12 14:13:24,992 | INFO | NVDA | rank=5 | last=180.41 | yclose=180.93 | change=None%
+2025-12-12 14:13:24,992 | INFO | ORCL | rank=6 | last=197.05 | yclose=198.85 | change=None%
+2025-12-12 14:13:24,992 | INFO | IONQ | rank=7 | last=52.03 | yclose=52.55 | change=None%
+2025-12-12 14:13:24,992 | INFO | BMNR | rank=8 | last=38.76 | yclose=38.38 | change=None%
+2025-12-12 14:13:24,992 | INFO | GOOGL | rank=9 | last=313.36 | yclose=312.43 | change=None%
+2025-12-12 14:13:24,992 | INFO | HOOD | rank=10 | last=124.4 | yclose=123.38 | change=None%
+2025-12-12 14:13:24,993 | INFO | IREN | rank=11 | last=43.58 | yclose=43.94 | change=None%
+2025-12-12 14:13:24,993 | INFO | GRAB | rank=12 | last=5.18 | yclose=5.18 | change=None%
+2025-12-12 14:13:24,993 | INFO | PLTR | rank=13 | last=185.88 | yclose=187.54 | change=None%
+2025-12-12 14:13:24,993 | INFO | SOFI | rank=14 | last=27.0 | yclose=27.07 | change=None%
+2025-12-12 14:13:24,993 | INFO | INTC | rank=15 | last=39.21 | yclose=39.51 | change=None%
+2025-12-12 14:13:24,993 | INFO | TSLA | rank=16 | last=445.64 | yclose=446.89 | change=None%
+2025-12-12 14:13:24,993 | INFO | === End of scan ===
+
+2025-12-12 14:13:38,420 | INFO | === Scan results for preset='gap_up_scan' (6 items) ===
+2025-12-12 14:13:38,420 | INFO | CDE | rank=0 | last=18.225 | yclose=17.48 | change=None%
+2025-12-12 14:13:38,421 | INFO | HL | rank=1 | last=20.12 | yclose=19.35 | change=None%
+2025-12-12 14:13:38,421 | INFO | BMNR | rank=2 | last=38.86 | yclose=38.38 | change=None%
+2025-12-12 14:13:38,421 | INFO | HOOD | rank=3 | last=124.4 | yclose=123.38 | change=None%
+2025-12-12 14:13:38,421 | INFO | NFLX | rank=4 | last=94.63 | yclose=94.09 | change=None%
+2025-12-12 14:13:38,421 | INFO | GOOGL | rank=5 | last=313.31 | yclose=312.43 | change=None%
+2025-12-12 14:13:38,421 | INFO | === End of scan ===
+
+2025-12-12 14:14:00,325 | INFO | === Scan results for preset='gap_down_scan' (10 items) ===
+2025-12-12 14:14:00,325 | INFO | AVGO | rank=0 | last=382.8 | yclose=406.37 | change=None%
+2025-12-12 14:14:00,325 | INFO | RKLB | rank=1 | last=62.41 | yclose=63.53 | change=None%
+2025-12-12 14:14:00,325 | INFO | IONQ | rank=2 | last=52.03 | yclose=52.55 | change=None%
+2025-12-12 14:14:00,325 | INFO | ORCL | rank=3 | last=197.05 | yclose=198.85 | change=None%
+2025-12-12 14:14:00,325 | INFO | PLTR | rank=4 | last=185.88 | yclose=187.54 | change=None%
+2025-12-12 14:14:00,325 | INFO | IREN | rank=5 | last=43.58 | yclose=43.94 | change=None%
+2025-12-12 14:14:00,325 | INFO | INTC | rank=6 | last=39.21 | yclose=39.51 | change=None%
+2025-12-12 14:14:00,326 | INFO | TSLA | rank=7 | last=445.6 | yclose=446.89 | change=None%
+2025-12-12 14:14:00,326 | INFO | NVDA | rank=8 | last=180.46 | yclose=180.93 | change=None%
+2025-12-12 14:14:00,326 | INFO | SOFI | rank=9 | last=27.02 | yclose=27.07 | change=None%
+2025-12-12 14:14:00,326 | INFO | === End of scan ===
+
+2025-12-12 14:16:08,427 | INFO | === Scan results for preset='high_activity_scan' (17 items) ===
+2025-12-12 14:16:08,427 | INFO | AVGO | rank=0 | last=383.07 | yclose=406.37 | change=None%
+2025-12-12 14:16:08,428 | INFO | NFLX | rank=1 | last=94.74 | yclose=94.09 | change=None%
+2025-12-12 14:16:08,428 | INFO | CDE | rank=2 | last=18.21 | yclose=17.48 | change=None%
+2025-12-12 14:16:08,428 | INFO | RKLB | rank=3 | last=62.53 | yclose=63.53 | change=None%
+2025-12-12 14:16:08,428 | INFO | HL | rank=4 | last=20.12 | yclose=19.35 | change=None%
+2025-12-12 14:16:08,428 | INFO | NVDA | rank=5 | last=180.5 | yclose=180.93 | change=None%
+2025-12-12 14:16:08,428 | INFO | ORCL | rank=6 | last=197.0 | yclose=198.85 | change=None%
+2025-12-12 14:16:08,428 | INFO | IONQ | rank=7 | last=52.03 | yclose=52.55 | change=None%
+2025-12-12 14:16:08,428 | INFO | BMNR | rank=8 | last=38.81 | yclose=38.38 | change=None%
+2025-12-12 14:16:08,428 | INFO | GOOGL | rank=9 | last=313.3 | yclose=312.43 | change=None%
+2025-12-12 14:16:08,429 | INFO | HOOD | rank=10 | last=124.56 | yclose=123.38 | change=None%
+2025-12-12 14:16:08,429 | INFO | IREN | rank=11 | last=43.55 | yclose=43.94 | change=None%
+2025-12-12 14:16:08,429 | INFO | GRAB | rank=12 | last=5.18 | yclose=5.18 | change=None%
+2025-12-12 14:16:08,429 | INFO | PLTR | rank=13 | last=185.8 | yclose=187.54 | change=None%
+2025-12-12 14:16:08,430 | INFO | SOFI | rank=14 | last=27.0 | yclose=27.07 | change=None%
+2025-12-12 14:16:08,430 | INFO | INTC | rank=15 | last=39.21 | yclose=39.51 | change=None%
+2025-12-12 14:16:08,430 | INFO | TSLA | rank=16 | last=445.65 | yclose=446.89 | change=None%
+2025-12-12 14:16:08,430 | INFO | === End of scan ===
+
+2025-12-12 14:16:22,076 | INFO | === Scan results for preset='gap_up_scan' (6 items) ===
+2025-12-12 14:16:22,076 | INFO | CDE | rank=0 | last=18.21 | yclose=17.48 | change=None%
+2025-12-12 14:16:22,076 | INFO | HL | rank=1 | last=20.1 | yclose=19.35 | change=None%
+2025-12-12 14:16:22,076 | INFO | BMNR | rank=2 | last=38.81 | yclose=38.38 | change=None%
+2025-12-12 14:16:22,076 | INFO | HOOD | rank=3 | last=124.64 | yclose=123.38 | change=None%
+2025-12-12 14:16:22,076 | INFO | NFLX | rank=4 | last=94.7 | yclose=94.09 | change=None%
+2025-12-12 14:16:22,076 | INFO | GOOGL | rank=5 | last=313.31 | yclose=312.43 | change=None%
+2025-12-12 14:16:22,076 | INFO | === End of scan ===
+
+2025-12-12 14:16:43,511 | INFO | === Scan results for preset='gap_down_scan' (10 items) ===
+2025-12-12 14:16:43,511 | INFO | AVGO | rank=0 | last=382.83 | yclose=406.37 | change=None%
+2025-12-12 14:16:43,511 | INFO | RKLB | rank=1 | last=62.53 | yclose=63.53 | change=None%
+2025-12-12 14:16:43,511 | INFO | IONQ | rank=2 | last=52.03 | yclose=52.55 | change=None%
+2025-12-12 14:16:43,512 | INFO | ORCL | rank=3 | last=196.93 | yclose=198.85 | change=None%
+2025-12-12 14:16:43,512 | INFO | PLTR | rank=4 | last=185.8 | yclose=187.54 | change=None%
+2025-12-12 14:16:43,512 | INFO | IREN | rank=5 | last=43.55 | yclose=43.94 | change=None%
+2025-12-12 14:16:43,512 | INFO | INTC | rank=6 | last=39.21 | yclose=39.51 | change=None%
+2025-12-12 14:16:43,512 | INFO | TSLA | rank=7 | last=445.64 | yclose=446.89 | change=None%
+2025-12-12 14:16:43,512 | INFO | SOFI | rank=8 | last=27.0 | yclose=27.07 | change=None%
+2025-12-12 14:16:43,512 | INFO | NVDA | rank=9 | last=180.49 | yclose=180.93 | change=None%
+2025-12-12 14:16:43,512 | INFO | === End of scan ===
+
+2025-12-12 14:20:14,846 | INFO | === Scan results for preset='high_activity_scan' (18 items) ===
+2025-12-12 14:20:14,846 | INFO | AVGO | rank=0 | last=382.15 | yclose=406.37 | change=None%
+2025-12-12 14:20:14,846 | INFO | NFLX | rank=1 | last=94.73 | yclose=94.09 | change=None%
+2025-12-12 14:20:14,846 | INFO | CDE | rank=2 | last=18.25 | yclose=17.48 | change=None%
+2025-12-12 14:20:14,846 | INFO | RKLB | rank=3 | last=62.55 | yclose=63.53 | change=None%
+2025-12-12 14:20:14,846 | INFO | HL | rank=4 | last=20.08 | yclose=19.35 | change=None%
+2025-12-12 14:20:14,846 | INFO | ORCL | rank=5 | last=196.68 | yclose=198.85 | change=None%
+2025-12-12 14:20:14,846 | INFO | NVDA | rank=6 | last=180.65 | yclose=180.93 | change=None%
+2025-12-12 14:20:14,847 | INFO | MU | rank=7 | last=255.5 | yclose=258.46 | change=None%
+2025-12-12 14:20:14,847 | INFO | IONQ | rank=8 | last=52.02 | yclose=52.55 | change=None%
+2025-12-12 14:20:14,847 | INFO | BMNR | rank=9 | last=38.73 | yclose=38.38 | change=None%
+2025-12-12 14:20:14,847 | INFO | GOOGL | rank=10 | last=313.1 | yclose=312.43 | change=None%
+2025-12-12 14:20:14,847 | INFO | HOOD | rank=11 | last=124.6 | yclose=123.38 | change=None%
+2025-12-12 14:20:14,847 | INFO | IREN | rank=12 | last=43.55 | yclose=43.94 | change=None%
+2025-12-12 14:20:14,847 | INFO | GRAB | rank=13 | last=5.18 | yclose=5.18 | change=None%
+2025-12-12 14:20:14,847 | INFO | PLTR | rank=14 | last=185.74 | yclose=187.54 | change=None%
+2025-12-12 14:20:14,847 | INFO | SOFI | rank=15 | last=26.99 | yclose=27.07 | change=None%
+2025-12-12 14:20:14,847 | INFO | INTC | rank=16 | last=39.18 | yclose=39.51 | change=None%
+2025-12-12 14:20:14,848 | INFO | TSLA | rank=17 | last=445.73 | yclose=446.89 | change=None%
+2025-12-12 14:20:14,848 | INFO | === End of scan ===
+
+2025-12-12 14:20:28,180 | INFO | === Scan results for preset='gap_up_scan' (6 items) ===
+2025-12-12 14:20:28,180 | INFO | CDE | rank=0 | last=18.25 | yclose=17.48 | change=None%
+2025-12-12 14:20:28,180 | INFO | HL | rank=1 | last=20.08 | yclose=19.35 | change=None%
+2025-12-12 14:20:28,180 | INFO | BMNR | rank=2 | last=38.78 | yclose=38.38 | change=None%
+2025-12-12 14:20:28,180 | INFO | HOOD | rank=3 | last=124.61 | yclose=123.38 | change=None%
+2025-12-12 14:20:28,180 | INFO | NFLX | rank=4 | last=94.71 | yclose=94.09 | change=None%
+2025-12-12 14:20:28,180 | INFO | GOOGL | rank=5 | last=313.29 | yclose=312.43 | change=None%
+2025-12-12 14:20:28,180 | INFO | === End of scan ===
+
+2025-12-12 14:20:50,615 | INFO | === Scan results for preset='gap_down_scan' (11 items) ===
+2025-12-12 14:20:50,615 | INFO | AVGO | rank=0 | last=382.2 | yclose=406.37 | change=None%
+2025-12-12 14:20:50,615 | INFO | RKLB | rank=1 | last=62.55 | yclose=63.53 | change=None%
+2025-12-12 14:20:50,615 | INFO | MU | rank=2 | last=255.5 | yclose=258.46 | change=None%
+2025-12-12 14:20:50,615 | INFO | ORCL | rank=3 | last=196.64 | yclose=198.85 | change=None%
+2025-12-12 14:20:50,615 | INFO | IONQ | rank=4 | last=52.04 | yclose=52.55 | change=None%
+2025-12-12 14:20:50,615 | INFO | PLTR | rank=5 | last=185.74 | yclose=187.54 | change=None%
+2025-12-12 14:20:50,615 | INFO | INTC | rank=6 | last=39.15 | yclose=39.51 | change=None%
+2025-12-12 14:20:50,615 | INFO | IREN | rank=7 | last=43.55 | yclose=43.94 | change=None%
+2025-12-12 14:20:50,615 | INFO | SOFI | rank=8 | last=26.99 | yclose=27.07 | change=None%
+2025-12-12 14:20:50,615 | INFO | TSLA | rank=9 | last=445.73 | yclose=446.89 | change=None%
+2025-12-12 14:20:50,615 | INFO | NVDA | rank=10 | last=180.71 | yclose=180.93 | change=None%
+2025-12-12 14:20:50,615 | INFO | === End of scan ===
+
+2025-12-12 14:22:01,368 | INFO | === Scan results for preset='high_activity_scan' (18 items) ===
+2025-12-12 14:22:01,368 | INFO | AVGO | rank=0 | last=382.75 | yclose=406.37 | change=None%
+2025-12-12 14:22:01,371 | INFO | NFLX | rank=1 | last=94.74 | yclose=94.09 | change=None%
+2025-12-12 14:22:01,371 | INFO | CDE | rank=2 | last=18.255 | yclose=17.48 | change=None%
+2025-12-12 14:22:01,371 | INFO | RKLB | rank=3 | last=62.55 | yclose=63.53 | change=None%
+2025-12-12 14:22:01,371 | INFO | HL | rank=4 | last=20.09 | yclose=19.35 | change=None%
+2025-12-12 14:22:01,371 | INFO | ORCL | rank=5 | last=196.76 | yclose=198.85 | change=None%
+2025-12-12 14:22:01,371 | INFO | NVDA | rank=6 | last=180.74 | yclose=180.93 | change=None%
+2025-12-12 14:22:01,371 | INFO | MU | rank=7 | last=255.5 | yclose=258.46 | change=None%
+2025-12-12 14:22:01,372 | INFO | IONQ | rank=8 | last=52.04 | yclose=52.55 | change=None%
+2025-12-12 14:22:01,372 | INFO | BMNR | rank=9 | last=38.78 | yclose=38.38 | change=None%
+2025-12-12 14:22:01,372 | INFO | GOOGL | rank=10 | last=313.47 | yclose=312.43 | change=None%
+2025-12-12 14:22:01,372 | INFO | HOOD | rank=11 | last=124.61 | yclose=123.38 | change=None%
+2025-12-12 14:22:01,372 | INFO | IREN | rank=12 | last=43.5 | yclose=43.94 | change=None%
+2025-12-12 14:22:01,372 | INFO | GRAB | rank=13 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:22:01,372 | INFO | PLTR | rank=14 | last=185.68 | yclose=187.54 | change=None%
+2025-12-12 14:22:01,372 | INFO | SOFI | rank=15 | last=26.99 | yclose=27.07 | change=None%
+2025-12-12 14:22:01,372 | INFO | INTC | rank=16 | last=39.16 | yclose=39.51 | change=None%
+2025-12-12 14:22:01,372 | INFO | TSLA | rank=17 | last=445.84 | yclose=446.89 | change=None%
+2025-12-12 14:22:01,372 | INFO | === End of scan ===
+
+2025-12-12 14:22:17,190 | INFO | === Scan results for preset='gap_up_scan' (7 items) ===
+2025-12-12 14:22:17,190 | INFO | CDE | rank=0 | last=18.255 | yclose=17.48 | change=None%
+2025-12-12 14:22:17,190 | INFO | HL | rank=1 | last=20.09 | yclose=19.35 | change=None%
+2025-12-12 14:22:17,190 | INFO | BMNR | rank=2 | last=38.78 | yclose=38.38 | change=None%
+2025-12-12 14:22:17,190 | INFO | HOOD | rank=3 | last=124.6 | yclose=123.38 | change=None%
+2025-12-12 14:22:17,190 | INFO | NFLX | rank=4 | last=94.73 | yclose=94.09 | change=None%
+2025-12-12 14:22:17,191 | INFO | GOOGL | rank=5 | last=313.47 | yclose=312.43 | change=None%
+2025-12-12 14:22:17,191 | INFO | GRAB | rank=6 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:22:17,191 | INFO | === End of scan ===
+
+2025-12-12 14:22:40,966 | INFO | === Scan results for preset='gap_down_scan' (11 items) ===
+2025-12-12 14:22:40,966 | INFO | AVGO | rank=0 | last=382.26 | yclose=406.37 | change=None%
+2025-12-12 14:22:40,966 | INFO | RKLB | rank=1 | last=62.55 | yclose=63.53 | change=None%
+2025-12-12 14:22:40,966 | INFO | MU | rank=2 | last=255.5 | yclose=258.46 | change=None%
+2025-12-12 14:22:40,966 | INFO | ORCL | rank=3 | last=196.76 | yclose=198.85 | change=None%
+2025-12-12 14:22:40,966 | INFO | IREN | rank=4 | last=43.57 | yclose=43.94 | change=None%
+2025-12-12 14:22:40,966 | INFO | PLTR | rank=5 | last=185.68 | yclose=187.54 | change=None%
+2025-12-12 14:22:40,966 | INFO | IONQ | rank=6 | last=52.06 | yclose=52.55 | change=None%
+2025-12-12 14:22:40,966 | INFO | INTC | rank=7 | last=39.16 | yclose=39.51 | change=None%
+2025-12-12 14:22:40,966 | INFO | SOFI | rank=8 | last=26.98 | yclose=27.07 | change=None%
+2025-12-12 14:22:40,966 | INFO | TSLA | rank=9 | last=445.84 | yclose=446.89 | change=None%
+2025-12-12 14:22:40,966 | INFO | NVDA | rank=10 | last=180.78 | yclose=180.93 | change=None%
+2025-12-12 14:22:40,966 | INFO | === End of scan ===
+
+2025-12-12 14:29:40,006 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 14:29:40,007 | INFO | AVGO | rank=0 | last=382.49 | yclose=406.37 | change=None%
+2025-12-12 14:29:40,007 | INFO | LULU | rank=1 | last=204.3 | yclose=187.01 | change=None%
+2025-12-12 14:29:40,007 | INFO | NFLX | rank=2 | last=94.69 | yclose=94.09 | change=None%
+2025-12-12 14:29:40,007 | INFO | CDE | rank=3 | last=18.26 | yclose=17.48 | change=None%
+2025-12-12 14:29:40,007 | INFO | RKLB | rank=4 | last=62.5 | yclose=63.53 | change=None%
+2025-12-12 14:29:40,007 | INFO | HL | rank=5 | last=20.11 | yclose=19.35 | change=None%
+2025-12-12 14:29:40,007 | INFO | NVDA | rank=6 | last=181.1 | yclose=180.93 | change=None%
+2025-12-12 14:29:40,007 | INFO | ORCL | rank=7 | last=197.17 | yclose=198.85 | change=None%
+2025-12-12 14:29:40,007 | INFO | MU | rank=8 | last=255.76 | yclose=258.46 | change=None%
+2025-12-12 14:29:40,007 | INFO | GOOGL | rank=9 | last=313.76 | yclose=312.43 | change=None%
+2025-12-12 14:29:40,008 | INFO | BMNR | rank=10 | last=38.71 | yclose=38.38 | change=None%
+2025-12-12 14:29:40,008 | INFO | IONQ | rank=11 | last=52.06 | yclose=52.55 | change=None%
+2025-12-12 14:29:40,008 | INFO | HOOD | rank=12 | last=124.79 | yclose=123.38 | change=None%
+2025-12-12 14:29:40,008 | INFO | IREN | rank=13 | last=43.62 | yclose=43.94 | change=None%
+2025-12-12 14:29:40,008 | INFO | GRAB | rank=14 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:29:40,008 | INFO | PLTR | rank=15 | last=185.82 | yclose=187.54 | change=None%
+2025-12-12 14:29:40,008 | INFO | SOFI | rank=16 | last=26.95 | yclose=27.07 | change=None%
+2025-12-12 14:29:40,008 | INFO | INTC | rank=17 | last=39.19 | yclose=39.51 | change=None%
+2025-12-12 14:29:40,008 | INFO | AMD | rank=18 | last=219.42 | yclose=221.43 | change=None%
+2025-12-12 14:29:40,008 | INFO | TSLA | rank=19 | last=445.88 | yclose=446.89 | change=None%
+2025-12-12 14:29:40,008 | INFO | === End of scan ===
+
+2025-12-12 14:30:00,935 | INFO | === Scan results for preset='gap_up_scan' (10 items) ===
+2025-12-12 14:30:00,935 | INFO | LULU | rank=0 | last=204.0 | yclose=187.01 | change=None%
+2025-12-12 14:30:00,935 | INFO | CDE | rank=1 | last=18.28 | yclose=17.48 | change=None%
+2025-12-12 14:30:00,935 | INFO | HL | rank=2 | last=20.08 | yclose=19.35 | change=None%
+2025-12-12 14:30:00,935 | INFO | AAL | rank=3 | last=15.17 | yclose=14.96 | change=None%
+2025-12-12 14:30:00,935 | INFO | HOOD | rank=4 | last=124.71 | yclose=123.38 | change=None%
+2025-12-12 14:30:00,935 | INFO | BMNR | rank=5 | last=38.76 | yclose=38.38 | change=None%
+2025-12-12 14:30:00,935 | INFO | NFLX | rank=6 | last=94.67 | yclose=94.09 | change=None%
+2025-12-12 14:30:00,935 | INFO | GOOGL | rank=7 | last=313.87 | yclose=312.43 | change=None%
+2025-12-12 14:30:00,936 | INFO | GRAB | rank=8 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:30:00,936 | INFO | NVDA | rank=9 | last=181.07 | yclose=180.93 | change=None%
+2025-12-12 14:30:00,936 | INFO | === End of scan ===
+
+2025-12-12 14:30:23,311 | INFO | === Scan results for preset='gap_down_scan' (11 items) ===
+2025-12-12 14:30:23,312 | INFO | AVGO | rank=0 | last=382.88 | yclose=406.37 | change=None%
+2025-12-12 14:30:23,312 | INFO | RKLB | rank=1 | last=62.4 | yclose=63.53 | change=None%
+2025-12-12 14:30:23,312 | INFO | MU | rank=2 | last=255.4 | yclose=258.46 | change=None%
+2025-12-12 14:30:23,312 | INFO | AMD | rank=3 | last=219.25 | yclose=221.43 | change=None%
+2025-12-12 14:30:23,312 | INFO | PLTR | rank=4 | last=185.72 | yclose=187.54 | change=None%
+2025-12-12 14:30:23,312 | INFO | IONQ | rank=5 | last=52.1 | yclose=52.55 | change=None%
+2025-12-12 14:30:23,312 | INFO | INTC | rank=6 | last=39.2 | yclose=39.51 | change=None%
+2025-12-12 14:30:23,312 | INFO | ORCL | rank=7 | last=197.37 | yclose=198.85 | change=None%
+2025-12-12 14:30:23,312 | INFO | IREN | rank=8 | last=43.66 | yclose=43.94 | change=None%
+2025-12-12 14:30:23,312 | INFO | SOFI | rank=9 | last=26.98 | yclose=27.07 | change=None%
+2025-12-12 14:30:23,312 | INFO | TSLA | rank=10 | last=445.84 | yclose=446.89 | change=None%
+2025-12-12 14:30:23,312 | INFO | === End of scan ===
+
+2025-12-12 14:33:34,534 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 14:33:34,534 | INFO | AVGO | rank=0 | last=382.72 | yclose=406.37 | change=None%
+2025-12-12 14:33:34,534 | INFO | LULU | rank=1 | last=203.7 | yclose=187.01 | change=None%
+2025-12-12 14:33:34,535 | INFO | NFLX | rank=2 | last=94.7 | yclose=94.09 | change=None%
+2025-12-12 14:33:34,535 | INFO | CDE | rank=3 | last=18.21 | yclose=17.48 | change=None%
+2025-12-12 14:33:34,535 | INFO | RKLB | rank=4 | last=62.36 | yclose=63.53 | change=None%
+2025-12-12 14:33:34,535 | INFO | HL | rank=5 | last=20.05 | yclose=19.35 | change=None%
+2025-12-12 14:33:34,535 | INFO | ORCL | rank=6 | last=197.29 | yclose=198.85 | change=None%
+2025-12-12 14:33:34,535 | INFO | NVDA | rank=7 | last=180.95 | yclose=180.93 | change=None%
+2025-12-12 14:33:34,535 | INFO | MU | rank=8 | last=255.78 | yclose=258.46 | change=None%
+2025-12-12 14:33:34,535 | INFO | GOOGL | rank=9 | last=313.97 | yclose=312.43 | change=None%
+2025-12-12 14:33:34,535 | INFO | IONQ | rank=10 | last=52.1 | yclose=52.55 | change=None%
+2025-12-12 14:33:34,535 | INFO | BMNR | rank=11 | last=38.73 | yclose=38.38 | change=None%
+2025-12-12 14:33:34,535 | INFO | HOOD | rank=12 | last=124.71 | yclose=123.38 | change=None%
+2025-12-12 14:33:34,535 | INFO | IREN | rank=13 | last=43.58 | yclose=43.94 | change=None%
+2025-12-12 14:33:34,535 | INFO | GRAB | rank=14 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:33:34,535 | INFO | PLTR | rank=15 | last=185.72 | yclose=187.54 | change=None%
+2025-12-12 14:33:34,535 | INFO | SOFI | rank=16 | last=27.0 | yclose=27.07 | change=None%
+2025-12-12 14:33:34,536 | INFO | AMD | rank=17 | last=219.2 | yclose=221.43 | change=None%
+2025-12-12 14:33:34,536 | INFO | INTC | rank=18 | last=39.23 | yclose=39.51 | change=None%
+2025-12-12 14:33:34,536 | INFO | TSLA | rank=19 | last=445.77 | yclose=446.89 | change=None%
+2025-12-12 14:33:34,536 | INFO | === End of scan ===
+
+2025-12-12 14:33:54,848 | INFO | === Scan results for preset='gap_up_scan' (10 items) ===
+2025-12-12 14:33:54,848 | INFO | LULU | rank=0 | last=203.7 | yclose=187.01 | change=None%
+2025-12-12 14:33:54,848 | INFO | CDE | rank=1 | last=18.19 | yclose=17.48 | change=None%
+2025-12-12 14:33:54,848 | INFO | HL | rank=2 | last=20.05 | yclose=19.35 | change=None%
+2025-12-12 14:33:54,849 | INFO | AAL | rank=3 | last=15.17 | yclose=14.96 | change=None%
+2025-12-12 14:33:54,849 | INFO | HOOD | rank=4 | last=124.71 | yclose=123.38 | change=None%
+2025-12-12 14:33:54,849 | INFO | BMNR | rank=5 | last=38.73 | yclose=38.38 | change=None%
+2025-12-12 14:33:54,849 | INFO | NFLX | rank=6 | last=94.66 | yclose=94.09 | change=None%
+2025-12-12 14:33:54,849 | INFO | GOOGL | rank=7 | last=313.81 | yclose=312.43 | change=None%
+2025-12-12 14:33:54,849 | INFO | GRAB | rank=8 | last=5.2 | yclose=5.18 | change=None%
+2025-12-12 14:33:54,849 | INFO | NVDA | rank=9 | last=180.94 | yclose=180.93 | change=None%
+2025-12-12 14:33:54,849 | INFO | === End of scan ===
+
+2025-12-12 14:34:18,089 | INFO | === Scan results for preset='gap_down_scan' (11 items) ===
+2025-12-12 14:34:18,089 | INFO | AVGO | rank=0 | last=382.75 | yclose=406.37 | change=None%
+2025-12-12 14:34:18,089 | INFO | RKLB | rank=1 | last=62.45 | yclose=63.53 | change=None%
+2025-12-12 14:34:18,090 | INFO | MU | rank=2 | last=255.35 | yclose=258.46 | change=None%
+2025-12-12 14:34:18,090 | INFO | PLTR | rank=3 | last=185.77 | yclose=187.54 | change=None%
+2025-12-12 14:34:18,090 | INFO | AMD | rank=4 | last=219.39 | yclose=221.43 | change=None%
+2025-12-12 14:34:18,090 | INFO | IONQ | rank=5 | last=52.11 | yclose=52.55 | change=None%
+2025-12-12 14:34:18,090 | INFO | IREN | rank=6 | last=43.58 | yclose=43.94 | change=None%
+2025-12-12 14:34:18,090 | INFO | ORCL | rank=7 | last=197.31 | yclose=198.85 | change=None%
+2025-12-12 14:34:18,090 | INFO | INTC | rank=8 | last=39.22 | yclose=39.51 | change=None%
+2025-12-12 14:34:18,090 | INFO | SOFI | rank=9 | last=27.0 | yclose=27.07 | change=None%
+2025-12-12 14:34:18,091 | INFO | TSLA | rank=10 | last=445.91 | yclose=446.89 | change=None%
+2025-12-12 14:34:18,091 | INFO | === End of scan ===
+
+2025-12-12 14:39:54,848 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 14:39:54,848 | INFO | AVGO | rank=0 | last=382.63 | yclose=406.37 | change=None%
+2025-12-12 14:39:54,848 | INFO | LULU | rank=1 | last=203.5 | yclose=187.01 | change=None%
+2025-12-12 14:39:54,849 | INFO | NFLX | rank=2 | last=94.69 | yclose=94.09 | change=None%
+2025-12-12 14:39:54,849 | INFO | CDE | rank=3 | last=18.18 | yclose=17.48 | change=None%
+2025-12-12 14:39:54,849 | INFO | RKLB | rank=4 | last=62.41 | yclose=63.53 | change=None%
+2025-12-12 14:39:54,849 | INFO | HL | rank=5 | last=20.1 | yclose=19.35 | change=None%
+2025-12-12 14:39:54,849 | INFO | ORCL | rank=6 | last=197.37 | yclose=198.85 | change=None%
+2025-12-12 14:39:54,849 | INFO | NVDA | rank=7 | last=180.75 | yclose=180.93 | change=None%
+2025-12-12 14:39:54,849 | INFO | GOOG | rank=8 | last=314.63 | yclose=313.7 | change=None%
+2025-12-12 14:39:54,849 | INFO | MU | rank=9 | last=255.34 | yclose=258.46 | change=None%
+2025-12-12 14:39:54,850 | INFO | GOOGL | rank=10 | last=313.47 | yclose=312.43 | change=None%
+2025-12-12 14:39:54,850 | INFO | IONQ | rank=11 | last=52.1 | yclose=52.55 | change=None%
+2025-12-12 14:39:54,850 | INFO | BMNR | rank=12 | last=38.7 | yclose=38.38 | change=None%
+2025-12-12 14:39:54,850 | INFO | HOOD | rank=13 | last=124.56 | yclose=123.38 | change=None%
+2025-12-12 14:39:54,850 | INFO | IREN | rank=14 | last=43.55 | yclose=43.94 | change=None%
+2025-12-12 14:39:54,850 | INFO | GRAB | rank=15 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:39:54,850 | INFO | PLTR | rank=16 | last=185.68 | yclose=187.54 | change=None%
+2025-12-12 14:39:54,850 | INFO | SOFI | rank=17 | last=26.99 | yclose=27.07 | change=None%
+2025-12-12 14:39:54,850 | INFO | AMD | rank=18 | last=218.85 | yclose=221.43 | change=None%
+2025-12-12 14:39:54,851 | INFO | INTC | rank=19 | last=39.19 | yclose=39.51 | change=None%
+2025-12-12 14:39:54,851 | INFO | === End of scan ===
+
+2025-12-12 14:40:16,585 | INFO | === Scan results for preset='gap_up_scan' (10 items) ===
+2025-12-12 14:40:16,585 | INFO | LULU | rank=0 | last=203.5 | yclose=187.01 | change=None%
+2025-12-12 14:40:16,585 | INFO | CDE | rank=1 | last=18.18 | yclose=17.48 | change=None%
+2025-12-12 14:40:16,585 | INFO | HL | rank=2 | last=20.06 | yclose=19.35 | change=None%
+2025-12-12 14:40:16,585 | INFO | AAL | rank=3 | last=15.18 | yclose=14.96 | change=None%
+2025-12-12 14:40:16,585 | INFO | HOOD | rank=4 | last=124.5 | yclose=123.38 | change=None%
+2025-12-12 14:40:16,585 | INFO | BMNR | rank=5 | last=38.71 | yclose=38.38 | change=None%
+2025-12-12 14:40:16,586 | INFO | NFLX | rank=6 | last=94.68 | yclose=94.09 | change=None%
+2025-12-12 14:40:16,586 | INFO | GOOGL | rank=7 | last=313.47 | yclose=312.43 | change=None%
+2025-12-12 14:40:16,586 | INFO | GOOG | rank=8 | last=314.63 | yclose=313.7 | change=None%
+2025-12-12 14:40:16,586 | INFO | GRAB | rank=9 | last=5.19 | yclose=5.18 | change=None%
+2025-12-12 14:40:16,586 | INFO | === End of scan ===
+
+2025-12-12 14:40:40,049 | INFO | === Scan results for preset='gap_down_scan' (12 items) ===
+2025-12-12 14:40:40,049 | INFO | AVGO | rank=0 | last=382.6 | yclose=406.37 | change=None%
+2025-12-12 14:40:40,049 | INFO | RKLB | rank=1 | last=62.35 | yclose=63.53 | change=None%
+2025-12-12 14:40:40,049 | INFO | MU | rank=2 | last=255.34 | yclose=258.46 | change=None%
+2025-12-12 14:40:40,050 | INFO | AMD | rank=3 | last=218.9 | yclose=221.43 | change=None%
+2025-12-12 14:40:40,050 | INFO | IONQ | rank=4 | last=52.02 | yclose=52.55 | change=None%
+2025-12-12 14:40:40,050 | INFO | PLTR | rank=5 | last=185.69 | yclose=187.54 | change=None%
+2025-12-12 14:40:40,050 | INFO | IREN | rank=6 | last=43.53 | yclose=43.94 | change=None%
+2025-12-12 14:40:40,051 | INFO | INTC | rank=7 | last=39.19 | yclose=39.51 | change=None%
+2025-12-12 14:40:40,051 | INFO | ORCL | rank=8 | last=197.5 | yclose=198.85 | change=None%
+2025-12-12 14:40:40,051 | INFO | SOFI | rank=9 | last=26.99 | yclose=27.07 | change=None%
+2025-12-12 14:40:40,051 | INFO | TSLA | rank=10 | last=446.0 | yclose=446.89 | change=None%
+2025-12-12 14:40:40,052 | INFO | NVDA | rank=11 | last=180.76 | yclose=180.93 | change=None%
+2025-12-12 14:40:40,052 | INFO | === End of scan ===
+
+2025-12-12 15:16:31,659 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 15:16:31,668 | INFO | FISV | rank=0 | last=68.74 | yclose=68.16 | change=None%
+2025-12-12 15:16:31,668 | INFO | CAH | rank=1 | last=None | yclose=198.32 | change=None%
+2025-12-12 15:16:31,668 | INFO | CTAS | rank=2 | last=189.68 | yclose=188.83 | change=None%
+2025-12-12 15:16:31,668 | INFO | UTHR | rank=3 | last=None | yclose=488.51 | change=None%
+2025-12-12 15:16:31,668 | INFO | ROP | rank=4 | last=None | yclose=445.84 | change=None%
+2025-12-12 15:16:31,668 | INFO | GLW | rank=5 | last=96.0 | yclose=95.97 | change=None%
+2025-12-12 15:16:31,669 | INFO | DHR | rank=6 | last=None | yclose=232.37 | change=None%
+2025-12-12 15:16:31,669 | INFO | FLUT | rank=7 | last=222.57 | yclose=220.18 | change=None%
+2025-12-12 15:16:31,669 | INFO | NFLX | rank=8 | last=94.37 | yclose=94.09 | change=None%
+2025-12-12 15:16:31,669 | INFO | CMCSA | rank=9 | last=27.69 | yclose=27.6 | change=None%
+2025-12-12 15:16:31,669 | INFO | GE | rank=10 | last=290.57 | yclose=288.42 | change=None%
+2025-12-12 15:16:31,669 | INFO | AVGO | rank=11 | last=380.91 | yclose=406.37 | change=None%
+2025-12-12 15:16:31,669 | INFO | LULU | rank=12 | last=205.5 | yclose=187.01 | change=None%
+2025-12-12 15:16:31,669 | INFO | ANET | rank=13 | last=133.24 | yclose=134.39 | change=None%
+2025-12-12 15:16:31,669 | INFO | INTC | rank=14 | last=39.26 | yclose=39.51 | change=None%
+2025-12-12 15:16:31,669 | INFO | ORCL | rank=15 | last=197.39 | yclose=198.85 | change=None%
+2025-12-12 15:16:31,669 | INFO | GH | rank=16 | last=101.8 | yclose=101.38 | change=None%
+2025-12-12 15:16:31,669 | INFO | MDT | rank=17 | last=100.0 | yclose=99.75 | change=None%
+2025-12-12 15:16:31,669 | INFO | MMM | rank=18 | last=None | yclose=168.6 | change=None%
+2025-12-12 15:16:31,669 | INFO | PFE | rank=19 | last=25.91 | yclose=25.8 | change=None%
+2025-12-12 15:16:31,669 | INFO | === End of scan ===
+
+2025-12-12 15:17:08,300 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 15:17:08,300 | INFO | LULU | rank=0 | last=205.3 | yclose=187.01 | change=None%
+2025-12-12 15:17:08,300 | INFO | CDE | rank=1 | last=18.21 | yclose=17.48 | change=None%
+2025-12-12 15:17:08,300 | INFO | HL | rank=2 | last=20.0 | yclose=19.35 | change=None%
+2025-12-12 15:17:08,300 | INFO | PAAS | rank=3 | last=51.94 | yclose=50.35 | change=None%
+2025-12-12 15:17:08,300 | INFO | NEM | rank=4 | last=102.19 | yclose=99.42 | change=None%
+2025-12-12 15:17:08,300 | INFO | B | rank=5 | last=44.14 | yclose=43.15 | change=None%
+2025-12-12 15:17:08,300 | INFO | BMNR | rank=6 | last=39.07 | yclose=38.38 | change=None%
+2025-12-12 15:17:08,300 | INFO | AAL | rank=7 | last=15.21 | yclose=14.96 | change=None%
+2025-12-12 15:17:08,300 | INFO | WBD | rank=8 | last=29.92 | yclose=29.49 | change=None%
+2025-12-12 15:17:08,300 | INFO | RIVN | rank=9 | last=16.66 | yclose=16.43 | change=None%
+2025-12-12 15:17:08,301 | INFO | HOOD | rank=10 | last=124.77 | yclose=123.38 | change=None%
+2025-12-12 15:17:08,301 | INFO | FLUT | rank=11 | last=222.57 | yclose=220.18 | change=None%
+2025-12-12 15:17:08,301 | INFO | NVDA | rank=12 | last=182.82 | yclose=180.93 | change=None%
+2025-12-12 15:17:08,301 | INFO | FISV | rank=13 | last=68.74 | yclose=68.16 | change=None%
+2025-12-12 15:17:08,301 | INFO | GRAB | rank=14 | last=5.22 | yclose=5.18 | change=None%
+2025-12-12 15:17:08,301 | INFO | GE | rank=15 | last=290.4 | yclose=288.42 | change=None%
+2025-12-12 15:17:08,301 | INFO | BAC | rank=16 | last=54.85 | yclose=54.56 | change=None%
+2025-12-12 15:17:08,301 | INFO | CTAS | rank=17 | last=189.68 | yclose=188.83 | change=None%
+2025-12-12 15:17:08,301 | INFO | PFE | rank=18 | last=25.91 | yclose=25.8 | change=None%
+2025-12-12 15:17:08,301 | INFO | GOOGL | rank=19 | last=313.78 | yclose=312.43 | change=None%
+2025-12-12 15:17:08,301 | INFO | === End of scan ===
+
+2025-12-12 15:17:45,773 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 15:17:45,773 | INFO | AVGO | rank=0 | last=381.23 | yclose=406.37 | change=None%
+2025-12-12 15:17:45,773 | INFO | SNDK | rank=1 | last=235.9 | yclose=241.61 | change=None%
+2025-12-12 15:17:45,773 | INFO | RKLB | rank=2 | last=62.69 | yclose=63.53 | change=None%
+2025-12-12 15:17:45,774 | INFO | CRWV | rank=3 | last=86.2 | yclose=87.38 | change=None%
+2025-12-12 15:17:45,774 | INFO | ASTS | rank=4 | last=83.78 | yclose=84.75 | change=None%
+2025-12-12 15:17:45,774 | INFO | IREN | rank=5 | last=43.44 | yclose=43.94 | change=None%
+2025-12-12 15:17:45,774 | INFO | AMD | rank=6 | last=219.22 | yclose=221.43 | change=None%
+2025-12-12 15:17:45,774 | INFO | MRVL | rank=7 | last=88.64 | yclose=89.43 | change=None%
+2025-12-12 15:17:45,774 | INFO | ANET | rank=8 | last=133.24 | yclose=134.39 | change=None%
+2025-12-12 15:17:45,774 | INFO | IONQ | rank=9 | last=52.2 | yclose=52.55 | change=None%
+2025-12-12 15:17:45,774 | INFO | INTC | rank=10 | last=39.23 | yclose=39.51 | change=None%
+2025-12-12 15:17:45,775 | INFO | ORCL | rank=11 | last=197.64 | yclose=198.85 | change=None%
+2025-12-12 15:17:45,775 | INFO | PYPL | rank=12 | last=61.29 | yclose=61.69 | change=None%
+2025-12-12 15:17:45,775 | INFO | SMCI | rank=13 | last=33.77 | yclose=34.02 | change=None%
+2025-12-12 15:17:45,775 | INFO | PLTR | rank=14 | last=186.43 | yclose=187.54 | change=None%
+2025-12-12 15:17:45,775 | INFO | OKLO | rank=15 | last=102.49 | yclose=103.0 | change=None%
+2025-12-12 15:17:45,775 | INFO | MU | rank=16 | last=257.2 | yclose=258.46 | change=None%
+2025-12-12 15:17:45,775 | INFO | JOBY | rank=17 | last=15.49 | yclose=15.56 | change=None%
+2025-12-12 15:17:45,775 | INFO | NBIS | rank=18 | last=93.89 | yclose=94.28 | change=None%
+2025-12-12 15:17:45,775 | INFO | MSFT | rank=19 | last=482.07 | yclose=483.47 | change=None%
+2025-12-12 15:17:45,776 | INFO | === End of scan ===
+
+2025-12-12 15:51:41,485 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 15:51:41,486 | INFO | FISV | rank=0 | last=68.81 | yclose=68.16 | change=None%
+2025-12-12 15:51:41,486 | INFO | CAH | rank=1 | last=None | yclose=198.32 | change=None%
+2025-12-12 15:51:41,486 | INFO | CTAS | rank=2 | last=189.63 | yclose=188.83 | change=None%
+2025-12-12 15:51:41,486 | INFO | UTHR | rank=3 | last=None | yclose=488.51 | change=None%
+2025-12-12 15:51:41,486 | INFO | ROP | rank=4 | last=None | yclose=445.84 | change=None%
+2025-12-12 15:51:41,486 | INFO | GLW | rank=5 | last=96.0 | yclose=95.97 | change=None%
+2025-12-12 15:51:41,486 | INFO | DHR | rank=6 | last=None | yclose=232.37 | change=None%
+2025-12-12 15:51:41,487 | INFO | FLUT | rank=7 | last=221.91 | yclose=220.18 | change=None%
+2025-12-12 15:51:41,487 | INFO | NFLX | rank=8 | last=94.5 | yclose=94.09 | change=None%
+2025-12-12 15:51:41,487 | INFO | PAA | rank=9 | last=17.54 | yclose=17.6 | change=None%
+2025-12-12 15:51:41,487 | INFO | CMCSA | rank=10 | last=27.72 | yclose=27.6 | change=None%
+2025-12-12 15:51:41,487 | INFO | AVGO | rank=11 | last=384.66 | yclose=406.37 | change=None%
+2025-12-12 15:51:41,487 | INFO | GE | rank=12 | last=290.42 | yclose=288.42 | change=None%
+2025-12-12 15:51:41,487 | INFO | LULU | rank=13 | last=206.68 | yclose=187.01 | change=None%
+2025-12-12 15:51:41,487 | INFO | ORCL | rank=14 | last=197.63 | yclose=198.85 | change=None%
+2025-12-12 15:51:41,487 | INFO | ANET | rank=15 | last=133.15 | yclose=134.39 | change=None%
+2025-12-12 15:51:41,488 | INFO | INTC | rank=16 | last=39.2 | yclose=39.51 | change=None%
+2025-12-12 15:51:41,488 | INFO | GH | rank=17 | last=101.8 | yclose=101.38 | change=None%
+2025-12-12 15:51:41,488 | INFO | MDT | rank=18 | last=100.0 | yclose=99.75 | change=None%
+2025-12-12 15:51:41,488 | INFO | CRH | rank=19 | last=126.09 | yclose=126.99 | change=None%
+2025-12-12 15:51:41,488 | INFO | === End of scan ===
+
+2025-12-12 15:52:15,793 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 15:52:15,793 | INFO | LULU | rank=0 | last=206.5 | yclose=187.01 | change=None%
+2025-12-12 15:52:15,793 | INFO | CDE | rank=1 | last=18.18 | yclose=17.48 | change=None%
+2025-12-12 15:52:15,793 | INFO | HL | rank=2 | last=20.0901 | yclose=19.35 | change=None%
+2025-12-12 15:52:15,793 | INFO | NEM | rank=3 | last=102.33 | yclose=99.42 | change=None%
+2025-12-12 15:52:15,794 | INFO | PAAS | rank=4 | last=51.78 | yclose=50.35 | change=None%
+2025-12-12 15:52:15,794 | INFO | B | rank=5 | last=44.3 | yclose=43.15 | change=None%
+2025-12-12 15:52:15,794 | INFO | WBD | rank=6 | last=30.04 | yclose=29.49 | change=None%
+2025-12-12 15:52:15,794 | INFO | BMNR | rank=7 | last=39.04 | yclose=38.38 | change=None%
+2025-12-12 15:52:15,794 | INFO | HOOD | rank=8 | last=125.2 | yclose=123.38 | change=None%
+2025-12-12 15:52:15,794 | INFO | AAL | rank=9 | last=15.19 | yclose=14.96 | change=None%
+2025-12-12 15:52:15,794 | INFO | RIVN | rank=10 | last=16.62 | yclose=16.43 | change=None%
+2025-12-12 15:52:15,794 | INFO | COIN | rank=11 | last=271.85 | yclose=269.02 | change=None%
+2025-12-12 15:52:15,794 | INFO | FISV | rank=12 | last=68.81 | yclose=68.16 | change=None%
+2025-12-12 15:52:15,794 | INFO | FLUT | rank=13 | last=221.91 | yclose=220.18 | change=None%
+2025-12-12 15:52:15,794 | INFO | GE | rank=14 | last=290.42 | yclose=288.42 | change=None%
+2025-12-12 15:52:15,794 | INFO | GOOGL | rank=15 | last=314.24 | yclose=312.43 | change=None%
+2025-12-12 15:52:15,794 | INFO | GRAB | rank=16 | last=5.21 | yclose=5.18 | change=None%
+2025-12-12 15:52:15,794 | INFO | BAC | rank=17 | last=54.84 | yclose=54.56 | change=None%
+2025-12-12 15:52:15,794 | INFO | GOOG | rank=18 | last=315.41 | yclose=313.7 | change=None%
+2025-12-12 15:52:15,794 | INFO | CRCL | rank=19 | last=89.0 | yclose=88.57 | change=None%
+2025-12-12 15:52:15,795 | INFO | === End of scan ===
+
+2025-12-12 15:52:51,731 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 15:52:51,731 | INFO | AVGO | rank=0 | last=384.64 | yclose=406.37 | change=None%
+2025-12-12 15:52:51,731 | INFO | SNDK | rank=1 | last=235.0 | yclose=241.61 | change=None%
+2025-12-12 15:52:51,731 | INFO | RKLB | rank=2 | last=62.51 | yclose=63.53 | change=None%
+2025-12-12 15:52:51,731 | INFO | CRWV | rank=3 | last=86.0 | yclose=87.38 | change=None%
+2025-12-12 15:52:51,731 | INFO | ASTS | rank=4 | last=83.5696 | yclose=84.75 | change=None%
+2025-12-12 15:52:51,732 | INFO | AMD | rank=5 | last=218.65 | yclose=221.43 | change=None%
+2025-12-12 15:52:51,732 | INFO | IONQ | rank=6 | last=51.98 | yclose=52.55 | change=None%
+2025-12-12 15:52:51,732 | INFO | MRVL | rank=7 | last=88.48 | yclose=89.43 | change=None%
+2025-12-12 15:52:51,732 | INFO | NBIS | rank=8 | last=93.52 | yclose=94.28 | change=None%
+2025-12-12 15:52:51,732 | INFO | IREN | rank=9 | last=43.52 | yclose=43.94 | change=None%
+2025-12-12 15:52:51,732 | INFO | ANET | rank=10 | last=133.15 | yclose=134.39 | change=None%
+2025-12-12 15:52:51,732 | INFO | INTC | rank=11 | last=39.2 | yclose=39.51 | change=None%
+2025-12-12 15:52:51,732 | INFO | CRH | rank=12 | last=125.94 | yclose=126.99 | change=None%
+2025-12-12 15:52:51,733 | INFO | MU | rank=13 | last=256.39 | yclose=258.46 | change=None%
+2025-12-12 15:52:51,733 | INFO | OKLO | rank=14 | last=102.23 | yclose=103.0 | change=None%
+2025-12-12 15:52:51,733 | INFO | SMCI | rank=15 | last=33.75 | yclose=34.02 | change=None%
+2025-12-12 15:52:51,733 | INFO | ORCL | rank=16 | last=197.5 | yclose=198.85 | change=None%
+2025-12-12 15:52:51,733 | INFO | PLTR | rank=17 | last=186.38 | yclose=187.54 | change=None%
+2025-12-12 15:52:51,733 | INFO | PYPL | rank=18 | last=61.3 | yclose=61.69 | change=None%
+2025-12-12 15:52:51,733 | INFO | PAA | rank=19 | last=17.54 | yclose=17.6 | change=None%
+2025-12-12 15:52:51,733 | INFO | === End of scan ===
+
+2025-12-12 15:55:49,523 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 15:55:49,526 | INFO | FRMI | rank=0 | last=8.77 | yclose=15.25 | change=None%
+2025-12-12 15:55:49,526 | INFO | FISV | rank=1 | last=68.74 | yclose=68.16 | change=None%
+2025-12-12 15:55:49,526 | INFO | TE | rank=2 | last=5.33 | yclose=5.87 | change=None%
+2025-12-12 15:55:49,526 | INFO | TLRY | rank=3 | last=11.69 | yclose=8.43 | change=None%
+2025-12-12 15:55:49,526 | INFO | WMG | rank=4 | last=None | yclose=27.85 | change=None%
+2025-12-12 15:55:49,526 | INFO | CAH | rank=5 | last=None | yclose=198.32 | change=None%
+2025-12-12 15:55:49,526 | INFO | MIAX | rank=6 | last=42.0 | yclose=41.78 | change=None%
+2025-12-12 15:55:49,526 | INFO | CTAS | rank=7 | last=189.63 | yclose=188.83 | change=None%
+2025-12-12 15:55:49,526 | INFO | UTHR | rank=8 | last=None | yclose=488.51 | change=None%
+2025-12-12 15:55:49,527 | INFO | ROP | rank=9 | last=None | yclose=445.84 | change=None%
+2025-12-12 15:55:49,527 | INFO | GLW | rank=10 | last=96.0 | yclose=95.97 | change=None%
+2025-12-12 15:55:49,527 | INFO | LGN | rank=11 | last=45.5 | yclose=45.8 | change=None%
+2025-12-12 15:55:49,527 | INFO | DHR | rank=12 | last=None | yclose=232.37 | change=None%
+2025-12-12 15:55:49,527 | INFO | NFLX | rank=13 | last=94.62 | yclose=94.09 | change=None%
+2025-12-12 15:55:49,527 | INFO | FLUT | rank=14 | last=221.9 | yclose=220.18 | change=None%
+2025-12-12 15:55:49,527 | INFO | PAA | rank=15 | last=17.54 | yclose=17.6 | change=None%
+2025-12-12 15:55:49,527 | INFO | CMCSA | rank=16 | last=27.7 | yclose=27.6 | change=None%
+2025-12-12 15:55:49,527 | INFO | BCRX | rank=17 | last=7.85 | yclose=7.58 | change=None%
+2025-12-12 15:55:49,527 | INFO | AVGO | rank=18 | last=385.35 | yclose=406.37 | change=None%
+2025-12-12 15:55:49,527 | INFO | GE | rank=19 | last=290.12 | yclose=288.42 | change=None%
+2025-12-12 15:55:49,527 | INFO | === End of scan ===
+
+2025-12-12 15:56:25,529 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 15:56:25,529 | INFO | TLRY | rank=0 | last=11.74 | yclose=8.43 | change=None%
+2025-12-12 15:56:25,529 | INFO | LULU | rank=1 | last=206.25 | yclose=187.01 | change=None%
+2025-12-12 15:56:25,529 | INFO | PL | rank=2 | last=18.34 | yclose=17.47 | change=None%
+2025-12-12 15:56:25,529 | INFO | WVE | rank=3 | last=17.5992 | yclose=16.75 | change=None%
+2025-12-12 15:56:25,530 | INFO | CDE | rank=4 | last=18.24 | yclose=17.48 | change=None%
+2025-12-12 15:56:25,530 | INFO | HL | rank=5 | last=20.0789 | yclose=19.35 | change=None%
+2025-12-12 15:56:25,530 | INFO | NGD | rank=6 | last=8.85 | yclose=8.55 | change=None%
+2025-12-12 15:56:25,530 | INFO | BCRX | rank=7 | last=7.83 | yclose=7.58 | change=None%
+2025-12-12 15:56:25,530 | INFO | NEM | rank=8 | last=102.12 | yclose=99.42 | change=None%
+2025-12-12 15:56:25,530 | INFO | B | rank=9 | last=44.23 | yclose=43.15 | change=None%
+2025-12-12 15:56:25,530 | INFO | PAAS | rank=10 | last=51.59 | yclose=50.35 | change=None%
+2025-12-12 15:56:25,530 | INFO | AG | rank=11 | last=17.22 | yclose=16.81 | change=None%
+2025-12-12 15:56:25,530 | INFO | EXK | rank=12 | last=9.63 | yclose=9.41 | change=None%
+2025-12-12 15:56:25,530 | INFO | USAS | rank=13 | last=5.885 | yclose=5.77 | change=None%
+2025-12-12 15:56:25,531 | INFO | WBD | rank=14 | last=30.04 | yclose=29.49 | change=None%
+2025-12-12 15:56:25,531 | INFO | AAL | rank=15 | last=15.21 | yclose=14.96 | change=None%
+2025-12-12 15:56:25,531 | INFO | NCLH | rank=16 | last=20.9 | yclose=20.55 | change=None%
+2025-12-12 15:56:25,531 | INFO | BMNR | rank=17 | last=38.99 | yclose=38.38 | change=None%
+2025-12-12 15:56:25,531 | INFO | HOOD | rank=18 | last=125.12 | yclose=123.38 | change=None%
+2025-12-12 15:56:25,531 | INFO | S | rank=19 | last=15.19 | yclose=14.99 | change=None%
+2025-12-12 15:56:25,531 | INFO | === End of scan ===
+
+2025-12-12 15:57:12,079 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 15:57:12,080 | INFO | FRMI | rank=0 | last=8.74 | yclose=15.25 | change=None%
+2025-12-12 15:57:12,080 | INFO | TE | rank=1 | last=5.33 | yclose=5.87 | change=None%
+2025-12-12 15:57:12,080 | INFO | AVGO | rank=2 | last=385.19 | yclose=406.37 | change=None%
+2025-12-12 15:57:12,080 | INFO | SNDK | rank=3 | last=235.0 | yclose=241.61 | change=None%
+2025-12-12 15:57:12,080 | INFO | RGTI | rank=4 | last=26.3 | yclose=26.88 | change=None%
+2025-12-12 15:57:12,080 | INFO | SMR | rank=5 | last=20.83 | yclose=21.22 | change=None%
+2025-12-12 15:57:12,080 | INFO | QBTS | rank=6 | last=27.54 | yclose=27.98 | change=None%
+2025-12-12 15:57:12,081 | INFO | RKLB | rank=7 | last=62.5 | yclose=63.53 | change=None%
+2025-12-12 15:57:12,081 | INFO | CRWV | rank=8 | last=86.0 | yclose=87.38 | change=None%
+2025-12-12 15:57:12,081 | INFO | CIFR | rank=9 | last=18.6 | yclose=18.88 | change=None%
+2025-12-12 15:57:12,081 | INFO | ASTS | rank=10 | last=83.5 | yclose=84.75 | change=None%
+2025-12-12 15:57:12,081 | INFO | USAR | rank=11 | last=18.54 | yclose=18.77 | change=None%
+2025-12-12 15:57:12,082 | INFO | IONQ | rank=12 | last=51.95 | yclose=52.55 | change=None%
+2025-12-12 15:57:12,082 | INFO | APLD | rank=13 | last=30.42 | yclose=30.76 | change=None%
+2025-12-12 15:57:12,082 | INFO | AMD | rank=14 | last=219.15 | yclose=221.43 | change=None%
+2025-12-12 15:57:12,082 | INFO | OKLO | rank=15 | last=101.98 | yclose=103.0 | change=None%
+2025-12-12 15:57:12,082 | INFO | LGN | rank=16 | last=45.35 | yclose=45.8 | change=None%
+2025-12-12 15:57:12,082 | INFO | MRVL | rank=17 | last=88.56 | yclose=89.43 | change=None%
+2025-12-12 15:57:12,082 | INFO | IREN | rank=18 | last=43.53 | yclose=43.94 | change=None%
+2025-12-12 15:57:12,082 | INFO | RCAT | rank=19 | last=8.71 | yclose=8.79 | change=None%
+2025-12-12 15:57:12,083 | INFO | === End of scan ===
+
+2025-12-12 16:03:40,888 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 16:03:40,888 | INFO | FRMI | rank=0 | last=8.82 | yclose=15.25 | change=None%
+2025-12-12 16:03:40,888 | INFO | TLRY | rank=1 | last=11.7471 | yclose=8.43 | change=None%
+2025-12-12 16:03:40,888 | INFO | FISV | rank=2 | last=68.67 | yclose=68.16 | change=None%
+2025-12-12 16:03:40,889 | INFO | TE | rank=3 | last=5.3699 | yclose=5.87 | change=None%
+2025-12-12 16:03:40,889 | INFO | WMG | rank=4 | last=None | yclose=27.85 | change=None%
+2025-12-12 16:03:40,889 | INFO | MIAX | rank=5 | last=42.01 | yclose=41.78 | change=None%
+2025-12-12 16:03:40,889 | INFO | CAH | rank=6 | last=None | yclose=198.32 | change=None%
+2025-12-12 16:03:40,889 | INFO | CTAS | rank=7 | last=189.63 | yclose=188.83 | change=None%
+2025-12-12 16:03:40,889 | INFO | LGN | rank=8 | last=45.5 | yclose=45.8 | change=None%
+2025-12-12 16:03:40,889 | INFO | UTHR | rank=9 | last=None | yclose=488.51 | change=None%
+2025-12-12 16:03:40,889 | INFO | ROP | rank=10 | last=None | yclose=445.84 | change=None%
+2025-12-12 16:03:40,889 | INFO | GLW | rank=11 | last=96.0 | yclose=95.97 | change=None%
+2025-12-12 16:03:40,890 | INFO | DHR | rank=12 | last=None | yclose=232.37 | change=None%
+2025-12-12 16:03:40,890 | INFO | NFLX | rank=13 | last=94.86 | yclose=94.09 | change=None%
+2025-12-12 16:03:40,890 | INFO | FLUT | rank=14 | last=221.9 | yclose=220.18 | change=None%
+2025-12-12 16:03:40,890 | INFO | PAA | rank=15 | last=17.55 | yclose=17.6 | change=None%
+2025-12-12 16:03:40,890 | INFO | CMCSA | rank=16 | last=27.7 | yclose=27.6 | change=None%
+2025-12-12 16:03:40,890 | INFO | BCRX | rank=17 | last=7.8 | yclose=7.58 | change=None%
+2025-12-12 16:03:40,890 | INFO | AVGO | rank=18 | last=384.44 | yclose=406.37 | change=None%
+2025-12-12 16:03:40,890 | INFO | GE | rank=19 | last=290.2 | yclose=288.42 | change=None%
+2025-12-12 16:03:40,890 | INFO | === End of scan ===
+
+2025-12-12 16:04:20,536 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 16:04:20,536 | INFO | TLRY | rank=0 | last=11.7217 | yclose=8.43 | change=None%
+2025-12-12 16:04:20,536 | INFO | LULU | rank=1 | last=206.51 | yclose=187.01 | change=None%
+2025-12-12 16:04:20,537 | INFO | PL | rank=2 | last=18.25 | yclose=17.47 | change=None%
+2025-12-12 16:04:20,537 | INFO | CDE | rank=3 | last=18.2388 | yclose=17.48 | change=None%
+2025-12-12 16:04:20,537 | INFO | NGD | rank=4 | last=8.87 | yclose=8.55 | change=None%
+2025-12-12 16:04:20,537 | INFO | HL | rank=5 | last=20.05 | yclose=19.35 | change=None%
+2025-12-12 16:04:20,537 | INFO | WVE | rank=6 | last=17.33 | yclose=16.75 | change=None%
+2025-12-12 16:04:20,537 | INFO | BMY | rank=7 | last=52.75 | yclose=51.2 | change=None%
+2025-12-12 16:04:20,537 | INFO | BCRX | rank=8 | last=7.8 | yclose=7.58 | change=None%
+2025-12-12 16:04:20,537 | INFO | AG | rank=9 | last=17.29 | yclose=16.81 | change=None%
+2025-12-12 16:04:20,538 | INFO | PAAS | rank=10 | last=51.73 | yclose=50.35 | change=None%
+2025-12-12 16:04:20,538 | INFO | NEM | rank=11 | last=102.1 | yclose=99.42 | change=None%
+2025-12-12 16:04:20,538 | INFO | B | rank=12 | last=44.21 | yclose=43.15 | change=None%
+2025-12-12 16:04:20,538 | INFO | USAS | rank=13 | last=5.9 | yclose=5.77 | change=None%
+2025-12-12 16:04:20,538 | INFO | EXK | rank=14 | last=9.6 | yclose=9.41 | change=None%
+2025-12-12 16:04:20,538 | INFO | SVM | rank=15 | last=8.7101 | yclose=8.54 | change=None%
+2025-12-12 16:04:20,538 | INFO | S | rank=16 | last=15.28 | yclose=14.99 | change=None%
+2025-12-12 16:04:20,538 | INFO | WBD | rank=17 | last=30.0 | yclose=29.49 | change=None%
+2025-12-12 16:04:20,539 | INFO | AAL | rank=18 | last=15.21 | yclose=14.96 | change=None%
+2025-12-12 16:04:20,539 | INFO | NCLH | rank=19 | last=20.87 | yclose=20.55 | change=None%
+2025-12-12 16:04:20,539 | INFO | === End of scan ===
+
+2025-12-12 16:04:55,505 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 16:04:55,505 | INFO | FRMI | rank=0 | last=8.8 | yclose=15.25 | change=None%
+2025-12-12 16:04:55,505 | INFO | RCUS | rank=1 | last=21.5 | yclose=25.14 | change=None%
+2025-12-12 16:04:55,505 | INFO | TE | rank=2 | last=5.37 | yclose=5.87 | change=None%
+2025-12-12 16:04:55,505 | INFO | AVGO | rank=3 | last=384.9 | yclose=406.37 | change=None%
+2025-12-12 16:04:55,505 | INFO | SNDK | rank=4 | last=234.96 | yclose=241.61 | change=None%
+2025-12-12 16:04:55,506 | INFO | RGTI | rank=5 | last=26.27 | yclose=26.88 | change=None%
+2025-12-12 16:04:55,506 | INFO | QBTS | rank=6 | last=27.44 | yclose=27.98 | change=None%
+2025-12-12 16:04:55,506 | INFO | SMR | rank=7 | last=20.8 | yclose=21.22 | change=None%
+2025-12-12 16:04:55,506 | INFO | RKLB | rank=8 | last=62.4 | yclose=63.53 | change=None%
+2025-12-12 16:04:55,507 | INFO | CIFR | rank=9 | last=18.58 | yclose=18.88 | change=None%
+2025-12-12 16:04:55,507 | INFO | CRWV | rank=10 | last=86.11 | yclose=87.38 | change=None%
+2025-12-12 16:04:55,508 | INFO | ASTS | rank=11 | last=83.65 | yclose=84.75 | change=None%
+2025-12-12 16:04:55,508 | INFO | EOSE | rank=12 | last=16.2303 | yclose=16.44 | change=None%
+2025-12-12 16:04:55,508 | INFO | APLD | rank=13 | last=30.31 | yclose=30.76 | change=None%
+2025-12-12 16:04:55,509 | INFO | USAR | rank=14 | last=18.54 | yclose=18.77 | change=None%
+2025-12-12 16:04:55,509 | INFO | IONQ | rank=15 | last=51.94 | yclose=52.55 | change=None%
+2025-12-12 16:04:55,509 | INFO | AMD | rank=16 | last=218.96 | yclose=221.43 | change=None%
+2025-12-12 16:04:55,509 | INFO | IREN | rank=17 | last=43.4906 | yclose=43.94 | change=None%
+2025-12-12 16:04:55,510 | INFO | QUBT | rank=18 | last=12.71 | yclose=12.83 | change=None%
+2025-12-12 16:04:55,510 | INFO | OKLO | rank=19 | last=102.08 | yclose=103.0 | change=None%
+2025-12-12 16:04:55,510 | INFO | === End of scan ===
+
+2025-12-12 16:09:54,480 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 16:09:54,480 | INFO | FRMI | rank=0 | last=8.8 | yclose=15.25 | change=None%
+2025-12-12 16:09:54,480 | INFO | TLRY | rank=1 | last=11.7405 | yclose=8.43 | change=None%
+2025-12-12 16:09:54,480 | INFO | TE | rank=2 | last=5.3598 | yclose=5.87 | change=None%
+2025-12-12 16:09:54,480 | INFO | FISV | rank=3 | last=68.66 | yclose=68.16 | change=None%
+2025-12-12 16:09:54,480 | INFO | WMG | rank=4 | last=None | yclose=27.85 | change=None%
+2025-12-12 16:09:54,480 | INFO | MIAX | rank=5 | last=42.0 | yclose=41.78 | change=None%
+2025-12-12 16:09:54,480 | INFO | CAH | rank=6 | last=None | yclose=198.32 | change=None%
+2025-12-12 16:09:54,480 | INFO | CTAS | rank=7 | last=189.63 | yclose=188.83 | change=None%
+2025-12-12 16:09:54,480 | INFO | LGN | rank=8 | last=45.59 | yclose=45.8 | change=None%
+2025-12-12 16:09:54,480 | INFO | UTHR | rank=9 | last=None | yclose=488.51 | change=None%
+2025-12-12 16:09:54,481 | INFO | ROP | rank=10 | last=None | yclose=445.84 | change=None%
+2025-12-12 16:09:54,481 | INFO | GLW | rank=11 | last=95.8 | yclose=95.97 | change=None%
+2025-12-12 16:09:54,481 | INFO | DHR | rank=12 | last=None | yclose=232.37 | change=None%
+2025-12-12 16:09:54,481 | INFO | NFLX | rank=13 | last=95.0 | yclose=94.09 | change=None%
+2025-12-12 16:09:54,481 | INFO | FLUT | rank=14 | last=221.9 | yclose=220.18 | change=None%
+2025-12-12 16:09:54,481 | INFO | PAA | rank=15 | last=17.55 | yclose=17.6 | change=None%
+2025-12-12 16:09:54,481 | INFO | CMCSA | rank=16 | last=27.66 | yclose=27.6 | change=None%
+2025-12-12 16:09:54,481 | INFO | AVGO | rank=17 | last=386.96 | yclose=406.37 | change=None%
+2025-12-12 16:09:54,481 | INFO | BCRX | rank=18 | last=7.84 | yclose=7.58 | change=None%
+2025-12-12 16:09:54,481 | INFO | LULU | rank=19 | last=204.75 | yclose=187.01 | change=None%
+2025-12-12 16:09:54,481 | INFO | === End of scan ===
+
+2025-12-12 16:10:30,424 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 16:10:30,424 | INFO | TLRY | rank=0 | last=11.71 | yclose=8.43 | change=None%
+2025-12-12 16:10:30,424 | INFO | LULU | rank=1 | last=205.46 | yclose=187.01 | change=None%
+2025-12-12 16:10:30,424 | INFO | PL | rank=2 | last=18.2887 | yclose=17.47 | change=None%
+2025-12-12 16:10:30,424 | INFO | CDE | rank=3 | last=18.2319 | yclose=17.48 | change=None%
+2025-12-12 16:10:30,424 | INFO | WVE | rank=4 | last=17.4481 | yclose=16.75 | change=None%
+2025-12-12 16:10:30,424 | INFO | NGD | rank=5 | last=8.8996 | yclose=8.55 | change=None%
+2025-12-12 16:10:30,424 | INFO | HL | rank=6 | last=20.06 | yclose=19.35 | change=None%
+2025-12-12 16:10:30,424 | INFO | BCRX | rank=7 | last=7.84 | yclose=7.58 | change=None%
+2025-12-12 16:10:30,424 | INFO | SVM | rank=8 | last=8.82 | yclose=8.54 | change=None%
+2025-12-12 16:10:30,424 | INFO | BMY | rank=9 | last=52.79 | yclose=51.2 | change=None%
+2025-12-12 16:10:30,424 | INFO | AG | rank=10 | last=17.31 | yclose=16.81 | change=None%
+2025-12-12 16:10:30,424 | INFO | NEM | rank=11 | last=102.21 | yclose=99.42 | change=None%
+2025-12-12 16:10:30,424 | INFO | B | rank=12 | last=44.24 | yclose=43.15 | change=None%
+2025-12-12 16:10:30,424 | INFO | PAAS | rank=13 | last=51.61 | yclose=50.35 | change=None%
+2025-12-12 16:10:30,425 | INFO | EXK | rank=14 | last=9.7 | yclose=9.41 | change=None%
+2025-12-12 16:10:30,425 | INFO | USAS | rank=15 | last=5.88 | yclose=5.77 | change=None%
+2025-12-12 16:10:30,425 | INFO | WBD | rank=16 | last=30.02 | yclose=29.49 | change=None%
+2025-12-12 16:10:30,425 | INFO | S | rank=17 | last=15.25 | yclose=14.99 | change=None%
+2025-12-12 16:10:30,425 | INFO | C | rank=18 | last=113.53 | yclose=111.74 | change=None%
+2025-12-12 16:10:30,425 | INFO | HOOD | rank=19 | last=125.22 | yclose=123.38 | change=None%
+2025-12-12 16:10:30,425 | INFO | === End of scan ===
+
+2025-12-12 16:11:05,112 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 16:11:05,113 | INFO | FRMI | rank=0 | last=8.64 | yclose=15.25 | change=None%
+2025-12-12 16:11:05,113 | INFO | RCUS | rank=1 | last=21.8 | yclose=25.14 | change=None%
+2025-12-12 16:11:05,113 | INFO | TE | rank=2 | last=5.36 | yclose=5.87 | change=None%
+2025-12-12 16:11:05,113 | INFO | AVGO | rank=3 | last=386.07 | yclose=406.37 | change=None%
+2025-12-12 16:11:05,113 | INFO | SNDK | rank=4 | last=234.75 | yclose=241.61 | change=None%
+2025-12-12 16:11:05,113 | INFO | RGTI | rank=5 | last=26.22 | yclose=26.88 | change=None%
+2025-12-12 16:11:05,113 | INFO | SMR | rank=6 | last=20.72 | yclose=21.22 | change=None%
+2025-12-12 16:11:05,113 | INFO | QBTS | rank=7 | last=27.34 | yclose=27.98 | change=None%
+2025-12-12 16:11:05,113 | INFO | RKLB | rank=8 | last=62.2 | yclose=63.53 | change=None%
+2025-12-12 16:11:05,113 | INFO | CRWV | rank=9 | last=86.12 | yclose=87.38 | change=None%
+2025-12-12 16:11:05,113 | INFO | ASTS | rank=10 | last=83.6 | yclose=84.75 | change=None%
+2025-12-12 16:11:05,113 | INFO | CIFR | rank=11 | last=18.63 | yclose=18.88 | change=None%
+2025-12-12 16:11:05,113 | INFO | USAR | rank=12 | last=18.53 | yclose=18.77 | change=None%
+2025-12-12 16:11:05,113 | INFO | APLD | rank=13 | last=30.3301 | yclose=30.76 | change=None%
+2025-12-12 16:11:05,113 | INFO | IONQ | rank=14 | last=51.86 | yclose=52.55 | change=None%
+2025-12-12 16:11:05,114 | INFO | AMD | rank=15 | last=219.15 | yclose=221.43 | change=None%
+2025-12-12 16:11:05,114 | INFO | QUBT | rank=16 | last=12.7 | yclose=12.83 | change=None%
+2025-12-12 16:11:05,114 | INFO | IREN | rank=17 | last=43.5 | yclose=43.94 | change=None%
+2025-12-12 16:11:05,114 | INFO | MRVL | rank=18 | last=88.55 | yclose=89.43 | change=None%
+2025-12-12 16:11:05,114 | INFO | EOSE | rank=19 | last=16.28 | yclose=16.44 | change=None%
+2025-12-12 16:11:05,114 | INFO | === End of scan ===
+
+2025-12-12 16:18:19,086 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 16:18:19,086 | INFO | FRMI | rank=0 | last=8.88 | yclose=15.25 | change=None%
+2025-12-12 16:18:19,086 | INFO | TLRY | rank=1 | last=11.5 | yclose=8.43 | change=None%
+2025-12-12 16:18:19,087 | INFO | TE | rank=2 | last=5.23 | yclose=5.87 | change=None%
+2025-12-12 16:18:19,087 | INFO | FISV | rank=3 | last=68.01 | yclose=68.16 | change=None%
+2025-12-12 16:18:19,087 | INFO | MIAX | rank=4 | last=41.78 | yclose=41.78 | change=None%
+2025-12-12 16:18:19,087 | INFO | WMG | rank=5 | last=None | yclose=27.85 | change=None%
+2025-12-12 16:18:19,087 | INFO | CAH | rank=6 | last=None | yclose=198.32 | change=None%
+2025-12-12 16:18:19,087 | INFO | PNW | rank=7 | last=86.3 | yclose=86.75 | change=None%
+2025-12-12 16:18:19,087 | INFO | LGN | rank=8 | last=45.55 | yclose=45.8 | change=None%
+2025-12-12 16:18:19,087 | INFO | CTAS | rank=9 | last=189.63 | yclose=188.83 | change=None%
+2025-12-12 16:18:19,087 | INFO | UTHR | rank=10 | last=None | yclose=488.51 | change=None%
+2025-12-12 16:18:19,087 | INFO | ROP | rank=11 | last=None | yclose=445.84 | change=None%
+2025-12-12 16:18:19,087 | INFO | GLW | rank=12 | last=95.75 | yclose=95.97 | change=None%
+2025-12-12 16:18:19,088 | INFO | DHR | rank=13 | last=None | yclose=232.37 | change=None%
+2025-12-12 16:18:19,088 | INFO | NFLX | rank=14 | last=95.0 | yclose=94.09 | change=None%
+2025-12-12 16:18:19,088 | INFO | FLUT | rank=15 | last=222.0 | yclose=220.18 | change=None%
+2025-12-12 16:18:19,088 | INFO | PAA | rank=16 | last=17.55 | yclose=17.6 | change=None%
+2025-12-12 16:18:19,089 | INFO | CMCSA | rank=17 | last=27.66 | yclose=27.6 | change=None%
+2025-12-12 16:18:19,089 | INFO | RCUS | rank=18 | last=21.1 | yclose=25.14 | change=None%
+2025-12-12 16:18:19,089 | INFO | AVGO | rank=19 | last=386.0 | yclose=406.37 | change=None%
+2025-12-12 16:18:19,089 | INFO | === End of scan ===
+
+2025-12-12 16:18:53,291 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 16:18:53,292 | INFO | TLRY | rank=0 | last=11.5057 | yclose=8.43 | change=None%
+2025-12-12 16:18:53,292 | INFO | LULU | rank=1 | last=205.6 | yclose=187.01 | change=None%
+2025-12-12 16:18:53,292 | INFO | PL | rank=2 | last=18.1993 | yclose=17.47 | change=None%
+2025-12-12 16:18:53,292 | INFO | WVE | rank=3 | last=17.4335 | yclose=16.75 | change=None%
+2025-12-12 16:18:53,292 | INFO | CDE | rank=4 | last=18.19 | yclose=17.48 | change=None%
+2025-12-12 16:18:53,292 | INFO | NGD | rank=5 | last=8.89 | yclose=8.55 | change=None%
+2025-12-12 16:18:53,292 | INFO | HL | rank=6 | last=20.06 | yclose=19.35 | change=None%
+2025-12-12 16:18:53,292 | INFO | BMY | rank=7 | last=52.77 | yclose=51.2 | change=None%
+2025-12-12 16:18:53,292 | INFO | AG | rank=8 | last=17.32 | yclose=16.81 | change=None%
+2025-12-12 16:18:53,292 | INFO | NEM | rank=9 | last=102.23 | yclose=99.42 | change=None%
+2025-12-12 16:18:53,292 | INFO | SVM | rank=10 | last=8.78 | yclose=8.54 | change=None%
+2025-12-12 16:18:53,292 | INFO | PAAS | rank=11 | last=51.71 | yclose=50.35 | change=None%
+2025-12-12 16:18:53,293 | INFO | EXK | rank=12 | last=9.65 | yclose=9.41 | change=None%
+2025-12-12 16:18:53,293 | INFO | BCRX | rank=13 | last=7.79 | yclose=7.58 | change=None%
+2025-12-12 16:18:53,293 | INFO | B | rank=14 | last=44.19 | yclose=43.15 | change=None%
+2025-12-12 16:18:53,293 | INFO | USAS | rank=15 | last=5.9 | yclose=5.77 | change=None%
+2025-12-12 16:18:53,293 | INFO | NCLH | rank=16 | last=20.93 | yclose=20.55 | change=None%
+2025-12-12 16:18:53,293 | INFO | WBD | rank=17 | last=30.03 | yclose=29.49 | change=None%
+2025-12-12 16:18:53,293 | INFO | C | rank=18 | last=113.6 | yclose=111.74 | change=None%
+2025-12-12 16:18:53,293 | INFO | AAL | rank=19 | last=15.2 | yclose=14.96 | change=None%
+2025-12-12 16:18:53,293 | INFO | === End of scan ===
+
+2025-12-12 16:19:28,994 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 16:19:28,994 | INFO | FRMI | rank=0 | last=9.0 | yclose=15.25 | change=None%
+2025-12-12 16:19:28,994 | INFO | RCUS | rank=1 | last=21.03 | yclose=25.14 | change=None%
+2025-12-12 16:19:28,994 | INFO | TE | rank=2 | last=5.24 | yclose=5.87 | change=None%
+2025-12-12 16:19:28,994 | INFO | AVGO | rank=3 | last=384.14 | yclose=406.37 | change=None%
+2025-12-12 16:19:28,994 | INFO | SNDK | rank=4 | last=234.0 | yclose=241.61 | change=None%
+2025-12-12 16:19:28,994 | INFO | BE | rank=5 | last=105.65 | yclose=108.99 | change=None%
+2025-12-12 16:19:28,995 | INFO | SMR | rank=6 | last=20.63 | yclose=21.22 | change=None%
+2025-12-12 16:19:28,995 | INFO | RGTI | rank=7 | last=26.2 | yclose=26.88 | change=None%
+2025-12-12 16:19:28,995 | INFO | RKLB | rank=8 | last=62.05 | yclose=63.53 | change=None%
+2025-12-12 16:19:28,995 | INFO | QBTS | rank=9 | last=27.35 | yclose=27.98 | change=None%
+2025-12-12 16:19:28,995 | INFO | CIFR | rank=10 | last=18.5 | yclose=18.88 | change=None%
+2025-12-12 16:19:28,995 | INFO | APLD | rank=11 | last=30.2 | yclose=30.76 | change=None%
+2025-12-12 16:19:28,995 | INFO | CRWV | rank=12 | last=85.9 | yclose=87.38 | change=None%
+2025-12-12 16:19:28,995 | INFO | IONQ | rank=13 | last=51.73 | yclose=52.55 | change=None%
+2025-12-12 16:19:28,996 | INFO | USAR | rank=14 | last=18.49 | yclose=18.77 | change=None%
+2025-12-12 16:19:28,996 | INFO | ASTS | rank=15 | last=83.5 | yclose=84.75 | change=None%
+2025-12-12 16:19:28,996 | INFO | OKLO | rank=16 | last=101.5 | yclose=103.0 | change=None%
+2025-12-12 16:19:28,996 | INFO | ORCL | rank=17 | last=196.31 | yclose=198.85 | change=None%
+2025-12-12 16:19:28,996 | INFO | AMD | rank=18 | last=218.63 | yclose=221.43 | change=None%
+2025-12-12 16:19:28,996 | INFO | MRVL | rank=19 | last=88.35 | yclose=89.43 | change=None%
+2025-12-12 16:19:28,996 | INFO | === End of scan ===
+
+2025-12-12 16:55:27,794 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-12 16:55:27,795 | INFO | FRMI | rank=0 | last=8.59 | yclose=8.59 | change=None%
+2025-12-12 16:55:27,795 | INFO | TLRY | rank=1 | last=11.1291 | yclose=11.15 | change=None%
+2025-12-12 16:55:27,795 | INFO | MIAX | rank=2 | last=41.88 | yclose=41.9 | change=None%
+2025-12-12 16:55:27,796 | INFO | TE | rank=3 | last=5.215 | yclose=5.215 | change=None%
+2025-12-12 16:55:27,796 | INFO | LULU | rank=4 | last=210.04 | yclose=210.01 | change=None%
+2025-12-12 16:55:27,796 | INFO | LGN | rank=5 | last=44.59 | yclose=44.59 | change=None%
+2025-12-12 16:55:27,796 | INFO | RCUS | rank=6 | last=22.2 | yclose=22.2 | change=None%
+2025-12-12 16:55:27,796 | INFO | AVGO | rank=7 | last=370.98 | yclose=370.81 | change=None%
+2025-12-12 16:55:27,796 | INFO | RH | rank=8 | last=168.03 | yclose=168.03 | change=None%
+2025-12-12 16:55:27,797 | INFO | NFLX | rank=9 | last=96.35 | yclose=96.35 | change=None%
+2025-12-12 16:55:27,797 | INFO | NTSK | rank=10 | last=21.73 | yclose=21.73 | change=None%
+2025-12-12 16:55:27,797 | INFO | PL | rank=11 | last=18.2 | yclose=18.2 | change=None%
+2025-12-12 16:55:27,797 | INFO | FISV | rank=12 | last=69.13 | yclose=69.13 | change=None%
+2025-12-12 16:55:27,797 | INFO | WMG | rank=13 | last=28.03 | yclose=28.03 | change=None%
+2025-12-12 16:55:27,797 | INFO | RIVN | rank=14 | last=19.02 | yclose=19.03 | change=None%
+2025-12-12 16:55:27,797 | INFO | HYMC | rank=15 | last=13.4339 | yclose=13.4339 | change=None%
+2025-12-12 16:55:27,797 | INFO | FLY | rank=16 | last=23.63 | yclose=23.66 | change=None%
+2025-12-12 16:55:27,797 | INFO | CAH | rank=17 | last=198.02 | yclose=198.02 | change=None%
+2025-12-12 16:55:27,798 | INFO | OTF | rank=18 | last=14.37 | yclose=14.37 | change=None%
+2025-12-12 16:55:27,798 | INFO | RDW | rank=19 | last=7.96 | yclose=7.94 | change=None%
+2025-12-12 16:55:27,798 | INFO | === End of scan ===
+
+2025-12-12 16:56:03,959 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-12 16:56:03,959 | INFO | TLRY | rank=0 | last=11.12 | yclose=11.1345 | change=None%
+2025-12-12 16:56:03,959 | INFO | RIVN | rank=1 | last=19.08 | yclose=19.07 | change=None%
+2025-12-12 16:56:03,959 | INFO | LULU | rank=2 | last=209.9 | yclose=209.9 | change=None%
+2025-12-12 16:56:03,959 | INFO | PHAT | rank=3 | last=16.32 | yclose=16.32 | change=None%
+2025-12-12 16:56:03,960 | INFO | YOU | rank=4 | last=40.67 | yclose=40.67 | change=None%
+2025-12-12 16:56:03,960 | INFO | RH | rank=5 | last=168.21 | yclose=168.21 | change=None%
+2025-12-12 16:56:03,960 | INFO | HYMC | rank=6 | last=13.4257 | yclose=13.4257 | change=None%
+2025-12-12 16:56:03,960 | INFO | NKTR | rank=7 | last=55.4801 | yclose=55.4801 | change=None%
+2025-12-12 16:56:03,960 | INFO | CCC | rank=8 | last=7.78 | yclose=7.78 | change=None%
+2025-12-12 16:56:03,960 | INFO | KDK | rank=9 | last=8.74 | yclose=8.74 | change=None%
+2025-12-12 16:56:03,961 | INFO | SHAK | rank=10 | last=83.42 | yclose=83.41 | change=None%
+2025-12-12 16:56:03,961 | INFO | LNTH | rank=11 | last=66.19 | yclose=66.19 | change=None%
+2025-12-12 16:56:03,961 | INFO | EAT | rank=12 | last=148.82 | yclose=148.81 | change=None%
+2025-12-12 16:56:03,961 | INFO | GE | rank=13 | last=300.59 | yclose=300.5 | change=None%
+2025-12-12 16:56:03,961 | INFO | RLAY | rank=14 | last=8.125 | yclose=8.125 | change=None%
+2025-12-12 16:56:03,961 | INFO | ORLA | rank=15 | last=13.68 | yclose=13.67 | change=None%
+2025-12-12 16:56:03,961 | INFO | PL | rank=16 | last=18.11 | yclose=18.1354 | change=None%
+2025-12-12 16:56:03,961 | INFO | DKNG | rank=17 | last=36.31 | yclose=36.34 | change=None%
+2025-12-12 16:56:03,961 | INFO | CLSK | rank=18 | last=15.4223 | yclose=15.365 | change=None%
+2025-12-12 16:56:03,961 | INFO | CAVA | rank=19 | last=54.73 | yclose=54.7 | change=None%
+2025-12-12 16:56:03,961 | INFO | === End of scan ===
+
+2025-12-12 16:56:43,387 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-12 16:56:43,387 | INFO | FRMI | rank=0 | last=8.75 | yclose=8.75 | change=None%
+2025-12-12 16:56:43,388 | INFO | TE | rank=1 | last=5.175 | yclose=5.18 | change=None%
+2025-12-12 16:56:43,388 | INFO | RCUS | rank=2 | last=22.44 | yclose=22.39 | change=None%
+2025-12-12 16:56:43,388 | INFO | AVGO | rank=3 | last=369.51 | yclose=369.52 | change=None%
+2025-12-12 16:56:43,388 | INFO | NTSK | rank=4 | last=21.47 | yclose=21.47 | change=None%
+2025-12-12 16:56:43,388 | INFO | SNDK | rank=5 | last=223.23 | yclose=223.46 | change=None%
+2025-12-12 16:56:43,388 | INFO | CLS | rank=6 | last=326.42 | yclose=326.5 | change=None%
+2025-12-12 16:56:43,388 | INFO | VRT | rank=7 | last=168.03 | yclose=168.33 | change=None%
+2025-12-12 16:56:43,388 | INFO | LITE | rank=8 | last=352.0 | yclose=350.79 | change=None%
+2025-12-12 16:56:43,388 | INFO | CIEN | rank=9 | last=229.42 | yclose=229.42 | change=None%
+2025-12-12 16:56:43,388 | INFO | OKLO | rank=10 | last=97.44 | yclose=97.3 | change=None%
+2025-12-12 16:56:43,388 | INFO | FLNC | rank=11 | last=24.45 | yclose=24.45 | change=None%
+2025-12-12 16:56:43,388 | INFO | TTI | rank=12 | last=8.6301 | yclose=8.63 | change=None%
+2025-12-12 16:56:43,388 | INFO | ALAB | rank=13 | last=165.06 | yclose=165.12 | change=None%
+2025-12-12 16:56:43,388 | INFO | PRIM | rank=14 | last=130.46 | yclose=130.46 | change=None%
+2025-12-12 16:56:43,388 | INFO | RBRK | rank=15 | last=83.1 | yclose=83.1 | change=None%
+2025-12-12 16:56:43,389 | INFO | WRBY | rank=16 | last=28.94 | yclose=28.94 | change=None%
+2025-12-12 16:56:43,389 | INFO | BE | rank=17 | last=104.03 | yclose=104.13 | change=None%
+2025-12-12 16:56:43,389 | INFO | SHLS | rank=18 | last=9.2 | yclose=9.2 | change=None%
+2025-12-12 16:56:43,389 | INFO | SMR | rank=19 | last=20.295 | yclose=20.315 | change=None%
+2025-12-12 16:56:43,389 | INFO | === End of scan ===
+
+2025-12-15 15:39:51,661 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-15 15:39:51,662 | INFO | LLYVA | rank=0 | last=None | yclose=82.86 | change=None%
+2025-12-15 15:39:51,662 | INFO | IMNM | rank=1 | last=24.48 | yclose=19.57 | change=None%
+2025-12-15 15:39:51,663 | INFO | LLYVK | rank=2 | last=None | yclose=85.2 | change=None%
+2025-12-15 15:39:51,663 | INFO | GBTG | rank=3 | last=8.06 | yclose=8.06 | change=None%
+2025-12-15 15:39:51,663 | INFO | YUMC | rank=4 | last=48.67 | yclose=48.54 | change=None%
+2025-12-15 15:39:51,663 | INFO | QXO | rank=5 | last=21.5 | yclose=21.38 | change=None%
+2025-12-15 15:39:51,663 | INFO | CRBG | rank=6 | last=32.14 | yclose=31.54 | change=None%
+2025-12-15 15:39:51,663 | INFO | TLRY | rank=7 | last=12.6409 | yclose=12.15 | change=None%
+2025-12-15 15:39:51,663 | INFO | AVGO | rank=8 | last=360.85 | yclose=359.93 | change=None%
+2025-12-15 15:39:51,663 | INFO | CRM | rank=9 | last=261.18 | yclose=262.23 | change=None%
+2025-12-15 15:39:51,664 | INFO | FRMI | rank=10 | last=10.05 | yclose=10.09 | change=None%
+2025-12-15 15:39:51,664 | INFO | HPE | rank=11 | last=23.93 | yclose=23.87 | change=None%
+2025-12-15 15:39:51,664 | INFO | ALM | rank=12 | last=6.9 | yclose=6.76 | change=None%
+2025-12-15 15:39:51,664 | INFO | ZIM | rank=13 | last=19.66 | yclose=18.76 | change=None%
+2025-12-15 15:39:51,664 | INFO | LITE | rank=14 | last=339.0 | yclose=324.35 | change=None%
+2025-12-15 15:39:51,664 | INFO | RDW | rank=15 | last=7.51 | yclose=7.29 | change=None%
+2025-12-15 15:39:51,664 | INFO | BBWI | rank=16 | last=20.2 | yclose=20.05 | change=None%
+2025-12-15 15:39:51,664 | INFO | SMR | rank=17 | last=18.66 | yclose=18.34 | change=None%
+2025-12-15 15:39:51,665 | INFO | LULU | rank=18 | last=202.4 | yclose=204.97 | change=None%
+2025-12-15 15:39:51,665 | INFO | PL | rank=19 | last=18.63 | yclose=18.24 | change=None%
+2025-12-15 15:39:51,665 | INFO | === End of scan ===
+
+2025-12-15 15:40:36,175 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-15 15:40:36,175 | INFO | IMNM | rank=0 | last=24.5 | yclose=19.57 | change=None%
+2025-12-15 15:40:36,175 | INFO | HL | rank=1 | last=19.7 | yclose=18.81 | change=None%
+2025-12-15 15:40:36,175 | INFO | ZIM | rank=2 | last=19.64 | yclose=18.76 | change=None%
+2025-12-15 15:40:36,175 | INFO | TLRY | rank=3 | last=12.7399 | yclose=12.15 | change=None%
+2025-12-15 15:40:36,175 | INFO | LITE | rank=4 | last=338.8 | yclose=324.35 | change=None%
+2025-12-15 15:40:36,176 | INFO | OPEN | rank=5 | last=6.84 | yclose=6.56 | change=None%
+2025-12-15 15:40:36,176 | INFO | AG | rank=6 | last=16.62 | yclose=15.94 | change=None%
+2025-12-15 15:40:36,176 | INFO | PAAS | rank=7 | last=51.71 | yclose=49.73 | change=None%
+2025-12-15 15:40:36,176 | INFO | NGD | rank=8 | last=8.71 | yclose=8.38 | change=None%
+2025-12-15 15:40:36,176 | INFO | EXK | rank=9 | last=9.2982 | yclose=8.98 | change=None%
+2025-12-15 15:40:36,176 | INFO | SNDK | rank=10 | last=213.4 | yclose=206.18 | change=None%
+2025-12-15 15:40:36,176 | INFO | CDE | rank=11 | last=17.85 | yclose=17.25 | change=None%
+2025-12-15 15:40:36,176 | INFO | FCX | rank=12 | last=48.89 | yclose=47.38 | change=None%
+2025-12-15 15:40:36,176 | INFO | CSIQ | rank=13 | last=23.36 | yclose=22.65 | change=None%
+2025-12-15 15:40:36,176 | INFO | RDW | rank=14 | last=7.5 | yclose=7.29 | change=None%
+2025-12-15 15:40:36,177 | INFO | MU | rank=15 | last=247.2 | yclose=241.14 | change=None%
+2025-12-15 15:40:36,177 | INFO | STM | rank=16 | last=26.64 | yclose=26.0 | change=None%
+2025-12-15 15:40:36,177 | INFO | TMC | rank=17 | last=6.8 | yclose=6.64 | change=None%
+2025-12-15 15:40:36,177 | INFO | EQX | rank=18 | last=15.05 | yclose=14.7 | change=None%
+2025-12-15 15:40:36,177 | INFO | BE | rank=19 | last=97.24 | yclose=94.98 | change=None%
+2025-12-15 15:40:36,177 | INFO | === End of scan ===
+
+2025-12-15 15:40:59,873 | INFO | === Scan results for preset='gap_down_scan' (10 items) ===
+2025-12-15 15:40:59,873 | INFO | UBER | rank=0 | last=83.5 | yclose=85.11 | change=None%
+2025-12-15 15:40:59,874 | INFO | LULU | rank=1 | last=202.89 | yclose=204.97 | change=None%
+2025-12-15 15:40:59,874 | INFO | CLSK | rank=2 | last=13.9301 | yclose=14.03 | change=None%
+2025-12-15 15:40:59,874 | INFO | ORCL | rank=3 | last=188.65 | yclose=189.97 | change=None%
+2025-12-15 15:40:59,874 | INFO | NCLH | rank=4 | last=20.74 | yclose=20.86 | change=None%
+2025-12-15 15:40:59,874 | INFO | T | rank=5 | last=24.46 | yclose=24.58 | change=None%
+2025-12-15 15:40:59,874 | INFO | CRM | rank=6 | last=261.18 | yclose=262.23 | change=None%
+2025-12-15 15:40:59,874 | INFO | FRMI | rank=7 | last=10.05 | yclose=10.09 | change=None%
+2025-12-15 15:40:59,874 | INFO | MSTR | rank=8 | last=175.8 | yclose=176.45 | change=None%
+2025-12-15 15:40:59,875 | INFO | MARA | rank=9 | last=11.48 | yclose=11.52 | change=None%
+2025-12-15 15:40:59,875 | INFO | === End of scan ===
+
+2025-12-15 15:45:19,635 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-15 15:45:19,635 | INFO | LLYVA | rank=0 | last=None | yclose=82.86 | change=None%
+2025-12-15 15:45:19,635 | INFO | IMNM | rank=1 | last=24.44 | yclose=19.57 | change=None%
+2025-12-15 15:45:19,635 | INFO | LLYVK | rank=2 | last=None | yclose=85.2 | change=None%
+2025-12-15 15:45:19,635 | INFO | GBTG | rank=3 | last=8.06 | yclose=8.06 | change=None%
+2025-12-15 15:45:19,635 | INFO | YUMC | rank=4 | last=48.67 | yclose=48.54 | change=None%
+2025-12-15 15:45:19,635 | INFO | QXO | rank=5 | last=21.5 | yclose=21.38 | change=None%
+2025-12-15 15:45:19,635 | INFO | CRBG | rank=6 | last=32.14 | yclose=31.54 | change=None%
+2025-12-15 15:45:19,636 | INFO | TLRY | rank=7 | last=12.6845 | yclose=12.15 | change=None%
+2025-12-15 15:45:19,636 | INFO | AVGO | rank=8 | last=361.0 | yclose=359.93 | change=None%
+2025-12-15 15:45:19,636 | INFO | CRM | rank=9 | last=261.18 | yclose=262.23 | change=None%
+2025-12-15 15:45:19,636 | INFO | FRMI | rank=10 | last=10.0 | yclose=10.09 | change=None%
+2025-12-15 15:45:19,636 | INFO | HPE | rank=11 | last=24.07 | yclose=23.87 | change=None%
+2025-12-15 15:45:19,636 | INFO | ALM | rank=12 | last=6.9 | yclose=6.76 | change=None%
+2025-12-15 15:45:19,636 | INFO | ZIM | rank=13 | last=19.7 | yclose=18.76 | change=None%
+2025-12-15 15:45:19,636 | INFO | LITE | rank=14 | last=339.29 | yclose=324.35 | change=None%
+2025-12-15 15:45:19,636 | INFO | RDW | rank=15 | last=7.51 | yclose=7.29 | change=None%
+2025-12-15 15:45:19,636 | INFO | BBWI | rank=16 | last=20.2 | yclose=20.05 | change=None%
+2025-12-15 15:45:19,636 | INFO | SMR | rank=17 | last=18.67 | yclose=18.34 | change=None%
+2025-12-15 15:45:19,636 | INFO | LULU | rank=18 | last=202.89 | yclose=204.97 | change=None%
+2025-12-15 15:45:19,636 | INFO | BMNR | rank=19 | last=35.0 | yclose=34.86 | change=None%
+2025-12-15 15:45:19,637 | INFO | === End of scan ===
+
+2025-12-15 15:45:54,711 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-15 15:45:54,711 | INFO | IMNM | rank=0 | last=24.32 | yclose=19.57 | change=None%
+2025-12-15 15:45:54,711 | INFO | ZIM | rank=1 | last=19.7 | yclose=18.76 | change=None%
+2025-12-15 15:45:54,711 | INFO | HL | rank=2 | last=19.68 | yclose=18.81 | change=None%
+2025-12-15 15:45:54,712 | INFO | LITE | rank=3 | last=339.29 | yclose=324.35 | change=None%
+2025-12-15 15:45:54,712 | INFO | TLRY | rank=4 | last=12.7 | yclose=12.15 | change=None%
+2025-12-15 15:45:54,712 | INFO | PAAS | rank=5 | last=51.92 | yclose=49.73 | change=None%
+2025-12-15 15:45:54,712 | INFO | AG | rank=6 | last=16.63 | yclose=15.94 | change=None%
+2025-12-15 15:45:54,712 | INFO | OPEN | rank=7 | last=6.84 | yclose=6.56 | change=None%
+2025-12-15 15:45:54,712 | INFO | SNDK | rank=8 | last=214.35 | yclose=206.18 | change=None%
+2025-12-15 15:45:54,712 | INFO | EXK | rank=9 | last=9.3126 | yclose=8.98 | change=None%
+2025-12-15 15:45:54,712 | INFO | NGD | rank=10 | last=8.6979 | yclose=8.38 | change=None%
+2025-12-15 15:45:54,712 | INFO | CDE | rank=11 | last=17.85 | yclose=17.25 | change=None%
+2025-12-15 15:45:54,712 | INFO | CSIQ | rank=12 | last=23.35 | yclose=22.65 | change=None%
+2025-12-15 15:45:54,712 | INFO | RDW | rank=13 | last=7.51 | yclose=7.29 | change=None%
+2025-12-15 15:45:54,712 | INFO | MU | rank=14 | last=247.79 | yclose=241.14 | change=None%
+2025-12-15 15:45:54,712 | INFO | FCX | rank=15 | last=48.69 | yclose=47.38 | change=None%
+2025-12-15 15:45:54,712 | INFO | STM | rank=16 | last=26.66 | yclose=26.0 | change=None%
+2025-12-15 15:45:54,712 | INFO | BE | rank=17 | last=97.38 | yclose=94.98 | change=None%
+2025-12-15 15:45:54,712 | INFO | RKLB | rank=18 | last=62.9 | yclose=61.49 | change=None%
+2025-12-15 15:45:54,712 | INFO | OKLO | rank=19 | last=89.34 | yclose=87.42 | change=None%
+2025-12-15 15:45:54,713 | INFO | === End of scan ===
+
+2025-12-15 15:46:13,427 | INFO | === Scan results for preset='gap_down_scan' (10 items) ===
+2025-12-15 15:46:13,427 | INFO | UBER | rank=0 | last=83.99 | yclose=85.11 | change=None%
+2025-12-15 15:46:13,428 | INFO | LULU | rank=1 | last=202.89 | yclose=204.97 | change=None%
+2025-12-15 15:46:13,428 | INFO | FRMI | rank=2 | last=10.0 | yclose=10.09 | change=None%
+2025-12-15 15:46:13,428 | INFO | ORCL | rank=3 | last=188.5 | yclose=189.97 | change=None%
+2025-12-15 15:46:13,428 | INFO | NCLH | rank=4 | last=20.7 | yclose=20.86 | change=None%
+2025-12-15 15:46:13,428 | INFO | CLSK | rank=5 | last=13.95 | yclose=14.03 | change=None%
+2025-12-15 15:46:13,428 | INFO | T | rank=6 | last=24.45 | yclose=24.58 | change=None%
+2025-12-15 15:46:13,428 | INFO | CRM | rank=7 | last=261.18 | yclose=262.23 | change=None%
+2025-12-15 15:46:13,428 | INFO | MARA | rank=8 | last=11.5 | yclose=11.52 | change=None%
+2025-12-15 15:46:13,428 | INFO | MSTR | rank=9 | last=176.27 | yclose=176.45 | change=None%
+2025-12-15 15:46:13,428 | INFO | === End of scan ===
+
+2025-12-15 16:03:16,939 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-15 16:03:16,940 | INFO | LLYVA | rank=0 | last=None | yclose=82.86 | change=None%
+2025-12-15 16:03:16,940 | INFO | IMNM | rank=1 | last=23.75 | yclose=19.57 | change=None%
+2025-12-15 16:03:16,940 | INFO | LLYVK | rank=2 | last=None | yclose=85.2 | change=None%
+2025-12-15 16:03:16,940 | INFO | FER | rank=3 | last=66.75 | yclose=66.75 | change=None%
+2025-12-15 16:03:16,940 | INFO | GBTG | rank=4 | last=8.06 | yclose=8.06 | change=None%
+2025-12-15 16:03:16,940 | INFO | YUMC | rank=5 | last=48.67 | yclose=48.54 | change=None%
+2025-12-15 16:03:16,940 | INFO | FITB | rank=6 | last=None | yclose=48.15 | change=None%
+2025-12-15 16:03:16,940 | INFO | TLRY | rank=7 | last=12.35 | yclose=12.15 | change=None%
+2025-12-15 16:03:16,940 | INFO | QXO | rank=8 | last=21.59 | yclose=21.38 | change=None%
+2025-12-15 16:03:16,940 | INFO | RNW | rank=9 | last=5.45 | yclose=7.55 | change=None%
+2025-12-15 16:03:16,940 | INFO | CRBG | rank=10 | last=32.76 | yclose=31.54 | change=None%
+2025-12-15 16:03:16,940 | INFO | AVGO | rank=11 | last=359.42 | yclose=359.93 | change=None%
+2025-12-15 16:03:16,940 | INFO | CRM | rank=12 | last=261.5 | yclose=262.23 | change=None%
+2025-12-15 16:03:16,940 | INFO | FRMI | rank=13 | last=10.15 | yclose=10.09 | change=None%
+2025-12-15 16:03:16,940 | INFO | LITE | rank=14 | last=340.0 | yclose=324.35 | change=None%
+2025-12-15 16:03:16,940 | INFO | ZIM | rank=15 | last=19.54 | yclose=18.76 | change=None%
+2025-12-15 16:03:16,941 | INFO | ALM | rank=16 | last=6.94 | yclose=6.76 | change=None%
+2025-12-15 16:03:16,941 | INFO | HPE | rank=17 | last=24.02 | yclose=23.87 | change=None%
+2025-12-15 16:03:16,941 | INFO | RDW | rank=18 | last=7.53 | yclose=7.29 | change=None%
+2025-12-15 16:03:16,941 | INFO | BMNR | rank=19 | last=34.8 | yclose=34.86 | change=None%
+2025-12-15 16:03:16,941 | INFO | === End of scan ===
+
+2025-12-15 16:03:49,988 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-15 16:03:49,988 | INFO | IMNM | rank=0 | last=23.54 | yclose=19.57 | change=None%
+2025-12-15 16:03:49,988 | INFO | LITE | rank=1 | last=340.0 | yclose=324.35 | change=None%
+2025-12-15 16:03:49,988 | INFO | AG | rank=2 | last=16.62 | yclose=15.94 | change=None%
+2025-12-15 16:03:49,988 | INFO | ZIM | rank=3 | last=19.52 | yclose=18.76 | change=None%
+2025-12-15 16:03:49,988 | INFO | SNDK | rank=4 | last=214.5 | yclose=206.18 | change=None%
+2025-12-15 16:03:49,988 | INFO | PAAS | rank=5 | last=51.74 | yclose=49.73 | change=None%
+2025-12-15 16:03:49,988 | INFO | OPEN | rank=6 | last=6.8199 | yclose=6.56 | change=None%
+2025-12-15 16:03:49,988 | INFO | CRBG | rank=7 | last=32.76 | yclose=31.54 | change=None%
+2025-12-15 16:03:49,988 | INFO | HL | rank=8 | last=19.5349 | yclose=18.81 | change=None%
+2025-12-15 16:03:49,988 | INFO | NGD | rank=9 | last=8.67 | yclose=8.38 | change=None%
+2025-12-15 16:03:49,988 | INFO | EXK | rank=10 | last=9.28 | yclose=8.98 | change=None%
+2025-12-15 16:03:49,988 | INFO | SVM | rank=11 | last=8.4 | yclose=8.13 | change=None%
+2025-12-15 16:03:49,988 | INFO | CSIQ | rank=12 | last=23.4 | yclose=22.65 | change=None%
+2025-12-15 16:03:49,988 | INFO | RDW | rank=13 | last=7.53 | yclose=7.29 | change=None%
+2025-12-15 16:03:49,989 | INFO | CDE | rank=14 | last=17.75 | yclose=17.25 | change=None%
+2025-12-15 16:03:49,989 | INFO | MU | rank=15 | last=247.99 | yclose=241.14 | change=None%
+2025-12-15 16:03:49,989 | INFO | FCX | rank=16 | last=48.72 | yclose=47.38 | change=None%
+2025-12-15 16:03:49,989 | INFO | BE | rank=17 | last=97.2 | yclose=94.98 | change=None%
+2025-12-15 16:03:49,989 | INFO | RKLB | rank=18 | last=62.91 | yclose=61.49 | change=None%
+2025-12-15 16:03:49,989 | INFO | TSLA | rank=19 | last=469.08 | yclose=458.96 | change=None%
+2025-12-15 16:03:49,989 | INFO | === End of scan ===
+
+2025-12-15 16:04:12,426 | INFO | === Scan results for preset='gap_down_scan' (13 items) ===
+2025-12-15 16:04:12,426 | INFO | RNW | rank=0 | last=5.46 | yclose=7.55 | change=None%
+2025-12-15 16:04:12,426 | INFO | UBER | rank=1 | last=83.97 | yclose=85.11 | change=None%
+2025-12-15 16:04:12,426 | INFO | LULU | rank=2 | last=203.3 | yclose=204.97 | change=None%
+2025-12-15 16:04:12,426 | INFO | NCLH | rank=3 | last=20.7 | yclose=20.86 | change=None%
+2025-12-15 16:04:12,426 | INFO | T | rank=4 | last=24.42 | yclose=24.58 | change=None%
+2025-12-15 16:04:12,426 | INFO | ORCL | rank=5 | last=189.1 | yclose=189.97 | change=None%
+2025-12-15 16:04:12,426 | INFO | BMNR | rank=6 | last=34.79 | yclose=34.86 | change=None%
+2025-12-15 16:04:12,426 | INFO | CLSK | rank=7 | last=13.99 | yclose=14.03 | change=None%
+2025-12-15 16:04:12,426 | INFO | CRM | rank=8 | last=261.5 | yclose=262.23 | change=None%
+2025-12-15 16:04:12,426 | INFO | MARA | rank=9 | last=11.5 | yclose=11.52 | change=None%
+2025-12-15 16:04:12,427 | INFO | MSTR | rank=10 | last=176.24 | yclose=176.45 | change=None%
+2025-12-15 16:04:12,427 | INFO | ET | rank=11 | last=16.55 | yclose=16.56 | change=None%
+2025-12-15 16:04:12,427 | INFO | AVGO | rank=12 | last=359.8 | yclose=359.93 | change=None%
+2025-12-15 16:04:12,427 | INFO | === End of scan ===
+
+2025-12-15 16:17:39,359 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-15 16:17:39,360 | INFO | IMNM | rank=0 | last=23.98 | yclose=19.57 | change=None%
+2025-12-15 16:17:39,360 | INFO | LITE | rank=1 | last=340.69 | yclose=324.35 | change=None%
+2025-12-15 16:17:39,360 | INFO | MICC | rank=2 | last=16.6 | yclose=15.87 | change=None%
+2025-12-15 16:17:39,361 | INFO | CRBG | rank=3 | last=32.93 | yclose=31.54 | change=None%
+2025-12-15 16:17:39,361 | INFO | HL | rank=4 | last=19.6 | yclose=18.81 | change=None%
+2025-12-15 16:17:39,364 | INFO | AG | rank=5 | last=16.57 | yclose=15.94 | change=None%
+2025-12-15 16:17:39,364 | INFO | PAAS | rank=6 | last=51.53 | yclose=49.73 | change=None%
+2025-12-15 16:17:39,364 | INFO | SNDK | rank=7 | last=214.0 | yclose=206.18 | change=None%
+2025-12-15 16:17:39,364 | INFO | ZIM | rank=8 | last=19.45 | yclose=18.76 | change=None%
+2025-12-15 16:17:39,364 | INFO | EXK | rank=9 | last=9.28 | yclose=8.98 | change=None%
+2025-12-15 16:17:39,364 | INFO | CDE | rank=10 | last=17.79 | yclose=17.25 | change=None%
+2025-12-15 16:17:39,364 | INFO | NGD | rank=11 | last=8.64 | yclose=8.38 | change=None%
+2025-12-15 16:17:39,365 | INFO | OPEN | rank=12 | last=6.76 | yclose=6.56 | change=None%
+2025-12-15 16:17:39,365 | INFO | FCX | rank=13 | last=48.7 | yclose=47.38 | change=None%
+2025-12-15 16:17:39,365 | INFO | CSIQ | rank=14 | last=23.28 | yclose=22.65 | change=None%
+2025-12-15 16:17:39,365 | INFO | RDW | rank=15 | last=7.49 | yclose=7.29 | change=None%
+2025-12-15 16:17:39,365 | INFO | SVM | rank=16 | last=8.35 | yclose=8.13 | change=None%
+2025-12-15 16:17:39,365 | INFO | MU | rank=17 | last=247.25 | yclose=241.14 | change=None%
+2025-12-15 16:17:39,366 | INFO | ALM | rank=18 | last=6.92 | yclose=6.76 | change=None%
+2025-12-15 16:17:39,366 | INFO | BE | rank=19 | last=97.18 | yclose=94.98 | change=None%
+2025-12-15 16:17:39,366 | INFO | === End of scan ===
+
+2025-12-16 14:15:33,372 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-16 14:15:33,377 | INFO | CRCL | rank=0 | last=77.88 | yclose=75.46 | change=None%
+2025-12-16 14:15:33,377 | INFO | IREN | rank=1 | last=35.39 | yclose=35.48 | change=None%
+2025-12-16 14:15:33,377 | INFO | NBIS | rank=2 | last=80.67 | yclose=81.14 | change=None%
+2025-12-16 14:15:33,377 | INFO | MSTR | rank=3 | last=165.5 | yclose=162.08 | change=None%
+2025-12-16 14:15:33,377 | INFO | BMNR | rank=4 | last=31.84 | yclose=30.95 | change=None%
+2025-12-16 14:15:33,377 | INFO | IONQ | rank=5 | last=46.81 | yclose=46.07 | change=None%
+2025-12-16 14:15:33,377 | INFO | RKLB | rank=6 | last=54.62 | yclose=55.41 | change=None%
+2025-12-16 14:15:33,377 | INFO | AVGO | rank=7 | last=339.0 | yclose=339.81 | change=None%
+2025-12-16 14:15:33,377 | INFO | SMR | rank=8 | last=17.35 | yclose=17.41 | change=None%
+2025-12-16 14:15:33,378 | INFO | PFE | rank=9 | last=26.51 | yclose=26.43 | change=None%
+2025-12-16 14:15:33,378 | INFO | NFLX | rank=10 | last=93.46 | yclose=93.77 | change=None%
+2025-12-16 14:15:33,378 | INFO | OKLO | rank=11 | last=82.94 | yclose=82.33 | change=None%
+2025-12-16 14:15:33,378 | INFO | TSLA | rank=12 | last=472.78 | yclose=475.31 | change=None%
+2025-12-16 14:15:33,378 | INFO | MU | rank=13 | last=237.1 | yclose=237.5 | change=None%
+2025-12-16 14:15:33,378 | INFO | GOOGL | rank=14 | last=308.3 | yclose=308.22 | change=None%
+2025-12-16 14:15:33,378 | INFO | ORCL | rank=15 | last=184.77 | yclose=184.92 | change=None%
+2025-12-16 14:15:33,378 | INFO | NVDA | rank=16 | last=176.77 | yclose=176.29 | change=None%
+2025-12-16 14:15:33,378 | INFO | SMCI | rank=17 | last=31.32 | yclose=31.37 | change=None%
+2025-12-16 14:15:33,378 | INFO | RGTI | rank=18 | last=23.61 | yclose=23.53 | change=None%
+2025-12-16 14:15:33,378 | INFO | CIFR | rank=19 | last=14.59 | yclose=14.74 | change=None%
+2025-12-16 14:15:33,378 | INFO | === End of scan ===
+
+2025-12-16 14:15:58,310 | INFO | === Scan results for preset='gap_up_scan' (13 items) ===
+2025-12-16 14:15:58,311 | INFO | CRCL | rank=0 | last=78.05 | yclose=75.46 | change=None%
+2025-12-16 14:15:58,311 | INFO | BMNR | rank=1 | last=31.8 | yclose=30.95 | change=None%
+2025-12-16 14:15:58,311 | INFO | MSTR | rank=2 | last=165.61 | yclose=162.08 | change=None%
+2025-12-16 14:15:58,311 | INFO | IONQ | rank=3 | last=46.79 | yclose=46.07 | change=None%
+2025-12-16 14:15:58,311 | INFO | MARA | rank=4 | last=10.86 | yclose=10.7 | change=None%
+2025-12-16 14:15:58,311 | INFO | INTC | rank=5 | last=37.95 | yclose=37.51 | change=None%
+2025-12-16 14:15:58,311 | INFO | CLSK | rank=6 | last=12.03 | yclose=11.915 | change=None%
+2025-12-16 14:15:58,311 | INFO | OKLO | rank=7 | last=82.88 | yclose=82.33 | change=None%
+2025-12-16 14:15:58,311 | INFO | RGTI | rank=8 | last=23.61 | yclose=23.53 | change=None%
+2025-12-16 14:15:58,311 | INFO | PFE | rank=9 | last=26.51 | yclose=26.43 | change=None%
+2025-12-16 14:15:58,311 | INFO | NVDA | rank=10 | last=176.78 | yclose=176.29 | change=None%
+2025-12-16 14:15:58,311 | INFO | QBTS | rank=11 | last=23.8 | yclose=23.74 | change=None%
+2025-12-16 14:15:58,311 | INFO | GOOGL | rank=12 | last=308.3 | yclose=308.22 | change=None%
+2025-12-16 14:15:58,312 | INFO | === End of scan ===
+
+2025-12-16 14:16:24,487 | INFO | === Scan results for preset='gap_down_scan' (15 items) ===
+2025-12-16 14:16:24,487 | INFO | RKLB | rank=0 | last=54.6 | yclose=55.41 | change=None%
+2025-12-16 14:16:24,487 | INFO | CIFR | rank=1 | last=14.59 | yclose=14.74 | change=None%
+2025-12-16 14:16:24,487 | INFO | OPEN | rank=2 | last=6.41 | yclose=6.47 | change=None%
+2025-12-16 14:16:24,487 | INFO | NBIS | rank=3 | last=80.35 | yclose=81.14 | change=None%
+2025-12-16 14:16:24,487 | INFO | ONDS | rank=4 | last=7.64 | yclose=7.69 | change=None%
+2025-12-16 14:16:24,487 | INFO | PLTR | rank=5 | last=182.2 | yclose=183.25 | change=None%
+2025-12-16 14:16:24,487 | INFO | TSLA | rank=6 | last=473.19 | yclose=475.31 | change=None%
+2025-12-16 14:16:24,488 | INFO | SMR | rank=7 | last=17.34 | yclose=17.41 | change=None%
+2025-12-16 14:16:24,488 | INFO | IREN | rank=8 | last=35.36 | yclose=35.48 | change=None%
+2025-12-16 14:16:24,488 | INFO | NFLX | rank=9 | last=93.46 | yclose=93.77 | change=None%
+2025-12-16 14:16:24,488 | INFO | SOFI | rank=10 | last=25.74 | yclose=25.82 | change=None%
+2025-12-16 14:16:24,488 | INFO | AVGO | rank=11 | last=338.82 | yclose=339.81 | change=None%
+2025-12-16 14:16:24,488 | INFO | SMCI | rank=12 | last=31.3 | yclose=31.37 | change=None%
+2025-12-16 14:16:24,488 | INFO | MU | rank=13 | last=237.1 | yclose=237.5 | change=None%
+2025-12-16 14:16:24,488 | INFO | ORCL | rank=14 | last=184.72 | yclose=184.92 | change=None%
+2025-12-16 14:16:24,488 | INFO | === End of scan ===
+
+2025-12-16 14:30:15,660 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-16 14:30:15,660 | INFO | CRCL | rank=0 | last=78.0 | yclose=75.46 | change=None%
+2025-12-16 14:30:15,660 | INFO | IREN | rank=1 | last=35.26 | yclose=35.48 | change=None%
+2025-12-16 14:30:15,660 | INFO | NBIS | rank=2 | last=80.61 | yclose=81.14 | change=None%
+2025-12-16 14:30:15,660 | INFO | MSTR | rank=3 | last=165.2 | yclose=162.08 | change=None%
+2025-12-16 14:30:15,660 | INFO | BMNR | rank=4 | last=31.72 | yclose=30.95 | change=None%
+2025-12-16 14:30:15,660 | INFO | IONQ | rank=5 | last=46.88 | yclose=46.07 | change=None%
+2025-12-16 14:30:15,660 | INFO | RKLB | rank=6 | last=54.52 | yclose=55.41 | change=None%
+2025-12-16 14:30:15,660 | INFO | PFE | rank=7 | last=26.6 | yclose=26.43 | change=None%
+2025-12-16 14:30:15,660 | INFO | AVGO | rank=8 | last=339.06 | yclose=339.81 | change=None%
+2025-12-16 14:30:15,660 | INFO | SMR | rank=9 | last=17.29 | yclose=17.41 | change=None%
+2025-12-16 14:30:15,660 | INFO | NFLX | rank=10 | last=93.49 | yclose=93.77 | change=None%
+2025-12-16 14:30:15,660 | INFO | TSLA | rank=11 | last=472.65 | yclose=475.31 | change=None%
+2025-12-16 14:30:15,661 | INFO | OKLO | rank=12 | last=82.77 | yclose=82.33 | change=None%
+2025-12-16 14:30:15,661 | INFO | MU | rank=13 | last=236.74 | yclose=237.5 | change=None%
+2025-12-16 14:30:15,661 | INFO | ORCL | rank=14 | last=184.5 | yclose=184.92 | change=None%
+2025-12-16 14:30:15,661 | INFO | GOOGL | rank=15 | last=308.39 | yclose=308.22 | change=None%
+2025-12-16 14:30:15,661 | INFO | NVDA | rank=16 | last=176.83 | yclose=176.29 | change=None%
+2025-12-16 14:30:15,661 | INFO | RGTI | rank=17 | last=23.63 | yclose=23.53 | change=None%
+2025-12-16 14:30:15,661 | INFO | HOOD | rank=18 | last=115.95 | yclose=115.26 | change=None%
+2025-12-16 14:30:15,661 | INFO | SMCI | rank=19 | last=31.34 | yclose=31.37 | change=None%
+2025-12-16 14:30:15,661 | INFO | === End of scan ===
+
+2025-12-16 14:30:41,702 | INFO | === Scan results for preset='gap_up_scan' (15 items) ===
+2025-12-16 14:30:41,702 | INFO | CRCL | rank=0 | last=78.1 | yclose=75.46 | change=None%
+2025-12-16 14:30:41,702 | INFO | BMNR | rank=1 | last=31.73 | yclose=30.95 | change=None%
+2025-12-16 14:30:41,702 | INFO | MSTR | rank=2 | last=165.3 | yclose=162.08 | change=None%
+2025-12-16 14:30:41,702 | INFO | IONQ | rank=3 | last=46.88 | yclose=46.07 | change=None%
+2025-12-16 14:30:41,702 | INFO | MARA | rank=4 | last=10.83 | yclose=10.7 | change=None%
+2025-12-16 14:30:41,702 | INFO | F | rank=5 | last=13.81 | yclose=13.65 | change=None%
+2025-12-16 14:30:41,703 | INFO | INTC | rank=6 | last=37.93 | yclose=37.51 | change=None%
+2025-12-16 14:30:41,703 | INFO | QBTS | rank=7 | last=23.9 | yclose=23.74 | change=None%
+2025-12-16 14:30:41,703 | INFO | PFE | rank=8 | last=26.6 | yclose=26.43 | change=None%
+2025-12-16 14:30:41,703 | INFO | HOOD | rank=9 | last=116.0 | yclose=115.26 | change=None%
+2025-12-16 14:30:41,703 | INFO | OKLO | rank=10 | last=82.77 | yclose=82.33 | change=None%
+2025-12-16 14:30:41,703 | INFO | RGTI | rank=11 | last=23.63 | yclose=23.53 | change=None%
+2025-12-16 14:30:41,703 | INFO | CLSK | rank=12 | last=11.96 | yclose=11.915 | change=None%
+2025-12-16 14:30:41,703 | INFO | NVDA | rank=13 | last=176.82 | yclose=176.29 | change=None%
+2025-12-16 14:30:41,703 | INFO | GOOGL | rank=14 | last=308.39 | yclose=308.22 | change=None%
+2025-12-16 14:30:41,703 | INFO | === End of scan ===
+
+2025-12-16 14:31:10,220 | INFO | === Scan results for preset='gap_down_scan' (17 items) ===
+2025-12-16 14:31:10,220 | INFO | RKLB | rank=0 | last=54.59 | yclose=55.41 | change=None%
+2025-12-16 14:31:10,220 | INFO | CIFR | rank=1 | last=14.55 | yclose=14.74 | change=None%
+2025-12-16 14:31:10,220 | INFO | CRWV | rank=2 | last=71.8 | yclose=72.35 | change=None%
+2025-12-16 14:31:10,220 | INFO | SMR | rank=3 | last=17.29 | yclose=17.41 | change=None%
+2025-12-16 14:31:10,220 | INFO | PLTR | rank=4 | last=182.0 | yclose=183.25 | change=None%
+2025-12-16 14:31:10,220 | INFO | ONDS | rank=5 | last=7.639 | yclose=7.69 | change=None%
+2025-12-16 14:31:10,220 | INFO | NBIS | rank=6 | last=80.61 | yclose=81.14 | change=None%
+2025-12-16 14:31:10,220 | INFO | IREN | rank=7 | last=35.24 | yclose=35.48 | change=None%
+2025-12-16 14:31:10,221 | INFO | TSLA | rank=8 | last=472.7 | yclose=475.31 | change=None%
+2025-12-16 14:31:10,221 | INFO | OPEN | rank=9 | last=6.44 | yclose=6.47 | change=None%
+2025-12-16 14:31:10,221 | INFO | APLD | rank=10 | last=22.91 | yclose=22.98 | change=None%
+2025-12-16 14:31:10,221 | INFO | NFLX | rank=11 | last=93.49 | yclose=93.77 | change=None%
+2025-12-16 14:31:10,221 | INFO | SOFI | rank=12 | last=25.75 | yclose=25.82 | change=None%
+2025-12-16 14:31:10,221 | INFO | AVGO | rank=13 | last=339.0 | yclose=339.81 | change=None%
+2025-12-16 14:31:10,221 | INFO | ORCL | rank=14 | last=184.5 | yclose=184.92 | change=None%
+2025-12-16 14:31:10,221 | INFO | MU | rank=15 | last=236.99 | yclose=237.5 | change=None%
+2025-12-16 14:31:10,221 | INFO | SMCI | rank=16 | last=31.34 | yclose=31.37 | change=None%
+2025-12-16 14:31:10,221 | INFO | === End of scan ===
+
+2025-12-16 15:13:44,152 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-16 15:13:44,152 | INFO | BMNR | rank=0 | last=31.59 | yclose=30.95 | change=None%
+2025-12-16 15:13:44,152 | INFO | CRCL | rank=1 | last=77.56 | yclose=75.46 | change=None%
+2025-12-16 15:13:44,152 | INFO | TMUS | rank=2 | last=196.16 | yclose=196.16 | change=None%
+2025-12-16 15:13:44,153 | INFO | QURE | rank=3 | last=22.62 | yclose=20.43 | change=None%
+2025-12-16 15:13:44,153 | INFO | MSTR | rank=4 | last=165.38 | yclose=162.08 | change=None%
+2025-12-16 15:13:44,153 | INFO | IREN | rank=5 | last=34.9961 | yclose=35.48 | change=None%
+2025-12-16 15:13:44,153 | INFO | TECK | rank=6 | last=44.2 | yclose=43.06 | change=None%
+2025-12-16 15:13:44,153 | INFO | SMR | rank=7 | last=17.18 | yclose=17.41 | change=None%
+2025-12-16 15:13:44,153 | INFO | NBIS | rank=8 | last=80.07 | yclose=81.14 | change=None%
+2025-12-16 15:13:44,153 | INFO | RKLB | rank=9 | last=54.13 | yclose=55.41 | change=None%
+2025-12-16 15:13:44,153 | INFO | TLRY | rank=10 | last=10.44 | yclose=10.93 | change=None%
+2025-12-16 15:13:44,153 | INFO | FRMI | rank=11 | last=8.7 | yclose=8.59 | change=None%
+2025-12-16 15:13:44,153 | INFO | IONQ | rank=12 | last=46.69 | yclose=46.07 | change=None%
+2025-12-16 15:13:44,153 | INFO | AVGO | rank=13 | last=337.88 | yclose=339.81 | change=None%
+2025-12-16 15:13:44,153 | INFO | COIN | rank=14 | last=252.9 | yclose=250.42 | change=None%
+2025-12-16 15:13:44,153 | INFO | PL | rank=15 | last=17.4 | yclose=18.05 | change=None%
+2025-12-16 15:13:44,153 | INFO | TSLA | rank=16 | last=472.0 | yclose=475.31 | change=None%
+2025-12-16 15:13:44,153 | INFO | RDW | rank=17 | last=6.69 | yclose=6.89 | change=None%
+2025-12-16 15:13:44,153 | INFO | PFE | rank=18 | last=26.59 | yclose=26.43 | change=None%
+2025-12-16 15:13:44,153 | INFO | ASTS | rank=19 | last=66.01 | yclose=67.81 | change=None%
+2025-12-16 15:13:44,153 | INFO | === End of scan ===
+
+2025-12-16 15:14:17,535 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-16 15:14:17,535 | INFO | QURE | rank=0 | last=22.62 | yclose=20.43 | change=None%
+2025-12-16 15:14:17,536 | INFO | CRCL | rank=1 | last=77.55 | yclose=75.46 | change=None%
+2025-12-16 15:14:17,536 | INFO | TECK | rank=2 | last=44.2 | yclose=43.06 | change=None%
+2025-12-16 15:14:17,536 | INFO | BMNR | rank=3 | last=31.62 | yclose=30.95 | change=None%
+2025-12-16 15:14:17,536 | INFO | MSTR | rank=4 | last=165.15 | yclose=162.08 | change=None%
+2025-12-16 15:14:17,536 | INFO | PYPL | rank=5 | last=61.79 | yclose=60.74 | change=None%
+2025-12-16 15:14:17,536 | INFO | IONQ | rank=6 | last=46.66 | yclose=46.07 | change=None%
+2025-12-16 15:14:17,536 | INFO | FRMI | rank=7 | last=8.7 | yclose=8.59 | change=None%
+2025-12-16 15:14:17,536 | INFO | SBET | rank=8 | last=9.62 | yclose=9.51 | change=None%
+2025-12-16 15:14:17,536 | INFO | F | rank=9 | last=13.81 | yclose=13.65 | change=None%
+2025-12-16 15:14:17,536 | INFO | COIN | rank=10 | last=252.9 | yclose=250.42 | change=None%
+2025-12-16 15:14:17,536 | INFO | MARA | rank=11 | last=10.79 | yclose=10.7 | change=None%
+2025-12-16 15:14:17,536 | INFO | INTC | rank=12 | last=37.77 | yclose=37.51 | change=None%
+2025-12-16 15:14:17,536 | INFO | SNDK | rank=13 | last=203.17 | yclose=201.87 | change=None%
+2025-12-16 15:14:17,536 | INFO | PFE | rank=14 | last=26.53 | yclose=26.43 | change=None%
+2025-12-16 15:14:17,536 | INFO | CLSK | rank=15 | last=11.9316 | yclose=11.915 | change=None%
+2025-12-16 15:14:17,536 | INFO | NVDA | rank=16 | last=176.66 | yclose=176.29 | change=None%
+2025-12-16 15:14:17,537 | INFO | HOOD | rank=17 | last=115.51 | yclose=115.26 | change=None%
+2025-12-16 15:14:17,537 | INFO | QBTS | rank=18 | last=23.79 | yclose=23.74 | change=None%
+2025-12-16 15:14:17,538 | INFO | AMZN | rank=19 | last=222.85 | yclose=222.54 | change=None%
+2025-12-16 15:14:17,538 | INFO | === End of scan ===
+
+2025-12-16 15:14:51,733 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-16 15:14:51,733 | INFO | TLRY | rank=0 | last=10.4498 | yclose=10.93 | change=None%
+2025-12-16 15:14:51,733 | INFO | PL | rank=1 | last=17.42 | yclose=18.05 | change=None%
+2025-12-16 15:14:51,733 | INFO | RDW | rank=2 | last=6.68 | yclose=6.89 | change=None%
+2025-12-16 15:14:51,733 | INFO | ASTS | rank=3 | last=66.01 | yclose=67.81 | change=None%
+2025-12-16 15:14:51,733 | INFO | UUUU | rank=4 | last=13.6588 | yclose=14.02 | change=None%
+2025-12-16 15:14:51,733 | INFO | RKLB | rank=5 | last=54.12 | yclose=55.41 | change=None%
+2025-12-16 15:14:51,733 | INFO | CIFR | rank=6 | last=14.4374 | yclose=14.74 | change=None%
+2025-12-16 15:14:51,734 | INFO | QS | rank=7 | last=10.62 | yclose=10.83 | change=None%
+2025-12-16 15:14:51,734 | INFO | AG | rank=8 | last=15.8 | yclose=16.04 | change=None%
+2025-12-16 15:14:51,734 | INFO | SMCI | rank=9 | last=30.92 | yclose=31.37 | change=None%
+2025-12-16 15:14:51,734 | INFO | CRWV | rank=10 | last=71.33 | yclose=72.35 | change=None%
+2025-12-16 15:14:51,734 | INFO | NBIS | rank=11 | last=80.05 | yclose=81.14 | change=None%
+2025-12-16 15:14:51,734 | INFO | SMR | rank=12 | last=17.19 | yclose=17.41 | change=None%
+2025-12-16 15:14:51,734 | INFO | NVTS | rank=13 | last=7.88 | yclose=7.96 | change=None%
+2025-12-16 15:14:51,734 | INFO | CDE | rank=14 | last=16.75 | yclose=16.91 | change=None%
+2025-12-16 15:14:51,734 | INFO | ACHR | rank=15 | last=7.75 | yclose=7.83 | change=None%
+2025-12-16 15:14:51,734 | INFO | MU | rank=16 | last=235.38 | yclose=237.5 | change=None%
+2025-12-16 15:14:51,734 | INFO | JOBY | rank=17 | last=14.07 | yclose=14.19 | change=None%
+2025-12-16 15:14:51,734 | INFO | PLTR | rank=18 | last=181.79 | yclose=183.25 | change=None%
+2025-12-16 15:14:51,734 | INFO | IREN | rank=19 | last=35.2 | yclose=35.48 | change=None%
+2025-12-16 15:14:51,734 | INFO | === End of scan ===
+
+2025-12-16 15:56:45,400 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-16 15:56:45,401 | INFO | ZTS | rank=0 | last=120.98 | yclose=120.98 | change=None%
+2025-12-16 15:56:45,401 | INFO | NKTR | rank=1 | last=50.0 | yclose=53.3 | change=None%
+2025-12-16 15:56:45,401 | INFO | TMUS | rank=2 | last=196.15 | yclose=196.16 | change=None%
+2025-12-16 15:56:45,401 | INFO | BMNR | rank=3 | last=31.3 | yclose=30.95 | change=None%
+2025-12-16 15:56:45,401 | INFO | CRCL | rank=4 | last=77.1 | yclose=75.46 | change=None%
+2025-12-16 15:56:45,401 | INFO | ROKU | rank=5 | last=113.14 | yclose=109.03 | change=None%
+2025-12-16 15:56:45,401 | INFO | MSTR | rank=6 | last=164.97 | yclose=162.08 | change=None%
+2025-12-16 15:56:45,401 | INFO | IREN | rank=7 | last=34.96 | yclose=35.48 | change=None%
+2025-12-16 15:56:45,401 | INFO | SMR | rank=8 | last=17.06 | yclose=17.41 | change=None%
+2025-12-16 15:56:45,401 | INFO | AVGO | rank=9 | last=336.7 | yclose=339.81 | change=None%
+2025-12-16 15:56:45,401 | INFO | NBIS | rank=10 | last=79.85 | yclose=81.14 | change=None%
+2025-12-16 15:56:45,401 | INFO | QURE | rank=11 | last=22.4 | yclose=20.43 | change=None%
+2025-12-16 15:56:45,401 | INFO | RKLB | rank=12 | last=54.0 | yclose=55.41 | change=None%
+2025-12-16 15:56:45,401 | INFO | TLRY | rank=13 | last=10.4 | yclose=10.93 | change=None%
+2025-12-16 15:56:45,401 | INFO | TECK | rank=14 | last=44.05 | yclose=43.06 | change=None%
+2025-12-16 15:56:45,401 | INFO | COIN | rank=15 | last=252.47 | yclose=250.42 | change=None%
+2025-12-16 15:56:45,402 | INFO | IONQ | rank=16 | last=46.38 | yclose=46.07 | change=None%
+2025-12-16 15:56:45,402 | INFO | APLD | rank=17 | last=23.33 | yclose=22.98 | change=None%
+2025-12-16 15:56:45,402 | INFO | FRMI | rank=18 | last=8.7 | yclose=8.59 | change=None%
+2025-12-16 15:56:45,402 | INFO | PL | rank=19 | last=17.293 | yclose=18.05 | change=None%
+2025-12-16 15:56:45,402 | INFO | === End of scan ===
+
+2025-12-16 15:57:19,483 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-16 15:57:19,483 | INFO | QURE | rank=0 | last=22.21 | yclose=20.43 | change=None%
+2025-12-16 15:57:19,484 | INFO | ROKU | rank=1 | last=113.14 | yclose=109.03 | change=None%
+2025-12-16 15:57:19,484 | INFO | TECK | rank=2 | last=44.05 | yclose=43.06 | change=None%
+2025-12-16 15:57:19,484 | INFO | CRCL | rank=3 | last=77.12 | yclose=75.46 | change=None%
+2025-12-16 15:57:19,484 | INFO | MSTR | rank=4 | last=164.94 | yclose=162.08 | change=None%
+2025-12-16 15:57:19,484 | INFO | PYPL | rank=5 | last=61.63 | yclose=60.74 | change=None%
+2025-12-16 15:57:19,484 | INFO | ZTS | rank=6 | last=122.77 | yclose=120.98 | change=None%
+2025-12-16 15:57:19,484 | INFO | APLD | rank=7 | last=23.3 | yclose=22.98 | change=None%
+2025-12-16 15:57:19,484 | INFO | BMNR | rank=8 | last=31.34 | yclose=30.95 | change=None%
+2025-12-16 15:57:19,484 | INFO | FRMI | rank=9 | last=8.68 | yclose=8.59 | change=None%
+2025-12-16 15:57:19,484 | INFO | COIN | rank=10 | last=252.7 | yclose=250.42 | change=None%
+2025-12-16 15:57:19,484 | INFO | IONQ | rank=11 | last=46.44 | yclose=46.07 | change=None%
+2025-12-16 15:57:19,484 | INFO | PFE | rank=12 | last=26.63 | yclose=26.43 | change=None%
+2025-12-16 15:57:19,484 | INFO | F | rank=13 | last=13.74 | yclose=13.65 | change=None%
+2025-12-16 15:57:19,484 | INFO | QBTS | rank=14 | last=23.9 | yclose=23.74 | change=None%
+2025-12-16 15:57:19,484 | INFO | STLA | rank=15 | last=12.01 | yclose=11.93 | change=None%
+2025-12-16 15:57:19,484 | INFO | MARA | rank=16 | last=10.76 | yclose=10.7 | change=None%
+2025-12-16 15:57:19,484 | INFO | HOOD | rank=17 | last=115.85 | yclose=115.26 | change=None%
+2025-12-16 15:57:19,484 | INFO | INTC | rank=18 | last=37.66 | yclose=37.51 | change=None%
+2025-12-16 15:57:19,485 | INFO | UBER | rank=19 | last=82.15 | yclose=81.86 | change=None%
+2025-12-16 15:57:19,485 | INFO | === End of scan ===
+
+2025-12-16 15:57:55,031 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-16 15:57:55,032 | INFO | NKTR | rank=0 | last=50.15 | yclose=53.3 | change=None%
+2025-12-16 15:57:55,032 | INFO | PL | rank=1 | last=17.2301 | yclose=18.05 | change=None%
+2025-12-16 15:57:55,032 | INFO | TLRY | rank=2 | last=10.45 | yclose=10.93 | change=None%
+2025-12-16 15:57:55,032 | INFO | UUUU | rank=3 | last=13.5608 | yclose=14.02 | change=None%
+2025-12-16 15:57:55,032 | INFO | RDW | rank=4 | last=6.73 | yclose=6.89 | change=None%
+2025-12-16 15:57:55,032 | INFO | ASTS | rank=5 | last=66.15 | yclose=67.81 | change=None%
+2025-12-16 15:57:55,032 | INFO | RKLB | rank=6 | last=54.0 | yclose=55.41 | change=None%
+2025-12-16 15:57:55,032 | INFO | CIFR | rank=7 | last=14.42 | yclose=14.74 | change=None%
+2025-12-16 15:57:55,033 | INFO | SMR | rank=8 | last=17.09 | yclose=17.41 | change=None%
+2025-12-16 15:57:55,033 | INFO | BE | rank=9 | last=88.0 | yclose=89.58 | change=None%
+2025-12-16 15:57:55,033 | INFO | OKLO | rank=10 | last=81.05 | yclose=82.33 | change=None%
+2025-12-16 15:57:55,033 | INFO | MP | rank=11 | last=52.46 | yclose=53.26 | change=None%
+2025-12-16 15:57:55,033 | INFO | IREN | rank=12 | last=34.9696 | yclose=35.48 | change=None%
+2025-12-16 15:57:55,033 | INFO | NVTS | rank=13 | last=7.86 | yclose=7.96 | change=None%
+2025-12-16 15:57:55,033 | INFO | QS | rank=14 | last=10.7 | yclose=10.83 | change=None%
+2025-12-16 15:57:55,033 | INFO | AG | rank=15 | last=15.85 | yclose=16.04 | change=None%
+2025-12-16 15:57:55,033 | INFO | CRWV | rank=16 | last=71.5 | yclose=72.35 | change=None%
+2025-12-16 15:57:55,033 | INFO | NBIS | rank=17 | last=80.21 | yclose=81.14 | change=None%
+2025-12-16 15:57:55,034 | INFO | RGTI | rank=18 | last=23.3 | yclose=23.53 | change=None%
+2025-12-16 15:57:55,034 | INFO | TEM | rank=19 | last=67.98 | yclose=68.67 | change=None%
+2025-12-16 15:57:55,034 | INFO | === End of scan ===
+
+2025-12-16 16:06:33,028 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-16 16:06:33,028 | INFO | ZTS | rank=0 | last=122.79 | yclose=120.98 | change=None%
+2025-12-16 16:06:33,028 | INFO | NKTR | rank=1 | last=49.97 | yclose=53.3 | change=None%
+2025-12-16 16:06:33,028 | INFO | TMUS | rank=2 | last=196.15 | yclose=196.16 | change=None%
+2025-12-16 16:06:33,028 | INFO | VITL | rank=3 | last=30.7 | yclose=34.53 | change=None%
+2025-12-16 16:06:33,029 | INFO | BMNR | rank=4 | last=31.06 | yclose=30.95 | change=None%
+2025-12-16 16:06:33,029 | INFO | CRCL | rank=5 | last=76.87 | yclose=75.46 | change=None%
+2025-12-16 16:06:33,029 | INFO | ROKU | rank=6 | last=113.0 | yclose=109.03 | change=None%
+2025-12-16 16:06:33,029 | INFO | MSTR | rank=7 | last=164.57 | yclose=162.08 | change=None%
+2025-12-16 16:06:33,029 | INFO | IREN | rank=8 | last=34.8 | yclose=35.48 | change=None%
+2025-12-16 16:06:33,029 | INFO | SMR | rank=9 | last=17.18 | yclose=17.41 | change=None%
+2025-12-16 16:06:33,029 | INFO | AVGO | rank=10 | last=336.87 | yclose=339.81 | change=None%
+2025-12-16 16:06:33,029 | INFO | NBIS | rank=11 | last=79.62 | yclose=81.14 | change=None%
+2025-12-16 16:06:33,029 | INFO | QURE | rank=12 | last=22.19 | yclose=20.43 | change=None%
+2025-12-16 16:06:33,029 | INFO | RKLB | rank=13 | last=54.15 | yclose=55.41 | change=None%
+2025-12-16 16:06:33,029 | INFO | TLRY | rank=14 | last=10.49 | yclose=10.93 | change=None%
+2025-12-16 16:06:33,030 | INFO | TECK | rank=15 | last=44.0 | yclose=43.06 | change=None%
+2025-12-16 16:06:33,030 | INFO | COIN | rank=16 | last=252.4 | yclose=250.42 | change=None%
+2025-12-16 16:06:33,030 | INFO | APLD | rank=17 | last=23.34 | yclose=22.98 | change=None%
+2025-12-16 16:06:33,030 | INFO | IONQ | rank=18 | last=46.59 | yclose=46.07 | change=None%
+2025-12-16 16:06:33,030 | INFO | FRMI | rank=19 | last=8.65 | yclose=8.59 | change=None%
+2025-12-16 16:06:33,030 | INFO | === End of scan ===
+
+2025-12-16 16:07:06,752 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-16 16:07:06,753 | INFO | QURE | rank=0 | last=22.1 | yclose=20.43 | change=None%
+2025-12-16 16:07:06,753 | INFO | ROKU | rank=1 | last=113.0 | yclose=109.03 | change=None%
+2025-12-16 16:07:06,753 | INFO | TECK | rank=2 | last=44.0 | yclose=43.06 | change=None%
+2025-12-16 16:07:06,753 | INFO | CRCL | rank=3 | last=76.91 | yclose=75.46 | change=None%
+2025-12-16 16:07:06,753 | INFO | MSTR | rank=4 | last=164.65 | yclose=162.08 | change=None%
+2025-12-16 16:07:06,754 | INFO | ZTS | rank=5 | last=122.8 | yclose=120.98 | change=None%
+2025-12-16 16:07:06,755 | INFO | APLD | rank=6 | last=23.3179 | yclose=22.98 | change=None%
+2025-12-16 16:07:06,755 | INFO | PYPL | rank=7 | last=61.54 | yclose=60.74 | change=None%
+2025-12-16 16:07:06,756 | INFO | IONQ | rank=8 | last=46.5 | yclose=46.07 | change=None%
+2025-12-16 16:07:06,756 | INFO | COIN | rank=9 | last=252.69 | yclose=250.42 | change=None%
+2025-12-16 16:07:06,756 | INFO | FRMI | rank=10 | last=8.65 | yclose=8.59 | change=None%
+2025-12-16 16:07:06,756 | INFO | STLA | rank=11 | last=12.0 | yclose=11.93 | change=None%
+2025-12-16 16:07:06,756 | INFO | F | rank=12 | last=13.72 | yclose=13.65 | change=None%
+2025-12-16 16:07:06,756 | INFO | BMNR | rank=13 | last=31.1 | yclose=30.95 | change=None%
+2025-12-16 16:07:06,756 | INFO | INTC | rank=14 | last=37.67 | yclose=37.51 | change=None%
+2025-12-16 16:07:06,756 | INFO | QBTS | rank=15 | last=23.84 | yclose=23.74 | change=None%
+2025-12-16 16:07:06,757 | INFO | HOOD | rank=16 | last=115.74 | yclose=115.26 | change=None%
+2025-12-16 16:07:06,757 | INFO | PFE | rank=17 | last=26.53 | yclose=26.43 | change=None%
+2025-12-16 16:07:06,757 | INFO | MARA | rank=18 | last=10.74 | yclose=10.7 | change=None%
+2025-12-16 16:07:06,757 | INFO | NVDA | rank=19 | last=176.84 | yclose=176.29 | change=None%
+2025-12-16 16:07:06,757 | INFO | === End of scan ===
+
+2025-12-16 16:07:39,764 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-16 16:07:39,768 | INFO | VITL | rank=0 | last=30.0 | yclose=34.53 | change=None%
+2025-12-16 16:07:39,769 | INFO | NKTR | rank=1 | last=49.97 | yclose=53.3 | change=None%
+2025-12-16 16:07:39,769 | INFO | TLRY | rank=2 | last=10.47 | yclose=10.93 | change=None%
+2025-12-16 16:07:39,769 | INFO | PL | rank=3 | last=17.39 | yclose=18.05 | change=None%
+2025-12-16 16:07:39,769 | INFO | UUUU | rank=4 | last=13.5999 | yclose=14.02 | change=None%
+2025-12-16 16:07:39,769 | INFO | RKLB | rank=5 | last=53.97 | yclose=55.41 | change=None%
+2025-12-16 16:07:39,769 | INFO | ASTS | rank=6 | last=66.35 | yclose=67.81 | change=None%
+2025-12-16 16:07:39,769 | INFO | CIFR | rank=7 | last=14.43 | yclose=14.74 | change=None%
+2025-12-16 16:07:39,770 | INFO | BE | rank=8 | last=87.9 | yclose=89.58 | change=None%
+2025-12-16 16:07:39,770 | INFO | IREN | rank=9 | last=34.8508 | yclose=35.48 | change=None%
+2025-12-16 16:07:39,770 | INFO | SMR | rank=10 | last=17.15 | yclose=17.41 | change=None%
+2025-12-16 16:07:39,770 | INFO | CRWV | rank=11 | last=71.2 | yclose=72.35 | change=None%
+2025-12-16 16:07:39,770 | INFO | NBIS | rank=12 | last=79.9 | yclose=81.14 | change=None%
+2025-12-16 16:07:39,770 | INFO | OKLO | rank=13 | last=81.09 | yclose=82.33 | change=None%
+2025-12-16 16:07:39,770 | INFO | QS | rank=14 | last=10.67 | yclose=10.83 | change=None%
+2025-12-16 16:07:39,770 | INFO | RDW | rank=15 | last=6.79 | yclose=6.89 | change=None%
+2025-12-16 16:07:39,770 | INFO | MP | rank=16 | last=52.55 | yclose=53.26 | change=None%
+2025-12-16 16:07:39,770 | INFO | NVTS | rank=17 | last=7.88 | yclose=7.96 | change=None%
+2025-12-16 16:07:39,771 | INFO | PLTR | rank=18 | last=181.37 | yclose=183.25 | change=None%
+2025-12-16 16:07:39,771 | INFO | SOUN | rank=19 | last=10.6901 | yclose=10.79 | change=None%
+2025-12-16 16:07:39,771 | INFO | === End of scan ===
+
+2025-12-17 15:43:57,351 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-17 15:43:57,351 | INFO | HUT | rank=0 | last=44.11 | yclose=36.85 | change=None%
+2025-12-17 15:43:57,352 | INFO | IMNM | rank=1 | last=22.29 | yclose=23.48 | change=None%
+2025-12-17 15:43:57,352 | INFO | COUR | rank=2 | last=8.77 | yclose=7.94 | change=None%
+2025-12-17 15:43:57,352 | INFO | KGS | rank=3 | last=35.51 | yclose=35.51 | change=None%
+2025-12-17 15:43:57,352 | INFO | JBL | rank=4 | last=228.0 | yclose=212.56 | change=None%
+2025-12-17 15:43:57,352 | INFO | GIS | rank=5 | last=47.51 | yclose=47.02 | change=None%
+2025-12-17 15:43:57,352 | INFO | TLRY | rank=6 | last=14.5994 | yclose=13.94 | change=None%
+2025-12-17 15:43:57,353 | INFO | ORCL | rank=7 | last=184.6 | yclose=188.65 | change=None%
+2025-12-17 15:43:57,353 | INFO | WBD | rank=8 | last=28.57 | yclose=28.9 | change=None%
+2025-12-17 15:43:57,353 | INFO | NFLX | rank=9 | last=96.14 | yclose=94.57 | change=None%
+2025-12-17 15:43:57,353 | INFO | IREN | rank=10 | last=37.09 | yclose=36.59 | change=None%
+2025-12-17 15:43:57,353 | INFO | SMR | rank=11 | last=17.13 | yclose=17.12 | change=None%
+2025-12-17 15:43:57,353 | INFO | NBIS | rank=12 | last=82.69 | yclose=80.95 | change=None%
+2025-12-17 15:43:57,354 | INFO | TSLA | rank=13 | last=487.57 | yclose=489.88 | change=None%
+2025-12-17 15:43:57,354 | INFO | AG | rank=14 | last=17.0 | yclose=16.4 | change=None%
+2025-12-17 15:43:57,355 | INFO | MU | rank=15 | last=236.0 | yclose=232.51 | change=None%
+2025-12-17 15:43:57,356 | INFO | CRWV | rank=16 | last=68.92 | yclose=69.5 | change=None%
+2025-12-17 15:43:57,356 | INFO | QS | rank=17 | last=11.47 | yclose=10.84 | change=None%
+2025-12-17 15:43:57,356 | INFO | LCID | rank=18 | last=11.57 | yclose=11.52 | change=None%
+2025-12-17 15:43:57,356 | INFO | LITE | rank=19 | last=329.8 | yclose=316.15 | change=None%
+2025-12-17 15:43:57,356 | INFO | === End of scan ===
+
+2025-12-17 15:44:37,940 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-17 15:44:37,940 | INFO | HUT | rank=0 | last=44.01 | yclose=36.85 | change=None%
+2025-12-17 15:44:37,941 | INFO | COUR | rank=1 | last=8.8 | yclose=7.94 | change=None%
+2025-12-17 15:44:37,941 | INFO | SGML | rank=2 | last=10.98 | yclose=10.23 | change=None%
+2025-12-17 15:44:37,941 | INFO | JBL | rank=3 | last=228.0 | yclose=212.56 | change=None%
+2025-12-17 15:44:37,941 | INFO | QS | rank=4 | last=11.48 | yclose=10.84 | change=None%
+2025-12-17 15:44:37,941 | INFO | TLRY | rank=5 | last=14.615 | yclose=13.94 | change=None%
+2025-12-17 15:44:37,941 | INFO | LITE | rank=6 | last=329.8 | yclose=316.15 | change=None%
+2025-12-17 15:44:37,941 | INFO | TECK | rank=7 | last=44.93 | yclose=43.17 | change=None%
+2025-12-17 15:44:37,941 | INFO | AG | rank=8 | last=17.0 | yclose=16.4 | change=None%
+2025-12-17 15:44:37,941 | INFO | EXK | rank=9 | last=9.6504 | yclose=9.32 | change=None%
+2025-12-17 15:44:37,941 | INFO | CDE | rank=10 | last=17.45 | yclose=16.89 | change=None%
+2025-12-17 15:44:37,941 | INFO | HL | rank=11 | last=19.71 | yclose=19.02 | change=None%
+2025-12-17 15:44:37,942 | INFO | ALAB | rank=12 | last=149.46 | yclose=144.94 | change=None%
+2025-12-17 15:44:37,942 | INFO | NGD | rank=13 | last=8.46 | yclose=8.23 | change=None%
+2025-12-17 15:44:37,942 | INFO | MRVL | rank=14 | last=86.4 | yclose=84.07 | change=None%
+2025-12-17 15:44:37,942 | INFO | CRDO | rank=15 | last=144.0 | yclose=140.34 | change=None%
+2025-12-17 15:44:37,942 | INFO | QBTS | rank=16 | last=26.15 | yclose=25.52 | change=None%
+2025-12-17 15:44:37,942 | INFO | CIFR | rank=17 | last=15.34 | yclose=14.99 | change=None%
+2025-12-17 15:44:37,942 | INFO | ASTS | rank=18 | last=69.78 | yclose=68.37 | change=None%
+2025-12-17 15:44:37,942 | INFO | CORZ | rank=19 | last=15.07 | yclose=14.73 | change=None%
+2025-12-17 15:44:37,942 | INFO | === End of scan ===
+
+2025-12-17 15:45:03,661 | INFO | === Scan results for preset='gap_down_scan' (13 items) ===
+2025-12-17 15:45:03,661 | INFO | LEN | rank=0 | last=111.13 | yclose=117.57 | change=None%
+2025-12-17 15:45:03,661 | INFO | IMNM | rank=1 | last=22.22 | yclose=23.48 | change=None%
+2025-12-17 15:45:03,661 | INFO | ORCL | rank=2 | last=184.8 | yclose=188.65 | change=None%
+2025-12-17 15:45:03,661 | INFO | NU | rank=3 | last=15.91 | yclose=16.2 | change=None%
+2025-12-17 15:45:03,661 | INFO | WBD | rank=4 | last=28.6 | yclose=28.9 | change=None%
+2025-12-17 15:45:03,662 | INFO | CRWV | rank=5 | last=68.9 | yclose=69.5 | change=None%
+2025-12-17 15:45:03,662 | INFO | BMNR | rank=6 | last=31.27 | yclose=31.39 | change=None%
+2025-12-17 15:45:03,662 | INFO | TSLA | rank=7 | last=487.6 | yclose=489.88 | change=None%
+2025-12-17 15:45:03,662 | INFO | NVDA | rank=8 | last=177.07 | yclose=177.72 | change=None%
+2025-12-17 15:45:03,662 | INFO | SNAP | rank=9 | last=7.35 | yclose=7.37 | change=None%
+2025-12-17 15:45:03,662 | INFO | PFE | rank=10 | last=25.48 | yclose=25.53 | change=None%
+2025-12-17 15:45:03,662 | INFO | META | rank=11 | last=656.3 | yclose=657.15 | change=None%
+2025-12-17 15:45:03,662 | INFO | MSTR | rank=12 | last=167.42 | yclose=167.5 | change=None%
+2025-12-17 15:45:03,662 | INFO | === End of scan ===
+
+2025-12-17 15:49:57,860 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-17 15:49:57,860 | INFO | UDMY | rank=0 | last=6.86 | yclose=5.37 | change=None%
+2025-12-17 15:49:57,860 | INFO | HUT | rank=1 | last=44.22 | yclose=36.85 | change=None%
+2025-12-17 15:49:57,860 | INFO | IMNM | rank=2 | last=22.09 | yclose=23.48 | change=None%
+2025-12-17 15:49:57,860 | INFO | COUR | rank=3 | last=8.83 | yclose=7.94 | change=None%
+2025-12-17 15:49:57,860 | INFO | KGS | rank=4 | last=35.51 | yclose=35.51 | change=None%
+2025-12-17 15:49:57,860 | INFO | JBL | rank=5 | last=227.0 | yclose=212.56 | change=None%
+2025-12-17 15:49:57,860 | INFO | GIS | rank=6 | last=47.57 | yclose=47.02 | change=None%
+2025-12-17 15:49:57,860 | INFO | TLRY | rank=7 | last=14.55 | yclose=13.94 | change=None%
+2025-12-17 15:49:57,860 | INFO | ORCL | rank=8 | last=185.3 | yclose=188.65 | change=None%
+2025-12-17 15:49:57,860 | INFO | WBD | rank=9 | last=28.6 | yclose=28.9 | change=None%
+2025-12-17 15:49:57,860 | INFO | NFLX | rank=10 | last=96.13 | yclose=94.57 | change=None%
+2025-12-17 15:49:57,861 | INFO | AG | rank=11 | last=17.0 | yclose=16.4 | change=None%
+2025-12-17 15:49:57,861 | INFO | IREN | rank=12 | last=37.18 | yclose=36.59 | change=None%
+2025-12-17 15:49:57,861 | INFO | SMR | rank=13 | last=17.2 | yclose=17.12 | change=None%
+2025-12-17 15:49:57,861 | INFO | TSLA | rank=14 | last=487.99 | yclose=489.88 | change=None%
+2025-12-17 15:49:57,861 | INFO | NBIS | rank=15 | last=83.08 | yclose=80.95 | change=None%
+2025-12-17 15:49:57,861 | INFO | MU | rank=16 | last=236.35 | yclose=232.51 | change=None%
+2025-12-17 15:49:57,861 | INFO | CRWV | rank=17 | last=69.45 | yclose=69.5 | change=None%
+2025-12-17 15:49:57,861 | INFO | QS | rank=18 | last=11.62 | yclose=10.84 | change=None%
+2025-12-17 15:49:57,861 | INFO | LCID | rank=19 | last=11.59 | yclose=11.52 | change=None%
+2025-12-17 15:49:57,861 | INFO | === End of scan ===
+
+2025-12-17 15:50:31,547 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-17 15:50:31,547 | INFO | UDMY | rank=0 | last=6.82 | yclose=5.37 | change=None%
+2025-12-17 15:50:31,548 | INFO | HUT | rank=1 | last=44.09 | yclose=36.85 | change=None%
+2025-12-17 15:50:31,548 | INFO | COUR | rank=2 | last=8.85 | yclose=7.94 | change=None%
+2025-12-17 15:50:31,548 | INFO | SGML | rank=3 | last=11.05 | yclose=10.23 | change=None%
+2025-12-17 15:50:31,548 | INFO | QS | rank=4 | last=11.6 | yclose=10.84 | change=None%
+2025-12-17 15:50:31,549 | INFO | JBL | rank=5 | last=226.89 | yclose=212.56 | change=None%
+2025-12-17 15:50:31,549 | INFO | TLRY | rank=6 | last=14.56 | yclose=13.94 | change=None%
+2025-12-17 15:50:31,549 | INFO | LITE | rank=7 | last=329.8 | yclose=316.15 | change=None%
+2025-12-17 15:50:31,549 | INFO | ALAB | rank=8 | last=150.89 | yclose=144.94 | change=None%
+2025-12-17 15:50:31,549 | INFO | TECK | rank=9 | last=44.93 | yclose=43.17 | change=None%
+2025-12-17 15:50:31,549 | INFO | HL | rank=10 | last=19.76 | yclose=19.02 | change=None%
+2025-12-17 15:50:31,549 | INFO | EXK | rank=11 | last=9.67 | yclose=9.32 | change=None%
+2025-12-17 15:50:31,550 | INFO | AG | rank=12 | last=16.99 | yclose=16.4 | change=None%
+2025-12-17 15:50:31,550 | INFO | PAAS | rank=13 | last=50.95 | yclose=49.26 | change=None%
+2025-12-17 15:50:31,550 | INFO | CDE | rank=14 | last=17.46 | yclose=16.89 | change=None%
+2025-12-17 15:50:31,550 | INFO | MRVL | rank=15 | last=86.73 | yclose=84.07 | change=None%
+2025-12-17 15:50:31,550 | INFO | IONQ | rank=16 | last=51.26 | yclose=49.67 | change=None%
+2025-12-17 15:50:31,550 | INFO | NGD | rank=17 | last=8.47 | yclose=8.23 | change=None%
+2025-12-17 15:50:31,550 | INFO | WULF | rank=18 | last=13.36 | yclose=12.99 | change=None%
+2025-12-17 15:50:31,550 | INFO | QBTS | rank=19 | last=26.24 | yclose=25.52 | change=None%
+2025-12-17 15:50:31,550 | INFO | === End of scan ===
+
+2025-12-17 15:50:54,662 | INFO | === Scan results for preset='gap_down_scan' (13 items) ===
+2025-12-17 15:50:54,662 | INFO | IMNM | rank=0 | last=21.95 | yclose=23.48 | change=None%
+2025-12-17 15:50:54,663 | INFO | LEN | rank=1 | last=111.44 | yclose=117.57 | change=None%
+2025-12-17 15:50:54,663 | INFO | NU | rank=2 | last=15.9 | yclose=16.2 | change=None%
+2025-12-17 15:50:54,663 | INFO | ORCL | rank=3 | last=185.5 | yclose=188.65 | change=None%
+2025-12-17 15:50:54,663 | INFO | STLA | rank=4 | last=11.72 | yclose=11.83 | change=None%
+2025-12-17 15:50:54,663 | INFO | WBD | rank=5 | last=28.67 | yclose=28.9 | change=None%
+2025-12-17 15:50:54,663 | INFO | TSLA | rank=6 | last=487.91 | yclose=489.88 | change=None%
+2025-12-17 15:50:54,663 | INFO | NVDA | rank=7 | last=177.08 | yclose=177.72 | change=None%
+2025-12-17 15:50:54,663 | INFO | PFE | rank=8 | last=25.49 | yclose=25.53 | change=None%
+2025-12-17 15:50:54,664 | INFO | AAL | rank=9 | last=15.97 | yclose=15.99 | change=None%
+2025-12-17 15:50:54,664 | INFO | SNAP | rank=10 | last=7.36 | yclose=7.37 | change=None%
+2025-12-17 15:50:54,664 | INFO | SBET | rank=11 | last=9.7 | yclose=9.71 | change=None%
+2025-12-17 15:50:54,664 | INFO | META | rank=12 | last=656.86 | yclose=657.15 | change=None%
+2025-12-17 15:50:54,664 | INFO | === End of scan ===
+
+2025-12-18 14:25:53,031 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-18 14:25:53,033 | INFO | DJT | rank=0 | last=12.62 | yclose=10.47 | change=None%
+2025-12-18 14:25:53,033 | INFO | SOC | rank=1 | last=7.71 | yclose=5.28 | change=None%
+2025-12-18 14:25:53,033 | INFO | MU | rank=2 | last=257.73 | yclose=225.52 | change=None%
+2025-12-18 14:25:53,033 | INFO | LULU | rank=3 | last=223.4 | yclose=207.87 | change=None%
+2025-12-18 14:25:53,033 | INFO | PYPL | rank=4 | last=59.21 | yclose=60.18 | change=None%
+2025-12-18 14:25:53,033 | INFO | SNDK | rank=5 | last=224.88 | yclose=206.83 | change=None%
+2025-12-18 14:25:53,033 | INFO | SMR | rank=6 | last=15.82 | yclose=15.73 | change=None%
+2025-12-18 14:25:53,033 | INFO | ORCL | rank=7 | last=180.74 | yclose=178.46 | change=None%
+2025-12-18 14:25:53,033 | INFO | BMNR | rank=8 | last=30.01 | yclose=29.32 | change=None%
+2025-12-18 14:25:53,033 | INFO | APLD | rank=9 | last=22.49 | yclose=22.0 | change=None%
+2025-12-18 14:25:53,033 | INFO | AVGO | rank=10 | last=329.62 | yclose=326.02 | change=None%
+2025-12-18 14:25:53,033 | INFO | TSLA | rank=11 | last=473.34 | yclose=467.26 | change=None%
+2025-12-18 14:25:53,033 | INFO | IREN | rank=12 | last=34.29 | yclose=33.78 | change=None%
+2025-12-18 14:25:53,033 | INFO | IONQ | rank=13 | last=47.14 | yclose=45.85 | change=None%
+2025-12-18 14:25:53,034 | INFO | GOOG | rank=14 | last=301.68 | yclose=298.06 | change=None%
+2025-12-18 14:25:53,034 | INFO | MARA | rank=15 | last=10.03 | yclose=9.93 | change=None%
+2025-12-18 14:25:53,034 | INFO | TLRY | rank=16 | last=13.52 | yclose=12.88 | change=None%
+2025-12-18 14:25:53,034 | INFO | CRWV | rank=17 | last=65.4 | yclose=64.55 | change=None%
+2025-12-18 14:25:53,034 | INFO | GOOGL | rank=18 | last=300.42 | yclose=296.72 | change=None%
+2025-12-18 14:25:53,034 | INFO | NVDA | rank=19 | last=172.95 | yclose=170.94 | change=None%
+2025-12-18 14:25:53,034 | INFO | === End of scan ===
+
+2025-12-18 14:26:31,012 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-18 14:26:31,012 | INFO | SOC | rank=0 | last=7.71 | yclose=5.28 | change=None%
+2025-12-18 14:26:31,012 | INFO | DJT | rank=1 | last=12.74 | yclose=10.47 | change=None%
+2025-12-18 14:26:31,013 | INFO | MU | rank=2 | last=257.5 | yclose=225.52 | change=None%
+2025-12-18 14:26:31,013 | INFO | SNDK | rank=3 | last=224.62 | yclose=206.83 | change=None%
+2025-12-18 14:26:31,013 | INFO | LULU | rank=4 | last=223.6 | yclose=207.87 | change=None%
+2025-12-18 14:26:31,014 | INFO | TLRY | rank=5 | last=13.52 | yclose=12.88 | change=None%
+2025-12-18 14:26:31,014 | INFO | RIVN | rank=6 | last=18.21 | yclose=17.63 | change=None%
+2025-12-18 14:26:31,014 | INFO | IONQ | rank=7 | last=47.14 | yclose=45.85 | change=None%
+2025-12-18 14:26:31,014 | INFO | QBTS | rank=8 | last=24.4 | yclose=23.8 | change=None%
+2025-12-18 14:26:31,014 | INFO | BBAI | rank=9 | last=5.58 | yclose=5.44 | change=None%
+2025-12-18 14:26:31,014 | INFO | INTC | rank=10 | last=36.92 | yclose=36.05 | change=None%
+2025-12-18 14:26:31,014 | INFO | BMNR | rank=11 | last=30.0 | yclose=29.32 | change=None%
+2025-12-18 14:26:31,015 | INFO | APLD | rank=12 | last=22.49 | yclose=22.0 | change=None%
+2025-12-18 14:26:31,015 | INFO | RGTI | rank=13 | last=22.88 | yclose=22.47 | change=None%
+2025-12-18 14:26:31,015 | INFO | OPEN | rank=14 | last=6.22 | yclose=6.12 | change=None%
+2025-12-18 14:26:31,015 | INFO | ONDS | rank=15 | last=7.49 | yclose=7.37 | change=None%
+2025-12-18 14:26:31,015 | INFO | PLTR | rank=16 | last=180.16 | yclose=177.29 | change=None%
+2025-12-18 14:26:31,015 | INFO | IREN | rank=17 | last=34.29 | yclose=33.78 | change=None%
+2025-12-18 14:26:31,015 | INFO | AMD | rank=18 | last=201.15 | yclose=198.11 | change=None%
+2025-12-18 14:26:31,015 | INFO | TSLA | rank=19 | last=473.48 | yclose=467.26 | change=None%
+2025-12-18 14:26:31,015 | INFO | === End of scan ===
+
+2025-12-18 14:26:35,542 | INFO | === Scan results for preset='gap_down_scan' (1 items) ===
+2025-12-18 14:26:35,542 | INFO | PYPL | rank=0 | last=59.28 | yclose=60.18 | change=None%
+2025-12-18 14:26:35,542 | INFO | === End of scan ===
+
+2025-12-18 14:46:41,398 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-18 14:46:41,400 | INFO | DJT | rank=0 | last=13.12 | yclose=10.47 | change=None%
+2025-12-18 14:46:41,400 | INFO | SOC | rank=1 | last=7.73 | yclose=5.28 | change=None%
+2025-12-18 14:46:41,400 | INFO | MU | rank=2 | last=256.38 | yclose=225.52 | change=None%
+2025-12-18 14:46:41,400 | INFO | LULU | rank=3 | last=224.0 | yclose=207.87 | change=None%
+2025-12-18 14:46:41,400 | INFO | PYPL | rank=4 | last=59.29 | yclose=60.18 | change=None%
+2025-12-18 14:46:41,400 | INFO | SNDK | rank=5 | last=224.51 | yclose=206.83 | change=None%
+2025-12-18 14:46:41,400 | INFO | KMX | rank=6 | last=38.75 | yclose=41.07 | change=None%
+2025-12-18 14:46:41,401 | INFO | SMR | rank=7 | last=15.83 | yclose=15.73 | change=None%
+2025-12-18 14:46:41,401 | INFO | ORCL | rank=8 | last=180.41 | yclose=178.46 | change=None%
+2025-12-18 14:46:41,401 | INFO | BMNR | rank=9 | last=30.23 | yclose=29.32 | change=None%
+2025-12-18 14:46:41,401 | INFO | AVGO | rank=10 | last=330.01 | yclose=326.02 | change=None%
+2025-12-18 14:46:41,401 | INFO | TSLA | rank=11 | last=474.77 | yclose=467.26 | change=None%
+2025-12-18 14:46:41,401 | INFO | APLD | rank=12 | last=22.36 | yclose=22.0 | change=None%
+2025-12-18 14:46:41,401 | INFO | IONQ | rank=13 | last=47.19 | yclose=45.85 | change=None%
+2025-12-18 14:46:41,401 | INFO | IREN | rank=14 | last=34.41 | yclose=33.78 | change=None%
+2025-12-18 14:46:41,401 | INFO | TLRY | rank=15 | last=13.66 | yclose=12.88 | change=None%
+2025-12-18 14:46:41,401 | INFO | CRWV | rank=16 | last=65.5 | yclose=64.55 | change=None%
+2025-12-18 14:46:41,401 | INFO | GOOG | rank=17 | last=301.48 | yclose=298.06 | change=None%
+2025-12-18 14:46:41,402 | INFO | MARA | rank=18 | last=10.05 | yclose=9.93 | change=None%
+2025-12-18 14:46:41,402 | INFO | GOOGL | rank=19 | last=300.21 | yclose=296.72 | change=None%
+2025-12-18 14:46:41,402 | INFO | === End of scan ===
+
+2025-12-18 14:47:16,312 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-18 14:47:16,312 | INFO | SOC | rank=0 | last=7.79 | yclose=5.28 | change=None%
+2025-12-18 14:47:16,312 | INFO | DJT | rank=1 | last=13.17 | yclose=10.47 | change=None%
+2025-12-18 14:47:16,312 | INFO | MU | rank=2 | last=256.8 | yclose=225.52 | change=None%
+2025-12-18 14:47:16,312 | INFO | SNDK | rank=3 | last=224.51 | yclose=206.83 | change=None%
+2025-12-18 14:47:16,312 | INFO | LULU | rank=4 | last=224.27 | yclose=207.87 | change=None%
+2025-12-18 14:47:16,313 | INFO | TLRY | rank=5 | last=13.66 | yclose=12.88 | change=None%
+2025-12-18 14:47:16,313 | INFO | RIVN | rank=6 | last=18.25 | yclose=17.63 | change=None%
+2025-12-18 14:47:16,313 | INFO | BMNR | rank=7 | last=30.22 | yclose=29.32 | change=None%
+2025-12-18 14:47:16,313 | INFO | IONQ | rank=8 | last=47.2 | yclose=45.85 | change=None%
+2025-12-18 14:47:16,313 | INFO | OPEN | rank=9 | last=6.28 | yclose=6.12 | change=None%
+2025-12-18 14:47:16,313 | INFO | QBTS | rank=10 | last=24.42 | yclose=23.8 | change=None%
+2025-12-18 14:47:16,313 | INFO | BBAI | rank=11 | last=5.56 | yclose=5.44 | change=None%
+2025-12-18 14:47:16,313 | INFO | INTC | rank=12 | last=36.78 | yclose=36.05 | change=None%
+2025-12-18 14:47:16,313 | INFO | RGTI | rank=13 | last=22.92 | yclose=22.47 | change=None%
+2025-12-18 14:47:16,313 | INFO | IREN | rank=14 | last=34.41 | yclose=33.78 | change=None%
+2025-12-18 14:47:16,313 | INFO | JOBY | rank=15 | last=13.43 | yclose=13.2 | change=None%
+2025-12-18 14:47:16,313 | INFO | AMD | rank=16 | last=201.6 | yclose=198.11 | change=None%
+2025-12-18 14:47:16,313 | INFO | NBIS | rank=17 | last=76.75 | yclose=75.45 | change=None%
+2025-12-18 14:47:16,313 | INFO | PLTR | rank=18 | last=180.23 | yclose=177.29 | change=None%
+2025-12-18 14:47:16,313 | INFO | APLD | rank=19 | last=22.35 | yclose=22.0 | change=None%
+2025-12-18 14:47:16,313 | INFO | === End of scan ===
+
+2025-12-18 14:47:23,506 | INFO | === Scan results for preset='gap_down_scan' (3 items) ===
+2025-12-18 14:47:23,506 | INFO | KMX | rank=0 | last=38.75 | yclose=41.07 | change=None%
+2025-12-18 14:47:23,506 | INFO | MDLN | rank=1 | last=38.9 | yclose=41.0 | change=None%
+2025-12-18 14:47:23,506 | INFO | PYPL | rank=2 | last=59.34 | yclose=60.18 | change=None%
+2025-12-18 14:47:23,506 | INFO | === End of scan ===
+
+2025-12-18 16:07:54,313 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-18 16:07:54,314 | INFO | DJT | rank=0 | last=12.97 | yclose=10.47 | change=None%
+2025-12-18 16:07:54,314 | INFO | SOC | rank=1 | last=8.12 | yclose=5.28 | change=None%
+2025-12-18 16:07:54,314 | INFO | BBNX | rank=2 | last=29.01 | yclose=29.19 | change=None%
+2025-12-18 16:07:54,314 | INFO | BKV | rank=3 | last=26.8 | yclose=26.2 | change=None%
+2025-12-18 16:07:54,314 | INFO | APLS | rank=4 | last=25.1 | yclose=25.2 | change=None%
+2025-12-18 16:07:54,314 | INFO | INSP | rank=5 | last=93.01 | yclose=118.27 | change=None%
+2025-12-18 16:07:54,314 | INFO | MU | rank=6 | last=259.5 | yclose=225.52 | change=None%
+2025-12-18 16:07:54,314 | INFO | DRI | rank=7 | last=199.0 | yclose=189.53 | change=None%
+2025-12-18 16:07:54,315 | INFO | BROS | rank=8 | last=63.97 | yclose=63.01 | change=None%
+2025-12-18 16:07:54,315 | INFO | LULU | rank=9 | last=223.8 | yclose=207.87 | change=None%
+2025-12-18 16:07:54,315 | INFO | BMNR | rank=10 | last=31.64 | yclose=29.32 | change=None%
+2025-12-18 16:07:54,315 | INFO | CLX | rank=11 | last=101.21 | yclose=101.52 | change=None%
+2025-12-18 16:07:54,315 | INFO | KMX | rank=12 | last=37.48 | yclose=41.07 | change=None%
+2025-12-18 16:07:54,315 | INFO | BIRK | rank=13 | last=42.49 | yclose=46.4 | change=None%
+2025-12-18 16:07:54,315 | INFO | SNDK | rank=14 | last=224.0 | yclose=206.83 | change=None%
+2025-12-18 16:07:54,315 | INFO | GEV | rank=15 | last=648.77 | yclose=614.19 | change=None%
+2025-12-18 16:07:54,316 | INFO | ROKU | rank=16 | last=109.7 | yclose=107.69 | change=None%
+2025-12-18 16:07:54,316 | INFO | PYPL | rank=17 | last=59.47 | yclose=60.18 | change=None%
+2025-12-18 16:07:54,316 | INFO | SMR | rank=18 | last=16.35 | yclose=15.73 | change=None%
+2025-12-18 16:07:54,316 | INFO | HUT | rank=19 | last=42.37 | yclose=40.16 | change=None%
+2025-12-18 16:07:54,316 | INFO | === End of scan ===
+
+2025-12-18 16:08:31,357 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-18 16:08:31,358 | INFO | SOC | rank=0 | last=8.12 | yclose=5.28 | change=None%
+2025-12-18 16:08:31,358 | INFO | DJT | rank=1 | last=12.99 | yclose=10.47 | change=None%
+2025-12-18 16:08:31,358 | INFO | MU | rank=2 | last=259.49 | yclose=225.52 | change=None%
+2025-12-18 16:08:31,358 | INFO | PCT | rank=3 | last=8.16 | yclose=7.45 | change=None%
+2025-12-18 16:08:31,358 | INFO | SNDK | rank=4 | last=224.22 | yclose=206.83 | change=None%
+2025-12-18 16:08:31,358 | INFO | BMNR | rank=5 | last=31.65 | yclose=29.32 | change=None%
+2025-12-18 16:08:31,358 | INFO | BE | rank=6 | last=82.76 | yclose=76.97 | change=None%
+2025-12-18 16:08:31,358 | INFO | LULU | rank=7 | last=223.8 | yclose=207.87 | change=None%
+2025-12-18 16:08:31,358 | INFO | CORZ | rank=8 | last=14.5 | yclose=13.57 | change=None%
+2025-12-18 16:08:31,359 | INFO | FLNC | rank=9 | last=19.82 | yclose=18.57 | change=None%
+2025-12-18 16:08:31,359 | INFO | TLRY | rank=10 | last=13.72 | yclose=12.88 | change=None%
+2025-12-18 16:08:31,359 | INFO | CIFR | rank=11 | last=15.2 | yclose=14.39 | change=None%
+2025-12-18 16:08:31,359 | INFO | ASTS | rank=12 | last=65.35 | yclose=61.86 | change=None%
+2025-12-18 16:08:31,359 | INFO | RGTI | rank=13 | last=23.78 | yclose=22.47 | change=None%
+2025-12-18 16:08:31,360 | INFO | HUT | rank=14 | last=42.53 | yclose=40.16 | change=None%
+2025-12-18 16:08:31,360 | INFO | GEV | rank=15 | last=648.7 | yclose=614.19 | change=None%
+2025-12-18 16:08:31,360 | INFO | WDC | rank=16 | last=175.55 | yclose=166.26 | change=None%
+2025-12-18 16:08:31,360 | INFO | ONDS | rank=17 | last=7.7784 | yclose=7.37 | change=None%
+2025-12-18 16:08:31,360 | INFO | HOOD | rank=18 | last=122.0 | yclose=115.8 | change=None%
+2025-12-18 16:08:31,360 | INFO | RDW | rank=19 | last=6.77 | yclose=6.44 | change=None%
+2025-12-18 16:08:31,360 | INFO | === End of scan ===
+
+2025-12-18 16:08:52,734 | INFO | === Scan results for preset='gap_down_scan' (11 items) ===
+2025-12-18 16:08:52,734 | INFO | INSP | rank=0 | last=92.75 | yclose=118.27 | change=None%
+2025-12-18 16:08:52,734 | INFO | KMX | rank=1 | last=37.37 | yclose=41.07 | change=None%
+2025-12-18 16:08:52,734 | INFO | BIRK | rank=2 | last=42.49 | yclose=46.4 | change=None%
+2025-12-18 16:08:52,734 | INFO | MDLN | rank=3 | last=39.01 | yclose=41.0 | change=None%
+2025-12-18 16:08:52,735 | INFO | ACN | rank=4 | last=264.0 | yclose=273.74 | change=None%
+2025-12-18 16:08:52,735 | INFO | PYPL | rank=5 | last=59.5 | yclose=60.18 | change=None%
+2025-12-18 16:08:52,735 | INFO | BBNX | rank=6 | last=29.01 | yclose=29.19 | change=None%
+2025-12-18 16:08:52,735 | INFO | NEM | rank=7 | last=98.9 | yclose=99.45 | change=None%
+2025-12-18 16:08:52,735 | INFO | APLS | rank=8 | last=25.1 | yclose=25.2 | change=None%
+2025-12-18 16:08:52,735 | INFO | CLX | rank=9 | last=101.21 | yclose=101.52 | change=None%
+2025-12-18 16:08:52,735 | INFO | ET | rank=10 | last=16.36 | yclose=16.39 | change=None%
+2025-12-18 16:08:52,735 | INFO | === End of scan ===
+
+2025-12-19 12:44:00,230 | INFO | === Scan results for preset='high_activity_scan' (9 items) ===
+2025-12-19 12:44:00,231 | INFO | DJT | rank=0 | last=15.1 | yclose=14.86 | change=None%
+2025-12-19 12:44:00,231 | INFO | NKE | rank=1 | last=58.85 | yclose=65.63 | change=None%
+2025-12-19 12:44:00,231 | INFO | MARA | rank=2 | last=9.94 | yclose=9.69 | change=None%
+2025-12-19 12:44:00,231 | INFO | ORCL | rank=3 | last=189.9 | yclose=180.03 | change=None%
+2025-12-19 12:44:00,231 | INFO | BMNR | rank=4 | last=30.28 | yclose=28.43 | change=None%
+2025-12-19 12:44:00,231 | INFO | IREN | rank=5 | last=37.22 | yclose=35.8 | change=None%
+2025-12-19 12:44:00,231 | INFO | TSLA | rank=6 | last=488.4 | yclose=483.37 | change=None%
+2025-12-19 12:44:00,232 | INFO | NVDA | rank=7 | last=176.63 | yclose=174.14 | change=None%
+2025-12-19 12:44:00,232 | INFO | ONDS | rank=8 | last=8.04 | yclose=7.8 | change=None%
+2025-12-19 12:44:00,232 | INFO | === End of scan ===
+
+2025-12-19 12:44:17,676 | INFO | === Scan results for preset='gap_up_scan' (8 items) ===
+2025-12-19 12:44:17,676 | INFO | BMNR | rank=0 | last=30.28 | yclose=28.43 | change=None%
+2025-12-19 12:44:17,676 | INFO | ORCL | rank=1 | last=189.81 | yclose=180.03 | change=None%
+2025-12-19 12:44:17,677 | INFO | IREN | rank=2 | last=37.22 | yclose=35.8 | change=None%
+2025-12-19 12:44:17,677 | INFO | ONDS | rank=3 | last=8.04 | yclose=7.8 | change=None%
+2025-12-19 12:44:17,677 | INFO | MARA | rank=4 | last=9.94 | yclose=9.69 | change=None%
+2025-12-19 12:44:17,677 | INFO | DJT | rank=5 | last=15.15 | yclose=14.86 | change=None%
+2025-12-19 12:44:17,677 | INFO | NVDA | rank=6 | last=176.66 | yclose=174.14 | change=None%
+2025-12-19 12:44:17,677 | INFO | TSLA | rank=7 | last=488.46 | yclose=483.37 | change=None%
+2025-12-19 12:44:17,677 | INFO | === End of scan ===
+
+2025-12-19 12:44:22,475 | INFO | === Scan results for preset='gap_down_scan' (1 items) ===
+2025-12-19 12:44:22,475 | INFO | NKE | rank=0 | last=58.88 | yclose=65.63 | change=None%
+2025-12-19 12:44:22,475 | INFO | === End of scan ===
+
+2025-12-19 14:10:53,959 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-19 14:10:53,959 | INFO | DJT | rank=0 | last=15.11 | yclose=14.86 | change=None%
+2025-12-19 14:10:53,959 | INFO | NKE | rank=1 | last=58.8 | yclose=65.63 | change=None%
+2025-12-19 14:10:53,959 | INFO | MARA | rank=2 | last=9.88 | yclose=9.69 | change=None%
+2025-12-19 14:10:53,959 | INFO | ORCL | rank=3 | last=187.63 | yclose=180.03 | change=None%
+2025-12-19 14:10:53,959 | INFO | BMNR | rank=4 | last=30.14 | yclose=28.43 | change=None%
+2025-12-19 14:10:53,959 | INFO | MSTR | rank=5 | last=164.07 | yclose=158.24 | change=None%
+2025-12-19 14:10:53,959 | INFO | SMR | rank=6 | last=16.03 | yclose=15.79 | change=None%
+2025-12-19 14:10:53,960 | INFO | IREN | rank=7 | last=36.98 | yclose=35.8 | change=None%
+2025-12-19 14:10:53,960 | INFO | RKLB | rank=8 | last=61.02 | yclose=59.92 | change=None%
+2025-12-19 14:10:53,960 | INFO | CRWV | rank=9 | last=70.77 | yclose=67.68 | change=None%
+2025-12-19 14:10:53,960 | INFO | MU | rank=10 | last=252.25 | yclose=248.55 | change=None%
+2025-12-19 14:10:53,960 | INFO | IONQ | rank=11 | last=47.06 | yclose=46.44 | change=None%
+2025-12-19 14:10:53,960 | INFO | TSLA | rank=12 | last=488.0 | yclose=483.37 | change=None%
+2025-12-19 14:10:53,960 | INFO | CLSK | rank=13 | last=11.49 | yclose=11.2 | change=None%
+2025-12-19 14:10:53,960 | INFO | NVDA | rank=14 | last=176.1 | yclose=174.14 | change=None%
+2025-12-19 14:10:53,960 | INFO | RIVN | rank=15 | last=20.25 | yclose=20.28 | change=None%
+2025-12-19 14:10:53,960 | INFO | APLD | rank=16 | last=24.72 | yclose=23.9 | change=None%
+2025-12-19 14:10:53,960 | INFO | GOOGL | rank=17 | last=303.16 | yclose=302.46 | change=None%
+2025-12-19 14:10:53,960 | INFO | PLTR | rank=18 | last=186.9 | yclose=185.69 | change=None%
+2025-12-19 14:10:53,961 | INFO | ONDS | rank=19 | last=7.96 | yclose=7.8 | change=None%
+2025-12-19 14:10:53,961 | INFO | === End of scan ===
+
+2025-12-19 14:11:27,448 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-19 14:11:27,448 | INFO | BMNR | rank=0 | last=30.17 | yclose=28.43 | change=None%
+2025-12-19 14:11:27,448 | INFO | CRWV | rank=1 | last=70.9 | yclose=67.68 | change=None%
+2025-12-19 14:11:27,448 | INFO | ORCL | rank=2 | last=187.77 | yclose=180.03 | change=None%
+2025-12-19 14:11:27,448 | INFO | MSTR | rank=3 | last=164.1 | yclose=158.24 | change=None%
+2025-12-19 14:11:27,449 | INFO | CIFR | rank=4 | last=15.68 | yclose=15.15 | change=None%
+2025-12-19 14:11:27,449 | INFO | IREN | rank=5 | last=37.03 | yclose=35.8 | change=None%
+2025-12-19 14:11:27,449 | INFO | APLD | rank=6 | last=24.72 | yclose=23.9 | change=None%
+2025-12-19 14:11:27,449 | INFO | CLSK | rank=7 | last=11.49 | yclose=11.2 | change=None%
+2025-12-19 14:11:27,449 | INFO | MARA | rank=8 | last=9.89 | yclose=9.69 | change=None%
+2025-12-19 14:11:27,449 | INFO | ONDS | rank=9 | last=7.96 | yclose=7.8 | change=None%
+2025-12-19 14:11:27,449 | INFO | RKLB | rank=10 | last=61.14 | yclose=59.92 | change=None%
+2025-12-19 14:11:27,449 | INFO | DJT | rank=11 | last=15.1 | yclose=14.86 | change=None%
+2025-12-19 14:11:27,449 | INFO | SMR | rank=12 | last=16.03 | yclose=15.79 | change=None%
+2025-12-19 14:11:27,449 | INFO | MU | rank=13 | last=252.05 | yclose=248.55 | change=None%
+2025-12-19 14:11:27,450 | INFO | IONQ | rank=14 | last=47.01 | yclose=46.44 | change=None%
+2025-12-19 14:11:27,450 | INFO | NVDA | rank=15 | last=176.1 | yclose=174.14 | change=None%
+2025-12-19 14:11:27,450 | INFO | TSLA | rank=16 | last=487.78 | yclose=483.37 | change=None%
+2025-12-19 14:11:27,450 | INFO | OPEN | rank=17 | last=6.34 | yclose=6.28 | change=None%
+2025-12-19 14:11:27,450 | INFO | INTC | rank=18 | last=36.54 | yclose=36.28 | change=None%
+2025-12-19 14:11:27,450 | INFO | PLTR | rank=19 | last=186.9 | yclose=185.69 | change=None%
+2025-12-19 14:11:27,450 | INFO | === End of scan ===
+
+2025-12-19 14:11:33,579 | INFO | === Scan results for preset='gap_down_scan' (2 items) ===
+2025-12-19 14:11:33,579 | INFO | NKE | rank=0 | last=58.85 | yclose=65.63 | change=None%
+2025-12-19 14:11:33,579 | INFO | RIVN | rank=1 | last=20.25 | yclose=20.28 | change=None%
+2025-12-19 14:11:33,579 | INFO | === End of scan ===
+
+2025-12-19 14:30:32,609 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-19 14:30:32,610 | INFO | NKE | rank=0 | last=58.31 | yclose=65.63 | change=None%
+2025-12-19 14:30:32,610 | INFO | DJT | rank=1 | last=15.3 | yclose=14.86 | change=None%
+2025-12-19 14:30:32,610 | INFO | MARA | rank=2 | last=9.89 | yclose=9.69 | change=None%
+2025-12-19 14:30:32,610 | INFO | ORCL | rank=3 | last=187.81 | yclose=180.03 | change=None%
+2025-12-19 14:30:32,610 | INFO | BMNR | rank=4 | last=30.23 | yclose=28.43 | change=None%
+2025-12-19 14:30:32,611 | INFO | MSTR | rank=5 | last=164.32 | yclose=158.24 | change=None%
+2025-12-19 14:30:32,611 | INFO | SMR | rank=6 | last=16.03 | yclose=15.79 | change=None%
+2025-12-19 14:30:32,611 | INFO | RKLB | rank=7 | last=61.23 | yclose=59.92 | change=None%
+2025-12-19 14:30:32,611 | INFO | IREN | rank=8 | last=36.95 | yclose=35.8 | change=None%
+2025-12-19 14:30:32,611 | INFO | CRWV | rank=9 | last=71.21 | yclose=67.68 | change=None%
+2025-12-19 14:30:32,611 | INFO | MU | rank=10 | last=253.28 | yclose=248.55 | change=None%
+2025-12-19 14:30:32,611 | INFO | IONQ | rank=11 | last=47.07 | yclose=46.44 | change=None%
+2025-12-19 14:30:32,611 | INFO | TSLA | rank=12 | last=489.47 | yclose=483.37 | change=None%
+2025-12-19 14:30:32,611 | INFO | NVDA | rank=13 | last=176.03 | yclose=174.14 | change=None%
+2025-12-19 14:30:32,611 | INFO | CLSK | rank=14 | last=11.53 | yclose=11.2 | change=None%
+2025-12-19 14:30:32,611 | INFO | AVGO | rank=15 | last=332.0 | yclose=329.88 | change=None%
+2025-12-19 14:30:32,612 | INFO | SMCI | rank=16 | last=29.75 | yclose=29.37 | change=None%
+2025-12-19 14:30:32,612 | INFO | RIVN | rank=17 | last=20.23 | yclose=20.28 | change=None%
+2025-12-19 14:30:32,612 | INFO | TLRY | rank=18 | last=12.64 | yclose=12.34 | change=None%
+2025-12-19 14:30:32,612 | INFO | HOOD | rank=19 | last=120.48 | yclose=117.16 | change=None%
+2025-12-19 14:30:32,612 | INFO | === End of scan ===
+
+2025-12-19 14:31:06,243 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-19 14:31:06,243 | INFO | BMNR | rank=0 | last=30.27 | yclose=28.43 | change=None%
+2025-12-19 14:31:06,243 | INFO | CRWV | rank=1 | last=71.21 | yclose=67.68 | change=None%
+2025-12-19 14:31:06,243 | INFO | ORCL | rank=2 | last=187.75 | yclose=180.03 | change=None%
+2025-12-19 14:31:06,243 | INFO | CIFR | rank=3 | last=15.76 | yclose=15.15 | change=None%
+2025-12-19 14:31:06,243 | INFO | MSTR | rank=4 | last=164.32 | yclose=158.24 | change=None%
+2025-12-19 14:31:06,243 | INFO | APLD | rank=5 | last=24.81 | yclose=23.9 | change=None%
+2025-12-19 14:31:06,244 | INFO | IREN | rank=6 | last=36.99 | yclose=35.8 | change=None%
+2025-12-19 14:31:06,244 | INFO | DJT | rank=7 | last=15.3 | yclose=14.86 | change=None%
+2025-12-19 14:31:06,244 | INFO | CLSK | rank=8 | last=11.53 | yclose=11.2 | change=None%
+2025-12-19 14:31:06,244 | INFO | HOOD | rank=9 | last=120.47 | yclose=117.16 | change=None%
+2025-12-19 14:31:06,244 | INFO | ONDS | rank=10 | last=8.001 | yclose=7.8 | change=None%
+2025-12-19 14:31:06,244 | INFO | TLRY | rank=11 | last=12.64 | yclose=12.34 | change=None%
+2025-12-19 14:31:06,244 | INFO | RKLB | rank=12 | last=61.2 | yclose=59.92 | change=None%
+2025-12-19 14:31:06,244 | INFO | MARA | rank=13 | last=9.9 | yclose=9.69 | change=None%
+2025-12-19 14:31:06,244 | INFO | MU | rank=14 | last=253.0 | yclose=248.55 | change=None%
+2025-12-19 14:31:06,244 | INFO | SMR | rank=15 | last=16.03 | yclose=15.79 | change=None%
+2025-12-19 14:31:06,244 | INFO | IONQ | rank=16 | last=47.07 | yclose=46.44 | change=None%
+2025-12-19 14:31:06,245 | INFO | SMCI | rank=17 | last=29.75 | yclose=29.37 | change=None%
+2025-12-19 14:31:06,245 | INFO | TSLA | rank=18 | last=489.4 | yclose=483.37 | change=None%
+2025-12-19 14:31:06,245 | INFO | NVDA | rank=19 | last=176.07 | yclose=174.14 | change=None%
+2025-12-19 14:31:06,245 | INFO | === End of scan ===
+
+2025-12-19 14:31:12,381 | INFO | === Scan results for preset='gap_down_scan' (2 items) ===
+2025-12-19 14:31:12,381 | INFO | NKE | rank=0 | last=58.3 | yclose=65.63 | change=None%
+2025-12-19 14:31:12,381 | INFO | RIVN | rank=1 | last=20.22 | yclose=20.28 | change=None%
+2025-12-19 14:31:12,381 | INFO | === End of scan ===
+
+2025-12-19 14:37:19,992 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-19 14:37:19,992 | INFO | NKE | rank=0 | last=58.25 | yclose=65.63 | change=None%
+2025-12-19 14:37:19,992 | INFO | DJT | rank=1 | last=15.17 | yclose=14.86 | change=None%
+2025-12-19 14:37:19,992 | INFO | MARA | rank=2 | last=9.89 | yclose=9.69 | change=None%
+2025-12-19 14:37:19,992 | INFO | ORCL | rank=3 | last=187.06 | yclose=180.03 | change=None%
+2025-12-19 14:37:19,992 | INFO | BMNR | rank=4 | last=30.18 | yclose=28.43 | change=None%
+2025-12-19 14:37:19,992 | INFO | MSTR | rank=5 | last=163.9 | yclose=158.24 | change=None%
+2025-12-19 14:37:19,992 | INFO | SMR | rank=6 | last=16.02 | yclose=15.79 | change=None%
+2025-12-19 14:37:19,992 | INFO | RKLB | rank=7 | last=61.1 | yclose=59.92 | change=None%
+2025-12-19 14:37:19,992 | INFO | IREN | rank=8 | last=36.94 | yclose=35.8 | change=None%
+2025-12-19 14:37:19,992 | INFO | CRWV | rank=9 | last=71.17 | yclose=67.68 | change=None%
+2025-12-19 14:37:19,993 | INFO | MU | rank=10 | last=252.6 | yclose=248.55 | change=None%
+2025-12-19 14:37:19,993 | INFO | IONQ | rank=11 | last=47.0 | yclose=46.44 | change=None%
+2025-12-19 14:37:19,993 | INFO | TSLA | rank=12 | last=488.6 | yclose=483.37 | change=None%
+2025-12-19 14:37:19,993 | INFO | NBIS | rank=13 | last=80.9 | yclose=78.09 | change=None%
+2025-12-19 14:37:19,993 | INFO | NVDA | rank=14 | last=175.79 | yclose=174.14 | change=None%
+2025-12-19 14:37:19,993 | INFO | CLSK | rank=15 | last=11.5 | yclose=11.2 | change=None%
+2025-12-19 14:37:19,993 | INFO | RIVN | rank=16 | last=20.2 | yclose=20.28 | change=None%
+2025-12-19 14:37:19,993 | INFO | AVGO | rank=17 | last=331.9 | yclose=329.88 | change=None%
+2025-12-19 14:37:19,993 | INFO | TLRY | rank=18 | last=12.64 | yclose=12.34 | change=None%
+2025-12-19 14:37:19,993 | INFO | SMCI | rank=19 | last=29.69 | yclose=29.37 | change=None%
+2025-12-19 14:37:19,993 | INFO | === End of scan ===
+
+2025-12-19 14:37:51,515 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-19 14:37:51,515 | INFO | BMNR | rank=0 | last=30.18 | yclose=28.43 | change=None%
+2025-12-19 14:37:51,515 | INFO | CRWV | rank=1 | last=71.0 | yclose=67.68 | change=None%
+2025-12-19 14:37:51,516 | INFO | ORCL | rank=2 | last=187.2 | yclose=180.03 | change=None%
+2025-12-19 14:37:51,516 | INFO | MSTR | rank=3 | last=163.99 | yclose=158.24 | change=None%
+2025-12-19 14:37:51,516 | INFO | CIFR | rank=4 | last=15.7 | yclose=15.15 | change=None%
+2025-12-19 14:37:51,517 | INFO | NBIS | rank=5 | last=80.9 | yclose=78.09 | change=None%
+2025-12-19 14:37:51,517 | INFO | APLD | rank=6 | last=24.75 | yclose=23.9 | change=None%
+2025-12-19 14:37:51,517 | INFO | IREN | rank=7 | last=36.91 | yclose=35.8 | change=None%
+2025-12-19 14:37:51,517 | INFO | ONDS | rank=8 | last=8.01 | yclose=7.8 | change=None%
+2025-12-19 14:37:51,517 | INFO | HOOD | rank=9 | last=120.3 | yclose=117.16 | change=None%
+2025-12-19 14:37:51,517 | INFO | CLSK | rank=10 | last=11.5 | yclose=11.2 | change=None%
+2025-12-19 14:37:51,517 | INFO | TLRY | rank=11 | last=12.66 | yclose=12.34 | change=None%
+2025-12-19 14:37:51,517 | INFO | DJT | rank=12 | last=15.17 | yclose=14.86 | change=None%
+2025-12-19 14:37:51,517 | INFO | RKLB | rank=13 | last=61.1 | yclose=59.92 | change=None%
+2025-12-19 14:37:51,517 | INFO | MARA | rank=14 | last=9.87 | yclose=9.69 | change=None%
+2025-12-19 14:37:51,517 | INFO | MU | rank=15 | last=252.52 | yclose=248.55 | change=None%
+2025-12-19 14:37:51,517 | INFO | SMR | rank=16 | last=16.02 | yclose=15.79 | change=None%
+2025-12-19 14:37:51,517 | INFO | IONQ | rank=17 | last=47.0 | yclose=46.44 | change=None%
+2025-12-19 14:37:51,518 | INFO | SMCI | rank=18 | last=29.69 | yclose=29.37 | change=None%
+2025-12-19 14:37:51,518 | INFO | TSLA | rank=19 | last=488.55 | yclose=483.37 | change=None%
+2025-12-19 14:37:51,518 | INFO | === End of scan ===
+
+2025-12-19 14:37:57,580 | INFO | === Scan results for preset='gap_down_scan' (2 items) ===
+2025-12-19 14:37:57,581 | INFO | NKE | rank=0 | last=58.3 | yclose=65.63 | change=None%
+2025-12-19 14:37:57,581 | INFO | RIVN | rank=1 | last=20.21 | yclose=20.28 | change=None%
+2025-12-19 14:37:57,581 | INFO | === End of scan ===
+
+2025-12-19 15:16:14,464 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-19 15:16:14,464 | INFO | FOLD | rank=0 | last=14.14 | yclose=10.89 | change=None%
+2025-12-19 15:16:14,465 | INFO | DJT | rank=1 | last=15.41 | yclose=14.86 | change=None%
+2025-12-19 15:16:14,465 | INFO | NKE | rank=2 | last=58.07 | yclose=65.63 | change=None%
+2025-12-19 15:16:14,465 | INFO | RJF | rank=3 | last=None | yclose=160.22 | change=None%
+2025-12-19 15:16:14,465 | INFO | VLTO | rank=4 | last=100.53 | yclose=100.77 | change=None%
+2025-12-19 15:16:14,465 | INFO | Z | rank=5 | last=67.36 | yclose=67.51 | change=None%
+2025-12-19 15:16:14,465 | INFO | BDX | rank=6 | last=None | yclose=194.7 | change=None%
+2025-12-19 15:16:14,466 | INFO | ORCL | rank=7 | last=188.55 | yclose=180.03 | change=None%
+2025-12-19 15:16:14,466 | INFO | LUNR | rank=8 | last=11.63 | yclose=10.85 | change=None%
+2025-12-19 15:16:14,466 | INFO | BMNR | rank=9 | last=30.11 | yclose=28.43 | change=None%
+2025-12-19 15:16:14,466 | INFO | RDW | rank=10 | last=7.3005 | yclose=7.02 | change=None%
+2025-12-19 15:16:14,466 | INFO | BK | rank=11 | last=114.46 | yclose=114.45 | change=None%
+2025-12-19 15:16:14,466 | INFO | MARA | rank=12 | last=9.9 | yclose=9.69 | change=None%
+2025-12-19 15:16:14,466 | INFO | SMR | rank=13 | last=15.98 | yclose=15.79 | change=None%
+2025-12-19 15:16:14,466 | INFO | MSTR | rank=14 | last=163.69 | yclose=158.24 | change=None%
+2025-12-19 15:16:14,466 | INFO | USB | rank=15 | last=53.73 | yclose=53.87 | change=None%
+2025-12-19 15:16:14,467 | INFO | RKLB | rank=16 | last=60.68 | yclose=59.92 | change=None%
+2025-12-19 15:16:14,467 | INFO | COIN | rank=17 | last=245.71 | yclose=239.2 | change=None%
+2025-12-19 15:16:14,467 | INFO | IREN | rank=18 | last=36.99 | yclose=35.8 | change=None%
+2025-12-19 15:16:14,467 | INFO | CRWV | rank=19 | last=71.39 | yclose=67.68 | change=None%
+2025-12-19 15:16:14,467 | INFO | === End of scan ===
+
+2025-12-19 15:16:48,853 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-19 15:16:48,853 | INFO | FOLD | rank=0 | last=14.14 | yclose=10.89 | change=None%
+2025-12-19 15:16:48,853 | INFO | LUNR | rank=1 | last=11.65 | yclose=10.85 | change=None%
+2025-12-19 15:16:48,854 | INFO | BMNR | rank=2 | last=30.07 | yclose=28.43 | change=None%
+2025-12-19 15:16:48,854 | INFO | CRWV | rank=3 | last=71.37 | yclose=67.68 | change=None%
+2025-12-19 15:16:48,854 | INFO | ORCL | rank=4 | last=188.7 | yclose=180.03 | change=None%
+2025-12-19 15:16:48,854 | INFO | SBET | rank=5 | last=9.43 | yclose=9.02 | change=None%
+2025-12-19 15:16:48,854 | INFO | RDW | rank=6 | last=7.31 | yclose=7.02 | change=None%
+2025-12-19 15:16:48,854 | INFO | CORZ | rank=7 | last=15.1 | yclose=14.56 | change=None%
+2025-12-19 15:16:48,854 | INFO | DJT | rank=8 | last=15.4 | yclose=14.86 | change=None%
+2025-12-19 15:16:48,854 | INFO | SOC | rank=9 | last=8.59 | yclose=8.25 | change=None%
+2025-12-19 15:16:48,854 | INFO | NBIS | rank=10 | last=80.73 | yclose=78.09 | change=None%
+2025-12-19 15:16:48,854 | INFO | MSTR | rank=11 | last=163.31 | yclose=158.24 | change=None%
+2025-12-19 15:16:48,854 | INFO | IREN | rank=12 | last=37.0 | yclose=35.8 | change=None%
+2025-12-19 15:16:48,854 | INFO | APLD | rank=13 | last=24.6 | yclose=23.9 | change=None%
+2025-12-19 15:16:48,854 | INFO | PL | rank=14 | last=17.89 | yclose=17.49 | change=None%
+2025-12-19 15:16:48,854 | INFO | CLSK | rank=15 | last=11.52 | yclose=11.2 | change=None%
+2025-12-19 15:16:48,854 | INFO | CIFR | rank=16 | last=15.57 | yclose=15.15 | change=None%
+2025-12-19 15:16:48,855 | INFO | COIN | rank=17 | last=245.71 | yclose=239.2 | change=None%
+2025-12-19 15:16:48,855 | INFO | ASTS | rank=18 | last=67.7 | yclose=65.93 | change=None%
+2025-12-19 15:16:48,855 | INFO | WULF | rank=19 | last=12.08 | yclose=11.79 | change=None%
+2025-12-19 15:16:48,855 | INFO | === End of scan ===
+
+2025-12-19 15:17:08,791 | INFO | === Scan results for preset='gap_down_scan' (10 items) ===
+2025-12-19 15:17:08,791 | INFO | NKE | rank=0 | last=57.85 | yclose=65.63 | change=None%
+2025-12-19 15:17:08,791 | INFO | LYFT | rank=1 | last=19.23 | yclose=19.86 | change=None%
+2025-12-19 15:17:08,792 | INFO | SNAP | rank=2 | last=7.59 | yclose=7.63 | change=None%
+2025-12-19 15:17:08,792 | INFO | PYPL | rank=3 | last=59.2 | yclose=59.44 | change=None%
+2025-12-19 15:17:08,792 | INFO | AAPL | rank=4 | last=271.16 | yclose=272.19 | change=None%
+2025-12-19 15:17:08,792 | INFO | META | rank=5 | last=661.99 | yclose=664.45 | change=None%
+2025-12-19 15:17:08,792 | INFO | USB | rank=6 | last=53.73 | yclose=53.87 | change=None%
+2025-12-19 15:17:08,792 | INFO | RIVN | rank=7 | last=20.23 | yclose=20.28 | change=None%
+2025-12-19 15:17:08,792 | INFO | Z | rank=8 | last=67.36 | yclose=67.51 | change=None%
+2025-12-19 15:17:08,792 | INFO | KO | rank=9 | last=70.36 | yclose=70.36 | change=None%
+2025-12-19 15:17:08,792 | INFO | === End of scan ===
+
+2025-12-19 16:22:25,448 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2025-12-19 16:22:25,450 | INFO | FOLD | rank=0 | last=14.2 | yclose=10.89 | change=None%
+2025-12-19 16:22:25,450 | INFO | DJT | rank=1 | last=15.43 | yclose=14.86 | change=None%
+2025-12-19 16:22:25,450 | INFO | NKE | rank=2 | last=59.32 | yclose=65.63 | change=None%
+2025-12-19 16:22:25,450 | INFO | ROP | rank=3 | last=449.93 | yclose=450.51 | change=None%
+2025-12-19 16:22:25,450 | INFO | AME | rank=4 | last=None | yclose=201.96 | change=None%
+2025-12-19 16:22:25,450 | INFO | LW | rank=5 | last=51.35 | yclose=59.33 | change=None%
+2025-12-19 16:22:25,450 | INFO | ULS | rank=6 | last=78.72 | yclose=78.72 | change=None%
+2025-12-19 16:22:25,451 | INFO | RJF | rank=7 | last=None | yclose=160.22 | change=None%
+2025-12-19 16:22:25,451 | INFO | VLTO | rank=8 | last=None | yclose=100.77 | change=None%
+2025-12-19 16:22:25,451 | INFO | WIX | rank=9 | last=106.0 | yclose=104.19 | change=None%
+2025-12-19 16:22:25,451 | INFO | VVV | rank=10 | last=30.42 | yclose=30.42 | change=None%
+2025-12-19 16:22:25,451 | INFO | EVEX | rank=11 | last=5.1 | yclose=4.83 | change=None%
+2025-12-19 16:22:25,451 | INFO | Z | rank=12 | last=67.36 | yclose=67.51 | change=None%
+2025-12-19 16:22:25,451 | INFO | CRDO | rank=13 | last=141.99 | yclose=138.57 | change=None%
+2025-12-19 16:22:25,451 | INFO | FISV | rank=14 | last=68.32 | yclose=68.0 | change=None%
+2025-12-19 16:22:25,451 | INFO | TGT | rank=15 | last=99.04 | yclose=99.05 | change=None%
+2025-12-19 16:22:25,451 | INFO | CCL | rank=16 | last=28.46 | yclose=28.34 | change=None%
+2025-12-19 16:22:25,451 | INFO | ALHC | rank=17 | last=20.41 | yclose=20.41 | change=None%
+2025-12-19 16:22:25,451 | INFO | LUNR | rank=18 | last=None | yclose=10.85 | change=None%
+2025-12-19 16:22:25,451 | INFO | SHC | rank=19 | last=17.09 | yclose=17.11 | change=None%
+2025-12-19 16:22:25,451 | INFO | === End of scan ===
+
+2025-12-19 16:23:02,526 | INFO | === Scan results for preset='gap_up_scan' (20 items) ===
+2025-12-19 16:23:02,527 | INFO | FOLD | rank=0 | last=14.21 | yclose=10.89 | change=None%
+2025-12-19 16:23:02,527 | INFO | LUNR | rank=1 | last=11.76 | yclose=10.85 | change=None%
+2025-12-19 16:23:02,527 | INFO | BMNR | rank=2 | last=30.03 | yclose=28.43 | change=None%
+2025-12-19 16:23:02,527 | INFO | EVEX | rank=3 | last=5.1 | yclose=4.83 | change=None%
+2025-12-19 16:23:02,527 | INFO | SOC | rank=4 | last=8.71 | yclose=8.25 | change=None%
+2025-12-19 16:23:02,527 | INFO | CRWV | rank=5 | last=71.3 | yclose=67.68 | change=None%
+2025-12-19 16:23:02,527 | INFO | SATS | rank=6 | last=108.0 | yclose=102.59 | change=None%
+2025-12-19 16:23:02,527 | INFO | SBET | rank=7 | last=9.48 | yclose=9.02 | change=None%
+2025-12-19 16:23:02,528 | INFO | RDW | rank=8 | last=7.365 | yclose=7.02 | change=None%
+2025-12-19 16:23:02,528 | INFO | HUT | rank=9 | last=40.42 | yclose=38.59 | change=None%
+2025-12-19 16:23:02,528 | INFO | DJT | rank=10 | last=15.5 | yclose=14.86 | change=None%
+2025-12-19 16:23:02,528 | INFO | NBIS | rank=11 | last=81.25 | yclose=78.09 | change=None%
+2025-12-19 16:23:02,528 | INFO | APLD | rank=12 | last=24.85 | yclose=23.9 | change=None%
+2025-12-19 16:23:02,528 | INFO | ORCL | rank=13 | last=187.18 | yclose=180.03 | change=None%
+2025-12-19 16:23:02,528 | INFO | CIFR | rank=14 | last=15.72 | yclose=15.15 | change=None%
+2025-12-19 16:23:02,528 | INFO | MSTR | rank=15 | last=163.99 | yclose=158.24 | change=None%
+2025-12-19 16:23:02,528 | INFO | IREN | rank=16 | last=37.076 | yclose=35.8 | change=None%
+2025-12-19 16:23:02,528 | INFO | ASTS | rank=17 | last=67.99 | yclose=65.93 | change=None%
+2025-12-19 16:23:02,528 | INFO | CORZ | rank=18 | last=15.01 | yclose=14.56 | change=None%
+2025-12-19 16:23:02,528 | INFO | CLSK | rank=19 | last=11.54 | yclose=11.2 | change=None%
+2025-12-19 16:23:02,528 | INFO | === End of scan ===
+
+2025-12-19 16:23:37,235 | INFO | === Scan results for preset='gap_down_scan' (20 items) ===
+2025-12-19 16:23:37,236 | INFO | LW | rank=0 | last=51.35 | yclose=59.33 | change=None%
+2025-12-19 16:23:37,236 | INFO | NKE | rank=1 | last=59.36 | yclose=65.63 | change=None%
+2025-12-19 16:23:37,236 | INFO | FDX | rank=2 | last=275.35 | yclose=287.12 | change=None%
+2025-12-19 16:23:37,236 | INFO | LYFT | rank=3 | last=19.16 | yclose=19.86 | change=None%
+2025-12-19 16:23:37,236 | INFO | RIVN | rank=4 | last=20.15 | yclose=20.28 | change=None%
+2025-12-19 16:23:37,236 | INFO | SNAP | rank=5 | last=7.6 | yclose=7.63 | change=None%
+2025-12-19 16:23:37,236 | INFO | PG | rank=6 | last=145.01 | yclose=145.52 | change=None%
+2025-12-19 16:23:37,236 | INFO | ORLY | rank=7 | last=91.48 | yclose=91.79 | change=None%
+2025-12-19 16:23:37,236 | INFO | UEC | rank=8 | last=11.89 | yclose=11.93 | change=None%
+2025-12-19 16:23:37,236 | INFO | FLNC | rank=9 | last=19.25 | yclose=19.31 | change=None%
+2025-12-19 16:23:37,236 | INFO | USB | rank=10 | last=53.73 | yclose=53.87 | change=None%
+2025-12-19 16:23:37,236 | INFO | PYPL | rank=11 | last=59.3 | yclose=59.44 | change=None%
+2025-12-19 16:23:37,236 | INFO | Z | rank=12 | last=67.36 | yclose=67.51 | change=None%
+2025-12-19 16:23:37,236 | INFO | PEP | rank=13 | last=149.05 | yclose=149.37 | change=None%
+2025-12-19 16:23:37,236 | INFO | RGTI | rank=14 | last=22.78 | yclose=22.82 | change=None%
+2025-12-19 16:23:37,236 | INFO | KO | rank=15 | last=70.26 | yclose=70.36 | change=None%
+2025-12-19 16:23:37,237 | INFO | AAPL | rank=16 | last=271.9 | yclose=272.19 | change=None%
+2025-12-19 16:23:37,237 | INFO | CCL | rank=17 | last=28.09 | yclose=28.34 | change=None%
+2025-12-19 16:23:37,237 | INFO | CMCSA | rank=18 | last=30.25 | yclose=30.27 | change=None%
+2025-12-19 16:23:37,237 | INFO | ROP | rank=19 | last=450.23 | yclose=450.51 | change=None%
+2025-12-19 16:23:37,237 | INFO | === End of scan ===
+
+2026-01-07 12:18:05,525 | INFO | === Scan results for preset='high_activity_scan' (15 items) ===
+2026-01-07 12:18:05,525 | INFO | VTYX | rank=0 | last=16.54 | yclose=10.05 | change=None%
+2026-01-07 12:18:05,525 | INFO | MBLY | rank=1 | last=13.5 | yclose=12.18 | change=None%
+2026-01-07 12:18:05,526 | INFO | CRML | rank=2 | last=13.0 | yclose=11.81 | change=None%
+2026-01-07 12:18:05,526 | INFO | MSTR | rank=3 | last=164.04 | yclose=157.97 | change=None%
+2026-01-07 12:18:05,526 | INFO | ASTS | rank=4 | last=93.6 | yclose=97.49 | change=None%
+2026-01-07 12:18:05,526 | INFO | SOUN | rank=5 | last=11.28 | yclose=11.23 | change=None%
+2026-01-07 12:18:05,526 | INFO | MU | rank=6 | last=338.43 | yclose=343.43 | change=None%
+2026-01-07 12:18:05,526 | INFO | SMR | rank=7 | last=19.16 | yclose=19.57 | change=None%
+2026-01-07 12:18:05,526 | INFO | BMNR | rank=8 | last=32.1 | yclose=32.33 | change=None%
+2026-01-07 12:18:05,526 | INFO | IREN | rank=9 | last=45.09 | yclose=45.91 | change=None%
+2026-01-07 12:18:05,526 | INFO | APLD | rank=10 | last=31.06 | yclose=30.26 | change=None%
+2026-01-07 12:18:05,526 | INFO | TSLA | rank=11 | last=434.9 | yclose=432.96 | change=None%
+2026-01-07 12:18:05,526 | INFO | NVDA | rank=12 | last=187.67 | yclose=187.24 | change=None%
+2026-01-07 12:18:05,527 | INFO | OPEN | rank=13 | last=6.8 | yclose=6.93 | change=None%
+2026-01-07 12:18:05,527 | INFO | BBAI | rank=14 | last=6.27 | yclose=6.41 | change=None%
+2026-01-07 12:18:05,527 | INFO | === End of scan ===
+
+2026-01-07 12:18:20,984 | INFO | === Scan results for preset='gap_up_scan' (8 items) ===
+2026-01-07 12:18:20,985 | INFO | VTYX | rank=0 | last=16.54 | yclose=10.05 | change=None%
+2026-01-07 12:18:20,985 | INFO | MBLY | rank=1 | last=13.5 | yclose=12.18 | change=None%
+2026-01-07 12:18:20,985 | INFO | CRML | rank=2 | last=13.04 | yclose=11.81 | change=None%
+2026-01-07 12:18:20,985 | INFO | MSTR | rank=3 | last=164.04 | yclose=157.97 | change=None%
+2026-01-07 12:18:20,985 | INFO | APLD | rank=4 | last=31.06 | yclose=30.26 | change=None%
+2026-01-07 12:18:20,985 | INFO | TSLA | rank=5 | last=434.92 | yclose=432.96 | change=None%
+2026-01-07 12:18:20,985 | INFO | SOUN | rank=6 | last=11.28 | yclose=11.23 | change=None%
+2026-01-07 12:18:20,985 | INFO | NVDA | rank=7 | last=187.6 | yclose=187.24 | change=None%
+2026-01-07 12:18:20,985 | INFO | === End of scan ===
+
+2026-01-07 12:18:34,397 | INFO | === Scan results for preset='gap_down_scan' (7 items) ===
+2026-01-07 12:18:34,397 | INFO | ASTS | rank=0 | last=93.3 | yclose=97.49 | change=None%
+2026-01-07 12:18:34,397 | INFO | BBAI | rank=1 | last=6.27 | yclose=6.41 | change=None%
+2026-01-07 12:18:34,397 | INFO | SMR | rank=2 | last=19.15 | yclose=19.57 | change=None%
+2026-01-07 12:18:34,397 | INFO | OPEN | rank=3 | last=6.8 | yclose=6.93 | change=None%
+2026-01-07 12:18:34,397 | INFO | IREN | rank=4 | last=45.09 | yclose=45.91 | change=None%
+2026-01-07 12:18:34,397 | INFO | MU | rank=5 | last=338.43 | yclose=343.43 | change=None%
+2026-01-07 12:18:34,398 | INFO | BMNR | rank=6 | last=32.1 | yclose=32.33 | change=None%
+2026-01-07 12:18:34,398 | INFO | === End of scan ===
+

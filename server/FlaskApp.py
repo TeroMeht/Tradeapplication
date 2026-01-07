@@ -25,6 +25,7 @@ from helpers.handle_open_risks import handle_open_risk
 from helpers.detect_stoplevel import detect_stoplevel
 from helpers.handle_executions import is_entry_allowed
 from helpers.utils import log_scan_results, sanitize_for_json
+from helpers.handle_rvol_operations import *
 from scanner.scan import run_scanner
 from helpers.handle_market_scan import *
 
@@ -398,6 +399,19 @@ def get_ibscanner_data():
         # Fetch snapshot last prices and yesterday close
         snapshot = fetch_snapshot_prices(ib, clean_data)
         yclose   = fetch_yesterday_close(ib, clean_data)
+    # -------------------------------
+        # Compute RVOL and print results
+        # -------------------------------
+        time_zone = "Europe/Helsinki"  # or your project-config timezone
+        rvol_map = compute_rvol_from_clean_data(ib, clean_data, time_zone)
+
+        # Print RVOL results
+        for symbol, rvol_info in rvol_map.items():
+            logger.info(f"{symbol}: RVOL={rvol_info.get('rvol')}, "
+                f"Current Volume={rvol_info.get('current_volume')}, "
+                f"Avg Volume={rvol_info.get('avg_volume')}")
+
+
 
         # Merge into results in desired order
         flat_results = []
@@ -414,14 +428,24 @@ def get_ibscanner_data():
             else:
                 change_pct = None
 
-            # Build dictionary in the order you want:
+            # Get RVOL info
+            rvol_info = rvol_map.get(symbol, {})
+            rvol = rvol_info.get("rvol")
+            current_volume = rvol_info.get("current_volume")
+            avg_volume = rvol_info.get("avg_volume")
+
+
+            # Build final dictionary
             flat_item = {
                 "contract": contract,
                 "last_price": last_price,
                 "rank": rank,
                 "symbol": symbol,
                 "yesterday_close": yesterday_close,
-                "change_pct": change_pct
+                "change": change_pct,
+                "rvol": rvol,
+                "current_volume": current_volume,
+                "avg_volume": avg_volume
             }
 
             flat_results.append(flat_item)
