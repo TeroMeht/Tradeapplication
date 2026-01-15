@@ -510,7 +510,7 @@ def portfolio_manager():
     )
 
     # Overextension to the upside exit
-    if alarm_type == "euforia":# and symbol in exit_requests:
+    if alarm_type == "euforia" and symbol in exit_requests:
         ib = IB()
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)

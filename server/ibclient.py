@@ -250,3 +250,20 @@ def close_position(ib: IB, symbol: str, quantity: int, action: str) -> None:
 
     except Exception as e:
         logging.error(f"Error closing position for {symbol}: {e}")
+
+
+
+def cancel_order(ib: IB, order: Order) -> None:
+    """
+    Cancel an existing order by its OrderId.
+
+    :param ib: Connected IB instance
+    :param order_id: The IB OrderId to cancel
+    """
+
+    try:
+        ib.cancelOrder(order)
+        ib.sleep(0.2)  # short pause to let IB process cancellation
+        logging.info(f"Cancelled order with OrderId={order.orderId}")
+    except Exception as e:
+        logging.error(f"Failed to cancel order {order.orderId}: {e}")
