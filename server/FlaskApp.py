@@ -4,7 +4,7 @@ import asyncio
 import subprocess
 from dataclasses import asdict
 from waitress import serve
-
+from backend_store import exit_requests
 
 
 from common.logger import setup_logging
@@ -463,6 +463,81 @@ def get_ibscanner_data():
     finally:
         ib.disconnect()
         loop.close()
+
+
+
+
+# POST endpoint to update exit requests from frontend
+@app.route("/api/exit_requests", methods=["POST"])
+def exit_requests_endpoint():
+    data = request.get_json()
+    symbol = data["symbol"]
+    requested = data["exitRequested"]
+
+    if requested:
+        exit_requests.add(symbol)
+    else:
+        exit_requests.discard(symbol)
+    print(f"Exit request updated: {exit_requests}")
+    return jsonify({"status": "ok", "current_requests": list(exit_requests)})
+
+
+# GET endpoint to fetch current exit requests
+@app.route("/api/exits", methods=["GET"])
+def get_exit_requests():
+    return jsonify({"active_exit_requests": list(exit_requests)})
+
+
+# Deal with incoming alarms and check if there is exit request
+@app.route("/api/portfoliomanager", methods=["POST"])
+def portfolio_manager():
+
+    alarms_data = request.get_json()
+
+    symbol = alarms_data.get("Symbol")
+    alarm_type = alarms_data.get("Alarm")
+    alarm_date = alarms_data.get("Date")
+    alarm_time = alarms_data.get("Time")
+
+    # Validate required fields
+    if not symbol or not alarm_type:
+        return jsonify({
+            "status": "error",
+            "message": "Missing required fields: Symbol, Alarm, Date, Time"
+        }), 400
+
+    has_exit_request = symbol in exit_requests
+
+    print(
+        f"[PORTFOLIO MANAGER] "
+        f"Date={alarm_date} Time={alarm_time} | "
+        f"Symbol={symbol} | Alarm={alarm_type} | "
+        f"ExitRequested={has_exit_request} | "
+        f"CurrentExitRequests={list(exit_requests)}"
+    )
+
+    if has_exit_request:
+        # close_position(symbol)  # later
+
+        return jsonify({
+            "status": "exit_triggered",
+            "symbol": symbol,
+            "alarm": alarm_type,
+            "date": alarm_date,
+            "time": alarm_time,
+            "action": "close_position"
+        })
+
+    return jsonify({
+        "status": "no_exit",
+        "symbol": symbol,
+        "alarm": alarm_type,
+        "date": alarm_date,
+        "time": alarm_time,
+        "action": "ignored"
+    })
+
+
 
 # @app.route("/api/get_executions", methods=['GET'])
 # def executions():

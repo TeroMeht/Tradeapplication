@@ -47,6 +47,8 @@ interface ApiResponse {
   orders: Order[];
 }
 
+
+
 function PortfolioDashboard() {
   const [, setAccountdata] = useState<AccountDataItem[]>([]);
   const [riskLevels, setRiskLevels] = useState<OpenRiskLevel[]>([]);
@@ -54,6 +56,7 @@ function PortfolioDashboard() {
   const [, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
 
   const fetchPortfolioData = useCallback(async () => {
     setLoading(true);
@@ -91,7 +94,7 @@ function PortfolioDashboard() {
       {error && <div className="text-red-500 mb-2">Error: {error}</div>}
 
       {/* Open Risk Table */}
-      <RiskTable riskLevels={riskLevels} onUpdate={fetchPortfolioData} />
+      <RiskTable riskLevels={riskLevels} />
 
     </div>
   );

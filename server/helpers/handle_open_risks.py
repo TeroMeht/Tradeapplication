@@ -1,9 +1,25 @@
 import pandas as pd
+from dataclasses import dataclass, asdict,field
+from typing import Optional
 
 
-def handle_open_risk(positions_df: pd.DataFrame, 
-                     orders_df: pd.DataFrame,
-                     account_data: dict) -> pd.DataFrame:
+@dataclass
+class PortfolioPosition:
+    Symbol: str
+    Allocation: Optional[float]
+    Size: float
+    AvgCost: float
+    AuxPrice: Optional[float] = field(default=0.0)
+    Position: float = 0.0
+    OpenRisk: Optional[float] = field(default=0.0)
+
+
+
+def handle_open_risk(
+    positions_df: pd.DataFrame, 
+    orders_df: pd.DataFrame,
+    account_data: dict
+) -> pd.DataFrame:
     """
     Build risk table for each position:
       - OpenRisk (based on stop)
@@ -11,58 +27,48 @@ def handle_open_risk(positions_df: pd.DataFrame,
       - Size (absolute position value)
     """
 
-    # Extract net liquidation from account summary
     netliq = float(account_data.get("NetLiquidation", 0))
 
-    risk_df = pd.DataFrame(columns=[
-        "Symbol",
-        "Allocation",
-        "Size",
-        "AvgCost",
-        "AuxPrice",
-        "Position",
-        "OpenRisk"
-    ])
+    # Ensure orders_df has expected columns
+    if orders_df is None or orders_df.empty:
+        orders_df = pd.DataFrame(columns=["Symbol", "OrderType", "AuxPrice"])
 
-    row_index = 0
+    risk_rows = []
 
     for _, pos in positions_df.iterrows():
         symbol = pos["Symbol"]
         position = float(pos["Position"])
         avgcost = float(pos["AvgCost"])
-
-        # Size = abs(position * avgcost)
         size = round(abs(position * avgcost), 2)
+        allocation = round((size / netliq) * 100, 2) if netliq > 0 else None
 
-        # Calculate NetLiquidity% using Size
-        if netliq > 0:
-            netliq_pct = round((size / netliq) * 100, 2)
-        else:
-            netliq_pct = None
-
-        # Find stop for this symbol
+        # Safe lookup for stop order
         stop_order = orders_df[
-            (orders_df["Symbol"] == symbol) &
-            (orders_df["OrderType"] == "STP")
+            (orders_df.get("Symbol", pd.Series(dtype=str)) == symbol) &
+            (orders_df.get("OrderType", pd.Series(dtype=str)) == "STP")
         ].head(1)
 
         if not stop_order.empty:
             aux_price = float(stop_order.iloc[0]["AuxPrice"])
             open_risk = round(abs(position * (aux_price - avgcost)), 2)
         else:
-            aux_price = None
-            open_risk = None
+            aux_price = 0.0
+            open_risk = 999999999
 
-        risk_df.loc[row_index] = {
-            "Symbol": symbol,
-            "Allocation": netliq_pct,
-            "Size": size,
-            "AvgCost": avgcost,
-            "AuxPrice": aux_price,
-            "Position": position,
-            "OpenRisk": open_risk
-        }
+        # Append as dataclass dict
+        risk_rows.append(asdict(PortfolioPosition(
+            Symbol=symbol,
+            Allocation=allocation,
+            Size=size,
+            AvgCost=avgcost,
+            AuxPrice=aux_price,
+            Position=position,
+            OpenRisk=open_risk
+        )))
 
-        row_index += 1
+    # Create DataFrame in one shot
+    risk_df = pd.DataFrame(risk_rows)
 
+
+    print(risk_df)
     return risk_df

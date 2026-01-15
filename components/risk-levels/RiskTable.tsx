@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -9,76 +9,104 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
 
 type RiskLevel = {
-  Allocation: number;
+  Allocation: number | null;
   Symbol: string;
-  AuxPrice: number;
+  AuxPrice: number | null;
   AvgCost: number;
-  OpenRisk: number | string;
+  OpenRisk: number | string | null;
   Position: number;
   Size: number;
 };
 
 interface RiskTableProps {
   riskLevels: RiskLevel[];
-  onUpdate?: () => void;
+  onExitRequest?: (symbol: string, selected: boolean) => void;
 }
 
-const RiskTableRow: React.FC<{ riskLevel: RiskLevel }> = ({ riskLevel }) => {
+// Row component
+const RiskTableRow: React.FC<{
+  riskLevel: RiskLevel;
+  isSelected: boolean;
+  onToggle: (symbol: string) => void;
+}> = ({ riskLevel, isSelected, onToggle }) => {
   const { Symbol, Allocation, AuxPrice, AvgCost, Size, Position, OpenRisk } =
     riskLevel;
 
-  const formattedAllocation =
-    Allocation != null ? `${Allocation.toFixed(2)}%` : "N/A";
-  const formattedAuxPrice = AuxPrice != null ? AuxPrice.toFixed(2) : "N/A";
-  const formattedAvgCost = AvgCost.toFixed(2);
-  const formattedOpenRisk =
-    typeof OpenRisk === "number" && isFinite(OpenRisk)
-      ? OpenRisk.toFixed(2)
-      : "No stop set";
-
-  const openRiskClass =
-    typeof OpenRisk !== "number" || !isFinite(OpenRisk)
-      ? "text-red-600 font-bold"
-      : "";
-
-  const handleManageClick = () => {
-    const url = `/risk-levels/${Symbol}/manage?` +
-      `symbol=${encodeURIComponent(Symbol)}` +
-      `&aux=${encodeURIComponent(AuxPrice)}` +
-      `&allocation=${encodeURIComponent(Allocation)}` +
-      `&avg=${encodeURIComponent(AvgCost)}` +
-      `&pos=${encodeURIComponent(Position)}` +
-      `&risk=${encodeURIComponent(OpenRisk)}`;
-    window.open(url, "_blank", "width=500,height=600,left=200,top=200");
+  const handleClick = () => {
+    onToggle(Symbol);
   };
 
   return (
-    <TableRow className="cursor-pointer hover:bg-gray-100">
+    <TableRow>
+      {/* Exit Toggle Button */}
+      <TableCell className="text-center">
+        <button
+          onClick={handleClick}
+          style={{
+            width: 24,
+            height: 24,
+            borderRadius: "50%",
+            border: "1px solid gray",
+            backgroundColor: isSelected ? "black" : "white",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+        </button>
+      </TableCell>
+
       <TableCell>{Symbol}</TableCell>
-      <TableCell>{formattedAllocation}</TableCell>
-            <TableCell>{formattedAuxPrice}</TableCell>
-      <TableCell>{formattedAvgCost}</TableCell>
+      <TableCell>{Allocation}</TableCell>
+      <TableCell>{AuxPrice}</TableCell>
+      <TableCell>{AvgCost}</TableCell>
       <TableCell>{Size}</TableCell>
       <TableCell>{Position}</TableCell>
-      <TableCell className={openRiskClass}>{formattedOpenRisk}</TableCell>
-      <TableCell>
-        <Button
-          variant="secondary"
-          size="sm"
-          className="bg-indigo-500 text-white hover:bg-indigo-600"
-          onClick={handleManageClick}
-        >
-          Manage
-        </Button>
-      </TableCell>
+      <TableCell>{OpenRisk}</TableCell>
     </TableRow>
   );
 };
 
-const RiskTable: React.FC<RiskTableProps> = ({ riskLevels }) => {
+// Main table component
+const RiskTable: React.FC<RiskTableProps> = ({ riskLevels, onExitRequest }) => {
+  // Track toggle state per symbol
+  const [selectedSymbols, setSelectedSymbols] = useState<Record<string, boolean>>({});
+
+  // Toggle handler
+  const handleToggle = async (symbol: string) => {
+    const currentlySelected = selectedSymbols[symbol] || false;
+    const newSelection = !currentlySelected;
+
+    setSelectedSymbols((prev) => ({ ...prev, [symbol]: newSelection }));
+
+    console.log(
+      newSelection
+        ? `Exit requested for: ${symbol}`
+        : `Exit request cleared for: ${symbol}`
+    );
+
+    // Send immediately to backend
+    if (onExitRequest) {
+      onExitRequest(symbol, newSelection);
+    } else {
+      // Default behavior: call backend directly
+      try {
+        const response = await fetch("http://127.0.0.1:8080/api/exit_requests", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ symbol, exitRequested: newSelection }),
+        });
+        const data = await response.json();
+        console.log("Backend response:", data);
+      } catch (err) {
+        console.error("Failed to update exit request:", err);
+      }
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-center my-4">
@@ -88,14 +116,14 @@ const RiskTable: React.FC<RiskTableProps> = ({ riskLevels }) => {
       <Table>
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
-             <TableHead>Symbol</TableHead>
+            <TableHead>Exit Request</TableHead>
+            <TableHead>Symbol</TableHead>
             <TableHead>Allocation</TableHead>
             <TableHead>Aux Price</TableHead>
             <TableHead>Avg Cost</TableHead>
             <TableHead>Size</TableHead>
             <TableHead>Position</TableHead>
             <TableHead>Open Risk</TableHead>
-            <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
 
@@ -107,8 +135,13 @@ const RiskTable: React.FC<RiskTableProps> = ({ riskLevels }) => {
               </TableCell>
             </TableRow>
           ) : (
-            riskLevels.map((riskLevel, index) => (
-              <RiskTableRow key={index} riskLevel={riskLevel} />
+            riskLevels.map((riskLevel) => (
+              <RiskTableRow
+                key={riskLevel.Symbol}
+                riskLevel={riskLevel}
+                isSelected={!!selectedSymbols[riskLevel.Symbol]}
+                onToggle={handleToggle}
+              />
             ))
           )}
         </TableBody>
