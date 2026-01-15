@@ -28,6 +28,7 @@ from helpers.utils import log_scan_results, sanitize_for_json
 from helpers.handle_rvol_operations import *
 from scanner.scan import run_scanner
 from helpers.handle_market_scan import *
+from portfoliomanager.manager import PortfolioManager
 
 
 
@@ -343,7 +344,6 @@ def get_ib_data():
         ib.disconnect()
         loop.close()
     
-
 @app.route("/api/stoplevel", methods=['GET'])
 def get_stop_level():
     """
@@ -368,7 +368,6 @@ def get_stop_level():
 
     # Return stop level as a float (calculable number)
     return jsonify({"stop_level": stop_level_float}), 200
-
 
 
 @app.route("/api/ib_scanner", methods=['GET'])
@@ -467,6 +466,11 @@ def get_ibscanner_data():
 
 
 
+
+
+
+
+
 # POST endpoint to update exit requests from frontend
 @app.route("/api/exit_requests", methods=["POST"])
 def exit_requests_endpoint():
@@ -488,7 +492,6 @@ def get_exit_requests():
     return jsonify({"active_exit_requests": list(exit_requests)})
 
 
-# Deal with incoming alarms and check if there is exit request
 @app.route("/api/portfoliomanager", methods=["POST"])
 def portfolio_manager():
 
@@ -499,45 +502,42 @@ def portfolio_manager():
     alarm_date = alarms_data.get("Date")
     alarm_time = alarms_data.get("Time")
 
-    # Validate required fields
-    if not symbol or not alarm_type:
-        return jsonify({
-            "status": "error",
-            "message": "Missing required fields: Symbol, Alarm, Date, Time"
-        }), 400
-
-    has_exit_request = symbol in exit_requests
-
-    print(
-        f"[PORTFOLIO MANAGER] "
+    logger.info(
+        f"[INCOMING ALARM DATA] "
         f"Date={alarm_date} Time={alarm_time} | "
         f"Symbol={symbol} | Alarm={alarm_type} | "
-        f"ExitRequested={has_exit_request} | "
-        f"CurrentExitRequests={list(exit_requests)}"
+        f"ExitRequested={symbol in exit_requests}"
     )
 
-    if has_exit_request:
-        # close_position(symbol)  # later
+    # Overextension to the upside exit
+    if alarm_type == "euforia":# and symbol in exit_requests:
+        ib = IB()
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
 
-        return jsonify({
-            "status": "exit_triggered",
-            "symbol": symbol,
-            "alarm": alarm_type,
-            "date": alarm_date,
-            "time": alarm_time,
-            "action": "close_position"
-        })
+        try:
+            # ---- IB CONNECT (SAFE) ----
+            ib.connect(
+                host=project_config["host"],
+                port=project_config["port"],
+                clientId=project_config["clientId"],
+                timeout=5
+            )
 
-    return jsonify({
-        "status": "no_exit",
-        "symbol": symbol,
-        "alarm": alarm_type,
-        "date": alarm_date,
-        "time": alarm_time,
-        "action": "ignored"
-    })
+            # ---- HANDLE SYMBOL EXIT ----
+            manager = PortfolioManager(ib)
+            status = manager.handle_automated_exit(symbol)
 
+            return jsonify({"status": status, "symbol": symbol})
 
+        except Exception as e:
+            logger.exception(f"Error in portfolio_manager endpoint for symbol {symbol}")
+            return jsonify({"status": "error", "error": str(e), "symbol": symbol}), 500
+
+        finally:
+            ib.disconnect()
+    else:
+        return jsonify({"status": "no close order sent", "symbol": symbol})
 
 # @app.route("/api/get_executions", methods=['GET'])
 # def executions():
@@ -588,6 +588,6 @@ def portfolio_manager():
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
     # Serve the app with Waitress on all interfaces
-    serve(app, host="0.0.0.0", port=8080)
+    #serve(app, host="0.0.0.0", port=8080)
     # Run Flask app (use built-in dev server for development)
-    #app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(host="0.0.0.0", port=8080, debug=True)

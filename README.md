@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+POST request 
+
+$uri = "http://localhost:8080/api/portfoliomanager"
+
+$body = @{
+    Symbol = "NVDA"
+    Alarm  = "euforia"
+    Date   = "2026-01-15"
+    Time   = "10:12:00"
+} | ConvertTo-Json
+
+Invoke-RestMethod `
+    -Uri $uri `
+    -Method Post `
+    -ContentType "application/json" `
+    -Body $body

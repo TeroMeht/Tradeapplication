@@ -218,3 +218,35 @@ def get_executed_trades(ib: IB) -> pd.DataFrame:
     except Exception as e:
         logging.error(f"Error fetching executed trades: {e}")
         return pd.DataFrame()
+
+
+
+def close_position(ib: IB, symbol: str, quantity: int, action: str) -> None:
+    """
+    Send a market order to close a position.
+
+    :param ib: Connected IB instance
+    :param symbol: Stock symbol (e.g. "AAPL")
+    :param quantity: Number of shares to close
+    :param action: "SELL" or "BUY"
+    """
+    try:
+        contract = Stock(symbol=symbol, exchange="SMART", currency="USD")
+        ib.qualifyContracts(contract)
+
+        order = MarketOrder(
+            action=action,
+            totalQuantity=quantity,
+            outsideRth=True
+        )
+
+        ib.placeOrder(contract, order)
+        ib.sleep(0.2)
+
+        logging.info(
+            f"Sent {action} market order to close "
+            f"{quantity} shares of {symbol}"
+        )
+
+    except Exception as e:
+        logging.error(f"Error closing position for {symbol}: {e}")
