@@ -42,8 +42,8 @@ POST request
 $uri = "http://localhost:8080/api/portfoliomanager"
 
 $body = @{
-    Symbol = "NVDA"
-    Alarm  = "euforia"
+    Symbol = "MU"
+    Alarm  = "endofday_exit"
     Date   = "2026-01-15"
     Time   = "10:12:00"
 } | ConvertTo-Json

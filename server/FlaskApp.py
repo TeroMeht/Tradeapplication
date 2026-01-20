@@ -121,7 +121,6 @@ def get_alarms():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
 @app.route("/api/tables", methods=['GET'])
 def get_table_names():
     """
@@ -140,7 +139,6 @@ def get_table_names():
     except Exception as e:
         logger.error(f"Error fetching table names: {e}")
         return jsonify({"error": str(e)}), 500
-
 
 @app.route("/api/tables/last_rows", methods=['GET'])
 def get_last_rows():
@@ -197,10 +195,6 @@ def run_script():
 
 
 
-
-
-
-
 @app.route("/api/open-alpaca-orders", methods=['GET'])
 def get_alpacaorders_data():
     ib = IB()
@@ -235,7 +229,6 @@ def get_alpacaorders_data():
     finally:
         ib.disconnect()
         loop.close()
-
 
 @app.route("/api/place-order", methods=['POST'])
 def place_order():
@@ -527,11 +520,37 @@ def portfolio_manager():
             # ---- HANDLE SYMBOL EXIT ----
             manager = PortfolioManager(ib)
             status = manager.handle_automated_exit(symbol)
+            # 🔁 RESET EXIT REQUEST
+            exit_requests.discard(symbol)
+
+        except Exception as e:
+            logger.exception(f"Error in portfolio_manager endpoint euforia exit{symbol}")
+            return jsonify({"status": "error", "error": str(e), "symbol": symbol}), 500
+        
+    elif alarm_type == "endofday_exit" and symbol in exit_requests:
+        ib = IB()
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+        try:
+            # ---- IB CONNECT (SAFE) ----
+            ib.connect(
+                host=project_config["host"],
+                port=project_config["port"],
+                clientId=project_config["clientId"],
+                timeout=5
+            )
+
+            # ---- HANDLE SYMBOL EXIT ----
+            manager = PortfolioManager(ib)
+            status = manager.handle_automated_exit(symbol)
+            # 🔁 RESET EXIT REQUEST
+            exit_requests.discard(symbol)
 
             return jsonify({"status": status, "symbol": symbol})
 
         except Exception as e:
-            logger.exception(f"Error in portfolio_manager endpoint for symbol {symbol}")
+            logger.exception(f"Error in portfolio_manager endpoint endofday exit {symbol}")
             return jsonify({"status": "error", "error": str(e), "symbol": symbol}), 500
 
         finally:
@@ -539,48 +558,7 @@ def portfolio_manager():
     else:
         return jsonify({"status": "no close order sent", "symbol": symbol})
 
-# @app.route("/api/get_executions", methods=['GET'])
-# def executions():
 
-#     ib = IB()
-#     loop = asyncio.new_event_loop()
-#     asyncio.set_event_loop(loop)
-
-#     try:
-#         # Connect
-#         ib.connect(
-#             host=project_config["host"],
-#             port=project_config["port"],
-#             clientId=project_config["clientId"]
-#         )
-
-#         # --- Get symbol from query params or use default ---
-#         symbol =  "NVDA"
-
-#         # Fetch executed trades
-#         executions_df = get_executed_trades(ib)
-        
-#         # --- Determine if entry allowed ---
-#         entry_allowed, message = is_entry_allowed(executions_df, symbol, project_config)
-
-#         # Convert DataFrame → list of dicts for JSON
-#         executions_json = executions_df.to_dict(orient="records")
-
-#         # --- Return full executions + entry info ---
-#         return jsonify({
-#             "executions": executions_json,
-#             "symbol": symbol,
-#             "entry_allowed": entry_allowed,
-#             "message": message
-#         }), 200
-
-#     except Exception as e:
-#         logger.error("Error fetching executions: %s", str(e))
-#         return jsonify({"error": str(e)}), 500
-
-#     finally:
-#         ib.disconnect()
-#         loop.close()
 
 
 

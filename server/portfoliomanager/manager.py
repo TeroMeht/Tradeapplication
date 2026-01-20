@@ -1,7 +1,8 @@
 import logging
 import pandas as pd
 from ib_insync import *
-from ibclient import get_positions, get_stop_orders, close_position,cancel_order
+from ibclient import get_positions, get_stop_orders, close_position
+from typing import List
 
 logger = logging.getLogger(__name__)
 
@@ -30,11 +31,12 @@ class PortfolioManager:
         if not self.has_position(symbol, self.positions_df):
             return "no_position"
 
-        # Cancel existing STP order (if any)
-        # stp_order = self.has_existing_stop_order(symbol, self.open_orders_df)
-        # ib_stp_order = self.create_ib_order_object(stp_order)
-        # print(ib_stp_order)
-        # self.cancel_order(ib_stp_order)
+            # 3️⃣ Fetch all trades from this session and filter by symbol
+           # Cancel active trades first
+        active_trades = self.active_trades_by_symbol(symbol)
+        self.cancel_trades(active_trades)
+
+        
 
         qty, action = self.get_position_info(symbol, self.positions_df)
         self.close_position(symbol, qty, action)
@@ -59,6 +61,24 @@ class PortfolioManager:
         except Exception as e:
             logger.error(f"Error fetching open orders: {e}")
             return pd.DataFrame()
+
+
+
+    def active_trades_by_symbol(self, symbol: str) -> List[Trade]:
+        try:
+            trades = self.ib.trades()  # This calls IB's trades() method internally
+            print(f"Trades fetched: {trades}")
+            # Filter by symbol and order status
+            filtered = [
+                t for t in trades
+                if t.contract and t.contract.symbol == symbol
+                and t.orderStatus.status == "PreSubmitted"
+            ]
+            return filtered
+        except Exception as e:
+            logging.error(f"Error fetching trades in PortfolioManager: {e}")
+            return []
+
 
     def has_position(self, symbol: str, positions_df: pd.DataFrame) -> bool:
         """Check if we have a position for the symbol"""
@@ -96,54 +116,6 @@ class PortfolioManager:
 
         return False
     
-    def create_ib_order_object(self,row: pd.Series) -> Order:
-        """
-        Convert a DataFrame row representing an order into an IB-insync Order object.
-        """
-        order = Order()
-        
-        # Map fields from DataFrame
-        order.orderId = int(row["OrderId"])
-        order.action = row["Action"].upper()       # "BUY" or "SELL"
-        order.totalQuantity = int(row["TotalQty"])
-        order.orderType = row["OrderType"].upper() # "MKT", "LMT", "STP", etc.
-        
-        # Optional prices
-        if "LmtPrice" in row and row["LmtPrice"] > 0:
-            order.lmtPrice = float(row["LmtPrice"])
-        if "AuxPrice" in row and row["AuxPrice"] > 0:
-            order.auxPrice = float(row["AuxPrice"])
-        
-        return order
-
-
-    def has_existing_stop_order(
-        self,
-        symbol: str,
-        open_orders_df: pd.DataFrame
-    ) -> pd.Series | None:
-        """
-        Return the full row (pd.Series) of an existing STP order for the symbol,
-        or None if not found.
-        """
-        if open_orders_df.empty:
-            logger.info(f"No open orders at all for {symbol}, safe to create new close order.")
-            return None
-
-        existing_stp_orders = open_orders_df.loc[
-            (open_orders_df["Symbol"] == symbol) &
-            (open_orders_df["OrderType"].str.upper() == "STP") &
-            (~open_orders_df["Status"].str.upper().isin(["CANCELLED"]))
-        ]
-
-        if not existing_stp_orders.empty:
-            order_row = existing_stp_orders.iloc[0]  # <- FULL ROW
-            logger.info(
-                f"Found existing STP order for {symbol}, OrderId={order_row['OrderId']}"
-            )
-            return order_row
-
-        return None
 
     def close_position(self, symbol: str, quantity: int, action: str) -> None:
         """Send market order to close the position"""
@@ -154,6 +126,22 @@ class PortfolioManager:
             action=action
         )
 
-    def cancel_order(self, order_id: int) -> None:
-        # Call the standalone function
-        cancel_order(self.ib, order_id)
+    def cancel_trades(self, trades: List[Trade]) -> None:
+        """
+        Cancel a list of trades by calling the PortfolioManager's cancelOrder method.
+
+        Args:
+            trades: List of Trade objects to cancel.
+        """
+        if not trades:
+            logger.info("cancel_trades: No trades provided to cancel.")
+            return
+
+        for trade in trades:
+            if trade.order:
+
+                self.ib.cancelOrder(trade.order)  # call your existing cancelOrder method
+
+
+            else:
+                logger.warning(f"Trade has no order attached: {trade}")
