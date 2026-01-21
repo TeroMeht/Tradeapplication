@@ -192,11 +192,60 @@ def run_script():
 
 # Risk-levels--------------------------------------------------------------------------
 
+ 
+@app.route("/api/deactivate_order", methods=["POST"])
+def deactivate_by_orderid():
+    try:
+        data = request.get_json()
+        if not data or "id" not in data:
+            return jsonify({
+                "status": "error",
+                "message": "Order ID is required"
+            }), 400
 
+        order_id = data["id"]
 
+        # Ensure numeric ID
+        try:
+            order_id = int(order_id)
+        except ValueError:
+            return jsonify({
+                "status": "error",
+                "message": "Order ID must be a number"
+            }), 400
 
-@app.route("/api/open-alpaca-orders", methods=['GET'])
-def get_alpacaorders_data():
+        # Update order status
+        rows_updated = update_order_status(
+            database_config=database_config,
+            order_id=order_id,
+            new_status="deactive"
+        )
+
+        if rows_updated is None:
+            return jsonify({
+                "status": "error",
+                "message": "Failed to deactivate order"
+            }), 500
+
+        if rows_updated == 0:
+            return jsonify({
+                "status": "error",
+                "message": f"No order found with ID {order_id}"
+            }), 404
+
+        return jsonify({
+            "status": "success",
+            "message": f"Order {order_id} deactivated successfully"
+        }), 200
+
+    except Exception as e:
+        logger.error(f"Deactivate order error: {e}")
+        return jsonify({
+            "status": "error",
+            "message": "Internal server error"
+        }), 500
+@app.route("/api/open-orders", methods=['GET'])
+def get_orders_data():
     ib = IB()
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
@@ -206,7 +255,7 @@ def get_alpacaorders_data():
                     port = project_config["port"], 
                     clientId = project_config["clientId"])
         
-        orders = process_open_orders(ib, project_config)
+        orders = process_open_orders(ib, project_config,database_config)
 
         if not orders:
             return jsonify({
@@ -566,6 +615,6 @@ def portfolio_manager():
 # Run Flask and IB API simultaneously
 if __name__ == "__main__":
     # Serve the app with Waitress on all interfaces
-    #serve(app, host="0.0.0.0", port=8080)
+    serve(app, host="0.0.0.0", port=8080)
     # Run Flask app (use built-in dev server for development)
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    #app.run(host="0.0.0.0", port=8080, debug=True)

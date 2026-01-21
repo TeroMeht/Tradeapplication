@@ -114,7 +114,7 @@ def fetch_all_table_names(database_config):
                 SELECT table_name
                 FROM information_schema.tables
                 WHERE table_schema = 'public'
-                AND table_name NOT IN ('livedata', 'alarms')
+                AND table_name NOT IN ('livedata', 'alarms','orders')
                 ORDER BY table_name;
         """
 
@@ -188,6 +188,90 @@ def fetch_last_row_from_each_table(database_config):
 
     except Exception as e:
         logger.error(f"Error in fetching last rows from tables: {e}")
+        return None
+
+    finally:
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+
+
+
+
+def fetch_active_open_orders(database_config):
+    """
+    Retrieve all active open orders from the 'orders' table
+    and return them as a list of dictionaries.
+    """
+    conn = None
+    cur = None
+    try:
+        # Use the helper function to get a connection and cursor
+        conn, cur = get_connection_and_cursor(database_config)
+
+        # Define SQL query
+        select_query = """
+            SELECT
+                "Id",
+                "Symbol",
+                "Time",
+                "Stop",
+                "Date",
+                "Status"
+            FROM orders
+            WHERE "Status" = 'active'
+            ORDER BY "Time" ASC;
+        """
+
+        cur.execute(select_query)
+        rows = cur.fetchall()
+
+        # Get column names dynamically
+        columns = [desc[0] for desc in cur.description]
+
+        # Convert rows to list of dictionaries
+        orders_list = [dict(zip(columns, row)) for row in rows]
+
+        return orders_list
+
+    except Exception as e:
+        logger.error(f"Error fetching active open orders: {e}")
+        return None
+
+    finally:
+        # Always close database resources safely
+        if cur:
+            cur.close()
+        if conn:
+            conn.close()
+
+
+def update_order_status(database_config, order_id, new_status):
+    """
+    Update the status of an order in the 'orders' table.
+    """
+    conn = None
+    cur = None
+    try:
+        # Get DB connection and cursor
+        conn, cur = get_connection_and_cursor(database_config)
+
+        update_query = """
+            UPDATE orders
+            SET "Status" = %s
+            WHERE "Id" = %s;
+        """
+
+        cur.execute(update_query, (new_status, order_id))
+        conn.commit()
+
+        return cur.rowcount  # number of rows updated
+
+    except Exception as e:
+        if conn:
+            conn.rollback()
+        logger.error(f"Error updating order status for Id {order_id}: {e}")
         return None
 
     finally:

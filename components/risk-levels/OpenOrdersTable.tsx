@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 
-type Order_Alpaca = {
+type Orders = {
   symbol: string;
+  id:string;
   latest_price: number;
   stop_price: number;
   position_size: number;
@@ -21,18 +22,18 @@ type Order_Alpaca = {
 type ApiResponse = {
   status: string;
   message: string;
-  data: Order_Alpaca[];
+  data: Orders[];
 };
 
 // --- KEEP THIS EXACTLY AS BEFORE ---
 const fetchPositions = async (): Promise<ApiResponse> => {
-  const res = await fetch("http://localhost:8080/api/open-alpaca-orders");
+  const res = await fetch("http://localhost:8080/api/open-orders");
   const json = await res.json();
   return json as ApiResponse;
 };
 
 const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
-  const [positions, setPositions] = useState<Order_Alpaca[]>([]);
+  const [positions, setPositions] = useState<Orders[]>([]);
   const [message, setMessage] = useState("");
   const [sentOrders, setSentOrders] = useState<Set<number>>(new Set());
   const [, setOrderMessages] = useState<Record<number, string>>({});
@@ -79,7 +80,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
     }
   }, [updateTable]);
 
-  const handleSendOrder = async (order: Order_Alpaca, index: number) => {
+  const handleSendOrder = async (order: Orders, index: number) => {
     if (sentOrders.has(index)) return;
 
     const requestBody = {
@@ -123,7 +124,32 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
       }));
     }
   };
+  const handleCancelOrder = async (order: Orders) => {
+    try {
+      const response = await fetch("http://localhost:8080/api/deactivate_order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: order.id }),
+      });
 
+      const data = await response.json();
+
+      const colorClass =
+        data.status === "success" ? "bg-green-600" : "bg-red-600";
+
+      setPopupMessage({ text: data.message, colorClass });
+      setTimeout(() => setPopupMessage(null), 10000);
+
+      if (data.status === "success") {
+        // Remove the cancelled order from table
+        setPositions((prev) => prev.filter((p) => p.id !== order.id));
+      }
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : "Cancel failed";
+      setPopupMessage({ text: errMsg, colorClass: "bg-red-600" });
+      setTimeout(() => setPopupMessage(null), 10000);
+    }
+  };
   return (
     <div className="relative">
       {/* --- POPUP MESSAGE --- */}
@@ -149,7 +175,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
       <Table>
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
-            <TableHead>#</TableHead>
+            <TableHead>Id</TableHead>
             <TableHead>Symbol</TableHead>
             <TableHead>Latest Price</TableHead>
             <TableHead>Stop price</TableHead>
@@ -173,7 +199,7 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
 
               return (
                 <TableRow key={index} className="cursor-pointer hover:bg-gray-100">
-                  <TableCell>{index + 1}</TableCell>
+                  <TableCell>{position.id}</TableCell>
                   <TableCell>{position.symbol}</TableCell>
                   <TableCell>{position.latest_price}</TableCell>
                   <TableCell>{stopValue}</TableCell>
@@ -195,6 +221,14 @@ const PositionTable = ({ onComplete }: { onComplete: () => void }) => {
                     >
                       {isSent ? "Sent" : "Send Order"}
                     </Button>
+                    <Button
+                  variant="destructive"
+                  size="sm"
+                  className="bg-gray-400 hover:bg-gray-500 text-white"
+                  onClick={() => handleCancelOrder(position)}
+                >
+                  Cancel
+                </Button>
                   </TableCell>
                 </TableRow>
               );
