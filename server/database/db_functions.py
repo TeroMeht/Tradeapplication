@@ -114,6 +114,7 @@ def fetch_all_table_names(database_config):
                 SELECT table_name
                 FROM information_schema.tables
                 WHERE table_schema = 'public'
+                AND table_name NOT ILIKE '%volume_model%'
                 AND table_name NOT IN ('livedata', 'alarms','orders')
                 ORDER BY table_name;
         """

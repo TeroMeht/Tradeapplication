@@ -2,7 +2,7 @@
     "TARGET_SCRIPT": "main.py",
     "SCRIPT_DIR": "C:\\productioncodes\\22_WatchlistStreamer",
     "input_tickers": "C:\\productioncodes\\22_WatchlistStreamer\\tickers",
-    "Risk": 200,
+    "Risk": 100,
     "host": "127.0.0.1",
     "port": 7497,
     "port2": 4002,

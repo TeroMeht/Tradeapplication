@@ -25,7 +25,7 @@ export const LastRowsTable: React.FC = () => {
 
       // Convert object to array and sort by Relatr descending
       const rows: LastRow[] = Object.values(json.last_rows || []).filter(Boolean) as LastRow[];
-      rows.sort((a, b) => (b.Relatr as number) - (a.Relatr as number));
+      rows.sort((a, b) => (b.Rvol as number) - (a.Rvol as number));
 
       setData(rows);
             setError(null); // Clear any previous error
@@ -56,7 +56,7 @@ export const LastRowsTable: React.FC = () => {
     <>
       {error && <p className="text-red-500">Error: {error}</p>}
       <Table className="mt-4">
-        <TableCaption>Last rows of all tables (sorted by Relatr ↓)</TableCaption>
+        <TableCaption>Last rows of all tables (sorted by Rvol ↓)</TableCaption>
         <TableHeader>
           <TableRow>
             {displayedColumns.map((col) => (
