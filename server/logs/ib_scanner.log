@@ -4785,3 +4785,54 @@
 2026-02-11 16:02:16,864 | INFO | CRCL | rank=19 | last=59.45 | yclose=59.75 | change=None%
 2026-02-11 16:02:16,864 | INFO | === End of scan ===
 
+2026-02-12 10:18:55,681 | INFO | === Scan results for preset='high_activity_scan' (20 items) ===
+2026-02-12 10:18:55,681 | INFO | NVCR | rank=0 | last=14.04 | yclose=10.5 | change=None%
+2026-02-12 10:18:55,681 | INFO | SNDK | rank=1 | last=639.3 | yclose=599.34 | change=None%
+2026-02-12 10:18:55,681 | INFO | MU | rank=2 | last=423.41 | yclose=410.34 | change=None%
+2026-02-12 10:18:55,681 | INFO | ASTS | rank=3 | last=88.5 | yclose=96.92 | change=None%
+2026-02-12 10:18:55,681 | INFO | U | rank=4 | last=21.08 | yclose=21.41 | change=None%
+2026-02-12 10:18:55,681 | INFO | PLTR | rank=5 | last=135.34 | yclose=135.68 | change=None%
+2026-02-12 10:18:55,681 | INFO | SMR | rank=6 | last=15.69 | yclose=15.57 | change=None%
+2026-02-12 10:18:55,681 | INFO | IONQ | rank=7 | last=33.82 | yclose=33.61 | change=None%
+2026-02-12 10:18:55,681 | INFO | RDW | rank=8 | last=8.98 | yclose=9.01 | change=None%
+2026-02-12 10:18:55,681 | INFO | HOOD | rank=9 | last=78.13 | yclose=77.97 | change=None%
+2026-02-12 10:18:55,681 | INFO | JOBY | rank=10 | last=10.24 | yclose=10.1 | change=None%
+2026-02-12 10:18:55,681 | INFO | BMNR | rank=11 | last=19.84 | yclose=19.47 | change=None%
+2026-02-12 10:18:55,681 | INFO | IREN | rank=12 | last=42.39 | yclose=42.67 | change=None%
+2026-02-12 10:18:55,681 | INFO | RIG | rank=13 | last=6.04 | yclose=6.0 | change=None%
+2026-02-12 10:18:55,681 | INFO | GOOGL | rank=14 | last=312.6 | yclose=310.96 | change=None%
+2026-02-12 10:18:55,681 | INFO | AMD | rank=15 | last=215.06 | yclose=213.58 | change=None%
+2026-02-12 10:18:55,681 | INFO | SNAP | rank=16 | last=5.01 | yclose=4.99 | change=None%
+2026-02-12 10:18:55,681 | INFO | INTC | rank=17 | last=48.55 | yclose=48.29 | change=None%
+2026-02-12 10:18:55,681 | INFO | ACHR | rank=18 | last=7.04 | yclose=6.97 | change=None%
+2026-02-12 10:18:55,682 | INFO | NVDA | rank=19 | last=190.77 | yclose=190.05 | change=None%
+2026-02-12 10:18:55,682 | INFO | === End of scan ===
+
+2026-02-12 10:19:23,131 | INFO | === Scan results for preset='gap_up_scan' (17 items) ===
+2026-02-12 10:19:23,131 | INFO | NVCR | rank=0 | last=14.04 | yclose=10.5 | change=None%
+2026-02-12 10:19:23,131 | INFO | SNDK | rank=1 | last=640.0 | yclose=599.34 | change=None%
+2026-02-12 10:19:23,131 | INFO | MU | rank=2 | last=423.52 | yclose=410.34 | change=None%
+2026-02-12 10:19:23,131 | INFO | BMNR | rank=3 | last=19.84 | yclose=19.47 | change=None%
+2026-02-12 10:19:23,131 | INFO | JOBY | rank=4 | last=10.24 | yclose=10.1 | change=None%
+2026-02-12 10:19:23,131 | INFO | ACHR | rank=5 | last=7.04 | yclose=6.97 | change=None%
+2026-02-12 10:19:23,131 | INFO | AMD | rank=6 | last=215.06 | yclose=213.58 | change=None%
+2026-02-12 10:19:23,131 | INFO | RIG | rank=7 | last=6.04 | yclose=6.0 | change=None%
+2026-02-12 10:19:23,131 | INFO | IONQ | rank=8 | last=33.82 | yclose=33.61 | change=None%
+2026-02-12 10:19:23,131 | INFO | INTC | rank=9 | last=48.59 | yclose=48.29 | change=None%
+2026-02-12 10:19:23,131 | INFO | SMR | rank=10 | last=15.66 | yclose=15.57 | change=None%
+2026-02-12 10:19:23,131 | INFO | ONDS | rank=11 | last=9.28 | yclose=9.23 | change=None%
+2026-02-12 10:19:23,131 | INFO | GOOGL | rank=12 | last=312.6 | yclose=310.96 | change=None%
+2026-02-12 10:19:23,131 | INFO | NVDA | rank=13 | last=190.89 | yclose=190.05 | change=None%
+2026-02-12 10:19:23,131 | INFO | SNAP | rank=14 | last=5.01 | yclose=4.99 | change=None%
+2026-02-12 10:19:23,131 | INFO | TSLA | rank=15 | last=429.29 | yclose=428.27 | change=None%
+2026-02-12 10:19:23,131 | INFO | HOOD | rank=16 | last=78.13 | yclose=77.97 | change=None%
+2026-02-12 10:19:23,131 | INFO | === End of scan ===
+
+2026-02-12 10:19:32,885 | INFO | === Scan results for preset='gap_down_scan' (5 items) ===
+2026-02-12 10:19:32,885 | INFO | ASTS | rank=0 | last=88.5 | yclose=96.92 | change=None%
+2026-02-12 10:19:32,885 | INFO | U | rank=1 | last=21.08 | yclose=21.41 | change=None%
+2026-02-12 10:19:32,885 | INFO | IREN | rank=2 | last=42.3 | yclose=42.67 | change=None%
+2026-02-12 10:19:32,885 | INFO | RDW | rank=3 | last=8.98 | yclose=9.01 | change=None%
+2026-02-12 10:19:32,885 | INFO | PLTR | rank=4 | last=135.34 | yclose=135.68 | change=None%
+2026-02-12 10:19:32,885 | INFO | === End of scan ===
+
