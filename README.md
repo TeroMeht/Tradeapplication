@@ -9,7 +9,7 @@ Frontend:
 npm run start
 ```
 Backend:
-run python .\FlaskApp.py 
+run ```bashpython .\FlaskApp.py``` 
 
 Now open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
